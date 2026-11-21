@@ -1,13 +1,15 @@
 extends Node
-## Original synthesized slide-whistle 'wie wo weeuh', chirp and launch whoosh.
+## Original synthesized slide-whistle, chirp and jump sounds.
 var voices: Array[AudioStreamPlayer] = []
 var clips: Dictionary = {}
-var counts: Dictionary = {"miss":0, "bird":0, "launch":0}
+var counts: Dictionary = {"miss":0, "bird":0, "launch":0, "dive":0, "ring":0}
 
 func _ready() -> void:
  clips.miss = glide([[0.0, 400.0], [0.20, 850.0], [0.31, 220.0], [0.52, 370.0], [0.64, 780.0], [1.25, 95.0]], 1.3)
  clips.bird = glide([[0.0, 1500.0], [0.08, 600.0], [0.15, 1900.0], [0.28, 700.0]], 0.3)
  clips.launch = glide([[0.0, 90.0], [0.15, 230.0], [0.4, 600.0]], 0.45)
+ clips.dive = glide([[0.0, 560.0], [0.10, 310.0], [0.32, 85.0]], 0.36)
+ clips.ring = glide([[0.0, 520.0], [0.08, 780.0], [0.16, 1040.0], [0.34, 1040.0]], 0.38)
  for i in 3:
   var voice = AudioStreamPlayer.new()
   add_child(voice)

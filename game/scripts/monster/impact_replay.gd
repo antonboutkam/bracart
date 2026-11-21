@@ -43,7 +43,7 @@ func complete() -> bool:
  return pending() and elapsed >= hit_time + AFTER and frames.size() > 1
 
 func visual_roots(mode) -> Array:
- var roots: Array = [mode.rocket, mode.birds, mode.arena.standing]
+ var roots: Array = [mode.rocket, mode.birds, mode.rings, mode.arena.standing]
  if "piece_root" in mode.arena:
   roots.append(mode.arena.piece_root)
  for chunk in mode.arena.chunks:

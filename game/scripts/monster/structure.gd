@@ -190,6 +190,26 @@ func strike(from: Vector3, to: Vector3, radius: float) -> Array:
   chunks.append(take(group))
  return chunks
 
+func first_contact(from: Vector3, to: Vector3, radius: float) -> Dictionary:
+ var half = Vector3.ONE * (CELL * 0.5 + radius)
+ # Only visit grid cells near this short sweep. Round outward at the edges.
+ var low = Vector3i(((from.min(to) - half - ORIGIN) / CELL + center_offset).floor())
+ var high = Vector3i(((from.max(to) + half - ORIGIN) / CELL + center_offset).ceil())
+ var nearest: Dictionary = {}
+ var distance = INF
+ for x in range(low.x, high.x + 1):
+  for y in range(low.y, high.y + 1):
+   for z in range(low.z, high.z + 1):
+    var cell = Vector3i(x, y, z)
+    if not cells.has(cell):
+     continue
+    var bounds = AABB(position_of(cell) - half, half * 2)
+    var point = from if bounds.has_point(from) else bounds.intersects_segment(from, to)
+    if point != null and from.distance_squared_to(point) < distance:
+     distance = from.distance_squared_to(point)
+     nearest = {"point": point, "target": target_cells.has(cell)}
+ return nearest
+
 func take(group: Array) -> Dictionary:
  var result: Dictionary = {}
  for cell in group:

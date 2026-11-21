@@ -198,14 +198,18 @@ Het startscherm heeft aparte tegels voor **1 speler** en **2 spelers**. Kies uit
 de tien aangeleverde blokjesmonsters, **Gifspuwer · verfijnd** met 76 breekstukken,
 of de tweekoppige proefdraak. Rijd vanuit
 vlak achter het zitje een lange, steile helling af, neem de schans en vlieg naar het monster.
-Gas, remmen en sturen werken zoals bij het racen; in de lucht kun je nog maar
-weinig corrigeren. Vogels kunnen je raken en een misser krijgt een komisch geluidje.
+De richtcirkel laat zien of je op het monster of een steun afvliegt. Stuur bij
+in de lucht en druk opnieuw op Shift of RB voor één duikboost per sprong.
+Daarmee buig je de vlucht omlaag en maak je de klap breder en harder.
+Onderweg geeft de groene ring links extra hoogte en de oranje ring rechts
+extra snelheid. De richtcirkel rekent de ring mee als je erop afvliegt.
+Vogels kunnen je raken en een misser krijgt een komisch geluidje.
 
 Solo probeer je het monster in zo weinig mogelijk sprongen te verslaan. Samen
 speel je om de beurt. Vóór iedere sprong kies je zelf een raketje. In pauze
 kun je direct op een monstertegel klikken om een nieuw spel te starten.
-De blokjesmonsters zijn 50% groter; in de lucht kun je rustig bijsturen. Een monsterblokje in het
-water levert 10 punten op; bij 70% in het water wint in een duel de hoogste score.
+De blokjesmonsters zijn 50% groter. Een monsterblokje in het water levert 10
+punten op. Bij 70% in het water wint in een duel de hoogste score.
 Bij de verfijnde Gifspuwer tellen volledig gezonken stukken naar hun volumegewicht:
 het hele monster is 10.000 punten, de wedstrijdgrens is 7.000. De breekbare torens
 tellen niet mee voor punten. Zie

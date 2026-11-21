@@ -4,6 +4,7 @@ const Structure = preload("res://scripts/monster/structure.gd")
 const Collection = preload("res://scripts/monster/catalog.gd")
 const Arena = preload("res://scripts/monster/arena.gd")
 const Birds = preload("res://scripts/monster/birds.gd")
+const FlightRings = preload("res://scripts/monster/flight_rings.gd")
 var checks = 0
 var failures: Array[String] = []
 var game
@@ -175,6 +176,7 @@ func run() -> void:
   if z_before > -160 and mode.rocket.position.z <= -160: ascending = mode.velocity.y > 0
   if mode.phase == "between": break
  check(ascending and mode.scores[0] > 0, "A normal full-gas jump reaches the supplied target while still rising")
+ check(mode.rings.taken == -1 and mode.sounds.counts.ring == 0, "A straight jump can skip both rings")
  check(mode.arena.chunks.is_empty() and mode.scores[0] == mode.arena.submerged * 10, "Points wait for water and count only target blocks")
  var remaining: int = mode.arena.structure.cells.size()
  mode.action()
@@ -186,6 +188,7 @@ func run() -> void:
   mode.step(1.0 / 60, 1, 0, 1, true)
  settle(mode, 1, true)
  check(mode.phase == "between" and mode.turn_score == 0 and mode.miss_announced, "Steering away from the target produces a real miss")
+ check(not mode.dive_used and mode.sounds.counts.dive == 0, "Holding the ramp boost through takeoff preserves the dive")
  check(mode.sounds.counts.miss == 1, "A missed jump plays the comic cue exactly once")
  mode.step(0.2)
  check(mode.sounds.counts.miss == 1, "Waiting after a miss does not replay its sound")
@@ -261,6 +264,74 @@ func run() -> void:
   # The small robot is lower: slightly less throttle avoids skimming over its head.
   settle(mode, 0.8 if entry.id == "08-robotmonster-mini" else 1.0)
   check(mode.phase == "between" and mode.scores[0] > 0 and mode.arena.chunks.is_empty(), "Complete natural flight, hit, splash and scoring: " + entry.id)
+  await process_frame
+ mode = controlled(Collection.DEFAULT_ID, 1)
+ var cells_before_aim: Dictionary = mode.arena.structure.cells.duplicate()
+ mode.action()
+ while mode.phase == "ramp" and mode.road_z > 65:
+  mode.step(1.0 / 60)
+ check(mode.aim_text == "Monster", "The aim guide previews a full-gas hit on the ramp")
+ while mode.phase == "ramp":
+  mode.step(1.0 / 60)
+ for i in 32:
+  mode.step(1.0 / 60)
+ mode._camera(0, true)
+ check(mode.aim_marker.visible and mode.aim_text == "Monster", "Cockpit projects the active flight's predicted impact")
+ check(mode.arena.structure.cells == cells_before_aim and mode.arena.chunks.is_empty(), "Previewing the flight never breaks any blocks")
+ var normal_aim: Vector3 = mode.aim_point
+ var normal_velocity: Vector3 = mode.velocity
+ key(KEY_SHIFT, true)
+ mode._physics_process(1.0 / 60)
+ key(KEY_SHIFT, false)
+ check(mode.dive_used and mode.sounds.counts.dive == 1 and mode.velocity.y < normal_velocity.y - 10 and mode.velocity.z < normal_velocity.z, "A fresh boost input makes the kart dive and gain forward speed")
+ check(mode.aim_text == "Steun" and mode.aim_point.y < normal_aim.y - 20, "The forecast immediately marks the lower support shot")
+ mode._physics_process(1.0 / 60)
+ key(KEY_SHIFT, true)
+ mode._physics_process(1.0 / 60)
+ key(KEY_SHIFT, false)
+ check(mode.sounds.counts.dive == 1, "A second boost press cannot dive again in the same jump")
+ for i in 600:
+  mode.step(1.0 / 60)
+  if mode.hit_count > 0 or mode.phase != "flight":
+   break
+ check(mode.hit_count > 0 and mode.pending_points == 0, "A predicted support shot breaks the tower without awarding points for support blocks")
+ check(not mode.arena.chunks.is_empty() and mode.arena.chunks[0].velocity.z < -20, "The dive passes extra forward momentum to broken blocks")
+ for i in 120:
+  mode.step(1.0 / 60)
+  if mode.rocket.position.z < mode.arena.hit_bounds.position.z - 3:
+   break
+ check(mode.phase == "flight" and game.camera.position.distance_to(mode.cockpit_eye()) > 20, "The camera shows the debris as the kart flies past")
+ settle(mode)
+ mode.action()
+ check(mode.phase == "ready" and not mode.dive_used and not mode.aim_marker.visible, "The next jump resets the dive and aim guide")
+ for ring in FlightRings.ROUTES.size():
+  mode = controlled()
+  mode.action()
+  while mode.phase == "ramp":
+   mode.step(1.0 / 60)
+  var predicted_ring = -1
+  var velocity_before_ring = Vector3.ZERO
+  for i in 180:
+   velocity_before_ring = mode.velocity
+   mode.step(1.0 / 60, 1, 0, -1 if ring == 0 else 1, ring == 1 and mode.phase_time >= 0.58)
+   if mode.rings.taken >= 0 or mode.phase != "flight":
+    break
+   if mode.aim_ring >= 0:
+    predicted_ring = mode.aim_ring
+  check(predicted_ring == ring and mode.rings.taken == ring, "The flight guide predicts a ring before the kart reaches it")
+  check(mode.sounds.counts.ring == 1 and mode.scores == [0, 0], "A ring gives a single boost and leaves the match score alone")
+  var difference: Vector3 = mode.velocity - velocity_before_ring + Vector3.UP * 12.0 / 60
+  var impulse: Vector3 = FlightRings.ROUTES[ring].impulse
+  check(is_equal_approx(difference.y, impulse.y) and is_equal_approx(difference.z, impulse.z), "The ring applies its own vertical and forward impulse")
+  for i in 600:
+   var steer = clampf(-mode.rocket.position.x * 0.45 - mode.velocity.x * 0.8, -1, 1)
+   mode.step(1.0 / 60, 1, 0, steer)
+   if mode.hit_count > 0 or mode.phase != "flight":
+    break
+  check(mode.hit_count > 0 and mode.sounds.counts.ring == 1 and not mode.rings.meshes[ring].visible, "Both ring routes can lead to a real hit")
+  settle(mode)
+  mode.action()
+  check(mode.phase == "ready" and mode.player == 1 and mode.rings.taken == -1 and mode.rings.meshes[ring].visible, "The next player gets both rings back")
   await process_frame
  check([game.profile.coins,game.profile.selected,game.profile.character,game.profile.records] == profile_before, "Stunts do not change racing progress")
  game.go_home()

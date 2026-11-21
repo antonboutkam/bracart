@@ -9,17 +9,28 @@ const Sounds = preload("res://scripts/monster/sounds.gd")
 const MonsterPreview = preload("res://scripts/monster/preview.gd")
 const Models = preload("res://scripts/monster/models.gd")
 const ImpactReplay = preload("res://scripts/monster/impact_replay.gd")
+const Structure = preload("res://scripts/monster/structure.gd")
+const FlightRings = preload("res://scripts/monster/flight_rings.gd")
 const WIN_FRACTION = 0.70
+const TICK = 1.0 / 60
 const GRAVITY = 12.0
 const AIR_CONTROL_ACCEL = 4.5
 const AIR_STEER_SPEED = 10.0
 const ROAD_TOP_SPEED = 70.0
+const IMPACT_RADIUS = 1.7
+const DIVE_RADIUS = 2.55
+const DIVE_MIN_TIME = 0.30
+const DIVE_KICK = Vector3(0, -17, -10)
+const DIVE_NOTICE_TIME = 0.65
+const STRIKE_HEIGHT = Vector3(0, 0.7, 0)
+const AIM_INTERVAL = 0.08
 var game
 var arena
 var rocket
 var birds
 var sounds
 var impact_replay = ImpactReplay.new()
+var rings = FlightRings.new()
 var player_count: int = 2
 var monster_id: String = MonsterCatalog.DEFAULT_ID
 var phase: String = "ready"
@@ -39,9 +50,18 @@ var launch_speed: float = 0
 var phase_time: float = 0
 var turn_time: float = 0
 var hit_count: int = 0
+var pending_points: int = 0
 var miss_announced: bool = false
 var bird_notice: float = 0
 var hit_sound_timer: float = 0
+var boost_held: bool = false
+var dive_used: bool = false
+var dive_notice: float = 0
+var ring_notice: float = 0
+var aim_timer: float = 0
+var aim_point: Vector3 = Vector3.INF
+var aim_text: String = ""
+var aim_ring: int = -1
 var title: Label
 var status: Label
 var score_labels: Array[Label] = []
@@ -52,6 +72,10 @@ var action_button: Button
 var pause_button: Button
 var speed_label: Label
 var detail_label: Label
+var controls_label: Label
+var aim_marker: Panel
+var aim_style: StyleBoxFlat
+var aim_caption: Label
 var vehicle_picker: PanelContainer
 var vehicle_buttons: Array[Button] = []
 
@@ -66,6 +90,7 @@ func setup(owner_game, model, players: int = 2) -> void:
  add_child(arena)
  arena.build(model)
  add_child(impact_replay)
+ add_child(rings)
  birds = Birds.new()
  add_child(birds)
  sounds = Sounds.new()
@@ -140,7 +165,25 @@ func _build_ui() -> void:
  detail_label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
  action_button = ui.button(controls, "Start afdaling", action, true)
  action_button.custom_minimum_size.x = 230
- ui.label(column, "W / ↑ / RT: gas · S / ↓ / LT: rem · A/D / ← → / stick: sturen · Shift / RB: boost · R: herstart aanloop", 14, ui.MUTED)
+ controls_label = ui.label(column, "", 14, ui.MUTED)
+ aim_marker = Panel.new()
+ aim_marker.name = "FlightAim"
+ aim_marker.mouse_filter = Control.MOUSE_FILTER_IGNORE
+ aim_marker.size = Vector2(28, 28)
+ aim_style = StyleBoxFlat.new()
+ aim_style.bg_color = Color("071a3466")
+ aim_style.set_border_width_all(2)
+ aim_style.set_corner_radius_all(14)
+ aim_style.shadow_color = Color("071a34bb")
+ aim_style.shadow_size = 2
+ aim_marker.add_theme_stylebox_override("panel", aim_style)
+ ui.screen.add_child(aim_marker)
+ aim_caption = ui.at(aim_marker, "", Vector2(-76, 28), 15)
+ aim_caption.size.x = 180
+ aim_caption.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+ aim_caption.add_theme_color_override("font_outline_color", ui.INK)
+ aim_caption.add_theme_constant_override("outline_size", 5)
+ aim_marker.hide()
  vehicle_picker = ui.panel(ui.screen, Rect2(24, 244, 1232, 100), Color("071a34"))
  vehicle_picker.name = "VehiclePicker"
  var choices = VBoxContainer.new()
@@ -163,8 +206,20 @@ func _prepare_turn(keep_vehicle: bool = false) -> void:
  turn_time = 0
  turn_score = 0
  hit_count = 0
+ pending_points = 0
  miss_announced = false
  bird_notice = 0
+ hit_sound_timer = 0
+ boost_held = false
+ dive_used = false
+ dive_notice = 0
+ ring_notice = 0
+ aim_timer = 0
+ aim_point = Vector3.INF
+ aim_text = ""
+ aim_ring = -1
+ rings.reset()
+ aim_marker.hide()
  road_z = Arena.COURSE_START
  road_speed = 0
  road_steering = 0
@@ -246,13 +301,16 @@ func step(delta: float, gas: float = 1, brake: float = 0, steer: float = 0, boos
  if paused or phase == "finished" or delta <= 0 or not is_finite(delta):
   return
  var remaining = minf(delta, 0.25)
+ var boost_pressed = boost and not boost_held
+ boost_held = boost
  while remaining > 0.00001:
-  var tick = minf(remaining, 1.0 / 60)
-  _simulate(tick, clampf(gas, 0, 1), clampf(brake, 0, 1), clampf(steer, -1, 1), boost)
+  var tick = minf(remaining, TICK)
+  _simulate(tick, clampf(gas, 0, 1), clampf(brake, 0, 1), clampf(steer, -1, 1), boost, boost_pressed)
+  boost_pressed = false
   remaining -= tick
  refresh_ui()
 
-func _simulate(delta: float, gas: float, brake: float, steer: float, boost: bool) -> void:
+func _simulate(delta: float, gas: float, brake: float, steer: float, boost: bool, boost_pressed: bool) -> void:
  if phase == "replay":
   if impact_replay.advance(delta):
    _finish_replay()
@@ -260,6 +318,9 @@ func _simulate(delta: float, gas: float, brake: float, steer: float, boost: bool
  phase_time += delta
  bird_notice = maxf(0, bird_notice - delta)
  hit_sound_timer = maxf(0, hit_sound_timer - delta)
+ dive_notice = maxf(0, dive_notice - delta)
+ ring_notice = maxf(0, ring_notice - delta)
+ rings.advance(delta)
  if phase in ["ramp", "flight", "settling"]:
   turn_time += delta
  birds.advance(delta)
@@ -267,14 +328,12 @@ func _simulate(delta: float, gas: float, brake: float, steer: float, boost: bool
   var points: int = landed.count * arena.structure.score_multiplier
   scores[landed.owner] += points
   turn_score += points
+  pending_points -= points
  if phase == "ramp":
   var slope = Arena.ramp_slope(road_z)
-  var acceleration = gas * 14 + 24 * slope / sqrt(1 + slope * slope) - brake * 38 - 1.5
-  if boost and gas > 0.1 and brake < 0.1:
-   acceleration += 18
-  road_speed = clampf(road_speed + acceleration * delta, 0, 86 if boost else ROAD_TOP_SPEED)
+  road_speed = _next_road_speed(road_speed, slope, gas, brake, boost, delta)
   road_steering = lerpf(road_steering, steer, 1 - exp(-delta * 9))
-  lateral_speed = road_steering * (1 + road_speed * 0.16) * clampf(road_speed / 6, 0, 1)
+  lateral_speed = _road_lateral_speed(road_speed, road_steering)
   var x: float = rocket.position.x + lateral_speed * delta
   if absf(x) > 5.4:
    x = clampf(x, -5.4, 5.4)
@@ -284,21 +343,33 @@ func _simulate(delta: float, gas: float, brake: float, steer: float, boost: bool
   rocket.rotation = Vector3(-atan(Arena.ramp_slope(road_z)), -road_steering * 0.10, 0)
   rocket.speed = road_speed
   if road_z <= 0:
-   var pitch = -atan(Arena.ramp_slope(0))
    launch_speed = road_speed
-   velocity = Vector3(lateral_speed * 1.5, road_speed * sin(pitch), -road_speed * cos(pitch))
+   velocity = _launch_velocity(road_speed, lateral_speed)
    phase = "flight"
    phase_time = 0
+   aim_timer = 0
    action_button.text = "In de lucht"
    sounds.play("launch", game.audio.sound_volume, game.audio.muted)
   elif phase_time > 45:
    _splash_down()
  elif phase == "flight":
+  if boost_pressed and _can_dive():
+   dive_used = true
+   dive_notice = DIVE_NOTICE_TIME
+   velocity += DIVE_KICK
+   aim_timer = 0
+   sounds.play("dive", game.audio.sound_volume, game.audio.muted)
   var before: Vector3 = rocket.position
-  # Gentle correction with damping on release, also allowing an opposite turn.
-  velocity.x = move_toward(velocity.x, steer * AIR_STEER_SPEED, AIR_CONTROL_ACCEL * delta)
-  velocity.y -= GRAVITY * delta
+  velocity = _next_air_velocity(velocity, steer, delta)
   rocket.position += velocity * delta
+  if rings.taken < 0:
+   var ring = FlightRings.crossed(before, rocket.position)
+   if ring >= 0:
+    rings.take(ring)
+    velocity += FlightRings.ROUTES[ring].impulse
+    ring_notice = 1.25
+    aim_timer = 0
+    sounds.play("ring", game.audio.sound_volume, game.audio.muted)
   rocket.rotation = Vector3(atan2(velocity.y, -velocity.z), atan2(-velocity.x, -velocity.z), 0)
   rocket.speed = velocity.length()
   var bird_hits: int = birds.collide(before, rocket.position)
@@ -306,16 +377,25 @@ func _simulate(delta: float, gas: float, brake: float, steer: float, boost: bool
    velocity.x += (2.5 if turn % 2 == 0 else -2.5)
    velocity.y -= 2
    bird_notice = 2
+   aim_timer = 0
    sounds.play("bird", game.audio.sound_volume, game.audio.muted)
-  var broken: int = arena.impact(before + Vector3.UP * 0.7, rocket.position + Vector3.UP * 0.7, 1.7, player)
+  var chunk_start: int = arena.chunks.size()
+  var momentum = velocity * (0.26 if dive_used else 0.12)
+  var broken: int = arena.impact(before + STRIKE_HEIGHT, rocket.position + STRIKE_HEIGHT, _impact_radius(), player, momentum)
   if broken > 0:
    impact_replay.mark_hit(rocket.position)
    hit_count += broken
+   for i in range(chunk_start, arena.chunks.size()):
+    pending_points += arena.chunks[i].target_count * arena.structure.score_multiplier
    if hit_sound_timer <= 0:
     game.audio.cue("hit")
     hit_sound_timer = 0.12
-  if rocket.position.z < -170 and hit_count == 0:
-   _announce_miss()
+  if _past_target(rocket.position.z):
+   if hit_count == 0:
+    _announce_miss()
+   elif not _past_target(before.z):
+    action_button.text = "Brokken vallen…"
+    _camera(0, true)
   if rocket.position.y <= 0 or phase_time >= 16:
    _splash_down()
  elif phase == "settling" and arena.chunks.is_empty() and phase_time >= 1.4 and not impact_replay.pending():
@@ -338,6 +418,109 @@ func _simulate(delta: float, gas: float, brake: float, steer: float, boost: bool
   action_button.disabled = false
   action_button.grab_focus()
   _camera(0, true)
+ _update_aim(delta, gas, brake, steer, boost)
+
+func _next_road_speed(speed: float, slope: float, gas: float, brake: float, boost: bool, delta: float) -> float:
+ var acceleration = gas * 14 + 24 * slope / sqrt(1 + slope * slope) - brake * 38 - 1.5
+ if boost and gas > 0.1 and brake < 0.1:
+  acceleration += 18
+ return clampf(speed + acceleration * delta, 0, 86 if boost else ROAD_TOP_SPEED)
+
+func _road_lateral_speed(speed: float, steering: float) -> float:
+ return steering * (1 + speed * 0.16) * clampf(speed / 6, 0, 1)
+
+func _launch_velocity(speed: float, side_speed: float) -> Vector3:
+ var pitch = -atan(Arena.ramp_slope(0))
+ return Vector3(side_speed * 1.5, speed * sin(pitch), -speed * cos(pitch))
+
+func _next_air_velocity(current: Vector3, steer: float, delta: float) -> Vector3:
+ current.x = move_toward(current.x, steer * AIR_STEER_SPEED, AIR_CONTROL_ACCEL * delta)
+ current.y -= GRAVITY * delta
+ return current
+
+func _impact_radius() -> float:
+ return DIVE_RADIUS if dive_used else IMPACT_RADIUS
+
+func _past_target(z: float) -> bool:
+ return z < arena.hit_bounds.position.z - _impact_radius()
+
+func _can_dive() -> bool:
+ return not dive_used and hit_count == 0 and phase_time >= DIVE_MIN_TIME and not _past_target(rocket.position.z)
+
+func _update_aim(delta: float, gas: float, brake: float, steer: float, boost: bool) -> void:
+ if not ((phase == "ramp" and road_z <= 85) or (phase == "flight" and hit_count == 0 and not _past_target(rocket.position.z))):
+  aim_point = Vector3.INF
+  aim_text = ""
+  aim_ring = -1
+  return
+ aim_timer -= delta
+ if aim_timer > 0:
+  return
+ aim_timer = AIM_INTERVAL
+ aim_point = Vector3.INF
+ aim_text = ""
+ aim_ring = -1
+ var at: Vector3 = rocket.position
+ var speed: Vector3 = velocity
+ if phase == "ramp":
+  # Preview the takeoff if the player keeps the current inputs.
+  var z = road_z
+  var x = at.x
+  var forward_speed = road_speed
+  var steering = road_steering
+  var side_speed = lateral_speed
+  for i in 6 * 60:
+   var slope = Arena.ramp_slope(z)
+   forward_speed = _next_road_speed(forward_speed, slope, gas, brake, boost, TICK)
+   steering = lerpf(steering, steer, 1 - exp(-TICK * 9))
+   side_speed = _road_lateral_speed(forward_speed, steering)
+   x += side_speed * TICK
+   if absf(x) > 5.4:
+    x = clampf(x, -5.4, 5.4)
+    forward_speed = maxf(0, forward_speed - TICK * 17)
+   z -= forward_speed * TICK / sqrt(1 + slope * slope)
+   if z <= 0 or forward_speed <= 0:
+    break
+  if z > 0:
+   aim_text = "Meer vaart nodig"
+   return
+  at = Arena.ramp_position(0) + Vector3(x, 0.1, 0)
+  speed = _launch_velocity(forward_speed, side_speed)
+ _trace_aim(at, speed, steer)
+
+func _trace_aim(at: Vector3, speed: Vector3, steer: float) -> void:
+ var radius = _impact_radius()
+ var bounds: AABB = arena.hit_bounds.grow(radius)
+ var target_z = Structure.ORIGIN.z
+ for segment in 16 * 15:
+  var before = at
+  # Integrate like the rocket, then query a short sweep through the target.
+  for i in 4:
+   var previous = at
+   speed = _next_air_velocity(speed, steer, TICK)
+   at += speed * TICK
+   if rings.taken < 0 and aim_ring < 0:
+    var ring = FlightRings.crossed(previous, at)
+    if ring >= 0:
+     aim_ring = ring
+     speed += FlightRings.ROUTES[ring].impulse
+  if at.y <= 0:
+   at = before.lerp(at, clampf(before.y / (before.y - at.y), 0, 1))
+  if at.z <= bounds.end.z and before.z >= bounds.position.z:
+   var contact: Dictionary = arena.aim_contact(before + STRIKE_HEIGHT, at + STRIKE_HEIGHT, radius)
+   if not contact.is_empty():
+    aim_point = contact.point
+    aim_text = "Monster" if contact.target else "Steun"
+    return
+  if before.z > target_z and at.z <= target_z:
+   aim_point = before.lerp(at, (target_z - before.z) / (at.z - before.z)) + STRIKE_HEIGHT
+   aim_text = "Geen treffer"
+  if at.z < minf(target_z, bounds.position.z):
+   return
+  if at.y <= 0.001:
+   if aim_text.is_empty():
+    aim_text = "Te kort"
+   return
 
 func _finish_replay() -> void:
  impact_replay.finish()
@@ -371,19 +554,55 @@ func refresh_ui() -> void:
  turn_label.text = "%s %d · %s%s" % ["SPRONG" if player_count == 1 else "BEURT", turn + 1, "SPELER %d · " % (player + 1) if player_count == 2 else "", Catalog.VEHICLES[vehicle_index].name]
  title.text = "MONSTERBREKER · " + arena.structure.monster_name.to_upper()
  speed_label.text = "%d KM/U" % roundi(rocket.speed * 3.6)
- detail_label.text = "190 m aanloop · 160 m tot het doelwit" if phase == "ready" else "+%d punten · %d %s los" % [turn_score, hit_count, arena.structure.debris_label]
+ controls_label.text = "W / ↑ / RT: gas · S / ↓ / LT: rem · A/D / ← → / stick: sturen · Shift / RB: boost · R / Y: herstart aanloop"
+ detail_label.text = "+%d punten · %d %s los" % [turn_score, hit_count, arena.structure.debris_label]
+ if phase in ["flight", "settling"] and pending_points > 0:
+  detail_label.text = "%d punten onderweg naar het water · +%d binnen" % [pending_points, turn_score]
  match phase:
-  "ready": status.text = "Geef gas! Richt op de baan; in de lucht kun je nog maar een beetje bijsturen."
-  "ramp": status.text = "%d m tot de sprong · gas geeft hoogte, remmen een lagere vlucht" % ceili(road_z)
+  "ready":
+   status.text = "Stuur door een luchtring of vlieg rechtstreeks naar het monster."
+   detail_label.text = "190 m aanloop · volg de richtcirkel bij de schans"
+  "ramp":
+   status.text = "%d m tot de sprong · gas voor hoogte, uitrollen voor de steunen" % ceili(road_z)
+   detail_label.text = aim_text if not aim_point.is_finite() else "Verwacht: " + aim_text.to_lower()
+   if aim_ring >= 0:
+    detail_label.text = FlightRings.ROUTES[aim_ring].name + " op je koers · " + detail_label.text
   "flight":
-   status.text = "OEPS, EEN VOGEL!" if bird_notice > 0 else ("Wie wo weeuh… MIS!" if miss_announced else "Vrije vlucht! Kleine stuurcorrecties; je snelheid bepaalt de hoogte.")
-  "settling": status.text = "Plons! Even wachten op alle brokken…"
+   controls_label.text = "A/D / ← → / stick: bijsturen · Shift / RB: één duikboost per sprong"
+   if hit_count > 0:
+    status.text = _hit_status()
+    if _past_target(rocket.position.z):
+     controls_label.text = ""
+   elif miss_announced:
+    status.text = "Wie wo weeuh… MIS!"
+    detail_label.text = "Richt bij je volgende sprong op het monster of een steun"
+   elif bird_notice > 0:
+    status.text = "OEPS, EEN VOGEL! Stuur bij."
+   elif ring_notice > 0:
+    status.text = FlightRings.ROUTES[rings.taken].feedback
+   elif aim_ring >= 0:
+    status.text = "Op koers voor de " + FlightRings.ROUTES[aim_ring].name.to_lower()
+   else:
+    status.text = "DUIKBOOST!" if dive_notice > 0 else "Vrije vlucht · stuur de richtcirkel naar je doel"
+   if hit_count == 0 and not miss_announced:
+    if aim_text == "Te kort":
+     detail_label.text = "Te kort · neem de schans met meer vaart"
+    elif dive_used:
+     detail_label.text = "Duikboost gebruikt"
+    elif boost_held:
+     detail_label.text = "Laat Shift / RB los en druk opnieuw om te duiken"
+    else:
+     detail_label.text = "Shift / RB: duikboost voor een lagere, hardere treffer"
+  "settling":
+   status.text = _hit_status() if hit_count > 0 else "Plons! Deze sprong leverde geen punten op."
+   controls_label.text = ""
   "replay":
    title.text = "IMPACT REPLAY"
    status.text = "Dezelfde klap, vanuit een andere hoek · vertraagd"
    speed_label.text = "REPLAY"
    detail_label.text = "Spatie / A: overslaan"
-  "between": status.text = "+%d punten! %s" % [turn_score, "Klaar voor je volgende poging?" if player_count == 1 else "Geef de bediening aan speler %d." % (2 - player)]
+  "between":
+   status.text = "Geef de bediening aan speler %d." % (2 - player) if player_count == 2 else ("Klaar voor je volgende sprong?" if turn_score > 0 else "Probeer bij je volgende sprong een andere lijn.")
   "finished":
    if player_count == 1:
     title.text = "MONSTER VERSLAGEN!"
@@ -391,6 +610,11 @@ func refresh_ui() -> void:
    else:
     title.text = "GELIJKSPEL!" if scores[0] == scores[1] else "SPELER %d WINT!" % (1 if scores[0] > scores[1] else 2)
     status.text = "Boaz: %d punten · Ravi: %d punten" % [scores[0], scores[1]]
+
+func _hit_status() -> String:
+ if pending_points + turn_score == 0:
+  return "STEUN GERAAKT!"
+ return "RAAK! %d punten uit deze sprong" % (pending_points + turn_score)
 
 func _process(delta: float) -> void:
  if not paused:
@@ -406,7 +630,7 @@ func _camera(delta: float, snap: bool = false) -> void:
   game.camera.position = focus + Vector3(72 if impact_replay.hit_position.x >= 0 else -72, 26, 62)
   game.camera.look_at(focus)
   game.camera.fov = 60
- elif phase in ["ready", "ramp", "flight"]:
+ elif phase in ["ready", "ramp", "flight"] and not (phase == "flight" and hit_count > 0 and _past_target(rocket.position.z)):
   game.camera.position = cockpit_eye()
   arena.clear_camera_space(game.camera.position)
   var forward: Vector3 = -rocket.global_basis.z.normalized()
@@ -414,12 +638,47 @@ func _camera(delta: float, snap: bool = false) -> void:
   # Follow the vehicle with a small downward tilt to keep its bonnet above the HUD.
   game.camera.look_at(game.camera.position + forward * 50 - up * 8, up)
   game.camera.fov = 72 + (clampf(rocket.speed / 86, 0, 1) * 7 if game.profile.settings.camera_motion else 0)
+  if game.profile.settings.camera_motion:
+   game.camera.fov += 5 * dive_notice / DIVE_NOTICE_TIME + 3 * hit_sound_timer / 0.12 + 4 * minf(ring_notice, 0.5) / 0.5
  else:
-  # After the splash, show the destruction while the next turn is handed over.
-  var at = Vector3(42, 70, -105)
+  # Watch the debris as soon as the kart clears the monster.
+  var focus: Vector3 = arena.hit_bounds.get_center() + Vector3(0, 0, -5)
+  var side = -1 if hit_count > 0 and impact_replay.hit_position.x < 0 else 1
+  var at = focus + Vector3(side * 108, 32, -90)
   game.camera.position = at if snap else game.camera.position.lerp(at, 1 - exp(-delta * 4))
-  game.camera.look_at(Vector3(0, 61, -160))
-  game.camera.fov = 64
+  game.camera.look_at(focus)
+  game.camera.fov = 60
+  arena.clear_camera_space(game.camera.position)
+ _position_aim_marker()
+
+func _position_aim_marker() -> void:
+ if not aim_point.is_finite() or hit_count > 0 or phase not in ["ramp", "flight"] or game.camera.is_position_behind(aim_point):
+  aim_marker.hide()
+  return
+ var ui = game.ui
+ var inverse: Transform2D = ui.layout_root.get_global_transform_with_canvas().affine_inverse()
+ var projected: Vector2 = inverse * game.camera.unproject_position(aim_point)
+ var pinned = projected.clamp(Vector2(85, 230), Vector2(1195, 600))
+ var caption = aim_text
+ if projected.x < pinned.x:
+  caption = "← " + caption
+ elif projected.x > pinned.x:
+  caption += " →"
+ if projected.y < pinned.y:
+  caption += " ↑"
+ elif projected.y > pinned.y:
+  caption += " ↓"
+ aim_marker.position = pinned - aim_marker.size * 0.5
+ if aim_caption.text != caption:
+  var color: Color = ui.WHITE
+  if aim_text == "Monster":
+   color = ui.CYAN
+  elif aim_text == "Steun":
+   color = ui.GOLD
+  aim_style.border_color = color
+  aim_caption.text = caption
+  aim_caption.add_theme_color_override("font_color", color)
+ aim_marker.show()
 
 func _input(event: InputEvent) -> void:
  if paused or phase not in ["ramp", "flight"]:

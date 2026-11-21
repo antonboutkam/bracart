@@ -125,6 +125,23 @@ func release_pieces(from: Vector3, to: Vector3, radius: float) -> Array:
  return released
 
 func intersects_piece(id_key: String, from: Vector3, to: Vector3, radius: float) -> bool:
+ return piece_entry(id_key, from, to, radius) >= 0
+
+func first_contact(from: Vector3, to: Vector3, radius: float) -> Dictionary:
+ var contact = super.first_contact(from, to, radius)
+ var distance = from.distance_squared_to(contact.point) if not contact.is_empty() else INF
+ for id_key in remaining:
+  var entry = piece_entry(id_key, from, to, radius)
+  if entry < 0:
+   continue
+  var point = from.lerp(to, entry)
+  var candidate_distance = from.distance_squared_to(point)
+  if candidate_distance < distance:
+   distance = candidate_distance
+   contact = {"point": point, "target": true}
+ return contact
+
+func piece_entry(id_key: String, from: Vector3, to: Vector3, radius: float) -> float:
  var piece: Dictionary = pieces[id_key]
  var a: Vector3 = (from - model_origin) / MODEL_SCALE - piece.pivot
  var b: Vector3 = (to - model_origin) / MODEL_SCALE - piece.pivot
@@ -138,7 +155,7 @@ func intersects_piece(id_key: String, from: Vector3, to: Vector3, radius: float)
   var da = normal.dot(a) - distance
   var db = normal.dot(b) - distance
   if da > 0 and db > 0:
-   return false
+   return -1
   if da <= 0 and db <= 0:
    continue
   var crossing = da / (da - db)
@@ -147,8 +164,8 @@ func intersects_piece(id_key: String, from: Vector3, to: Vector3, radius: float)
   else:
    leave = minf(leave, crossing)
   if enter > leave:
-   return false
- return true
+   return -1
+ return enter
 
 func instantiate_visual() -> Node3D:
  var node = packed.instantiate() as Node3D

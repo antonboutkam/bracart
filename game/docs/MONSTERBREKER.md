@@ -26,8 +26,9 @@ botsingsvlakken groeien mee; de draagplaat blijft op ongeveer dezelfde hoogte.
 
 Tijdens het rijden en vliegen kijk je **vlak achter en boven het zitje**, vooruit
 in de richting van het raketje. Zo zie je meer van je voertuig. De coureur wordt
-voor deze camera verborgen. Na een treffer en de plons zie je de impact nog één
-keer vanuit een camera schuin naast het monster, op grotere afstand. De replay
+voor deze camera verborgen. Zodra je na een treffer voorbij het monster vliegt,
+draait het beeld naar de vallende brokken. Na de plons zie je de impact nog één
+keer vanuit een camera schuin naast het monster. De replay
 toont 0,8 seconde aanvlucht en 2,4 seconden na de eerste treffer, op 60% snelheid.
 Met **Replay overslaan**, spatie of controllerknop A ga je direct verder.
 Pauze werkt ook tijdens de replay. Een gemiste sprong krijgt geen replay.
@@ -38,7 +39,7 @@ Daarna volgt het overzicht voor de resterende puntentelling en beurtwissel.
 | Gas / start vanaf stilstand | W / pijl omhoog | RT |
 | Remmen | S / pijl omlaag | LT |
 | Links / rechts sturen | A/D / pijltjes | Linkerstick |
-| Boost op de baan | Shift | RB |
+| Boost op de baan / duikboost in de lucht | Shift | RB |
 | Start of volgende poging | Knop op scherm / spatie | A |
 | Aanloop opnieuw proberen | R, tijdens de aanloop | Y |
 | Pauze | Escape / P | Start |
@@ -47,14 +48,30 @@ De automatische-gasinstelling wordt tijdens de aanloop gerespecteerd. Vanaf het
 klaarstaande raketje is nog steeds een expliciete start nodig. R zet alleen een
 nog lopende aanloop terug; schade en scores kunnen daarmee niet worden teruggedraaid.
 
-Gas en remmen bepalen de afzetsnelheid en daarmee de vlieghoogte. De afdaling
-geeft ook zonder gas vaart. Vol gas bereikt het doelwit normaal nog stijgend;
-uitrollen geeft een lagere vlucht richting de steunen. Boost verandert de
-vluchtbaan en kan je voorbij een lager deel van het monster laten vliegen.
-Sturen vlak voor de afzet bepaalt de zijwaartse snelheid. In de lucht kun je naar links en rechts bijsturen;
-loslaten remt de zijwaartse drift rustig af. De stuurkracht is 4,5 m/s² met een
-richtsnelheid van maximaal 10 m/s opzij. De correcties blijven beperkt:
-geen extra lift met W, geen luchtboost en geen automatische doelzoeker.
+Gas en remmen bepalen de afzetsnelheid en daarmee de vlieghoogte. Met vol gas
+bereik je het doelwit meestal terwijl je nog stijgt. Uitrollen levert een
+lagere vlucht op, in de richting van de steunen.
+
+Bij de schans en tijdens de vlucht laat de richtcirkel zien waar je met de
+huidige bediening uitkomt. Hij kleurt blauw bij een verwacht raakpunt op het
+monster, goud bij een steun en wit bij een misser. De voorspelling houdt
+rekening met gaten van vorige sprongen. Stuur links en rechts om de cirkel
+te verplaatsen. Een pijl geeft aan waar het voorspelde raakpunt buiten beeld
+ligt. Loslaten remt de zijwaartse drift af.
+
+Halverwege de vlucht kun je door een van twee optionele luchtringen sturen.
+De groene **liftring** links geeft extra hoogte. De oranje **snelheidsring**
+rechts hangt lager en geeft extra vaart richting het monster. Probeer na de
+afzet naar links te sturen voor de hoge route, of een duikboost met rechts
+sturen te combineren voor de lage route. De richtcirkel rekent de impuls
+al mee wanneer je op koers ligt. Beide ringen keren terug bij elke sprong.
+
+Kort na de afzet kun je één keer per sprong op **Shift / RB** drukken voor
+een duikboost. Houd je de boost al op de schans ingedrukt, laat dan los en
+druk in de lucht opnieuw. De duikboost buigt je vlucht naar beneden en maakt
+de klap breder en harder. De richtcirkel volgt meteen je nieuwe vluchtlijn.
+Bij een treffer zie je meteen hoeveel punten er onderweg zijn naar het water.
+De punten worden bijgeschreven zodra de brokken zinken.
 
 Af en toe kruisen vogels de vlucht. Een botsing geeft een kleine afwijking,
 een piepje en sterretjes; de vogel herstelt en vliegt weg. Vogels leveren geen

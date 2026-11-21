@@ -103,7 +103,13 @@ func rebuild_standing() -> void:
  standing = block_batch(structure.cells, Vector3.ZERO)
  add_child(standing)
 
-func impact(from: Vector3, to: Vector3, radius: float, owner_index: int) -> int:
+func aim_contact(from: Vector3, to: Vector3, radius: float) -> Dictionary:
+ var bounds = hit_bounds.grow(radius)
+ if bounds.has_point(from) or bounds.has_point(to) or bounds.intersects_segment(from, to) != null:
+  return structure.first_contact(from, to, radius)
+ return {}
+
+func impact(from: Vector3, to: Vector3, radius: float, owner_index: int, momentum: Vector3 = Vector3.ZERO) -> int:
  var bounds = hit_bounds.grow(radius)
  if not bounds.has_point(from) and not bounds.has_point(to) and bounds.intersects_segment(from, to) == null:
   return 0
@@ -125,12 +131,17 @@ func impact(from: Vector3, to: Vector3, radius: float, owner_index: int) -> int:
    highest = maxf(highest, structure.position_of(cell).y - center.y)
    if structure.target_cells.has(cell):
     target_count += 1
-  var sign_x = -1.0 if center.x < to.x else 1.0
-  chunks.append({"node":node, "velocity":Vector3(sign_x * 3, 2, -5), "count":blocks.size(), "target_count":target_count, "owner":owner_index, "lowest":lowest, "highest":highest, "wet":false})
+  var push = debris_velocity(center, to, momentum, blocks.size())
+  chunks.append({"node":node, "velocity":push, "count":blocks.size(), "target_count":target_count, "owner":owner_index, "lowest":lowest, "highest":highest, "wet":false})
   count += blocks.size()
  if count:
   rebuild_standing()
  return count
+
+func debris_velocity(center: Vector3, contact: Vector3, momentum: Vector3, size: int) -> Vector3:
+ var side = -1.0 if center.x < contact.x else 1.0
+ var impulse = (momentum + Vector3(side * momentum.length() * 0.35, 0, 0)) / sqrt(size)
+ return Vector3(side * 3, 2, -5) + impulse
 
 func advance(delta: float) -> Array:
  var landed: Array = []

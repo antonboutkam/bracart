@@ -53,7 +53,7 @@ func run() -> void:
   var replay = mode.impact_replay
   check(replay.frames.size() <= 101 and replay.frames[0].time < replay.hit_time - 0.7 and replay.frames.back().time > replay.hit_time + 2.3, "Recording is bounded and includes approach and falling debris")
   check(mode.title.text == "IMPACT REPLAY" and not mode.action_button.disabled, "Replay is clearly labelled and can be skipped")
-  check(not mode.arena.standing.visible and replay.visible and not mode.rocket.visible, "Playback hides the live dynamic scene")
+  check(not mode.arena.standing.visible and replay.visible and not mode.rocket.visible and not mode.rings.visible, "Playback hides the live dynamic scene")
   var score_before: Array = mode.scores.duplicate()
   var submerged_before: int = mode.arena.submerged
   var cells_before: Dictionary = mode.arena.structure.cells.duplicate()
@@ -98,7 +98,7 @@ func run() -> void:
     mode.step(1.0 / 60)
     if mode.phase != "replay": break
    check(mode.phase == "settling" and not replay.playing, "Replay finishes automatically")
-  check(not replay.visible and mode.arena.standing.visible and mode.birds.visible and not mode.rocket.visible, "Original scene visibility is restored after playback")
+  check(not replay.visible and mode.arena.standing.visible and mode.birds.visible and mode.rings.visible and not mode.rocket.visible, "Original scene visibility is restored after playback")
   for i in 1200:
    mode.step(1.0 / 60)
    if mode.phase in ["between", "finished"]: break

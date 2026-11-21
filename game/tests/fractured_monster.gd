@@ -58,6 +58,8 @@ func run() -> void:
    break
  check(not horn.is_empty(), "A separately breakable horn exists")
  var horn_center: Vector3 = model.model_origin + model.pieces[horn].pivot * Fractured.MODEL_SCALE
+ var preview: Dictionary = arena.aim_contact(horn_center + Vector3(0,0,30), horn_center - Vector3(0,0,30), 0.25)
+ check(preview.get("target", false) and model.remaining.size() == 76, "The aim guide detects a convex monster piece without detaching it")
  var broken: int = arena.impact(horn_center + Vector3(0,0,30), horn_center - Vector3(0,0,30), 0.25, 1)
  check(broken > 0 and model.remaining.size() > 0, "Local horn hit creates damage while leaving a standing monster")
  check(arena.submerged == 0, "Detaching pieces awards no points before water")
@@ -107,12 +109,16 @@ func run() -> void:
  mode.set_process(false)
  mode.set_physics_process(false)
  mode.action()
+ var saw_pending_points = false
  for i in 2400:
   mode.step(1.0 / 60)
+  if mode.pending_points > 0 and mode.scores[0] == 0:
+   saw_pending_points = true
   if mode.phase in ["between", "finished"]: break
  print("GIFSPUWER NATURAL FLIGHT: phase=%s points=%d remaining=%d" % [mode.phase, mode.scores[0], mode.arena.structure.remaining.size()])
  check(mode.phase in ["between", "finished"] and mode.scores[0] > 0, "An ordinary full-gas jump hits the new monster and scores after landing")
  check(mode.scores[0] == mode.arena.submerged, "Mode uses volume points, not the old block multiplier")
+ check(saw_pending_points and mode.pending_points == 0, "The impact preview shows pending points before they are awarded in the water")
  if mode.phase == "between":
   var before: Dictionary = mode.arena.structure.remaining.duplicate()
   mode.action()
