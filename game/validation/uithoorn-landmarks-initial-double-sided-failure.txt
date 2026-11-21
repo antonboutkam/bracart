@@ -1,0 +1,439 @@
+ERROR: Failed to open 'user://logs/godot2026-10-18T15.39.36.log'.
+   at: copy (core/io/dir_access.cpp:429)
+ERROR: Failed to open log file for writing: user://logs/godot.log
+   at: rotate_file (core/io/logger.cpp:169)
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+ERROR: normal backface culling
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/uithoorn_landmarks.gd:10)
+       [1] run (res://tests/uithoorn_landmarks.gd:48)
+ERROR: normal backface culling
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/uithoorn_landmarks.gd:10)
+       [1] run (res://tests/uithoorn_landmarks.gd:48)
+ERROR: normal backface culling
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/uithoorn_landmarks.gd:10)
+       [1] run (res://tests/uithoorn_landmarks.gd:48)
+ERROR: normal backface culling
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/uithoorn_landmarks.gd:10)
+       [1] run (res://tests/uithoorn_landmarks.gd:48)
+ERROR: normal backface culling
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/uithoorn_landmarks.gd:10)
+       [1] run (res://tests/uithoorn_landmarks.gd:48)
+ERROR: normal backface culling
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/uithoorn_landmarks.gd:10)
+       [1] run (res://tests/uithoorn_landmarks.gd:48)
+ERROR: normal backface culling
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/uithoorn_landmarks.gd:10)
+       [1] run (res://tests/uithoorn_landmarks.gd:48)
+ERROR: normal backface culling
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/uithoorn_landmarks.gd:10)
+       [1] run (res://tests/uithoorn_landmarks.gd:48)
+ERROR: normal backface culling
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/uithoorn_landmarks.gd:10)
+       [1] run (res://tests/uithoorn_landmarks.gd:48)
+ERROR: normal backface culling
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/uithoorn_landmarks.gd:10)
+       [1] run (res://tests/uithoorn_landmarks.gd:48)
+ERROR: normal backface culling
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/uithoorn_landmarks.gd:10)
+       [1] run (res://tests/uithoorn_landmarks.gd:48)
+ERROR: normal backface culling
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/uithoorn_landmarks.gd:10)
+       [1] run (res://tests/uithoorn_landmarks.gd:48)
+ERROR: normal backface culling
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/uithoorn_landmarks.gd:10)
+       [1] run (res://tests/uithoorn_landmarks.gd:48)
+ERROR: normal backface culling
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/uithoorn_landmarks.gd:10)
+       [1] run (res://tests/uithoorn_landmarks.gd:48)
+ERROR: normal backface culling
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/uithoorn_landmarks.gd:10)
+       [1] run (res://tests/uithoorn_landmarks.gd:48)
+ERROR: normal backface culling
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/uithoorn_landmarks.gd:10)
+       [1] run (res://tests/uithoorn_landmarks.gd:48)
+ERROR: normal backface culling
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/uithoorn_landmarks.gd:10)
+       [1] run (res://tests/uithoorn_landmarks.gd:48)
+ERROR: normal backface culling
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/uithoorn_landmarks.gd:10)
+       [1] run (res://tests/uithoorn_landmarks.gd:48)
+ERROR: normal backface culling
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/uithoorn_landmarks.gd:10)
+       [1] run (res://tests/uithoorn_landmarks.gd:48)
+ERROR: normal backface culling
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/uithoorn_landmarks.gd:10)
+       [1] run (res://tests/uithoorn_landmarks.gd:48)
+ERROR: normal backface culling
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/uithoorn_landmarks.gd:10)
+       [1] run (res://tests/uithoorn_landmarks.gd:48)
+ERROR: normal backface culling
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/uithoorn_landmarks.gd:10)
+       [1] run (res://tests/uithoorn_landmarks.gd:48)
+ERROR: normal backface culling
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/uithoorn_landmarks.gd:10)
+       [1] run (res://tests/uithoorn_landmarks.gd:48)
+ERROR: normal backface culling
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/uithoorn_landmarks.gd:10)
+       [1] run (res://tests/uithoorn_landmarks.gd:48)
+ERROR: normal backface culling
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/uithoorn_landmarks.gd:10)
+       [1] run (res://tests/uithoorn_landmarks.gd:48)
+ERROR: normal backface culling
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/uithoorn_landmarks.gd:10)
+       [1] run (res://tests/uithoorn_landmarks.gd:48)
+ERROR: normal backface culling
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/uithoorn_landmarks.gd:10)
+       [1] run (res://tests/uithoorn_landmarks.gd:48)
+ERROR: normal backface culling
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/uithoorn_landmarks.gd:10)
+       [1] run (res://tests/uithoorn_landmarks.gd:48)
+ERROR: normal backface culling
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/uithoorn_landmarks.gd:10)
+       [1] run (res://tests/uithoorn_landmarks.gd:48)
+ERROR: normal backface culling
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/uithoorn_landmarks.gd:10)
+       [1] run (res://tests/uithoorn_landmarks.gd:48)
+ERROR: normal backface culling
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/uithoorn_landmarks.gd:10)
+       [1] run (res://tests/uithoorn_landmarks.gd:48)
+ERROR: normal backface culling
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/uithoorn_landmarks.gd:10)
+       [1] run (res://tests/uithoorn_landmarks.gd:48)
+ERROR: normal backface culling
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/uithoorn_landmarks.gd:10)
+       [1] run (res://tests/uithoorn_landmarks.gd:48)
+ERROR: normal backface culling
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/uithoorn_landmarks.gd:10)
+       [1] run (res://tests/uithoorn_landmarks.gd:48)
+ERROR: normal backface culling
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/uithoorn_landmarks.gd:10)
+       [1] run (res://tests/uithoorn_landmarks.gd:48)
+ERROR: normal backface culling
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/uithoorn_landmarks.gd:10)
+       [1] run (res://tests/uithoorn_landmarks.gd:48)
+ERROR: normal backface culling
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/uithoorn_landmarks.gd:10)
+       [1] run (res://tests/uithoorn_landmarks.gd:48)
+ERROR: normal backface culling
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/uithoorn_landmarks.gd:10)
+       [1] run (res://tests/uithoorn_landmarks.gd:48)
+ERROR: normal backface culling
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/uithoorn_landmarks.gd:10)
+       [1] run (res://tests/uithoorn_landmarks.gd:48)
+ERROR: normal backface culling
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/uithoorn_landmarks.gd:10)
+       [1] run (res://tests/uithoorn_landmarks.gd:48)
+ERROR: normal backface culling
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/uithoorn_landmarks.gd:10)
+       [1] run (res://tests/uithoorn_landmarks.gd:48)
+ERROR: normal backface culling
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/uithoorn_landmarks.gd:10)
+       [1] run (res://tests/uithoorn_landmarks.gd:48)
+ERROR: normal backface culling
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/uithoorn_landmarks.gd:10)
+       [1] run (res://tests/uithoorn_landmarks.gd:48)
+UITHOORN_PLACEMENTS variant=4 [{ "id": "rechthuis", "position": (60.0, -20.9, -150.0) }, { "id": "schanskerk", "position": (170.0, -20.9, -60.0) }, { "id": "fort-aan-de-drecht", "position": (-140.0, -20.9, 100.0) }, { "id": "irenebrug", "position": (0.0, -21.74, 180.0) }, { "id": "thamerkerk", "position": (-60.0, -20.9, 180.0) }, { "id": "de-hoeksteen", "position": (-120.0, -20.9, -100.0) }]
+ERROR: normal backface culling
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/uithoorn_landmarks.gd:10)
+       [1] run (res://tests/uithoorn_landmarks.gd:48)
+ERROR: normal backface culling
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/uithoorn_landmarks.gd:10)
+       [1] run (res://tests/uithoorn_landmarks.gd:48)
+ERROR: normal backface culling
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/uithoorn_landmarks.gd:10)
+       [1] run (res://tests/uithoorn_landmarks.gd:48)
+ERROR: normal backface culling
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/uithoorn_landmarks.gd:10)
+       [1] run (res://tests/uithoorn_landmarks.gd:48)
+ERROR: normal backface culling
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/uithoorn_landmarks.gd:10)
+       [1] run (res://tests/uithoorn_landmarks.gd:48)
+ERROR: normal backface culling
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/uithoorn_landmarks.gd:10)
+       [1] run (res://tests/uithoorn_landmarks.gd:48)
+ERROR: normal backface culling
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/uithoorn_landmarks.gd:10)
+       [1] run (res://tests/uithoorn_landmarks.gd:48)
+ERROR: normal backface culling
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/uithoorn_landmarks.gd:10)
+       [1] run (res://tests/uithoorn_landmarks.gd:48)
+ERROR: normal backface culling
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/uithoorn_landmarks.gd:10)
+       [1] run (res://tests/uithoorn_landmarks.gd:48)
+ERROR: normal backface culling
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/uithoorn_landmarks.gd:10)
+       [1] run (res://tests/uithoorn_landmarks.gd:48)
+ERROR: normal backface culling
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/uithoorn_landmarks.gd:10)
+       [1] run (res://tests/uithoorn_landmarks.gd:48)
+ERROR: normal backface culling
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/uithoorn_landmarks.gd:10)
+       [1] run (res://tests/uithoorn_landmarks.gd:48)
+ERROR: normal backface culling
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/uithoorn_landmarks.gd:10)
+       [1] run (res://tests/uithoorn_landmarks.gd:48)
+ERROR: normal backface culling
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/uithoorn_landmarks.gd:10)
+       [1] run (res://tests/uithoorn_landmarks.gd:48)
+ERROR: normal backface culling
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/uithoorn_landmarks.gd:10)
+       [1] run (res://tests/uithoorn_landmarks.gd:48)
+ERROR: normal backface culling
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/uithoorn_landmarks.gd:10)
+       [1] run (res://tests/uithoorn_landmarks.gd:48)
+ERROR: normal backface culling
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/uithoorn_landmarks.gd:10)
+       [1] run (res://tests/uithoorn_landmarks.gd:48)
+ERROR: normal backface culling
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/uithoorn_landmarks.gd:10)
+       [1] run (res://tests/uithoorn_landmarks.gd:48)
+ERROR: normal backface culling
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/uithoorn_landmarks.gd:10)
+       [1] run (res://tests/uithoorn_landmarks.gd:48)
+ERROR: normal backface culling
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/uithoorn_landmarks.gd:10)
+       [1] run (res://tests/uithoorn_landmarks.gd:48)
+ERROR: normal backface culling
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/uithoorn_landmarks.gd:10)
+       [1] run (res://tests/uithoorn_landmarks.gd:48)
+ERROR: normal backface culling
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/uithoorn_landmarks.gd:10)
+       [1] run (res://tests/uithoorn_landmarks.gd:48)
+ERROR: normal backface culling
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/uithoorn_landmarks.gd:10)
+       [1] run (res://tests/uithoorn_landmarks.gd:48)
+ERROR: normal backface culling
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/uithoorn_landmarks.gd:10)
+       [1] run (res://tests/uithoorn_landmarks.gd:48)
+ERROR: normal backface culling
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/uithoorn_landmarks.gd:10)
+       [1] run (res://tests/uithoorn_landmarks.gd:48)
+ERROR: normal backface culling
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/uithoorn_landmarks.gd:10)
+       [1] run (res://tests/uithoorn_landmarks.gd:48)
+ERROR: normal backface culling
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/uithoorn_landmarks.gd:10)
+       [1] run (res://tests/uithoorn_landmarks.gd:48)
+ERROR: normal backface culling
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/uithoorn_landmarks.gd:10)
+       [1] run (res://tests/uithoorn_landmarks.gd:48)
+ERROR: normal backface culling
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/uithoorn_landmarks.gd:10)
+       [1] run (res://tests/uithoorn_landmarks.gd:48)
+ERROR: normal backface culling
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/uithoorn_landmarks.gd:10)
+       [1] run (res://tests/uithoorn_landmarks.gd:48)
+ERROR: normal backface culling
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/uithoorn_landmarks.gd:10)
+       [1] run (res://tests/uithoorn_landmarks.gd:48)
+ERROR: normal backface culling
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/uithoorn_landmarks.gd:10)
+       [1] run (res://tests/uithoorn_landmarks.gd:48)
+ERROR: normal backface culling
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/uithoorn_landmarks.gd:10)
+       [1] run (res://tests/uithoorn_landmarks.gd:48)
+ERROR: normal backface culling
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/uithoorn_landmarks.gd:10)
+       [1] run (res://tests/uithoorn_landmarks.gd:48)
+ERROR: normal backface culling
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/uithoorn_landmarks.gd:10)
+       [1] run (res://tests/uithoorn_landmarks.gd:48)
+ERROR: normal backface culling
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/uithoorn_landmarks.gd:10)
+       [1] run (res://tests/uithoorn_landmarks.gd:48)
+ERROR: normal backface culling
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/uithoorn_landmarks.gd:10)
+       [1] run (res://tests/uithoorn_landmarks.gd:48)
+ERROR: normal backface culling
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/uithoorn_landmarks.gd:10)
+       [1] run (res://tests/uithoorn_landmarks.gd:48)
+ERROR: normal backface culling
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/uithoorn_landmarks.gd:10)
+       [1] run (res://tests/uithoorn_landmarks.gd:48)
+ERROR: normal backface culling
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/uithoorn_landmarks.gd:10)
+       [1] run (res://tests/uithoorn_landmarks.gd:48)
+ERROR: normal backface culling
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/uithoorn_landmarks.gd:10)
+       [1] run (res://tests/uithoorn_landmarks.gd:48)
+ERROR: normal backface culling
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/uithoorn_landmarks.gd:10)
+       [1] run (res://tests/uithoorn_landmarks.gd:48)
+ERROR: normal backface culling
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/uithoorn_landmarks.gd:10)
+       [1] run (res://tests/uithoorn_landmarks.gd:48)
+UITHOORN_PLACEMENTS variant=10 [{ "id": "rechthuis", "position": (-110.0, -20.9, 250.0) }, { "id": "schanskerk", "position": (160.0, -20.9, 220.0) }, { "id": "fort-aan-de-drecht", "position": (-130.0, -20.9, -220.0) }, { "id": "irenebrug", "position": (0.0, -21.74, 80.0) }, { "id": "thamerkerk", "position": (200.0, -20.9, -250.0) }, { "id": "de-hoeksteen", "position": (-210.0, -20.9, 10.0) }]
+UITHOORN_LANDMARKS checks=42151 failures=86

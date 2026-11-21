@@ -1,0 +1,12 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+BORACER HOME DASHBOARD QA: 20066 checks, 0 failures
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+DASHBOARD SETUP dashboard-duo-front (no image)
+DASHBOARD SETUP dashboard-duo-gedraaid (no image)
+DASHBOARD SETUP dashboard-1280x720 (no image)
+DASHBOARD SETUP dashboard-800x600 (no image)
+DASHBOARD SETUP dashboard-600x900 (no image)
+DASHBOARD SETUP dashboard-tegelfocus (no image)
+DASHBOARD SETUP VALIDATION; no images; scenarios=6; failures=0

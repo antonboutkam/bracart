@@ -1,0 +1,260 @@
+{
+  "suite_count": 42,
+  "total_checks": 4479124,
+  "failures": 0,
+  "method": "Latest results composed from 14 passing prefix suites, remaining27 and final affected reruns. Original full check.sh exited1. No contiguous fullcheck exit0 claimed.",
+  "suites": {
+    "profile_storage": {
+      "checks": 28,
+      "failures": 0,
+      "evidence": "kitchen-adventure-first-full-failure.txt",
+      "run": "first full run prefix"
+    },
+    "default_vehicle": {
+      "checks": 60,
+      "failures": 0,
+      "evidence": "kitchen-adventure-first-full-failure.txt",
+      "run": "first full run prefix"
+    },
+    "vehicle_audio": {
+      "checks": 1638,
+      "failures": 0,
+      "evidence": "kitchen-adventure-first-full-failure.txt",
+      "run": "first full run prefix"
+    },
+    "vehicle_audio_qa": {
+      "checks": 829,
+      "failures": 0,
+      "evidence": "kitchen-adventure-first-full-failure.txt",
+      "run": "first full run prefix"
+    },
+    "world_geometry": {
+      "checks": 53909,
+      "failures": 0,
+      "evidence": "kitchen-adventure-first-full-failure.txt",
+      "run": "first full run prefix"
+    },
+    "outdoor_life": {
+      "checks": 157043,
+      "failures": 0,
+      "evidence": "kitchen-adventure-first-full-failure.txt",
+      "run": "first full run prefix"
+    },
+    "street_walkers": {
+      "checks": 120817,
+      "failures": 0,
+      "evidence": "kitchen-adventure-first-full-failure.txt",
+      "run": "first full run prefix"
+    },
+    "street_walkers_main": {
+      "checks": 6,
+      "failures": 0,
+      "evidence": "kitchen-adventure-first-full-failure.txt",
+      "run": "first full run prefix"
+    },
+    "outdoor_life_qa": {
+      "checks": 169348,
+      "failures": 0,
+      "evidence": "kitchen-adventure-first-full-failure.txt",
+      "run": "first full run prefix"
+    },
+    "kitchen_props": {
+      "checks": 17817,
+      "failures": 0,
+      "evidence": "kitchen-adventure-first-full-failure.txt",
+      "run": "first full run prefix"
+    },
+    "kitchen_photo_qa": {
+      "checks": 24900,
+      "failures": 0,
+      "evidence": "kitchen-adventure-first-full-failure.txt",
+      "run": "first full run prefix"
+    },
+    "kitchen_course": {
+      "checks": 15209,
+      "failures": 0,
+      "evidence": "kitchen-course-final-qa-rerun.txt",
+      "run": "final affected-source rerun"
+    },
+    "kitchen_adventure_props": {
+      "checks": 5600,
+      "failures": 0,
+      "evidence": "kitchen-adventure-props-final-qa-rerun.txt",
+      "run": "final affected-source rerun"
+    },
+    "kitchen_course_qa": {
+      "checks": 132108,
+      "failures": 0,
+      "evidence": "kitchen-course-independent-qa-checks.txt",
+      "run": "final affected-source rerun"
+    },
+    "kitchen_adventure_qa": {
+      "checks": 1731637,
+      "failures": 0,
+      "evidence": "kitchen-adventure-independent-qa-checks.txt",
+      "run": "final affected-source rerun"
+    },
+    "world_art": {
+      "checks": 368,
+      "failures": 0,
+      "evidence": "kitchen-adventure-remaining-checks.txt",
+      "run": "remaining suite runner"
+    },
+    "architecture": {
+      "checks": 599,
+      "failures": 0,
+      "evidence": "kitchen-adventure-remaining-checks.txt",
+      "run": "remaining suite runner"
+    },
+    "street_districts": {
+      "checks": 179677,
+      "failures": 0,
+      "evidence": "kitchen-adventure-remaining-checks.txt",
+      "run": "remaining suite runner"
+    },
+    "street_scene_qa": {
+      "checks": 856749,
+      "failures": 0,
+      "evidence": "kitchen-adventure-remaining-checks.txt",
+      "run": "remaining suite runner"
+    },
+    "tram_motion": {
+      "checks": 1224,
+      "failures": 0,
+      "evidence": "kitchen-adventure-remaining-checks.txt",
+      "run": "remaining suite runner"
+    },
+    "reward_weather": {
+      "checks": 21,
+      "failures": 0,
+      "evidence": "kitchen-adventure-remaining-checks.txt",
+      "run": "remaining suite runner"
+    },
+    "kart_visuals": {
+      "checks": 888,
+      "failures": 0,
+      "evidence": "kitchen-adventure-remaining-checks.txt",
+      "run": "remaining suite runner"
+    },
+    "garage_presentation": {
+      "checks": 56,
+      "failures": 0,
+      "evidence": "kitchen-adventure-remaining-checks.txt",
+      "run": "remaining suite runner"
+    },
+    "garage_features": {
+      "checks": 667,
+      "failures": 0,
+      "evidence": "kitchen-adventure-remaining-checks.txt",
+      "run": "remaining suite runner"
+    },
+    "garage_interaction_qa": {
+      "checks": 104281,
+      "failures": 0,
+      "evidence": "kitchen-adventure-remaining-checks.txt",
+      "run": "remaining suite runner"
+    },
+    "dutch_sky_horizons": {
+      "checks": 9473,
+      "failures": 0,
+      "evidence": "kitchen-adventure-remaining-checks.txt",
+      "run": "remaining suite runner"
+    },
+    "dutch_world_qa": {
+      "checks": 366193,
+      "failures": 0,
+      "evidence": "kitchen-adventure-remaining-checks.txt",
+      "run": "remaining suite runner"
+    },
+    "aircraft": {
+      "checks": 8771,
+      "failures": 0,
+      "evidence": "kitchen-adventure-remaining-checks.txt",
+      "run": "remaining suite runner"
+    },
+    "aircraft_qa": {
+      "checks": 75258,
+      "failures": 0,
+      "evidence": "kitchen-adventure-remaining-checks.txt",
+      "run": "remaining suite runner"
+    },
+    "race_behavior": {
+      "checks": 34,
+      "failures": 0,
+      "evidence": "kitchen-adventure-remaining-checks.txt",
+      "run": "remaining suite runner"
+    },
+    "follow_camera": {
+      "checks": 1464,
+      "failures": 0,
+      "evidence": "kitchen-adventure-follow-camera-checks.txt",
+      "run": "final affected-source rerun"
+    },
+    "camera_composition": {
+      "checks": 420628,
+      "failures": 0,
+      "evidence": "kitchen-adventure-camera-composition-checks.txt",
+      "run": "final affected-source rerun"
+    },
+    "home_duo_preview": {
+      "checks": 1254,
+      "failures": 0,
+      "evidence": "kitchen-adventure-remaining-checks.txt",
+      "run": "remaining suite runner"
+    },
+    "home_dashboard_qa": {
+      "checks": 20066,
+      "failures": 0,
+      "evidence": "kitchen-adventure-remaining-checks.txt",
+      "run": "remaining suite runner"
+    },
+    "ui_layout": {
+      "checks": 32,
+      "failures": 0,
+      "evidence": "kitchen-adventure-remaining-checks.txt",
+      "run": "remaining suite runner"
+    },
+    "ui_sfeer": {
+      "checks": 30,
+      "failures": 0,
+      "evidence": "kitchen-adventure-remaining-checks.txt",
+      "run": "remaining suite runner"
+    },
+    "world_concepts": {
+      "checks": 111,
+      "failures": 0,
+      "evidence": "kitchen-adventure-remaining-checks.txt",
+      "run": "remaining suite runner"
+    },
+    "ui_input_devices": {
+      "checks": 37,
+      "failures": 0,
+      "evidence": "kitchen-adventure-remaining-checks.txt",
+      "run": "remaining suite runner"
+    },
+    "game10001_integration": {
+      "checks": 17,
+      "failures": 0,
+      "evidence": "kitchen-adventure-remaining-checks.txt",
+      "run": "remaining suite runner"
+    },
+    "smoke": {
+      "checks": 162,
+      "failures": 0,
+      "evidence": "kitchen-adventure-remaining-checks.txt",
+      "run": "remaining suite runner"
+    },
+    "input_flow": {
+      "checks": 17,
+      "failures": 0,
+      "evidence": "kitchen-adventure-remaining-checks.txt",
+      "run": "remaining suite runner"
+    },
+    "integration_audit": {
+      "checks": 98,
+      "failures": 0,
+      "evidence": "kitchen-adventure-remaining-checks.txt",
+      "run": "remaining suite runner"
+    }
+  }
+}

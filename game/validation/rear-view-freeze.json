@@ -1,0 +1,28 @@
+{
+  "files": {
+    "scripts/main.gd": "868cdabd7027170af79521d8123cbd714815fa3f78c82f9d7a6c855b5a3d7571",
+    "scripts/kart.gd": "45a27aaecf96d0a933bf889ebc9d2cf13775a9d5f44484219e9b86c5253a8234",
+    "scripts/interface.gd": "f71937a84914015ce1995f672b8ac64771b7a0a17746c9440d346832bc727877",
+    "README.md": "c47eb0e18eadd8eb37f5a6dd7b8e83c98fca0022b93e1607a06f66a990cfb64b",
+    "tools/check.sh": "3c0fccea27233216a77c3aefbc59813bfe793a4fd8498f875595f6c0ad6ba1c4",
+    "tools/capture_step.py": "dc12cf051ab887281e6c9cf25a3fd9ab36557110e1232e15cb1b67e2aedfd742",
+    "scripts/rear_view.gd": "12d44491f059e85b857eb82aac09eb4af5cb8800cb48951f950ce8c4d19af7a9",
+    "tests/rear_view.gd": "87c7d8d5ed5764c0edf2454e5d64dcb14cd3f8e9c7cafde748e856c4f9eaecdb",
+    "tests/rear_view_capture.gd": "29e60aac4c2da03c6b4b342b44ac02baea029aeca2bbe7229ec05f1dfd5b38c5",
+    "tests/rear_view_qa.gd": "424470cf113e9659b36517d3d948d60aade434b29ca454ad152b8414a7338080"
+  },
+  "before_snapshot": "/tmp/boracer-rear-before",
+  "maker": "1267 checks, 0 failures",
+  "regressions": [
+    "kart_visuals",
+    "follow_camera",
+    "camera_composition",
+    "ui_input_devices",
+    "ui_layout",
+    "input_flow",
+    "tracks_v2_flight",
+    "rear_view_qa"
+  ],
+  "diagnosis": "Sandbox062723 failed display. Native062740 rider obstruction fixed by local eyez1.6. Native062847 is reviewed selected ten-frame evidence. Later fixture062949 updated ranking but kept GO. Finalattempt063054 returned black2x2 despite exit0; rejected complete=false. Latest restored062847, capture source restored to match that reviewed run. Capture guard now rejects tiny frames and identical-image runs.",
+  "final_capture": "20261018T062847-694829Z"
+}

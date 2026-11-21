@@ -1,0 +1,34 @@
+Sem GD-005 kitchen course handoff, 2026-10-17
+Observed Godot 4.7.2 headless/Dummy outputs with isolated /tmp XDG:
+BORACER KITCHEN COURSE: 15209 checks, 0 failures
+WORLD GEOMETRY: 53909 checks, 0 failures (before metadata-only PVC widening)
+BORACER TESTS: 162 checks, 0 failures (before metadata-only PVC widening)
+BORACER FOLLOW CAMERA: 1464 checks, 0 failures (final kitchen camera floor correction)
+
+Kitchen full-road clearance metric: 18.3m between non-neighbor 3D route samples.
+Loop: radius9, maximum road height18.12, helical22m sideways exit, continuous right-handed frames.
+Outside worlds0..4 retain original build/frame/simulation/camera branches. Independent numeric baseline QA is separate.
+No native capture/visual approval claimed. Static household supports/props owned by Ruben.
+
+Final PVC correction: inner15.5, outer16.3, axis16.4; roadfloor5.3 unchanged.
+Toilet rolls remain inner12.4, outer13.2, axis13.3. Final PVC underside is table0.1.
+241 approach-to-exit samples plus all lane/height combinations enforce polygonal bore margin5cm.
+Route-building/pose functions and distance arrays unchanged by metadata correction.
+Rainbow geometry now follows the actual straight PVC axis, radius14.9/axisoffset11.1.
+Ruben independently reports final physical props5600/0 and11 legacy photo groups retained.
+True 3D nearest camera check exposed two loop poses at0.655/0.682 above surface.
+Kitchen camera alone now enforces0.78m safe floor against nearby actual frames.
+Legacy camera test uses actual course arc frames only for world5; outside0..4 unchanged.
+Final logs: /tmp/boracer-follow-camera-sem.log; /tmp/boracer-kitchen-camera-final.log.
+
+Handoff SHA256:
+484f30b4358d30c0959670b3bfc0af38db20f9a93f5782b9e1b4a1831b37b315  scripts/worlds/kitchen_course.gd
+ad586d30fcf9a203687d08d2456cb9a47cfe778f7fdbdce2d76efe0c7a332732  scripts/effects/kitchen_rainbow.gd
+05aae22c22c1d16bc0fa9fb08abf0958117283cfd6ecbe2940be4cd84ddbd367  scripts/track.gd
+e0c07d2b12f5747f29f183245d353bf7fca76e18ed622c60809ab150bd51e942  scripts/follow_camera.gd
+4c893ae6170cb55a45fdfdbdd4fc4c38ff86d383d05b9351627a285cdf63b1d9  scripts/race.gd
+c37e7cf6b880090dbff5ed00d5cea7262c91f5398e14ef44a68f6dbf6bec9ef6  scripts/main.gd
+5d7ff15e1e23df3e14f98d3b1724b6091375fd57ab0ff4062279cca9ab307344  tests/kitchen_course.gd
+878eff00c7a318f62e671801b3777023bb6a87ed0d847d2daee686bb821a40e0  tests/follow_camera.gd
+576f330f5c3f13f71de0501c2effd7639973a1e15815ab8af11f4b4c8633150c  tests/world_geometry.gd
+594dd9f3e2afcdf9838af97ef0c12c6ec8e27a07b380217373be25ec2e1f0c2b  tests/smoke.gd

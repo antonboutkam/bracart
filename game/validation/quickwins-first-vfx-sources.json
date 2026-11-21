@@ -1,0 +1,12 @@
+{
+  "sha256": {
+    "scripts/main.gd": "32c7e66b74b34a35ec80d9181e04574e9ecc84556b0e0bd8c9bcb4b2676e4656",
+    "scripts/audio.gd": "441e9fa2fbacc99a55da460ac0fc62183473c8683ba98885613645ddec12608d",
+    "scripts/race.gd": "cad3375117a8b06f87a645d25316994eec9c6522ba6a3fc7a24852080f896f96",
+    "scripts/effects/race_feedback.gd": "33daef4e9a7a8ffb0f136a4839db809824e25b4e760f51f384271798b577d163",
+    "scripts/worlds/nature_accents.gd": "818bc1709eb8ef102deb0396589a93e7cf6002e994152b6bd98a111f9e929ed5",
+    "scripts/worlds/outdoor_life.gd": "fa36a6b0a978c8879ffbcc56b4b0007e15f5444620587a1b0aad8e4a684d049f",
+    "tests/quickwins_qa.gd": "b66763bf4d06b90e8dcc0efc37f911165922c2c795b893048182285e91989ee7"
+  },
+  "note": "Before follow-up slow-ramp feedback clearance investigation; initial independent356828/0 does not test that edge."
+}

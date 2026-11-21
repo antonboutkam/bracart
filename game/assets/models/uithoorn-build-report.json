@@ -1,0 +1,236 @@
+{
+  "rechthuis": {
+    "glb": "game/assets/models/uithoorn-rechthuis.glb",
+    "mesh_components": 122,
+    "triangles": 1444,
+    "nonmanifold": [],
+    "degenerate_faces": 0,
+    "blender_min_xyz": [
+      -12.5,
+      -9.300000190734863,
+      0.0
+    ],
+    "blender_max_xyz": [
+      12.5,
+      13.5,
+      13.399999618530273
+    ],
+    "godot_min_xyz": [
+      -12.5,
+      0.0,
+      -13.5
+    ],
+    "godot_max_xyz": [
+      12.5,
+      13.399999618530273,
+      9.300000190734863
+    ],
+    "godot_size_xyz": [
+      25.0,
+      13.399999618530273,
+      22.800000190734863
+    ],
+    "front": "Godot +Z",
+    "textures": [
+      "awning.png",
+      "roof.png",
+      "wall.png",
+      "window.png"
+    ]
+  },
+  "schanskerk": {
+    "glb": "game/assets/models/uithoorn-schanskerk.glb",
+    "mesh_components": 94,
+    "triangles": 3074,
+    "nonmanifold": [],
+    "degenerate_faces": 0,
+    "blender_min_xyz": [
+      -12.75,
+      -24.834999084472656,
+      0.0
+    ],
+    "blender_max_xyz": [
+      12.75,
+      35.79999923706055,
+      39.0
+    ],
+    "godot_min_xyz": [
+      -12.75,
+      0.0,
+      -35.79999923706055
+    ],
+    "godot_max_xyz": [
+      12.75,
+      39.0,
+      24.834999084472656
+    ],
+    "godot_size_xyz": [
+      25.5,
+      39.0,
+      60.6349983215332
+    ],
+    "front": "Godot +Z",
+    "textures": [
+      "door.png",
+      "roof.png",
+      "wall.png",
+      "window.png"
+    ]
+  },
+  "fort-aan-de-drecht": {
+    "glb": "game/assets/models/uithoorn-fort-aan-de-drecht.glb",
+    "mesh_components": 57,
+    "triangles": 2140,
+    "nonmanifold": [],
+    "degenerate_faces": 0,
+    "blender_min_xyz": [
+      -27.0,
+      -24.0,
+      0.0
+    ],
+    "blender_max_xyz": [
+      32.20000076293945,
+      20.5,
+      8.800000190734863
+    ],
+    "godot_min_xyz": [
+      -27.0,
+      0.0,
+      -20.5
+    ],
+    "godot_max_xyz": [
+      32.20000076293945,
+      8.800000190734863,
+      24.0
+    ],
+    "godot_size_xyz": [
+      59.20000076293945,
+      8.800000190734863,
+      44.5
+    ],
+    "front": "Godot +Z",
+    "textures": [
+      "gate.png",
+      "opening.png",
+      "roof.png",
+      "wall.png"
+    ]
+  },
+  "irenebrug": {
+    "glb": "game/assets/models/uithoorn-irenebrug.glb",
+    "mesh_components": 139,
+    "triangles": 2048,
+    "nonmanifold": [],
+    "degenerate_faces": 0,
+    "blender_min_xyz": [
+      -24.125,
+      -6.0,
+      0.0
+    ],
+    "blender_max_xyz": [
+      24.125,
+      9.850000381469727,
+      9.77500057220459
+    ],
+    "godot_min_xyz": [
+      -24.125,
+      0.0,
+      -9.850000381469727
+    ],
+    "godot_max_xyz": [
+      24.125,
+      9.77500057220459,
+      6.0
+    ],
+    "godot_size_xyz": [
+      48.25,
+      9.77500057220459,
+      15.850000381469727
+    ],
+    "front": "Godot +Z",
+    "textures": [
+      "barrier.png",
+      "house.png",
+      "railing.png",
+      "road.png"
+    ]
+  },
+  "thamerkerk": {
+    "glb": "game/assets/models/uithoorn-thamerkerk.glb",
+    "mesh_components": 93,
+    "triangles": 2456,
+    "nonmanifold": [],
+    "degenerate_faces": 0,
+    "blender_min_xyz": [
+      -11.4399995803833,
+      -10.5,
+      0.0
+    ],
+    "blender_max_xyz": [
+      11.4399995803833,
+      8.84000015258789,
+      23.0
+    ],
+    "godot_min_xyz": [
+      -11.4399995803833,
+      0.0,
+      -8.84000015258789
+    ],
+    "godot_max_xyz": [
+      11.4399995803833,
+      23.0,
+      10.5
+    ],
+    "godot_size_xyz": [
+      22.8799991607666,
+      23.0,
+      19.34000015258789
+    ],
+    "front": "Godot +Z",
+    "textures": [
+      "door.png",
+      "roof.png",
+      "wall.png",
+      "window.png"
+    ]
+  },
+  "de-hoeksteen": {
+    "glb": "game/assets/models/uithoorn-de-hoeksteen.glb",
+    "mesh_components": 112,
+    "triangles": 2760,
+    "nonmanifold": [],
+    "degenerate_faces": 0,
+    "blender_min_xyz": [
+      -12.710000038146973,
+      -12.875,
+      0.0
+    ],
+    "blender_max_xyz": [
+      20.0,
+      12.710000038146973,
+      14.774999618530273
+    ],
+    "godot_min_xyz": [
+      -12.710000038146973,
+      0.0,
+      -12.710000038146973
+    ],
+    "godot_max_xyz": [
+      20.0,
+      14.774999618530273,
+      12.875
+    ],
+    "godot_size_xyz": [
+      32.71000003814697,
+      14.774999618530273,
+      25.585000038146973
+    ],
+    "front": "Godot +Z",
+    "textures": [
+      "base.png",
+      "door.png",
+      "wall.png",
+      "window.png"
+    ]
+  }
+}

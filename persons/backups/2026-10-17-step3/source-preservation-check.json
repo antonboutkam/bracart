@@ -1,0 +1,13 @@
+{
+  "apply_anatomy": true,
+  "anatomy_point": true,
+  "atlas": true,
+  "make_head": true,
+  "child_face": true,
+  "face_shapes": true,
+  "build_skeleton": true,
+  "animations": true,
+  "setup_stage": true,
+  "render_view": true,
+  "character_hair_module_byte_identical": true
+}

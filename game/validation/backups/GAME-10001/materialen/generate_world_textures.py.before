@@ -1,0 +1,48 @@
+#!/usr/bin/env python3
+"""Small deterministic seamless material tiles; rerun with Python 3 and Pillow."""
+from pathlib import Path
+import math
+from PIL import Image
+ROOT = Path(__file__).resolve().parents[1] / 'assets/textures/worlds'
+N=256
+for name in ['grass','stone','roof','metal','paper','wood_fallback','brick_fallback','solar']:
+    im=Image.new('RGB',(N,N)); height=[]
+    for y in range(N):
+        row=[]
+        for x in range(N):
+            u=x/N; v=y/N
+            wave=math.sin(u*math.tau*19+math.sin(v*math.tau*3)*2)*math.sin(v*math.tau*13)
+            h=.5; base=(130,130,130)
+            if name=='grass':
+                h=.5+.15*wave+.09*math.sin((u*43+v*29)*math.tau); base=(111,148,89)
+            elif name in ['stone','brick_fallback']:
+                rows=8 if name=='brick_fallback' else 4; cols=4
+                yy=(v*rows)%1; xx=(u*cols+(int(v*rows)%2)*.5)%1
+                h=.32 if yy<.065 or xx<.035 else .65+.04*wave
+                base=(169,104,73) if name=='brick_fallback' else (160,153,135)
+            elif name=='roof':
+                h=.48+.2*math.cos(u*math.tau*8)
+                if (v*8)%1<.07: h=.18
+                base=(143,79,59)
+            elif name=='wood_fallback':
+                h=.5+.14*math.sin(v*math.tau*36+math.sin(u*math.tau*2)*1.4)+.06*math.sin(v*math.tau*83)
+                base=(181,139,89)
+            elif name=='metal':
+                h=.5+.025*math.sin(v*math.tau*113)+.02*wave; base=(190,187,172)
+            elif name=='paper':
+                h=.5+.018*wave; base=(240,231,207)
+            elif name=='solar':
+                h=.2 if x%32<2 or y%48<2 else .6+.03*wave; base=(49,89,126)
+            factor=.72+.56*h
+            im.putpixel((x,y),tuple(max(0,min(255,int(c*factor))) for c in base)); row.append(h)
+        height.append(row)
+    im.save(ROOT/(name+'.png'))
+    normal=Image.new('RGB',(N,N))
+    for y in range(N):
+        for x in range(N):
+            dx=(height[y][(x+1)%N]-height[y][(x-1)%N])*1.5
+            dy=(height[(y+1)%N][x]-height[(y-1)%N][x])*1.5
+            length=math.sqrt(dx*dx+dy*dy+1)
+            normal.putpixel((x,y),(int(127.5-dx/length*127),int(127.5+dy/length*127),int(127.5+127/length)))
+    normal.save(ROOT/(name+'_normal.png'))
+print('Generated 8 seamless albedo/normal tile pairs (256x256).')

@@ -1,0 +1,6 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+TUBE_BOUNDS toilet_rolls [P: (25.34761, 0.1, -92.71606), S: (18.24954, 26.4, 26.70227)]
+TUBE_BOUNDS pvc_rainbow [P: (-23.55237, 0.1, 52.82073), S: (22.71104, 32.6, 34.94194)]
+KITCHEN_ADVENTURE_PROPS groups=6 nodes=119
+KITCHEN_ADVENTURE_PROPS checks=5600 failures=0

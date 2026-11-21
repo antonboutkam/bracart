@@ -1,0 +1,205 @@
+LATEST SUITE OUTCOMES: 36/36 passed, composed from 11 + 25 suite processes.
+Initial check.sh exited 1 at suite12 world_art; complete failure evidence is
+validation/garage-worlds-first-full-failure.txt. Its first11 suites passed.
+After an optional env.sky=null guard and legacy geometry expectation correction,
+remaining25 resumed suite processes exited0, including final integration audit.
+This is NOT a claim that a complete check.sh invocation exited0 at one source hash.
+The import stage returned0 despite sandbox TCP listen errors printed below.
+No native renders or visual acceptance are established by this log.
+
+FINAL RELEVANT PRODUCT SHA256 (verified unchanged after resumed gate):
+d2ac3a8eb946d5997c385c4abb878f99a2be38bf4e8338aa4a9a5a13219630fb  public_html/boracer/game/scripts/ui/garage_drivers.gd
+60fbbbdc32b6af131d7b3e37cc044c98a322e90a578259ada01dc70965de2afe  public_html/boracer/game/scripts/ui/garage_studio.gd
+1af7f283e24d43676afeca5ae405b1d1e1a7eeb75bb48d98a9662f8dac3f8d16  public_html/boracer/game/scripts/ui/vehicle_preview.gd
+e4be446e1f97547aef8b9d782b0abc344732adbc467c9fb5994b05ef69fd45db  public_html/boracer/game/scripts/interface.gd
+223a04e5db307129ce5fffc2d411b518861fad7c0811881051b33c6fd1c64583  public_html/boracer/game/scripts/worlds/dutch_sky.gd
+9f99420e512b373a21a691fd4eac9bd7e48144cab64a732fd231672a9654a652  public_html/boracer/game/scripts/worlds/dutch_horizons.gd
+422bb6701aefa22daeb9da86c127dc967b464f7f977e416e5374ffbc38742c81  public_html/boracer/game/scripts/worlds/world_art.gd
+
+FIRST11 PASSED SUITE OUTPUTS (before failing world_art process):
+ERROR: Condition "_sock == -1" is true. Returning: FAILED
+   at: _inet_open (drivers/unix/net_socket_unix.cpp:288)
+ERROR: Condition "err != OK" is true. Returning: ERR_CANT_CREATE
+   at: listen (core/io/tcp_server.cpp:56)
+ERROR: Condition "_sock == -1" is true. Returning: FAILED
+   at: _inet_open (drivers/unix/net_socket_unix.cpp:288)
+ERROR: Condition "err != OK" is true. Returning: ERR_CANT_CREATE
+   at: listen (core/io/tcp_server.cpp:56)
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+BORACER PROFILE STORAGE: 28 checks, 0 failures
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+BORACER DEFAULT VEHICLE: 60 checks, 0 failures
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+BORACER VEHICLE AUDIO: 1638 checks, 0 failures
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+BORACER VEHICLE AUDIO QA: 829 checks, 0 failures
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+WORLD 0 length=693.3 min_clearance=55.4 max_gradient=0.14 min_bend_radius=17.0
+WORLD 1 length=783.6 min_clearance=49.3 max_gradient=0.11 min_bend_radius=11.8
+WORLD 2 length=816.1 min_clearance=51.8 max_gradient=0.23 min_bend_radius=13.2
+WORLD 3 length=720.1 min_clearance=50.5 max_gradient=0.14 min_bend_radius=11.1
+WORLD 4 length=757.8 min_clearance=53.2 max_gradient=0.09 min_bend_radius=15.5
+WORLD 5 length=630.0 min_clearance=52.3 max_gradient=0.00 min_bend_radius=11.1
+WORLD GEOMETRY: 53689 checks, 0 failures
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+DISTANCES median=57.1418647766113 max=100.5048828125
+OUTDOOR_LIFE world=0 clusters=24 walker_routes=4 nodes=254 static_instances=993
+DISTANCES median=44.5076751708984 max=76.4154052734375
+OUTDOOR_LIFE world=1 clusters=24 walker_routes=4 nodes=256 static_instances=936
+DISTANCES median=72.5011367797852 max=128.497802734375
+OUTDOOR_LIFE world=2 clusters=24 walker_routes=4 nodes=258 static_instances=1032
+DISTANCES median=51.5065231323242 max=105.292610168457
+OUTDOOR_LIFE world=3 clusters=24 walker_routes=4 nodes=254 static_instances=912
+DISTANCES median=75.9677200317383 max=141.001113891602
+OUTDOOR_LIFE world=4 clusters=24 walker_routes=4 nodes=255 static_instances=921
+OUTDOOR_LIFE checks=157043 failures=0
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+BORACER STREET WALKERS: 120817 checks, 0 failures
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+BORACER STREET WALKERS MAIN: 6 checks, 0 failures
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+OUTDOOR QA world=0 clusters=24 projected_visible=23 actors=4 submitted_shapes=993
+OUTDOOR QA world=1 clusters=24 projected_visible=24 actors=4 submitted_shapes=936
+OUTDOOR QA world=2 clusters=24 projected_visible=23 actors=4 submitted_shapes=1032
+OUTDOOR QA world=3 clusters=24 projected_visible=24 actors=4 submitted_shapes=912
+OUTDOOR QA world=4 clusters=24 projected_visible=23 actors=4 submitted_shapes=921
+BORACER OUTDOOR LIFE QA: 169348 checks, 0 failures
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+KITCHEN_PROPS objects=11 mesh_nodes=219 checks=16607 failures=0
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+KITCHEN PHOTO IMPORT res://assets/textures/kitchen/photos/IMG_20261017_093242.jpg size=(1536.0, 2048.0) format=17 compressed=true payload=2097176
+KITCHEN PHOTO IMPORT res://assets/textures/kitchen/photos/IMG_20261017_093236.jpg size=(1536.0, 2048.0) format=17 compressed=true payload=2097176
+KITCHEN PHOTO IMPORT res://assets/textures/kitchen/photos/IMG_20261017_093205.jpg size=(1536.0, 2048.0) format=17 compressed=true payload=2097176
+KITCHEN PHOTO IMPORT res://assets/textures/kitchen/photos/IMG_20261017_093239.jpg size=(1536.0, 2048.0) format=17 compressed=true payload=2097176
+KITCHEN PHOTO IMPORT res://assets/textures/kitchen/photos/IMG_20261017_093220.jpg size=(1536.0, 2048.0) format=17 compressed=true payload=2097176
+KITCHEN PHOTO QA mesh_count=219 imported_textures=5 image_payload_bytes=10485880
+BORACER KITCHEN PHOTO QA: 24075 checks, 0 failures
+
+RESUMED25 SUITE OUTPUTS (exit0):
+QA_SUITE world_art
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+WORLD ART: 368 checks, 0 failures
+QA_SUITE architecture
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+ARCHITECTURE world=3 houses=4 house_child_nodes=132
+ARCHITECTURE world=4 houses=4 house_child_nodes=120
+ARCHITECTURE checks=599 failures=0
+QA_SUITE street_districts
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+DISTRICT world=3 houses=198 draw_nodes=21 instances=7854 under_route=0 min_vertical_gap=inf min_horizontal_margin=3.18542957305908
+DISTRICT world=4 houses=99 draw_nodes=21 instances=2394 under_route=39 min_vertical_gap=28.4107830047607 min_horizontal_margin=inf
+STREET_DISTRICTS checks=179677 failures=0
+QA_SUITE street_scene_qa
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+STREET QA elevated roof samples=192 minimum_gap=29.4653274536133
+BORACER STREET SCENE QA: 856749 checks, 0 failures
+QA_SUITE tram_motion
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+BORACER TRAM: 1224 checks, 0 failures
+QA_SUITE reward_weather
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+REWARD_WEATHER: 21 checks; 0 failures
+QA_SUITE kart_visuals
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+KART VISUAL CHECKS: 888; failures: 0
+QA_SUITE garage_presentation
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+BORACER GARAGE STUDIO: 56 checks, 0 failures
+QA_SUITE garage_features
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+BORACER GARAGE FEATURES: 667 checks, 0 failures
+QA_SUITE garage_interaction_qa
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+BORACER GARAGE INDEPENDENT QA: 104281 checks, 0 failures
+QA_SUITE dutch_sky_horizons
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+DUTCH_HORIZON world=3 records=336 nodes=4
+DUTCH_HORIZON world=4 records=310 nodes=9
+DUTCH_SKY_HORIZONS checks=9473 failures=0 cloud_pixels=974 clear_pixels=2273
+QA_SUITE dutch_world_qa
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+BORACER DUTCH WORLD INDEPENDENT QA: 366193 checks, 0 failures
+QA_SUITE race_behavior
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+BORACER RACE BEHAVIOR: 34 checks, 0 failures
+QA_SUITE follow_camera
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+BORACER FOLLOW CAMERA: 1464 checks, 0 failures
+QA_SUITE camera_composition
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+CAMERA COMPOSITION distance=4.313..8.663m head/center normalized_screen=(0.316619, 0.454044)..(0.679493, 0.715756)
+CAMERA COMPOSITION: 415480 checks, 0 failures
+QA_SUITE home_duo_preview
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+DUO bounds radius=1.59976577758789 spacing=1.89976577758789 orthosize=4.89934396743774
+BORACER HOME DUO: 1254 checks, 0 failures
+QA_SUITE home_dashboard_qa
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+BORACER HOME DASHBOARD QA: 20066 checks, 0 failures
+QA_SUITE ui_layout
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+BORACER UI LAYOUT: 32 checks, 0 failures
+QA_SUITE ui_sfeer
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+BORACER UI SFEER: 30 checks, 0 failures
+QA_SUITE world_concepts
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+BORACER WORLD CONCEPTS: 111 checks, 0 failures
+QA_SUITE ui_input_devices
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+BORACER INPUT DEVICES: 37 checks, 0 failures
+QA_SUITE game10001_integration
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+BORACER GAME10001 INTEGRATION: 17 checks, 0 failures
+QA_SUITE smoke
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+BORACER TESTS: 162 checks, 0 failures
+QA_SUITE input_flow
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+BORACER INPUT FLOW: 17 checks, 0 failures
+QA_SUITE integration_audit
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+INTEGRATION world=0 finish=38.18s rank=1 coins=628 sim_ticks=167
+INTEGRATION world=1 finish=50.46s rank=1 coins=755 sim_ticks=216
+INTEGRATION world=2 finish=46.72s rank=1 coins=878 sim_ticks=201
+INTEGRATION world=3 finish=36.67s rank=1 coins=1065 sim_ticks=161
+INTEGRATION world=4 finish=42.13s rank=1 coins=1206 sim_ticks=183
+INTEGRATION world=5 finish=36.34s rank=1 coins=1330 sim_ticks=160
+INTEGRATION node baseline=799 maximum_after_restart=799
+INTEGRATION AUDIT: 98 checks, 0 failures

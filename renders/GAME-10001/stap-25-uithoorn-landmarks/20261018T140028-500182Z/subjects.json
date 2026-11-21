@@ -1,0 +1,628 @@
+[
+  {
+    "category": "standalone",
+    "filename": "rechthuis-studio-voor.png",
+    "id": "rechthuis",
+    "label": "rechthuis · zelfstandig GLB met ingebedde materialen · voor",
+    "model_path": "res://assets/models/uithoorn-rechthuis.glb",
+    "world": 4
+  },
+  {
+    "category": "standalone",
+    "filename": "rechthuis-studio-achter.png",
+    "id": "rechthuis",
+    "label": "rechthuis · zelfstandig GLB met ingebedde materialen · achter",
+    "model_path": "res://assets/models/uithoorn-rechthuis.glb",
+    "world": 4
+  },
+  {
+    "category": "standalone",
+    "filename": "schanskerk-studio-voor.png",
+    "id": "schanskerk",
+    "label": "schanskerk · zelfstandig GLB met ingebedde materialen · voor",
+    "model_path": "res://assets/models/uithoorn-schanskerk.glb",
+    "world": 4
+  },
+  {
+    "category": "standalone",
+    "filename": "schanskerk-studio-achter.png",
+    "id": "schanskerk",
+    "label": "schanskerk · zelfstandig GLB met ingebedde materialen · achter",
+    "model_path": "res://assets/models/uithoorn-schanskerk.glb",
+    "world": 4
+  },
+  {
+    "category": "standalone",
+    "filename": "fort-aan-de-drecht-studio-voor.png",
+    "id": "fort-aan-de-drecht",
+    "label": "fort-aan-de-drecht · zelfstandig GLB met ingebedde materialen · voor",
+    "model_path": "res://assets/models/uithoorn-fort-aan-de-drecht.glb",
+    "world": 4
+  },
+  {
+    "category": "standalone",
+    "filename": "fort-aan-de-drecht-studio-achter.png",
+    "id": "fort-aan-de-drecht",
+    "label": "fort-aan-de-drecht · zelfstandig GLB met ingebedde materialen · achter",
+    "model_path": "res://assets/models/uithoorn-fort-aan-de-drecht.glb",
+    "world": 4
+  },
+  {
+    "category": "standalone",
+    "filename": "irenebrug-studio-voor.png",
+    "id": "irenebrug",
+    "label": "irenebrug · zelfstandig GLB met ingebedde materialen · voor",
+    "model_path": "res://assets/models/uithoorn-irenebrug.glb",
+    "world": 4
+  },
+  {
+    "category": "standalone",
+    "filename": "irenebrug-studio-achter.png",
+    "id": "irenebrug",
+    "label": "irenebrug · zelfstandig GLB met ingebedde materialen · achter",
+    "model_path": "res://assets/models/uithoorn-irenebrug.glb",
+    "world": 4
+  },
+  {
+    "category": "standalone",
+    "filename": "thamerkerk-studio-voor.png",
+    "id": "thamerkerk",
+    "label": "thamerkerk · zelfstandig GLB met ingebedde materialen · voor",
+    "model_path": "res://assets/models/uithoorn-thamerkerk.glb",
+    "world": 4
+  },
+  {
+    "category": "standalone",
+    "filename": "thamerkerk-studio-achter.png",
+    "id": "thamerkerk",
+    "label": "thamerkerk · zelfstandig GLB met ingebedde materialen · achter",
+    "model_path": "res://assets/models/uithoorn-thamerkerk.glb",
+    "world": 4
+  },
+  {
+    "category": "standalone",
+    "filename": "de-hoeksteen-studio-voor.png",
+    "id": "de-hoeksteen",
+    "label": "de-hoeksteen · zelfstandig GLB met ingebedde materialen · voor",
+    "model_path": "res://assets/models/uithoorn-de-hoeksteen.glb",
+    "world": 4
+  },
+  {
+    "category": "standalone",
+    "filename": "de-hoeksteen-studio-achter.png",
+    "id": "de-hoeksteen",
+    "label": "de-hoeksteen · zelfstandig GLB met ingebedde materialen · achter",
+    "model_path": "res://assets/models/uithoorn-de-hoeksteen.glb",
+    "world": 4
+  },
+  {
+    "category": "world",
+    "filename": "rechthuis-v1-omgeving.png",
+    "id": "rechthuis",
+    "label": "Het Rechthuis · in de echte Uithoornwereld · versie 1",
+    "track": 4,
+    "visibility": {
+      "body_points": 65,
+      "pixel_size": [
+        350.7421875,
+        303.371795654297
+      ],
+      "score": -1110.58372688293,
+      "viewport_size": [
+        1280.0,
+        800.0
+      ],
+      "visible_points": 68
+    },
+    "world": 4
+  },
+  {
+    "category": "race",
+    "filename": "rechthuis-v1-racecamera.png",
+    "id": "rechthuis",
+    "label": "Het Rechthuis · gewone racecamera · versie 1",
+    "lateral": 6.0,
+    "progress": 542.317170333862,
+    "score": 143.085131144393,
+    "track": 4,
+    "visibility": {
+      "body_points": 52,
+      "pixel_size": [
+        75.3151245117188,
+        30.4732971191406
+      ],
+      "score": 143.085131144393,
+      "viewport_size": [
+        1280.0,
+        800.0
+      ],
+      "visible_points": 54
+    },
+    "world": 4
+  },
+  {
+    "category": "world",
+    "filename": "schanskerk-v1-omgeving.png",
+    "id": "schanskerk",
+    "label": "Schanskerk · in de echte Uithoornwereld · versie 1",
+    "track": 4,
+    "visibility": {
+      "body_points": 71,
+      "pixel_size": [
+        409.735534667969,
+        294.414031982422
+      ],
+      "score": -1091.06038665771,
+      "viewport_size": [
+        1280.0,
+        800.0
+      ],
+      "visible_points": 72
+    },
+    "world": 4
+  },
+  {
+    "category": "race",
+    "filename": "schanskerk-v1-racecamera.png",
+    "id": "schanskerk",
+    "label": "Schanskerk · gewone racecamera · versie 1",
+    "lateral": 0.0,
+    "progress": 0.0,
+    "score": 1e99999,
+    "track": 4,
+    "visibility": {},
+    "world": 4
+  },
+  {
+    "category": "world",
+    "filename": "fort-aan-de-drecht-v1-omgeving.png",
+    "id": "fort-aan-de-drecht",
+    "label": "Fort aan de Drecht · in de echte Uithoornwereld · versie 1",
+    "track": 4,
+    "visibility": {
+      "body_points": 74,
+      "pixel_size": [
+        376.988464355469,
+        271.541290283203
+      ],
+      "score": -1123.35139656067,
+      "viewport_size": [
+        1280.0,
+        800.0
+      ],
+      "visible_points": 74
+    },
+    "world": 4
+  },
+  {
+    "category": "race",
+    "filename": "fort-aan-de-drecht-v1-racecamera.png",
+    "id": "fort-aan-de-drecht",
+    "label": "Fort aan de Drecht · gewone racecamera · versie 1",
+    "lateral": 6.0,
+    "progress": 314.970234298706,
+    "score": 227.714398565516,
+    "track": 4,
+    "visibility": {
+      "body_points": 24,
+      "pixel_size": [
+        116.858825683594,
+        30.7239990234375
+      ],
+      "score": 227.714398565516,
+      "viewport_size": [
+        1280.0,
+        800.0
+      ],
+      "visible_points": 24
+    },
+    "world": 4
+  },
+  {
+    "category": "world",
+    "filename": "irenebrug-v1-omgeving.png",
+    "id": "irenebrug",
+    "label": "Irenebrug · in de echte Uithoornwereld · versie 1",
+    "track": 4,
+    "visibility": {
+      "body_points": 54,
+      "pixel_size": [
+        314.012054443359,
+        362.347625732422
+      ],
+      "score": -1109.19798564911,
+      "viewport_size": [
+        1280.0,
+        800.0
+      ],
+      "visible_points": 60
+    },
+    "world": 4
+  },
+  {
+    "category": "race",
+    "filename": "irenebrug-v1-racecamera.png",
+    "id": "irenebrug",
+    "label": "Irenebrug · gewone racecamera · versie 1",
+    "lateral": 0.0,
+    "progress": 0.0,
+    "score": 1e99999,
+    "track": 4,
+    "visibility": {},
+    "world": 4
+  },
+  {
+    "category": "world",
+    "filename": "thamerkerk-v1-omgeving.png",
+    "id": "thamerkerk",
+    "label": "Thamerkerk · in de echte Uithoornwereld · versie 1",
+    "track": 4,
+    "visibility": {
+      "body_points": 67,
+      "pixel_size": [
+        343.372131347656,
+        343.906555175781
+      ],
+      "score": -1130.68951892853,
+      "viewport_size": [
+        1280.0,
+        800.0
+      ],
+      "visible_points": 71
+    },
+    "world": 4
+  },
+  {
+    "category": "race",
+    "filename": "thamerkerk-v1-racecamera.png",
+    "id": "thamerkerk",
+    "label": "Thamerkerk · gewone racecamera · versie 1",
+    "lateral": 6.0,
+    "progress": 272.342683792114,
+    "score": 250.470613866895,
+    "track": 4,
+    "visibility": {
+      "body_points": 14,
+      "pixel_size": [
+        40.1602783203125,
+        46.4913330078125
+      ],
+      "score": 250.470613866895,
+      "viewport_size": [
+        1280.0,
+        800.0
+      ],
+      "visible_points": 18
+    },
+    "world": 4
+  },
+  {
+    "category": "world",
+    "filename": "de-hoeksteen-v1-omgeving.png",
+    "id": "de-hoeksteen",
+    "label": "De Hoeksteen · in de echte Uithoornwereld · versie 1",
+    "track": 4,
+    "visibility": {
+      "body_points": 68,
+      "pixel_size": [
+        327.201324462891,
+        323.597778320312
+      ],
+      "score": -1134.10949373245,
+      "viewport_size": [
+        1280.0,
+        800.0
+      ],
+      "visible_points": 70
+    },
+    "world": 4
+  },
+  {
+    "category": "race",
+    "filename": "de-hoeksteen-v1-racecamera.png",
+    "id": "de-hoeksteen",
+    "label": "De Hoeksteen · gewone racecamera · versie 1",
+    "lateral": 6.0,
+    "progress": 345.756798553467,
+    "score": 319.44660607975,
+    "track": 4,
+    "visibility": {
+      "body_points": 10,
+      "pixel_size": [
+        30.8630981445312,
+        29.4526977539062
+      ],
+      "score": 319.44660607975,
+      "viewport_size": [
+        1280.0,
+        800.0
+      ],
+      "visible_points": 11
+    },
+    "world": 4
+  },
+  {
+    "category": "overview",
+    "filename": "uithoorn-v1-overzicht.png",
+    "label": "Zes landmarks in Uithoorn · versie 1",
+    "track": 4,
+    "world": 4
+  },
+  {
+    "category": "world",
+    "filename": "rechthuis-v2-omgeving.png",
+    "id": "rechthuis",
+    "label": "Het Rechthuis · in de echte Uithoornwereld · versie 2",
+    "track": 10,
+    "visibility": {
+      "body_points": 68,
+      "pixel_size": [
+        350.934936523438,
+        303.560516357422
+      ],
+      "score": -1116.56636047363,
+      "viewport_size": [
+        1280.0,
+        800.0
+      ],
+      "visible_points": 71
+    },
+    "world": 4
+  },
+  {
+    "category": "race",
+    "filename": "rechthuis-v2-racecamera.png",
+    "id": "rechthuis",
+    "label": "Het Rechthuis · gewone racecamera · versie 2",
+    "lateral": -6.0,
+    "progress": 2259.24420911483,
+    "score": 6.47300689542666,
+    "track": 10,
+    "visibility": {
+      "body_points": 69,
+      "pixel_size": [
+        142.347961425781,
+        103.638397216797
+      ],
+      "score": 6.47300689542666,
+      "viewport_size": [
+        1280.0,
+        800.0
+      ],
+      "visible_points": 72
+    },
+    "world": 4
+  },
+  {
+    "category": "world",
+    "filename": "schanskerk-v2-omgeving.png",
+    "id": "schanskerk",
+    "label": "Schanskerk · in de echte Uithoornwereld · versie 2",
+    "track": 10,
+    "visibility": {
+      "body_points": 71,
+      "pixel_size": [
+        408.755096435547,
+        293.648376464844
+      ],
+      "score": -1091.21360015869,
+      "viewport_size": [
+        1280.0,
+        800.0
+      ],
+      "visible_points": 72
+    },
+    "world": 4
+  },
+  {
+    "category": "race",
+    "filename": "schanskerk-v2-racecamera.png",
+    "id": "schanskerk",
+    "label": "Schanskerk · gewone racecamera · versie 2",
+    "lateral": -6.0,
+    "progress": 333.913452290557,
+    "score": -302.26834033981,
+    "track": 10,
+    "visibility": {
+      "body_points": 52,
+      "pixel_size": [
+        224.739410400391,
+        170.27197265625
+      ],
+      "score": -302.26834033981,
+      "viewport_size": [
+        1280.0,
+        800.0
+      ],
+      "visible_points": 53
+    },
+    "world": 4
+  },
+  {
+    "category": "world",
+    "filename": "fort-aan-de-drecht-v2-omgeving.png",
+    "id": "fort-aan-de-drecht",
+    "label": "Fort aan de Drecht · in de echte Uithoornwereld · versie 2",
+    "track": 10,
+    "visibility": {
+      "body_points": 74,
+      "pixel_size": [
+        381.202301025391,
+        274.601654052734
+      ],
+      "score": -1122.94519424438,
+      "viewport_size": [
+        1280.0,
+        800.0
+      ],
+      "visible_points": 74
+    },
+    "world": 4
+  },
+  {
+    "category": "race",
+    "filename": "fort-aan-de-drecht-v2-racecamera.png",
+    "id": "fort-aan-de-drecht",
+    "label": "Fort aan de Drecht · gewone racecamera · versie 2",
+    "lateral": -6.0,
+    "progress": 1236.19022762887,
+    "score": -66.2641856687423,
+    "track": 10,
+    "visibility": {
+      "body_points": 74,
+      "pixel_size": [
+        84.3971862792969,
+        34.6963195800781
+      ],
+      "score": -66.2641856687423,
+      "viewport_size": [
+        1280.0,
+        800.0
+      ],
+      "visible_points": 74
+    },
+    "world": 4
+  },
+  {
+    "category": "world",
+    "filename": "irenebrug-v2-omgeving.png",
+    "id": "irenebrug",
+    "label": "Irenebrug · in de echte Uithoornwereld · versie 2",
+    "track": 10,
+    "visibility": {
+      "body_points": 54,
+      "pixel_size": [
+        314.011962890625,
+        362.34765625
+      ],
+      "score": -1109.1978521347,
+      "viewport_size": [
+        1280.0,
+        800.0
+      ],
+      "visible_points": 60
+    },
+    "world": 4
+  },
+  {
+    "category": "race",
+    "filename": "irenebrug-v2-racecamera.png",
+    "id": "irenebrug",
+    "label": "Irenebrug · gewone racecamera · versie 2",
+    "lateral": -6.0,
+    "progress": 191.822621528618,
+    "score": 175.505351050273,
+    "track": 10,
+    "visibility": {
+      "body_points": 46,
+      "pixel_size": [
+        100.066101074219,
+        29.8087158203125
+      ],
+      "score": 175.505351050273,
+      "viewport_size": [
+        1280.0,
+        800.0
+      ],
+      "visible_points": 51
+    },
+    "world": 4
+  },
+  {
+    "category": "world",
+    "filename": "thamerkerk-v2-omgeving.png",
+    "id": "thamerkerk",
+    "label": "Thamerkerk · in de echte Uithoornwereld · versie 2",
+    "track": 10,
+    "visibility": {
+      "body_points": 61,
+      "pixel_size": [
+        385.969635009766,
+        362.023376464844
+      ],
+      "score": -1121.70060443878,
+      "viewport_size": [
+        1280.0,
+        800.0
+      ],
+      "visible_points": 65
+    },
+    "world": 4
+  },
+  {
+    "category": "race",
+    "filename": "thamerkerk-v2-racecamera.png",
+    "id": "thamerkerk",
+    "label": "Thamerkerk · gewone racecamera · versie 2",
+    "lateral": -6.0,
+    "progress": 909.381316876411,
+    "score": -50.4427721763775,
+    "track": 10,
+    "visibility": {
+      "body_points": 67,
+      "pixel_size": [
+        51.9635620117188,
+        54.2857055664062
+      ],
+      "score": -50.4427721763775,
+      "viewport_size": [
+        1280.0,
+        800.0
+      ],
+      "visible_points": 71
+    },
+    "world": 4
+  },
+  {
+    "category": "world",
+    "filename": "de-hoeksteen-v2-omgeving.png",
+    "id": "de-hoeksteen",
+    "label": "De Hoeksteen · in de echte Uithoornwereld · versie 2",
+    "track": 10,
+    "visibility": {
+      "body_points": 66,
+      "pixel_size": [
+        390.577850341797,
+        344.87646484375
+      ],
+      "score": -1132.05671262741,
+      "viewport_size": [
+        1280.0,
+        800.0
+      ],
+      "visible_points": 68
+    },
+    "world": 4
+  },
+  {
+    "category": "race",
+    "filename": "de-hoeksteen-v2-racecamera.png",
+    "id": "de-hoeksteen",
+    "label": "De Hoeksteen · gewone racecamera · versie 2",
+    "lateral": -6.0,
+    "progress": 1726.40359375756,
+    "score": -68.7964200355113,
+    "track": 10,
+    "visibility": {
+      "body_points": 68,
+      "pixel_size": [
+        65.660400390625,
+        40.7783813476562
+      ],
+      "score": -68.7964200355113,
+      "viewport_size": [
+        1280.0,
+        800.0
+      ],
+      "visible_points": 70
+    },
+    "world": 4
+  },
+  {
+    "category": "overview",
+    "filename": "uithoorn-v2-overzicht.png",
+    "label": "Zes landmarks in Uithoorn · versie 2",
+    "track": 10,
+    "world": 4
+  }
+]

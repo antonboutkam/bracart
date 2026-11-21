@@ -1,0 +1,44 @@
+{
+  "boaz": {
+    "sha256": "e0221bbb8047c7aa362e18e8be259615cb440b6a073534e7e7ce2f483a33fd57",
+    "morphs": {
+      "wink_left": {
+        "changed_vertices": 1896,
+        "x_min": -0.08065146207809448,
+        "x_max": -0.024238193407654762
+      },
+      "wink_right": {
+        "changed_vertices": 1898,
+        "x_min": 0.024238208308815956,
+        "x_max": 0.08065147697925568
+      },
+      "blink": {
+        "changed_vertices": 3794,
+        "x_min": -0.08065146207809448,
+        "x_max": 0.08065147697925568
+      }
+    },
+    "one_eye_only": true
+  },
+  "ravi": {
+    "sha256": "69bae3d32cc5e240b9f1c42c57ddacbfa9822ef5a00a6f9f8dacb29110efcf6d",
+    "morphs": {
+      "wink_left": {
+        "changed_vertices": 1978,
+        "x_min": -0.07444342225790024,
+        "x_max": -0.021056216210126877
+      },
+      "wink_right": {
+        "changed_vertices": 1976,
+        "x_min": 0.02105623111128807,
+        "x_max": 0.07444343715906143
+      },
+      "blink": {
+        "changed_vertices": 3954,
+        "x_min": -0.07444342225790024,
+        "x_max": 0.07444343715906143
+      }
+    },
+    "one_eye_only": true
+  }
+}

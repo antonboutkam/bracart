@@ -1,0 +1,3 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+BORACER KITCHEN ADVENTURE INDEPENDENT QA: 1731637 checks, 0 failures

@@ -1,0 +1,212 @@
+{
+  "source": {
+    "path": "../../../../assets/audio/raviracer.mp3",
+    "sha256": "68139b40edbe7521dad77eb773a662eac31a6694442f3c2009c9b686f52f252e",
+    "probe": {
+      "streams": [
+        {
+          "index": 0,
+          "codec_name": "mp3",
+          "codec_long_name": "MP3 (MPEG audio layer 3)",
+          "codec_type": "audio",
+          "codec_tag_string": "[0][0][0][0]",
+          "codec_tag": "0x0000",
+          "sample_fmt": "fltp",
+          "sample_rate": "44100",
+          "channels": 1,
+          "channel_layout": "mono",
+          "bits_per_sample": 0,
+          "r_frame_rate": "0/0",
+          "avg_frame_rate": "0/0",
+          "time_base": "1/14112000",
+          "start_pts": 0,
+          "start_time": "0.000000",
+          "duration_ts": 276263568,
+          "duration": "19.576500",
+          "bit_rate": "128000",
+          "disposition": {
+            "default": 0,
+            "dub": 0,
+            "original": 0,
+            "comment": 0,
+            "lyrics": 0,
+            "karaoke": 0,
+            "forced": 0,
+            "hearing_impaired": 0,
+            "visual_impaired": 0,
+            "clean_effects": 0,
+            "attached_pic": 0,
+            "timed_thumbnails": 0
+          }
+        }
+      ],
+      "format": {
+        "filename": "/home/anton/Documents/sites/boracart/public_html/boracer/assets/audio/raviracer.mp3",
+        "nb_streams": 1,
+        "nb_programs": 0,
+        "format_name": "mp3",
+        "format_long_name": "MP2/3 (MPEG audio layer 2/3)",
+        "start_time": "0.000000",
+        "duration": "19.576500",
+        "size": "313224",
+        "bit_rate": "128000",
+        "probe_score": 51
+      }
+    },
+    "decoded_samples": 861696,
+    "decoded_seconds": 19.539591836734694,
+    "decode_warnings": "[mp3 @ DECODER] Estimating duration from bitrate, this may be inaccurate\n[mp3float @ DECODER] Header missing\nError while decoding stream #0:0: Invalid data found when processing input\n",
+    "original_bytes_unchanged": true,
+    "sample_peak_dbfs": -3.1855,
+    "rms_dbfs": -18.2972,
+    "dc_offset": -5.303876657799668e-05,
+    "near_silent_samples_below_minus50db_percent": 31.217273841354725
+  },
+  "format": {
+    "channels": 1,
+    "sample_rate_hz": 44100,
+    "pcm_bits": 16
+  },
+  "filter_chain": [
+    "source segment",
+    "remove DC",
+    "zero-phase Butterworth highpass90Hz order3",
+    "zero-phase Butterworth lowpass4500Hz order4",
+    "polyphase resampling for mild pitch/rate",
+    "80ms complementary raised-cosine periodic overlap",
+    "remove DC",
+    "RMS target0.19 capped at -2dBFS peak",
+    "PCM16 quantization"
+  ],
+  "assets": {
+    "idle": {
+      "file": "idle.wav",
+      "sha256": "9d2e4377aa023f02cd41d034d69d7ac0daeaae8402cb62ebb0c9aa3467a7f353",
+      "recipe": {
+        "start_seconds": 3.6,
+        "end_seconds": 4.45,
+        "playback_rate": 0.8
+      },
+      "processing": {
+        "source_first_sample": 158760,
+        "source_end_sample_exclusive": 196245,
+        "crossfade_samples": 3528,
+        "crossfade_seconds": 0.08,
+        "crossfade_shape": "complementary raised cosine; overlap removed",
+        "gain_linear": 1.4145903031128975,
+        "pitch_semitones": -3.8631
+      },
+      "measurements": {
+        "samples": 43329,
+        "seconds": 0.982517,
+        "sample_peak_dbfs": -2.5431,
+        "estimated_4x_true_peak_dbfs": -2.5202,
+        "rms_dbfs": -14.4252,
+        "dc_offset": 7.043222351081262e-09,
+        "clipped_samples": 0,
+        "boundary_jump_linear": 0.047210693359375,
+        "interior_derivative_p99_linear": 0.053436279296875,
+        "boundary_below_interior_p99": true,
+        "autocorrelation_fundamental_candidate_hz": 279.114,
+        "fundamental_note": "Autocorrelation candidate only; changing vocal harmonics are not a fixed engine RPM."
+      },
+      "godot": {
+        "loop_begin": 0,
+        "loop_end": 43329,
+        "loop_mode": "forward"
+      }
+    },
+    "drive": {
+      "file": "drive.wav",
+      "sha256": "b2cd0b5126d3e1b5a85f0a934d63ba512680757f3d225827a98b06ca555c799f",
+      "recipe": {
+        "start_seconds": 1.85,
+        "end_seconds": 2.85,
+        "playback_rate": 1.0
+      },
+      "processing": {
+        "source_first_sample": 81585,
+        "source_end_sample_exclusive": 125685,
+        "crossfade_samples": 3528,
+        "crossfade_seconds": 0.08,
+        "crossfade_shape": "complementary raised cosine; overlap removed",
+        "gain_linear": 0.944035688233233,
+        "pitch_semitones": 0.0
+      },
+      "measurements": {
+        "samples": 40572,
+        "seconds": 0.92,
+        "sample_peak_dbfs": -4.4674,
+        "estimated_4x_true_peak_dbfs": -4.4467,
+        "rms_dbfs": -14.4252,
+        "dc_offset": 3.685697841183575e-08,
+        "clipped_samples": 0,
+        "boundary_jump_linear": 0.0423583984375,
+        "interior_derivative_p99_linear": 0.12488708496093759,
+        "boundary_below_interior_p99": true,
+        "autocorrelation_fundamental_candidate_hz": 358.537,
+        "fundamental_note": "Autocorrelation candidate only; changing vocal harmonics are not a fixed engine RPM."
+      },
+      "godot": {
+        "loop_begin": 0,
+        "loop_end": 40572,
+        "loop_mode": "forward"
+      }
+    },
+    "boost": {
+      "file": "boost.wav",
+      "sha256": "68ec0b06a636c13c189909d061189a489c39b57a31ea85d21ccc50b040e3f5fd",
+      "recipe": {
+        "start_seconds": 5.18,
+        "end_seconds": 6.13,
+        "playback_rate": 1.12
+      },
+      "processing": {
+        "source_first_sample": 228438,
+        "source_end_sample_exclusive": 270333,
+        "crossfade_samples": 3528,
+        "crossfade_seconds": 0.08,
+        "crossfade_shape": "complementary raised cosine; overlap removed",
+        "gain_linear": 0.9795090055809684,
+        "pitch_semitones": 1.962
+      },
+      "measurements": {
+        "samples": 33879,
+        "seconds": 0.768231,
+        "sample_peak_dbfs": -4.3136,
+        "estimated_4x_true_peak_dbfs": -4.2908,
+        "rms_dbfs": -14.4252,
+        "dc_offset": 6.305470848460698e-08,
+        "clipped_samples": 0,
+        "boundary_jump_linear": 0.0775146484375,
+        "interior_derivative_p99_linear": 0.15953643798828154,
+        "boundary_below_interior_p99": true,
+        "autocorrelation_fundamental_candidate_hz": 262.5,
+        "fundamental_note": "Autocorrelation candidate only; changing vocal harmonics are not a fixed engine RPM."
+      },
+      "godot": {
+        "loop_begin": 0,
+        "loop_end": 33879,
+        "loop_mode": "forward"
+      }
+    }
+  },
+  "tools": {
+    "ffmpeg": "ffmpeg version 4.4.2-0ubuntu0.22.04.1 Copyright (c) 2000-2021 the FFmpeg developers",
+    "numpy": "2.2.6",
+    "scipy": "1.15.3",
+    "builder_sha256": "0641cb0d46acd12cfd61979090a5b343d2fd3aaa2243ef69dd280361a5220ab1"
+  },
+  "review": {
+    "auditory_review_performed": false,
+    "reason": "No direct audio listening channel available to this agent.",
+    "preview": "Offline acceleration/crossfade illustration; not captured game audio.",
+    "estimated_true_peak_note": "4x polyphase estimate, not a certified intersample peak meter.",
+    "selection_note": "Selected continuous harmonic portions using waveform and STFT; no semantic speech-removal guarantee without listening.",
+    "engine_pitch_recommendation": [
+      0.8,
+      1.2
+    ],
+    "engine_headroom_note": "Keep player engine below cues; attenuate spatial AI and limit voices. Assets alone do not guarantee mix headroom."
+  }
+}

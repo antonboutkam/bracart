@@ -1,0 +1,33 @@
+GIFSPUWER - 3D UITWERKING, FASE 1 (VORM & VERHOUDINGEN)
+=====================================================
+
+Dit is een vernieuwde 3D-sculpt van het rode gifspuwende monster uit de
+oorspronkelijke kindertekening en de daarop gebaseerde gekleurde illustratie.
+
+Bestanden:
+- gifspuwer-verfijnd-fase1.glb: echt 3D-model voor een game of GLB-viewer.
+- gifspuwer-verfijnd-fase1.blend: bewerkbaar Blender-project, met studio.
+  De collectie 'SOURCE SHAPES | editable backup, hidden' bevat de originele
+  losse bouwvormen. De zichtbare romp is voor mooiere aansluitingen gefuseerd.
+- gifspuwer-perspectief.png: voorbeeld vanuit een hoek.
+- gifspuwer-voorkant.png: vooraanzicht.
+- gifspuwer-zijkant.png: zijaanzicht.
+- gifspuwer-achterkant.png: achteraanzicht.
+
+Status:
+Dit is bewust een eerste VOORSTEL voor de vorm, geen definitief gedetailleerd
+model. De brede, lage romp, vier stevige poten, bolle ogen, grote open bek,
+gekromde hoorns, tanden en blauwe plekken zijn als echte 3D-vormen uitgewerkt.
+
+In de volgende ronde zijn verdere verfijningen voorzien:
+- schaalstructuur, huidplooien en blauwturkooizen verhardingen;
+- natuurlijker tanden, bekholte, hoorns, schouders, knieën en tenen;
+- echte game-materialen / texturen en nettere mesh-topologie;
+- groen-paarse giftige damp als afzonderlijk schakelbaar VFX-object;
+- waar nodig rigging en een geoptimaliseerde export.
+
+Coordinaten:
+Het GLB-model gebruikt Y omhoog; +Z is de voorkant.
+
+De eerdere blokjes-/voxelmonsters zijn een ANDER spelproject en worden hiermee
+niet vervangen. Dit is een organisch 3D-monster, geen voxelmodel.

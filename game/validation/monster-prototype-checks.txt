@@ -1,0 +1,39 @@
+Monsterbreker prototype — lokale validatie 2026-11-08
+
+Gerichte suites: 408 checks, 0 failures.
+Geisoleerde XDG-profielen; Godot headless met Dummy-audio.
+Geen volledige historische suite of GPU-prestatiemeting.
+
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+MONSTER PROTOTYPE: 142 checks, 0 failures
+
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+RENDER RESOLUTION: 25 checks, 0 failures
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+BORACER INPUT FLOW: 17 checks, 0 failures
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+BORACER UI SFEER: 30 checks, 0 failures
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+BORACER UI LAYOUT: 32 checks, 0 failures
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+BORACER TESTS: 162 checks, 0 failures
+
+Native beeldcontrole (Mesa softwareweergave; gameplay 50% 3D-resolutie):
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+WARNING: Could not set V-Sync mode, as changing V-Sync mode is not supported by the graphics driver.
+     at: set_use_vsync (platform/linuxbsd/x11/gl_manager_x11.cpp:372)
+OpenGL API 4.5 (Core Profile) Mesa 23.2.1-1ubuntu3.1~22.04.4 - Compatibility - Using Device: Mesa - llvmpipe (LLVM 15.0.7, 256 bits)
+
+CAPTURED 01-splash
+CAPTURED 02-monster-choice
+CAPTURED 03-cockpit-start
+CAPTURED 04-downhill
+CAPTURED 05-free-flight
+CAPTURED 06-target
+CAPTURED 07-score

@@ -1,0 +1,28 @@
+{
+  "source_files_sha256": {
+    "build_characters.py": "94b6b0dabfdd0d29ab6780e4ef348060b1c56bbad0ad5062ea8f2452d65e9199",
+    "character_clothes.py": "c4d10b2454aea09bee009fe1d5a7009bb5ad6cbf273b4f918ab3bc7f7b33b020",
+    "character_hair.py": "6e7fa7d7e9c8c16f3e86f820313b9fcde6c2001299d6e46f983b85bba594b62b",
+    "check_character_clothes_scope.py": "4b4a20087040fc88bc5954082113fefe028ee86d19e104ad7d3800c581b3145b",
+    "check_cape_emblem_contact.py": "2bd463559caf862e2997ca4f4922f0a314c6c35a8dbf66a5f7f1a91512abd75a",
+    "measure_character_sources.py": "ca17469bc4ab676fa49bde7ab77e21edfae8542b267b1008893c4a8608dda3fc",
+    "make_character_step3_review.py": "c101e14ad954ae63b46f6c16d9bbff77c1cc2b0cf5cc09b043c13a5645bf87db",
+    "render_characters.py": "0291b1913b33b8fbdd8d3f1c4ecd042019f08c90754c49a8c16c4bfff8195343",
+    "validate_glb.py": "a064d81a140449bb9b79adb80db07558e7dd69d9f6195300758b6d9f93609cf6",
+    "check_blender_import.py": "b1fda8a88e4c521f53485f4abd2fb53b08cf211a19b47dc725eb68eff0e1bd2d",
+    "make_overviews.py": "b084d09e8a3231b8e62f2e26ce7288e24e686865614d5fb3519c3d74f6a7cf45",
+    "check_character_hair_scope.py": "78a187451c22697500afd9ba14925eedf99cb51432d5e93edec944dd157282ac"
+  },
+  "assets": {
+    "boaz": {
+      "sha256": "e0221bbb8047c7aa362e18e8be259615cb440b6a073534e7e7ce2f483a33fd57",
+      "triangles": 65518,
+      "frozen_snapshot": "public_html/boracer/persons/boaz/review-step3/after"
+    },
+    "ravi": {
+      "sha256": "69bae3d32cc5e240b9f1c42c57ddacbfa9822ef5a00a6f9f8dacb29110efcf6d",
+      "triangles": 46304,
+      "frozen_snapshot": "public_html/boracer/persons/ravi/review-step3/after"
+    }
+  }
+}

@@ -1,0 +1,28 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+STREET LIFE race view distance=53.4963188171387 progress=9.87033179389106
+STREET LIFE SETUP sunset-park-racecamera (no image)
+STREET LIFE SETUP sunset-park-straatinterieur (no image)
+STREET LIFE SETUP sunset-park-wandelaar-hond (no image)
+STREET LIFE SETUP sunset-park-wandelaar-hond-later (no image)
+STREET LIFE race view distance=48.7796249389648 progress=363.96390625
+STREET LIFE SETUP neon-city-racecamera (no image)
+STREET LIFE SETUP neon-city-straatinterieur (no image)
+STREET LIFE SETUP neon-city-wandelaar-hond (no image)
+STREET LIFE SETUP neon-city-wandelaar-hond-later (no image)
+STREET LIFE race view distance=59.3478889465332 progress=108.498244425456
+STREET LIFE SETUP regenbogenrijk-racecamera (no image)
+STREET LIFE SETUP regenbogenrijk-straatinterieur (no image)
+STREET LIFE SETUP regenbogenrijk-wandelaar-hond (no image)
+STREET LIFE SETUP regenbogenrijk-wandelaar-hond-later (no image)
+STREET LIFE race view distance=68.4437103271484 progress=431.675983564589
+STREET LIFE SETUP haarlem-1888-racecamera (no image)
+STREET LIFE SETUP haarlem-1888-straatinterieur (no image)
+STREET LIFE SETUP haarlem-1888-wandelaar-hond (no image)
+STREET LIFE SETUP haarlem-1888-wandelaar-hond-later (no image)
+STREET LIFE race view distance=112.509841918945 progress=726.87111650255
+STREET LIFE SETUP uithoorn-2056-racecamera (no image)
+STREET LIFE SETUP uithoorn-2056-straatinterieur (no image)
+STREET LIFE SETUP uithoorn-2056-wandelaar-hond (no image)
+STREET LIFE SETUP uithoorn-2056-wandelaar-hond-later (no image)
+STREET LIFE SETUP VALIDATION; no images; scenarios=20; failures=0

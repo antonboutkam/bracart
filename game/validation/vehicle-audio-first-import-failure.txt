@@ -1,0 +1,21 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+BORACER VEHICLE AUDIO: 1638 checks, 0 failures
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+ERROR: Shipped assets bind all real racers for vehicle0
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/vehicle_audio_qa.gd:12)
+       [1] run (res://tests/vehicle_audio_qa.gd:49)
+ERROR: Only twenty racing layer voices exist after vehicle0 rebind
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/vehicle_audio_qa.gd:12)
+       [1] run (res://tests/vehicle_audio_qa.gd:50)
+ERROR: All six real garage vehicles bind their authored profiles
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/vehicle_audio_qa.gd:12)
+       [1] run (res://tests/vehicle_audio_qa.gd:96)
+BORACER VEHICLE AUDIO QA: 6 checks, 3 failures

@@ -1,0 +1,33 @@
+{
+  "capture": "../renders/GAME-10001/stap-21-tracks-v2/20261017T125810-168498Z/index.html",
+  "baseline_backup": "/tmp/boracer-v2-before",
+  "original_unchanged": {
+    "routes.gd": "e51c024e71845401e10e78ae7c8eed6b9a5c012b4d35e1360da98e1439253a62",
+    "kitchen_course.gd": "484f30b4358d30c0959670b3bfc0af38db20f9a93f5782b9e1b4a1831b37b315"
+  },
+  "owned_file_sha256": {
+    "scripts/catalog.gd": "76373217c457dcf8ad62ef95e1a66a42820fd5f5f4e1dda0fc7ea5c414b9a421",
+    "scripts/track.gd": "2fe57fd7d2b99ff27cf96442fe6c97ce334a477025f8ea1047c689a76b232d0d",
+    "scripts/race.gd": "27002bf6378a692220aa2f49f70a2e273c00a2b6dbbfb3f1fc5142da5defea62",
+    "scripts/follow_camera.gd": "0cd498df8d2ad543d5c4a1a49bee5074de54036ba6dbc2891e15850d322c6912",
+    "scripts/main.gd": "b95febb5709071ae09b90083ed536bdc136f4fc130521f481eb09b78c8f96bfe",
+    "scripts/interface.gd": "eee36434111b56496b91bcd05735ed939005ebbe9578696086c4b28dedd2a6d9",
+    "scripts/profile.gd": "6d994bc241f1ae0c1c678a355f1506a1810026db4c3cd33f806c6caadfa31e5f",
+    "scripts/worlds/stunt_course_v2.gd": "4c97ba2cfcb99d060b11a8efb2cf5cd20acf91e7b53372c54d373ce11805ea07",
+    "scripts/worlds/scenery.gd": "9a322c04efe3b1c1a630009836524891a926ad035f6f5c63a713ad8747e38e4a",
+    "scripts/worlds/kitchen_props.gd": "8c38beaa32050755a85d312634e851e69a8c9f3027fb13a9fb3e319994589793",
+    "scripts/worlds/world_art.gd": "230d0c1cdd704ceb4bdd2a2be4a8391797f059eab99dc121306e8af89dd6ae01",
+    "scripts/worlds/street_districts.gd": "809c0bf0ba52e6f7a39f728b1d90b5147980d20aa4b05d490f1ae55ac1986ee0",
+    "scripts/worlds/outdoor_life.gd": "800cc24f5093d06f013b4d77510913197809bc9aa239992f35df7e68b6c1ee48",
+    "tests/tracks_v2.gd": "566d108f7aaa23a743eb4cfe69a35f3db88500df588d0b483fbab2023ccf0a7f",
+    "tests/tracks_v2_ui.gd": "7e8027c32c9501eb7721766dd6d2e2b33dbf693f13ba6df4cb317b5efa7377bd",
+    "tests/tracks_v2_flight.gd": "87b3946a23e1c10b4ea013eb5239acc8b4a4c5fb29fd8a21cf90c03a9b47b41f",
+    "tests/tracks_v2_clearance.gd": "7726f92a52c70a63615ac9c4972c9b795e31425a530ececd63f437b166756a1d",
+    "tests/tracks_v2_capture.gd": "075b3249e39d05ab1edeb48d5cdde76ee7799b9b6b1f787fa10b337ad67d6cb3",
+    "tools/capture_step.py": "bb622fede0f85b28bddcb54d5fc82294911d7f56b9d33ef7ba09024c80f2da05",
+    "tools/render_commands.py": "19aebe1752f95a9a12ce4202e49080cf9a8d66b58f4d01b0949217dfae16b3c8",
+    "tools/check.sh": "2a4e3e389ad8bc6434eda1476fc0614aa13257eb94386f1b792c0d1f7c1721b7",
+    "tests/fixtures/tracks_v1_baseline.json": "c1a8bc42e1d975c70488b6a80b38fc1fbcd3313dae2875cc699b3b88f153917b",
+    "docs/TRACKS-V2.md": "17ad6c65f2dd27f9ec66c9beb4bb9dc86040a1375f9cde4c6b6f086c1645afd2"
+  }
+}

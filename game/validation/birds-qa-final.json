@@ -1,0 +1,41 @@
+{
+  "suites": {
+    "birds_qa": {
+      "checks": 35198,
+      "failures": 0
+    },
+    "birds": {
+      "checks": 2461,
+      "failures": 0
+    },
+    "aircraft_qa": {
+      "checks": 75258,
+      "failures": 0
+    },
+    "dutch_world_qa": {
+      "checks": 366193,
+      "failures": 0
+    },
+    "smoke": {
+      "checks": 162,
+      "failures": 0
+    },
+    "integration_audit": {
+      "checks": 98,
+      "failures": 0
+    }
+  },
+  "suite_count": 6,
+  "total_checks": 479370,
+  "failures": 0,
+  "sha256": {
+    "scripts/worlds/birds.gd": "42f27614053b177737e7eedcafce3fcc8bdd93ef8fb04ea85490e5d0bc5f7de8",
+    "scripts/worlds/dutch_sky.gd": "ab3d1d5d0039372eed6ad324b0211a7e4fbb3cfafa03eaa45bb318079ceb6276",
+    "tests/birds_capture.gd": "b8069a85eba42718947075f47185a8a785e9e71ec2d226571c6bb7dabbcaa022"
+  },
+  "proof_boundary": "Headless engine/geometry/projected frustum; no native images produced. Focused six suites, not full44.",
+  "integration_nodes": {
+    "baseline": 1032,
+    "maximum_after_restart": 1032
+  }
+}

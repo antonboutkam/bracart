@@ -1,0 +1,23 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+CONTEXT SETUP haarlem-straat-overzicht (no image)
+CONTEXT SETUP haarlem-gebouw-1 (no image)
+CONTEXT SETUP haarlem-gebouw-2 (no image)
+CONTEXT SETUP haarlem-gebouw-3 (no image)
+CONTEXT SETUP uithoorn-straat-overzicht (no image)
+CONTEXT SETUP uithoorn-gebouw-1 (no image)
+CONTEXT SETUP uithoorn-gebouw-2 (no image)
+CONTEXT SETUP uithoorn-gebouw-3 (no image)
+CONTEXT SETUP keukentafel-objecten-overzicht (no image)
+CONTEXT SETUP tafel-monitor (no image)
+CONTEXT SETUP tafel-megaphone (no image)
+CONTEXT SETUP tafel-can (no image)
+CONTEXT SETUP tafel-remote (no image)
+CONTEXT SETUP tafel-power (no image)
+CONTEXT SETUP tafel-esp (no image)
+CONTEXT SETUP tafel-scissors (no image)
+CONTEXT SETUP tafel-paper (no image)
+CONTEXT SETUP tafel-adapter (no image)
+CONTEXT SETUP tafel-cloth (no image)
+CONTEXT SETUP tafel-globe (no image)
+CONTEXT SETUP VALIDATION; no images; scenarios=20; failures=0

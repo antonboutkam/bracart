@@ -1,0 +1,206 @@
+{
+  "origin": "Customer photographs, no third-party CC0 claim",
+  "raster_changes": "none; byte-identical copies, UV-only selection",
+  "source_count": 18,
+  "runtime_photo_count": 5,
+  "photographs": [
+    {
+      "file": "IMG_20261017_093159.jpg",
+      "source": "../../../../../assets/straatbeeld/keukentafel/IMG_20261017_093159.jpg",
+      "sha256": "a552ac0f51ca18694f21279299ee791f9c59f219d7553bdf3f888e3be291a652",
+      "bytes": 932854,
+      "runtime_copy": false,
+      "dimensions": [
+        2448,
+        3264
+      ]
+    },
+    {
+      "file": "IMG_20261017_093201.jpg",
+      "source": "../../../../../assets/straatbeeld/keukentafel/IMG_20261017_093201.jpg",
+      "sha256": "a549a744c748a106ade93cd247848d3b00f4e1f4b82472a8d1f95cd18c8fbcf7",
+      "bytes": 625876,
+      "runtime_copy": false,
+      "dimensions": [
+        2448,
+        3264
+      ]
+    },
+    {
+      "file": "IMG_20261017_093205.jpg",
+      "source": "../../../../../assets/straatbeeld/keukentafel/IMG_20261017_093205.jpg",
+      "sha256": "808c5b996cd9e6dc0973393631e26ec5ea94be51a2771d78c38eb62f44326d70",
+      "bytes": 741134,
+      "runtime_copy": true,
+      "dimensions": [
+        2448,
+        3264
+      ]
+    },
+    {
+      "file": "IMG_20261017_093208.jpg",
+      "source": "../../../../../assets/straatbeeld/keukentafel/IMG_20261017_093208.jpg",
+      "sha256": "f498ff413d40afa464c516c32216e95c229981b058ae06f0bd5e5f4a12e32f75",
+      "bytes": 827087,
+      "runtime_copy": false,
+      "dimensions": [
+        2448,
+        3264
+      ]
+    },
+    {
+      "file": "IMG_20261017_093210.jpg",
+      "source": "../../../../../assets/straatbeeld/keukentafel/IMG_20261017_093210.jpg",
+      "sha256": "4b3a1e52c481c54154764ec6ab3edfe32da4f14f3335b301eeec8909a4c075b0",
+      "bytes": 783387,
+      "runtime_copy": false,
+      "dimensions": [
+        2448,
+        3264
+      ]
+    },
+    {
+      "file": "IMG_20261017_093213.jpg",
+      "source": "../../../../../assets/straatbeeld/keukentafel/IMG_20261017_093213.jpg",
+      "sha256": "3a19a4c062f8a864aebcb6d0d58ed589761a1b7de568272ab9a3aa327a92f465",
+      "bytes": 1047389,
+      "runtime_copy": false,
+      "dimensions": [
+        2448,
+        3264
+      ]
+    },
+    {
+      "file": "IMG_20261017_093220.jpg",
+      "source": "../../../../../assets/straatbeeld/keukentafel/IMG_20261017_093220.jpg",
+      "sha256": "31f8b36bea2976ff71c36dcc2eb133d2c238bc6f25d79cdeb9662d6ebfa84bc9",
+      "bytes": 681695,
+      "runtime_copy": true,
+      "dimensions": [
+        2448,
+        3264
+      ]
+    },
+    {
+      "file": "IMG_20261017_093223.jpg",
+      "source": "../../../../../assets/straatbeeld/keukentafel/IMG_20261017_093223.jpg",
+      "sha256": "c2067be6515ba404c71e43dcdd8c10c24bb3190b43c45ddc62520cd58bc43d3f",
+      "bytes": 898397,
+      "runtime_copy": false,
+      "dimensions": [
+        2448,
+        3264
+      ]
+    },
+    {
+      "file": "IMG_20261017_093228.jpg",
+      "source": "../../../../../assets/straatbeeld/keukentafel/IMG_20261017_093228.jpg",
+      "sha256": "730ab66e1fefe4b6bf6f5358a497bcb928d96d9fa2ce3be34597d4f0afc7fcba",
+      "bytes": 578759,
+      "runtime_copy": false,
+      "dimensions": [
+        2448,
+        3264
+      ]
+    },
+    {
+      "file": "IMG_20261017_093230.jpg",
+      "source": "../../../../../assets/straatbeeld/keukentafel/IMG_20261017_093230.jpg",
+      "sha256": "58f6e62750fe869f987670e5b2061dfcb4d50cb4a18e99526e7e84bb87743ba2",
+      "bytes": 664857,
+      "runtime_copy": false,
+      "dimensions": [
+        2448,
+        3264
+      ]
+    },
+    {
+      "file": "IMG_20261017_093232.jpg",
+      "source": "../../../../../assets/straatbeeld/keukentafel/IMG_20261017_093232.jpg",
+      "sha256": "870d1756ca644d2843104ba791b78459af88dacffdf617e32eecaed78e2a9329",
+      "bytes": 815214,
+      "runtime_copy": false,
+      "dimensions": [
+        2448,
+        3264
+      ]
+    },
+    {
+      "file": "IMG_20261017_093236.jpg",
+      "source": "../../../../../assets/straatbeeld/keukentafel/IMG_20261017_093236.jpg",
+      "sha256": "43d408ba2d57bfb2d0b7c686f7e0590e6dfa67c64a75169950935d1caaf6a035",
+      "bytes": 1035088,
+      "runtime_copy": true,
+      "dimensions": [
+        2448,
+        3264
+      ]
+    },
+    {
+      "file": "IMG_20261017_093239.jpg",
+      "source": "../../../../../assets/straatbeeld/keukentafel/IMG_20261017_093239.jpg",
+      "sha256": "0e9e3b09f3a3efcb21a8ad7338f4612de06e4b3034422074533c2dfb9082e8f6",
+      "bytes": 767079,
+      "runtime_copy": true,
+      "dimensions": [
+        2448,
+        3264
+      ]
+    },
+    {
+      "file": "IMG_20261017_093242.jpg",
+      "source": "../../../../../assets/straatbeeld/keukentafel/IMG_20261017_093242.jpg",
+      "sha256": "77fa0791d9d8c456ba082d3324fe46c92bcb2b11f7e8a6f2b5b4d3f81bebd267",
+      "bytes": 765960,
+      "runtime_copy": true,
+      "dimensions": [
+        2448,
+        3264
+      ]
+    },
+    {
+      "file": "IMG_20261017_093244.jpg",
+      "source": "../../../../../assets/straatbeeld/keukentafel/IMG_20261017_093244.jpg",
+      "sha256": "5ae5663a99bf8e202dfe1ac45f9a6e27dc63d7252e6e74baeef3471c70c4fa4e",
+      "bytes": 768449,
+      "runtime_copy": false,
+      "dimensions": [
+        2448,
+        3264
+      ]
+    },
+    {
+      "file": "IMG_20261017_093246.jpg",
+      "source": "../../../../../assets/straatbeeld/keukentafel/IMG_20261017_093246.jpg",
+      "sha256": "e71481a8ee28146a7ed6cb1707f5e32dc7cd94c737eda741aef99be82c1848d8",
+      "bytes": 694566,
+      "runtime_copy": false,
+      "dimensions": [
+        2448,
+        3264
+      ]
+    },
+    {
+      "file": "IMG_20261017_093250.jpg",
+      "source": "../../../../../assets/straatbeeld/keukentafel/IMG_20261017_093250.jpg",
+      "sha256": "103d6f2001b4b8f251514f6ee96b7371e352515420b3a701a3aff0c58a1cd610",
+      "bytes": 658768,
+      "runtime_copy": false,
+      "dimensions": [
+        2448,
+        3264
+      ]
+    },
+    {
+      "file": "IMG_20261017_093253.jpg",
+      "source": "../../../../../assets/straatbeeld/keukentafel/IMG_20261017_093253.jpg",
+      "sha256": "5be8f4c18859122055b9871643d9b5b4bfb17bb3e359070d325fd5e07cc2a71f",
+      "bytes": 631809,
+      "runtime_copy": false,
+      "dimensions": [
+        2448,
+        3264
+      ]
+    }
+  ]
+}

@@ -1,0 +1,290 @@
+{
+  "suite_count": 47,
+  "total_checks": 4892875,
+  "failures": 0,
+  "method": "47-suite serial wide runner without redundant editor import exited1 on legacy vehicle-audio counting contract. Final latest status replaces vehicle_audio_qa plus affected race_feedback and quickwins_qa with independent directed reruns. Product feedback and foreground celebration changed during wide run; final Main UI/smoke/input/integration plus independent directed checks cover those deltas. No contiguous47-suite exit0 claimed.",
+  "suites": {
+    "profile_storage": {
+      "checks": 28,
+      "failures": 0,
+      "exit": 0,
+      "evidence": "quickwins-first-wide-checks.txt"
+    },
+    "default_vehicle": {
+      "checks": 60,
+      "failures": 0,
+      "exit": 0,
+      "evidence": "quickwins-first-wide-checks.txt"
+    },
+    "vehicle_audio": {
+      "checks": 1638,
+      "failures": 0,
+      "exit": 0,
+      "evidence": "quickwins-first-wide-checks.txt"
+    },
+    "vehicle_audio_qa": {
+      "checks": 883,
+      "failures": 0,
+      "exit": 0,
+      "evidence": "quickwins-vehicle-audio-final-checks.txt"
+    },
+    "world_geometry": {
+      "checks": 53909,
+      "failures": 0,
+      "exit": 0,
+      "evidence": "quickwins-first-wide-checks.txt"
+    },
+    "outdoor_life": {
+      "checks": 157043,
+      "failures": 0,
+      "exit": 0,
+      "evidence": "quickwins-first-wide-checks.txt"
+    },
+    "street_walkers": {
+      "checks": 120817,
+      "failures": 0,
+      "exit": 0,
+      "evidence": "quickwins-first-wide-checks.txt"
+    },
+    "street_walkers_main": {
+      "checks": 6,
+      "failures": 0,
+      "exit": 0,
+      "evidence": "quickwins-first-wide-checks.txt"
+    },
+    "outdoor_life_qa": {
+      "checks": 169348,
+      "failures": 0,
+      "exit": 0,
+      "evidence": "quickwins-first-wide-checks.txt"
+    },
+    "kitchen_props": {
+      "checks": 17817,
+      "failures": 0,
+      "exit": 0,
+      "evidence": "quickwins-first-wide-checks.txt"
+    },
+    "kitchen_photo_qa": {
+      "checks": 24900,
+      "failures": 0,
+      "exit": 0,
+      "evidence": "quickwins-first-wide-checks.txt"
+    },
+    "kitchen_course": {
+      "checks": 15209,
+      "failures": 0,
+      "exit": 0,
+      "evidence": "quickwins-first-wide-checks.txt"
+    },
+    "kitchen_adventure_props": {
+      "checks": 5600,
+      "failures": 0,
+      "exit": 0,
+      "evidence": "quickwins-first-wide-checks.txt"
+    },
+    "kitchen_course_qa": {
+      "checks": 132108,
+      "failures": 0,
+      "exit": 0,
+      "evidence": "quickwins-first-wide-checks.txt"
+    },
+    "kitchen_adventure_qa": {
+      "checks": 1731637,
+      "failures": 0,
+      "exit": 0,
+      "evidence": "quickwins-first-wide-checks.txt"
+    },
+    "nature_accents": {
+      "checks": 9220,
+      "failures": 0,
+      "exit": 0,
+      "evidence": "quickwins-first-wide-checks.txt"
+    },
+    "race_feedback": {
+      "checks": 794,
+      "failures": 0,
+      "exit": 0,
+      "evidence": "quickwins-feedback-final-checks.txt"
+    },
+    "quickwins_qa": {
+      "checks": 366024,
+      "failures": 0,
+      "exit": 0,
+      "evidence": "quickwins-independent-qa-checks.txt"
+    },
+    "world_art": {
+      "checks": 368,
+      "failures": 0,
+      "exit": 0,
+      "evidence": "quickwins-first-wide-checks.txt"
+    },
+    "architecture": {
+      "checks": 599,
+      "failures": 0,
+      "exit": 0,
+      "evidence": "quickwins-first-wide-checks.txt"
+    },
+    "street_districts": {
+      "checks": 179677,
+      "failures": 0,
+      "exit": 0,
+      "evidence": "quickwins-first-wide-checks.txt"
+    },
+    "street_scene_qa": {
+      "checks": 856749,
+      "failures": 0,
+      "exit": 0,
+      "evidence": "quickwins-first-wide-checks.txt"
+    },
+    "tram_motion": {
+      "checks": 1224,
+      "failures": 0,
+      "exit": 0,
+      "evidence": "quickwins-first-wide-checks.txt"
+    },
+    "reward_weather": {
+      "checks": 21,
+      "failures": 0,
+      "exit": 0,
+      "evidence": "quickwins-first-wide-checks.txt"
+    },
+    "kart_visuals": {
+      "checks": 888,
+      "failures": 0,
+      "exit": 0,
+      "evidence": "quickwins-first-wide-checks.txt"
+    },
+    "garage_presentation": {
+      "checks": 56,
+      "failures": 0,
+      "exit": 0,
+      "evidence": "quickwins-first-wide-checks.txt"
+    },
+    "garage_features": {
+      "checks": 667,
+      "failures": 0,
+      "exit": 0,
+      "evidence": "quickwins-first-wide-checks.txt"
+    },
+    "garage_interaction_qa": {
+      "checks": 104281,
+      "failures": 0,
+      "exit": 0,
+      "evidence": "quickwins-first-wide-checks.txt"
+    },
+    "dutch_sky_horizons": {
+      "checks": 9473,
+      "failures": 0,
+      "exit": 0,
+      "evidence": "quickwins-first-wide-checks.txt"
+    },
+    "dutch_world_qa": {
+      "checks": 366193,
+      "failures": 0,
+      "exit": 0,
+      "evidence": "quickwins-first-wide-checks.txt"
+    },
+    "aircraft": {
+      "checks": 8771,
+      "failures": 0,
+      "exit": 0,
+      "evidence": "quickwins-first-wide-checks.txt"
+    },
+    "aircraft_qa": {
+      "checks": 75258,
+      "failures": 0,
+      "exit": 0,
+      "evidence": "quickwins-first-wide-checks.txt"
+    },
+    "birds": {
+      "checks": 2461,
+      "failures": 0,
+      "exit": 0,
+      "evidence": "quickwins-first-wide-checks.txt"
+    },
+    "birds_qa": {
+      "checks": 35198,
+      "failures": 0,
+      "exit": 0,
+      "evidence": "quickwins-first-wide-checks.txt"
+    },
+    "race_behavior": {
+      "checks": 34,
+      "failures": 0,
+      "exit": 0,
+      "evidence": "quickwins-first-wide-checks.txt"
+    },
+    "follow_camera": {
+      "checks": 1464,
+      "failures": 0,
+      "exit": 0,
+      "evidence": "quickwins-first-wide-checks.txt"
+    },
+    "camera_composition": {
+      "checks": 420628,
+      "failures": 0,
+      "exit": 0,
+      "evidence": "quickwins-first-wide-checks.txt"
+    },
+    "home_duo_preview": {
+      "checks": 1254,
+      "failures": 0,
+      "exit": 0,
+      "evidence": "quickwins-first-wide-checks.txt"
+    },
+    "home_dashboard_qa": {
+      "checks": 20066,
+      "failures": 0,
+      "exit": 0,
+      "evidence": "quickwins-first-wide-checks.txt"
+    },
+    "ui_layout": {
+      "checks": 32,
+      "failures": 0,
+      "exit": 0,
+      "evidence": "quickwins-first-wide-checks.txt"
+    },
+    "ui_sfeer": {
+      "checks": 30,
+      "failures": 0,
+      "exit": 0,
+      "evidence": "quickwins-first-wide-checks.txt"
+    },
+    "world_concepts": {
+      "checks": 111,
+      "failures": 0,
+      "exit": 0,
+      "evidence": "quickwins-first-wide-checks.txt"
+    },
+    "ui_input_devices": {
+      "checks": 37,
+      "failures": 0,
+      "exit": 0,
+      "evidence": "quickwins-first-wide-checks.txt"
+    },
+    "game10001_integration": {
+      "checks": 17,
+      "failures": 0,
+      "exit": 0,
+      "evidence": "quickwins-first-wide-checks.txt"
+    },
+    "smoke": {
+      "checks": 162,
+      "failures": 0,
+      "exit": 0,
+      "evidence": "quickwins-first-wide-checks.txt"
+    },
+    "input_flow": {
+      "checks": 17,
+      "failures": 0,
+      "exit": 0,
+      "evidence": "quickwins-first-wide-checks.txt"
+    },
+    "integration_audit": {
+      "checks": 98,
+      "failures": 0,
+      "exit": 0,
+      "evidence": "quickwins-first-wide-checks.txt"
+    }
+  }
+}

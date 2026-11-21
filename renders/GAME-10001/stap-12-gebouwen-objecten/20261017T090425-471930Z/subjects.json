@@ -1,0 +1,222 @@
+[
+  {
+    "category": "gebouwen",
+    "filename": "haarlem-straat-overzicht.png",
+    "label": "Haarlemse gevelrij langs de racebaan",
+    "target": [
+      0.929381310939789,
+      6.61996412277222,
+      -107.919136047363
+    ],
+    "world": 3
+  },
+  {
+    "category": "gebouwen",
+    "filename": "haarlem-gebouw-1.png",
+    "label": "Haarlems huis met trapgevel",
+    "target": [
+      0.973438143730164,
+      9.09196472167969,
+      -106.359756469727
+    ],
+    "world": 3
+  },
+  {
+    "category": "gebouwen",
+    "filename": "haarlem-gebouw-2.png",
+    "label": "Haarlems huis met lijstgevel",
+    "target": [
+      5.59769344329834,
+      10.6262550354004,
+      -106.636962890625
+    ],
+    "world": 3
+  },
+  {
+    "category": "gebouwen",
+    "filename": "haarlem-gebouw-3.png",
+    "label": "Haarlems huis met kapgevel",
+    "target": [
+      10.5018930435181,
+      12.192084312439,
+      -107.183181762695
+    ],
+    "world": 3
+  },
+  {
+    "category": "gebouwen",
+    "filename": "uithoorn-straat-overzicht.png",
+    "label": "Uithoornse woonwijk onder het parcours",
+    "target": [
+      -39.0,
+      -18.7999992370605,
+      -130.0
+    ],
+    "world": 4
+  },
+  {
+    "category": "gebouwen",
+    "filename": "uithoorn-gebouw-1.png",
+    "label": "Uithoorns woonhuis 1 met dakkapel",
+    "target": [
+      -39.0,
+      -17.576000213623,
+      -131.679992675781
+    ],
+    "world": 4
+  },
+  {
+    "category": "gebouwen",
+    "filename": "uithoorn-gebouw-2.png",
+    "label": "Uithoorns woonhuis 2 met dakkapel",
+    "target": [
+      -44.9000015258789,
+      -17.576000213623,
+      -131.679992675781
+    ],
+    "world": 4
+  },
+  {
+    "category": "gebouwen",
+    "filename": "uithoorn-gebouw-3.png",
+    "label": "Uithoorns woonhuis 3 met dakkapel",
+    "target": [
+      -50.7999992370605,
+      -17.576000213623,
+      -131.679992675781
+    ],
+    "world": 4
+  },
+  {
+    "category": "objecten",
+    "filename": "keukentafel-objecten-overzicht.png",
+    "label": "Voorwerpen op de echte keukentafel",
+    "target": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "world": 5
+  },
+  {
+    "category": "objecten",
+    "filename": "tafel-monitor.png",
+    "label": "Code-monitor, toetsenbord en muis",
+    "target": [
+      -22.0,
+      11.3699998855591,
+      -24.0
+    ],
+    "world": 5
+  },
+  {
+    "category": "objecten",
+    "filename": "tafel-megaphone.png",
+    "label": "Rechtopstaande witte megafoon met rode bovenkant",
+    "target": [
+      21.0,
+      6.46499967575073,
+      -24.0
+    ],
+    "world": 5
+  },
+  {
+    "category": "objecten",
+    "filename": "tafel-can.png",
+    "label": "Slank cyaan energiedrankblik",
+    "target": [
+      39.0,
+      5.60999965667725,
+      8.0
+    ],
+    "world": 5
+  },
+  {
+    "category": "objecten",
+    "filename": "tafel-remote.png",
+    "label": "Zwarte afstandsbediening",
+    "target": [
+      -35.0,
+      0.794999957084656,
+      25.0
+    ],
+    "world": 5
+  },
+  {
+    "category": "objecten",
+    "filename": "tafel-power.png",
+    "label": "Zwart stekkerblok en kabelbundel",
+    "target": [
+      2.0,
+      1.91999995708466,
+      25.0
+    ],
+    "world": 5
+  },
+  {
+    "category": "objecten",
+    "filename": "tafel-esp.png",
+    "label": "Kleine blauwe printplaatjes",
+    "target": [
+      30.0,
+      0.794999957084656,
+      33.0
+    ],
+    "world": 5
+  },
+  {
+    "category": "objecten",
+    "filename": "tafel-scissors.png",
+    "label": "Schaar met metalen bladen",
+    "target": [
+      -3.0,
+      0.615000009536743,
+      0.0
+    ],
+    "world": 5
+  },
+  {
+    "category": "objecten",
+    "filename": "tafel-paper.png",
+    "label": "Papier en doordrukstrip",
+    "target": [
+      -15.0,
+      0.794999957084656,
+      43.0
+    ],
+    "world": 5
+  },
+  {
+    "category": "objecten",
+    "filename": "tafel-adapter.png",
+    "label": "Witte USB-voeding",
+    "target": [
+      17.0,
+      1.5149998664856,
+      5.0
+    ],
+    "world": 5
+  },
+  {
+    "category": "objecten",
+    "filename": "tafel-cloth.png",
+    "label": "Groene stof met witte binnenkant",
+    "target": [
+      -43.0,
+      1.28999996185303,
+      -2.0
+    ],
+    "world": 5
+  },
+  {
+    "category": "objecten",
+    "filename": "tafel-globe.png",
+    "label": "Glazen bol op zwart-zilveren voet en doosje",
+    "target": [
+      -50.0,
+      4.79999971389771,
+      -25.0
+    ],
+    "world": 5
+  }
+]

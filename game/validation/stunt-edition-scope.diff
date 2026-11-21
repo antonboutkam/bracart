@@ -1,0 +1,202 @@
+--- before/scripts/catalog.gd
++++ after/scripts/catalog.gd
+@@ -38,7 +38,7 @@
+ 
+ static func track_name(index: int) -> String:
+  var selection: Dictionary = TRACKS[clampi(index,0,TRACKS.size()-1)]
+- return WORLDS[selection.world].name+(" · Versie 2" if selection.variant==2 else "")
++ return WORLDS[selection.world].name+(" · Stunt Edition" if selection.variant==2 else "")
+ 
+ static func valid_track_id(id: String) -> bool:
+  return TRACKS.any(func(track): return track.id==id)
+--- before/scripts/interface.gd
++++ after/scripts/interface.gd
+@@ -7,6 +7,7 @@
+ const TouchAction = preload("res://scripts/ui/touch_action.gd")
+ const RaceGauge = preload("res://scripts/ui/race_gauge.gd")
+ const WorldConcepts = preload("res://scripts/ui/world_concepts.gd")
++const StuntRibbon = preload("res://scripts/ui/stunt_ribbon.gd")
+ const MenuTile = preload("res://scripts/ui/menu_tile.gd")
+ const HomeDuoPreview = preload("res://scripts/ui/home_duo_preview.gd")
+ var race_gauge
+@@ -287,6 +288,8 @@
+  garage_art.filter_clip = true
+  var tiles: Array = []
+  tiles.append(_home_tile("HomeRaceTile", "Racen  →", show_worlds, WorldConcepts.texture_for(Catalog.world_id(game.world_index)), "race", Vector2(48, 574), true))
++ if Catalog.TRACKS[game.track_index].variant == 2:
++  _stunt_ribbon(tiles[0], Vector2(70, 12), Vector2(190, 32))
+  tiles.append(_home_tile("HomeGarageTile", "Garage & coureurs", show_garage, garage_art, "garage", Vector2(344, 574)))
+  tiles.append(_home_tile("HomeSettingsTile", "Instellingen", show_settings, WorldConcepts.texture_for("keukentafel"), "settings", Vector2(640, 574)))
+  tiles.append(_home_tile("HomeExitTile", "Afsluiten", func(): game.get_tree().quit(), WorldConcepts.texture_for("regenbogenrijk"), "exit", Vector2(936, 574)))
+@@ -339,12 +342,12 @@
+ 
+ func show_worlds() -> void:
+  active_page = "worlds"
+- page("Kies je wereld", "Zes landschappen, twaalf circuits. Kies je versie en race.")
++ page("Kies je wereld", "Zes landschappen, twaalf circuits. Kies je editie en race.")
+  var versions = HBoxContainer.new()
+  screen.add_child(versions)
+- versions.position = Vector2(800,91)
++ versions.position = Vector2(770,91)
+  button(versions,"✓ Versie 1" if world_variant==1 else "Versie 1",func(): world_variant=1; show_worlds())
+- button(versions,"✓ Versie 2" if world_variant==2 else "Versie 2",func(): world_variant=2; show_worlds())
++ button(versions,"✓ Stunt Edition" if world_variant==2 else "Stunt Edition",func(): world_variant=2; show_worlds())
+  var grid = GridContainer.new()
+  screen.add_child(grid)
+  grid.position = Vector2(48, 161)
+@@ -366,7 +369,9 @@
+   image.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+   image.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_COVERED
+   box.add_child(image)
+-  label(box, Catalog.track_name(index), 23)
++  if world_variant == 2:
++   _stunt_ribbon(image, Vector2(140, 8), Vector2(200, 34))
++  label(box, world.name, 23)
+   var record = game.profile.record_for(index)
+   label(box, world.tag + ("   •   PB " + time_string(record) if float(record) > 0 else ""), 12, Color(world.accent))
+   label(box, "3× langer · looping · schansen" if world_variant==2 else world.subtitle, 14, MUTED)
+@@ -541,6 +546,8 @@
+  at(hud, "POSITIE", Vector2(36, 24), 14, CYAN)
+  position_label = at(hud, "1 / 5", Vector2(32, 39), 72, GOLD)
+  _outline(position_label, 9)
++ if Catalog.TRACKS[game.track_index].variant == 2:
++  _stunt_ribbon(hud, Vector2(764, 25), Vector2(196, 34))
+  var lap_panel = panel(hud, Rect2(980, 25, 272, 190), Color(0.04, 0.09, 0.16, 0.88))
+  var lap_box = VBoxContainer.new()
+  lap_panel.add_child(lap_box)
+@@ -548,7 +555,7 @@
+  time_label = label(lap_box, "00:00.00", 22, GOLD)
+  current_lap_label = label(lap_box, "Ronde  00:00.00", 15)
+  record_label = label(lap_box, "", 13, GOLD)
+- label(lap_box, Catalog.track_name(game.track_index), 15, MUTED)
++ label(lap_box, Catalog.track_name(game.track_index), 13 if Catalog.TRACKS[game.track_index].variant == 2 else 15, MUTED)
+  var standings = Control.new()
+  hud.add_child(standings)
+  standings.position = Vector2(28, 154)
+@@ -782,3 +789,12 @@
+ 
+ static func time_string(seconds: float) -> String:
+  return "%02d:%05.2f" % [int(seconds / 60), fmod(seconds, 60)]
++
++func _stunt_ribbon(parent: Node, pos: Vector2, dimensions: Vector2) -> Control:
++ var ribbon = StuntRibbon.new()
++ ribbon.name = "StuntEditionRibbon"
++ parent.add_child(ribbon)
++ ribbon.position = pos
++ ribbon.size = dimensions
++ ribbon.setup(heading_font)
++ return ribbon
+--- before/scripts/ui/stunt_ribbon.gd
++++ after/scripts/ui/stunt_ribbon.gd
+@@ -0,0 +1,25 @@
++extends Control
++# Decorative code-native ribbon: clipped/slanted ends, no input or external asset.
++func setup(font: Font) -> void:
++ mouse_filter = Control.MOUSE_FILTER_IGNORE
++ focus_mode = Control.FOCUS_NONE
++ var caption = Label.new()
++ add_child(caption)
++ caption.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
++ caption.text = "Stunt Edition"
++ caption.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
++ caption.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
++ caption.add_theme_font_override("font", font)
++ caption.add_theme_font_size_override("font_size", 17)
++ caption.add_theme_color_override("font_color", Color("071a34"))
++ caption.mouse_filter = Control.MOUSE_FILTER_IGNORE
++ resized.connect(queue_redraw)
++ queue_redraw()
++
++func _draw() -> void:
++ var w = size.x
++ var h = size.y
++ var outline = PackedVector2Array([Vector2(10,0),Vector2(w,0),Vector2(w-10,h),Vector2(0,h),Vector2(10,0)])
++ draw_colored_polygon(outline, Color("ffce63"))
++ draw_polyline(outline, Color("32d5ff"), 2.0, true)
++ draw_line(Vector2(17,h-5),Vector2(w-16,h-5),Color("bf7e35"),1.0,true)
+--- before/tests/stunt_edition_capture.gd
++++ after/tests/stunt_edition_capture.gd
+@@ -0,0 +1,44 @@
++extends SceneTree
++const Main=preload("res://scripts/main.gd")
++var output:String
++var subjects:Array[Dictionary]=[]
++var game
++var failures:=0
++func _initialize(): call_deferred("run")
++func capture(filename:String,label:String):
++ for frame in 3: await process_frame
++ await RenderingServer.frame_post_draw
++ if root.get_texture().get_image().save_png(output.path_join(filename+".png"))!=OK: failures+=1
++ subjects.append({"filename":filename+".png","label":label,"category":"ui"})
++func run():
++ output=OS.get_environment("BORACER_CAPTURE_DIR")
++ if output.is_empty() or DisplayServer.get_name()=="headless":
++  quit(2)
++  return
++ root.size=Vector2i(1280,800)
++ root.gui_disable_input=true
++ game=Main.new()
++ root.add_child(game)
++ game.set_process(false)
++ game.set_process_unhandled_input(false)
++ game.ui.set_process_input(false)
++ game.set_physics_process(false)
++ game.audio.muted=true
++ game.audio.music.stop()
++ for variant in [1,2]:
++  game.ui.world_variant=variant
++  game.ui.show_worlds()
++  await capture("selectie-"+str(variant),"Baanselectie · "+("Versie 1" if variant==1 else "Stunt Edition"))
++  game.start_race(5 if variant==1 else 11)
++  game.race.set_process(false)
++  game.race.countdown=0
++  game.ui.update_hud(0)
++  await capture("cockpit-"+str(variant),"Cockpit · De Keukentafel · "+("Versie 1" if variant==1 else "Stunt Edition"))
++  game.go_home()
++  await capture("home-"+str(variant),"Dashboard Racen-tegel · "+("Versie 1" if variant==1 else "Stunt Edition"))
++ var file=FileAccess.open(output.path_join("subjects.json"),FileAccess.WRITE)
++ file.store_string(JSON.stringify(subjects,"  "))
++ print("STUNT EDITION CAPTURES=",subjects.size()," failures=",failures)
++ game.queue_free()
++ await process_frame
++ quit(0 if failures==0 and subjects.size()==6 else 1)
+--- before/tools/capture_step.py
++++ after/tools/capture_step.py
+@@ -13,7 +13,7 @@
+ from render_commands import update_page, latest_successful_run, write_overview_indexes
+ 
+ GAME = Path(__file__).resolve().parents[1]
+-STEPS = ('stap-00-start', 'stap-03-kleding', 'stap-04-materialen', 'stap-05-animatie', 'stap-06-werelden', 'stap-07-effecten', 'stap-08-interface', 'stap-09-keukentafel', 'stap-10-dashboard', 'stap-11-straatleven', 'stap-12-gebouwen-objecten', 'stap-13-garage-hemel', 'stap-14-vliegtuig', 'stap-15-keuken-avontuur', 'stap-16-vogeltje', 'stap-17-groen-cc0', 'stap-18-racefeedback', 'stap-19-haarlem-landmarks', 'stap-20-coureurreacties', 'stap-21-tracks-v2', 'stap-22-overwinningspodium')
++STEPS = ('stap-00-start', 'stap-03-kleding', 'stap-04-materialen', 'stap-05-animatie', 'stap-06-werelden', 'stap-07-effecten', 'stap-08-interface', 'stap-09-keukentafel', 'stap-10-dashboard', 'stap-11-straatleven', 'stap-12-gebouwen-objecten', 'stap-13-garage-hemel', 'stap-14-vliegtuig', 'stap-15-keuken-avontuur', 'stap-16-vogeltje', 'stap-17-groen-cc0', 'stap-18-racefeedback', 'stap-19-haarlem-landmarks', 'stap-20-coureurreacties', 'stap-21-tracks-v2', 'stap-22-overwinningspodium', 'stap-23-stunt-edition')
+ 
+ def write_context_gallery(project):
+     folder = project / 'gebouwen-en-objecten'
+@@ -66,7 +66,7 @@
+         parser.error('project must be a plain directory name')
+     run = GAME.parent / 'renders' / args.project / args.step / dt.datetime.now(dt.timezone.utc).strftime('%Y%m%dT%H%M%S-%fZ')
+     run.mkdir(parents=True, exist_ok=False)
+-    script = {'stap-22-overwinningspodium': 'tests/victory_podium_capture.gd', 'stap-21-tracks-v2': 'tests/tracks_v2_capture.gd', 'stap-20-coureurreacties': 'tests/driver_reactions_capture.gd', 'stap-19-haarlem-landmarks': 'tests/haarlem_landmarks_capture.gd',
++    script = {'stap-23-stunt-edition': 'tests/stunt_edition_capture.gd', 'stap-22-overwinningspodium': 'tests/victory_podium_capture.gd', 'stap-21-tracks-v2': 'tests/tracks_v2_capture.gd', 'stap-20-coureurreacties': 'tests/driver_reactions_capture.gd', 'stap-19-haarlem-landmarks': 'tests/haarlem_landmarks_capture.gd',
+               'stap-07-effecten': 'tests/effects_capture.gd',
+               'stap-09-keukentafel': 'tests/kitchen_capture.gd',
+               'stap-10-dashboard': 'tests/dashboard_capture.gd',
+@@ -78,7 +78,7 @@
+               'stap-16-vogeltje': 'tests/birds_capture.gd',
+               'stap-17-groen-cc0': 'tests/quickwins_capture.gd',
+               'stap-18-racefeedback': 'tests/quickwins_capture.gd'}.get(args.step, 'tests/step_capture.gd')
+-    expected = {'stap-22-overwinningspodium': 18, 'stap-21-tracks-v2': 56, 'stap-20-coureurreacties': 36, 'stap-19-haarlem-landmarks': 6, 'stap-06-werelden': 22, 'stap-07-effecten': 10, 'stap-08-interface': 20,
++    expected = {'stap-23-stunt-edition': 6, 'stap-22-overwinningspodium': 18, 'stap-21-tracks-v2': 56, 'stap-20-coureurreacties': 36, 'stap-19-haarlem-landmarks': 6, 'stap-06-werelden': 22, 'stap-07-effecten': 10, 'stap-08-interface': 20,
+                 'stap-09-keukentafel': 13, 'stap-10-dashboard': 6, 'stap-11-straatleven': 20,
+                 'stap-12-gebouwen-objecten': 20, 'stap-13-garage-hemel': 15, 'stap-14-vliegtuig': 3, 'stap-15-keuken-avontuur': 20, 'stap-16-vogeltje': 3, 'stap-17-groen-cc0': 4, 'stap-18-racefeedback': 5}.get(args.step, 12)
+     assets = []
+--- before/tools/render_commands.py
++++ after/tools/render_commands.py
+@@ -16,6 +16,7 @@
+ END = '<!-- boracer-render-commands:end -->'
+ BLOCK = re.compile(re.escape(START) + r'.*?' + re.escape(END), re.S)
+ STEP_NAMES = {
++ 'stap-23-stunt-edition':'Stunt Edition · selectie en cockpit',
+  'stap-00-start':'Startcapture', 'stap-03-kleding':'Kostuums Boaz en Ravi',
+  'stap-04-materialen':'Materialen Boaz en Ravi', 'stap-05-animatie':'Animaties Boaz en Ravi',
+  'stap-06-werelden':'Werelden Haarlem en Uithoorn', 'stap-07-effecten':'Beloningen en weereffecten',

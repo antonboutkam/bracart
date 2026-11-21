@@ -1,0 +1,40 @@
+{
+  "baseline": "public_html/boracer/persons/backups/2026-10-17-step3/ravi/ravi.glb",
+  "candidate": "public_html/boracer/persons/ravi/ravi.glb",
+  "baseline_sha256": "f1aa1b6f79fc523023a4492c1350dd521a4e6a237f06ab308497667850bdf4a8",
+  "candidate_sha256": "69bae3d32cc5e240b9f1c42c57ddacbfa9822ef5a00a6f9f8dacb29110efcf6d",
+  "passed": true,
+  "checks": {
+    "protected_position_payloads_exact": true,
+    "protected_head_hair_skin_attributes_preserved_1um_rounded": true,
+    "rig_and_inverse_bind_matrices_unchanged": true,
+    "node_transforms_unchanged": true,
+    "animation_payloads_unchanged": true,
+    "embedded_images_unchanged": true,
+    "materials_unchanged": true,
+    "morph_names_unchanged": true,
+    "morph_defaults_unchanged": true
+  },
+  "strict_0_1um_rounded_preserved": true,
+  "before_protected_triangles": {
+    "head_neck": 23168,
+    "skin": 1192,
+    "hair": 0
+  },
+  "after_protected_triangles": {
+    "head_neck": 23168,
+    "skin": 1192,
+    "hair": 0
+  },
+  "protected_removed_or_changed": 0,
+  "protected_added_or_changed": 0,
+  "precision": {
+    "position_uv_weights_morph_decimals": 7,
+    "normal_decimals": 5
+  },
+  "limitations": [
+    "Position payloads are compared without rounding; normals, UVs, weights and morphs use the reported decimal precision.",
+    "Protected triangles are selected by head/neck weights or skin/hair palette; garment skinning and intersections need separate visual review.",
+    "No Godot runtime or artistic acceptance claim."
+  ]
+}

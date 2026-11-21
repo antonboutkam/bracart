@@ -1,0 +1,13 @@
+PASS Actual reviewed native run: 10 distinct large frames
+PASS Actual PNG dimensions 952x595
+PASS Actual black final run rejected: all tiny and identical
+PASS Actual rejected PNG dimensions 2x2
+PASS Short, wrong magic, and undersize fixtures rejected
+PASS Duplicate large frames recognized as a single distinct frame
+PASS Latest resolves to reviewed native run
+PASS Rejected run complete false
+PASS 168 selected capture runtime/assets hashes match current
+PASS Restored capture fixture matches selected native script hash
+PASS All ten selected PNG hashes match metadata
+PASS Subjects hash matches metadata
+INDEPENDENT CAPTURE QA: 12 checks, 0 failures

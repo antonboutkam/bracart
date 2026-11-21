@@ -1,0 +1,18 @@
+{
+  "boaz": {
+    "runtime_stage": "hair-step2",
+    "runtime_sha256": "bfe7550b22bd4cf836c8c68f297a0d0afbe005e058b971aa4dbe7824c6f279b0",
+    "runtime_matches_frozen_source": true,
+    "runtime_manifest_sha256_matches": true,
+    "runtime_source": "persons/boaz/review-step2/after/boaz.glb",
+    "visual_approval_before_step3": "pending"
+  },
+  "ravi": {
+    "runtime_stage": "hair-step2",
+    "runtime_sha256": "f1aa1b6f79fc523023a4492c1350dd521a4e6a237f06ab308497667850bdf4a8",
+    "runtime_matches_frozen_source": true,
+    "runtime_manifest_sha256_matches": true,
+    "runtime_source": "persons/ravi/review-step2/after/ravi.glb",
+    "visual_approval_before_step3": "pending"
+  }
+}

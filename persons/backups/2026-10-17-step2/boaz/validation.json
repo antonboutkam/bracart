@@ -1,0 +1,44 @@
+{
+  "character": "boaz",
+  "vertices": 21823,
+  "triangles": 41782,
+  "bones": 51,
+  "materials": 1,
+  "height_m": 1.15,
+  "glTF_forward": "-Z",
+  "clips": [
+    "Cheer",
+    "Idle",
+    "Jump",
+    "Kart_Sit",
+    "Kart_Steer",
+    "Run"
+  ],
+  "blendshapes": [
+    "neutral",
+    "smile",
+    "happy",
+    "laugh",
+    "surprised",
+    "angry",
+    "sad",
+    "wink_left",
+    "wink_right",
+    "mouth_open",
+    "blink",
+    "frown",
+    "brows_up",
+    "brows_down",
+    "confident",
+    "cheeky",
+    "playful",
+    "cheer",
+    "celebrate",
+    "nervous"
+  ],
+  "notes": [
+    "First-pass procedural reconstruction, not an exact sculpt of the supplied illustrations.",
+    "Shared palette UV tiles intentionally overlap.",
+    "Godot runtime import and full gameplay animation require separate verification."
+  ]
+}

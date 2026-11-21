@@ -1,0 +1,22 @@
+# Godot imports and temporary files are regenerated on each machine.
+.godot/
+__pycache__/
+*.py[cod]
+*.tmp
+*.blend1
+*.blend2
+
+# Local logs, configuration and credentials.
+/log/
+*.log
+.env
+.env.*
+!.env.example
+/.aws/
+/.codex/
+/.agents/
+.DS_Store
+
+# Saved personalized browser pages are reference material, not game assets.
+/assets/straatbeeld/uithoorn/*Google Zoeken.html
+/assets/straatbeeld/uithoorn/*Google Zoeken_files/

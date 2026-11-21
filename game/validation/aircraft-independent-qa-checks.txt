@@ -1,0 +1,54 @@
+Eight targeted suites passed; independent + seven regressions. No full38 rerun.
+Headless Godot, Dummy audio, isolated XDG. No native-image or occlusion proof.
+
+a0703d4fb000874b5a4178570629b8459ae315c4e86d6acfbb8434075264eedf  public_html/boracer/game/scripts/worlds/aircraft.gd
+6f093794ffbfa13dcaee5d8494d0a42a397b24dec800d2aa03b13362aaf6a41d  public_html/boracer/game/scripts/worlds/dutch_sky.gd
+
+INDEPENDENT QA:
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+AIRCRAFT QA world=0 normal_views=32 max_width_pixels=23.0333709716797 nodes=14
+AIRCRAFT QA world=1 normal_views=32 max_width_pixels=24.0563201904297 nodes=14
+AIRCRAFT QA world=2 normal_views=30 max_width_pixels=23.0547714233398 nodes=14
+AIRCRAFT QA world=3 normal_views=33 max_width_pixels=18.9134521484375 nodes=14
+AIRCRAFT QA world=4 normal_views=27 max_width_pixels=18.4517822265625 nodes=14
+BORACER AIRCRAFT INDEPENDENT QA: 75258 checks, 0 failures
+
+SEVEN REGRESSIONS (exit0):
+QA_SUITE aircraft
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+BORACER AIRCRAFT: 8771 checks, 0 failures
+QA_SUITE world_art
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+WORLD ART: 368 checks, 0 failures
+QA_SUITE dutch_sky_horizons
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+DUTCH_HORIZON world=3 records=336 nodes=4
+DUTCH_HORIZON world=4 records=310 nodes=9
+DUTCH_SKY_HORIZONS checks=9473 failures=0 cloud_pixels=974 clear_pixels=2273
+QA_SUITE dutch_world_qa
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+BORACER DUTCH WORLD INDEPENDENT QA: 366193 checks, 0 failures
+QA_SUITE reward_weather
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+REWARD_WEATHER: 21 checks; 0 failures
+QA_SUITE game10001_integration
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+BORACER GAME10001 INTEGRATION: 17 checks, 0 failures
+QA_SUITE integration_audit
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+INTEGRATION world=0 finish=38.18s rank=1 coins=628 sim_ticks=167
+INTEGRATION world=1 finish=50.46s rank=1 coins=755 sim_ticks=216
+INTEGRATION world=2 finish=46.72s rank=1 coins=878 sim_ticks=201
+INTEGRATION world=3 finish=36.67s rank=1 coins=1065 sim_ticks=161
+INTEGRATION world=4 finish=42.13s rank=1 coins=1206 sim_ticks=183
+INTEGRATION world=5 finish=36.34s rank=1 coins=1330 sim_ticks=160
+INTEGRATION node baseline=799 maximum_after_restart=799
+INTEGRATION AUDIT: 98 checks, 0 failures

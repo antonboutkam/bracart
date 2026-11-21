@@ -1,0 +1,13 @@
+Sem GD-005 aircraft handoff, 2026-10-17
+Observed Godot 4.7.2 headless/Dummy test output:
+BORACER AIRCRAFT: 8771 checks, 0 failures
+
+One aircraft, two fixed 96-record worldspace rings, one ImmediateMesh.
+Checks include actual scheduler start, passage/gap ranges, fixed emitted world positions,
+behind-engine placement, vertex colors/fade, bounded nodes/buffers, expiry, parent pause and cleanup.
+No native visual approval or audio claim.
+
+Handoff SHA256:
+a0703d4fb000874b5a4178570629b8459ae315c4e86d6acfbb8434075264eedf  scripts/worlds/aircraft.gd
+6f093794ffbfa13dcaee5d8494d0a42a397b24dec800d2aa03b13362aaf6a41d  scripts/worlds/dutch_sky.gd
+d2c09c13d93d061275336984f592954d619b16bc2642c2ad545e0b18b90fdf05  tests/aircraft.gd

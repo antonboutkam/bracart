@@ -1,0 +1,52 @@
+[
+  {
+    "category": "rear-view",
+    "filename": "spiegels-0.png",
+    "label": "Twee fysieke spiegels · De Raketfiets"
+  },
+  {
+    "category": "rear-view",
+    "filename": "spiegels-1.png",
+    "label": "Twee fysieke spiegels · Purple Passion"
+  },
+  {
+    "category": "rear-view",
+    "filename": "spiegels-2.png",
+    "label": "Twee fysieke spiegels · Golden Rocket"
+  },
+  {
+    "category": "rear-view",
+    "filename": "spiegels-3.png",
+    "label": "Twee fysieke spiegels · Toxic Turbo"
+  },
+  {
+    "category": "rear-view",
+    "filename": "spiegels-4.png",
+    "label": "Twee fysieke spiegels · Retro Racer"
+  },
+  {
+    "category": "rear-view",
+    "filename": "spiegels-5.png",
+    "label": "Twee fysieke spiegels · Rainbow Jet"
+  },
+  {
+    "category": "rear-view",
+    "filename": "vooruit.png",
+    "label": "Vooruitbeeld · C of LB vasthouden voor achterom"
+  },
+  {
+    "category": "rear-view",
+    "filename": "achterom.png",
+    "label": "Achteruit als hoofdbeeld · actueel vooruitbeeld in venster"
+  },
+  {
+    "category": "rear-view",
+    "filename": "achterom-verder.png",
+    "label": "Beide camera's volgen het voertuig tijdens achterom kijken"
+  },
+  {
+    "category": "rear-view",
+    "filename": "losgelaten.png",
+    "label": "Losgelaten · direct terug naar vooruitbeeld"
+  }
+]

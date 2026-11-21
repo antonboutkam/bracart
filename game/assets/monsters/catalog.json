@@ -1,0 +1,122 @@
+[
+  {
+    "id": "01-gifspuwer-rood",
+    "name": "Gifspuwer",
+    "blocks": 1741,
+    "dimensions": [
+      26,
+      30,
+      8
+    ],
+    "source": "assets/monters/monster-blokjes-10/json/01-gifspuwer-rood.json",
+    "sha256": "f44f603612849611b79a2a1e0aaee0b9e94f74314f89141351fa31cf429a837d"
+  },
+  {
+    "id": "02-schouderreus-turkoois",
+    "name": "Schouderreus",
+    "blocks": 1780,
+    "dimensions": [
+      23,
+      30,
+      5
+    ],
+    "source": "assets/monters/monster-blokjes-10/json/02-schouderreus-turkoois.json",
+    "sha256": "f1dcc86b6ae61b701ad1f20f2c0a1aec1703f64afab3b0bd89a402e8ba8d91a9"
+  },
+  {
+    "id": "03-slakkenoog-blauw",
+    "name": "Slakkenoog",
+    "blocks": 1290,
+    "dimensions": [
+      13,
+      30,
+      5
+    ],
+    "source": "assets/monters/monster-blokjes-10/json/03-slakkenoog-blauw.json",
+    "sha256": "ea30a5c0c4e034fbe60118c453d6601d74e6f5b41a0e5d999d1e45b67cc1befb"
+  },
+  {
+    "id": "04-bolle-stippelmonster",
+    "name": "Bolle Stippel",
+    "blocks": 1961,
+    "dimensions": [
+      24,
+      27,
+      7
+    ],
+    "source": "assets/monters/monster-blokjes-10/json/04-bolle-stippelmonster.json",
+    "sha256": "8eed65a797a95871b6b74570f41f09cbd3f6edd50da1d390ffebed0c564b7615"
+  },
+  {
+    "id": "05-paars-stekelig-monster",
+    "name": "Stekelmonster",
+    "blocks": 864,
+    "dimensions": [
+      17,
+      29,
+      3
+    ],
+    "source": "assets/monters/monster-blokjes-10/json/05-paars-stekelig-monster.json",
+    "sha256": "fc8795355c224b30c7b4947107754a13c105156dd69401db3e434d1dce57d4e4"
+  },
+  {
+    "id": "06-oranje-pluismonster",
+    "name": "Pluismonster",
+    "blocks": 1906,
+    "dimensions": [
+      16,
+      29,
+      5
+    ],
+    "source": "assets/monters/monster-blokjes-10/json/06-oranje-pluismonster.json",
+    "sha256": "3f8c340119cb4ca59cb18aae449625d7d4c09db816cbf198feb5d9325fabc592"
+  },
+  {
+    "id": "07-gele-girafnek",
+    "name": "Girafnek",
+    "blocks": 732,
+    "dimensions": [
+      12,
+      32,
+      4
+    ],
+    "source": "assets/monters/monster-blokjes-10/json/07-gele-girafnek.json",
+    "sha256": "4157850ee87b5c169dfcedb8bffa90643e29ba3110a667285eec3627dd39b92b"
+  },
+  {
+    "id": "08-robotmonster-mini",
+    "name": "Robotmonster",
+    "blocks": 272,
+    "dimensions": [
+      28,
+      26,
+      1
+    ],
+    "source": "assets/monters/monster-blokjes-10/json/08-robotmonster-mini.json",
+    "sha256": "14fe9cbb37f2df158adc0e107819cd047e320f4ebdf45e6bbe32895e2e2df328"
+  },
+  {
+    "id": "09-paarse-spook",
+    "name": "Paars Spook",
+    "blocks": 1134,
+    "dimensions": [
+      19,
+      30,
+      6
+    ],
+    "source": "assets/monters/monster-blokjes-10/json/09-paarse-spook.json",
+    "sha256": "32666fb07f68621eeb07f729d73359b2cc6a6ba618c3575fdd04c754b5c239bb"
+  },
+  {
+    "id": "10-geelgroene-spook",
+    "name": "Groen Spook",
+    "blocks": 1293,
+    "dimensions": [
+      19,
+      30,
+      6
+    ],
+    "source": "assets/monters/monster-blokjes-10/json/10-geelgroene-spook.json",
+    "sha256": "4690f16de8c627641077ca0b739147930026ae0bdfe49c4d1cbd453b89d647df"
+  }
+]

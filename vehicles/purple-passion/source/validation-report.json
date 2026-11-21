@@ -1,0 +1,21 @@
+{
+  "container": "GLB 2.0",
+  "size_bytes": 1500460,
+  "triangles": 39454,
+  "degenerate_triangles": 0,
+  "draw_primitives": 104,
+  "meshes": 92,
+  "materials": 15,
+  "embedded_images": 3,
+  "external_resources": false,
+  "rear_wheel_pivots": "checked: local X axle, centered at Y=.211 / Z=.387",
+  "dimensions_godot_xyz_m": [
+    0.9447779439532564,
+    1.0332290902733805,
+    1.8930342430248857
+  ],
+  "ground_y_m": -0.001245200634002963,
+  "orientation": "checked: +Y up, nose -Z, thruster +Z",
+  "checks_passed": true,
+  "validation_scope": "Structural binary/accessor checks only. See separate Blender and Godot import reports. No Khronos validator or gameplay test."
+}

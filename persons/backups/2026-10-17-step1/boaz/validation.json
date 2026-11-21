@@ -1,0 +1,41 @@
+{
+  "character": "boaz",
+  "Blender": "5.2.2 LTS",
+  "vertices": 17547,
+  "triangles": 33306,
+  "skeleton_bones": 51,
+  "materials": 1,
+  "height_m": 1.15,
+  "glTF_forward": "-Z",
+  "clips": [
+    "Cheer",
+    "Idle",
+    "Jump",
+    "Kart_Sit",
+    "Kart_Steer",
+    "Run"
+  ],
+  "blendshapes": [
+    "neutral",
+    "smile",
+    "happy",
+    "laugh",
+    "surprised",
+    "angry",
+    "sad",
+    "wink_left",
+    "wink_right",
+    "mouth_open",
+    "blink",
+    "frown",
+    "brows_up",
+    "brows_down",
+    "confident",
+    "cheeky",
+    "playful",
+    "cheer",
+    "celebrate",
+    "nervous"
+  ],
+  "stage": "First procedural study; Godot runtime not tested"
+}

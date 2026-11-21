@@ -1,0 +1,40 @@
+{
+  "render_engine": "Blender Cycles CPU",
+  "real_mesh_renders": true,
+  "samples": 16,
+  "denoising": false,
+  "native_Godot_images": "not produced: sandbox blocks AF_UNIX display sockets",
+  "final_glb_sha256": "69bae3d32cc5e240b9f1c42c57ddacbfa9822ef5a00a6f9f8dacb29110efcf6d",
+  "views": {
+    "01-front.png": {
+      "source_glb_sha256": "69bae3d32cc5e240b9f1c42c57ddacbfa9822ef5a00a6f9f8dacb29110efcf6d",
+      "reused_unchanged_front_geometry": false,
+      "png_sha256": "bad4866fe2cc46efab906f08eb646f2d99640221d4918a6fddd8db91539b61df"
+    },
+    "02-three-quarter.png": {
+      "source_glb_sha256": "69bae3d32cc5e240b9f1c42c57ddacbfa9822ef5a00a6f9f8dacb29110efcf6d",
+      "reused_unchanged_front_geometry": false,
+      "png_sha256": "e3dbf05633b9461ee9f74ccdf4e18c8a4a9bf47781aa8c2329c9a82097fbba23"
+    },
+    "03-side.png": {
+      "source_glb_sha256": "69bae3d32cc5e240b9f1c42c57ddacbfa9822ef5a00a6f9f8dacb29110efcf6d",
+      "reused_unchanged_front_geometry": false,
+      "png_sha256": "51722cf707430c9fff3e12121e9be8013431f2d2d9d67abf80781001743b6c2c"
+    },
+    "04-back.png": {
+      "source_glb_sha256": "69bae3d32cc5e240b9f1c42c57ddacbfa9822ef5a00a6f9f8dacb29110efcf6d",
+      "reused_unchanged_front_geometry": false,
+      "png_sha256": "9471dd0117376a138d527b2095df24f886c5d01e777d0f4722b63999d1f29d88"
+    },
+    "05-face.png": {
+      "source_glb_sha256": "69bae3d32cc5e240b9f1c42c57ddacbfa9822ef5a00a6f9f8dacb29110efcf6d",
+      "reused_unchanged_front_geometry": false,
+      "png_sha256": "44b1a2e48b4dcfc0bd3b44228177317e613f475a8e4e1210ffb877fa1c079d22"
+    },
+    "06-kart-pose.png": {
+      "source_glb_sha256": "69bae3d32cc5e240b9f1c42c57ddacbfa9822ef5a00a6f9f8dacb29110efcf6d",
+      "reused_unchanged_front_geometry": false,
+      "png_sha256": "90f85ae89cadfb4f3462a880150aa7eca7b1c47b13326292a78611a034c54bc4"
+    }
+  }
+}

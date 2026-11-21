@@ -1,0 +1,9 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+WORLD 0 length=693.3 min_clearance=55.4 max_gradient=0.14 min_bend_radius=17.0
+WORLD 1 length=783.6 min_clearance=49.3 max_gradient=0.11 min_bend_radius=11.8
+WORLD 2 length=816.1 min_clearance=51.8 max_gradient=0.23 min_bend_radius=13.2
+WORLD 3 length=720.1 min_clearance=50.5 max_gradient=0.14 min_bend_radius=11.1
+WORLD 4 length=1875.5 min_clearance=55.0 max_gradient=0.39 min_bend_radius=22.4
+WORLD 5 length=685.2 min_clearance=18.3 max_gradient=0.93 min_bend_radius=8.2
+WORLD GEOMETRY: 50603 checks, 0 failures

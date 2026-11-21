@@ -1,0 +1,40 @@
+{
+  "baseline": "public_html/boracer/persons/backups/2026-10-17-step3/boaz/boaz.glb",
+  "candidate": "public_html/boracer/persons/boaz/boaz.glb",
+  "baseline_sha256": "bfe7550b22bd4cf836c8c68f297a0d0afbe005e058b971aa4dbe7824c6f279b0",
+  "candidate_sha256": "e0221bbb8047c7aa362e18e8be259615cb440b6a073534e7e7ce2f483a33fd57",
+  "passed": true,
+  "checks": {
+    "protected_position_payloads_exact": true,
+    "protected_head_hair_skin_attributes_preserved_1um_rounded": true,
+    "rig_and_inverse_bind_matrices_unchanged": true,
+    "node_transforms_unchanged": true,
+    "animation_payloads_unchanged": true,
+    "embedded_images_unchanged": true,
+    "materials_unchanged": true,
+    "morph_names_unchanged": true,
+    "morph_defaults_unchanged": true
+  },
+  "strict_0_1um_rounded_preserved": true,
+  "before_protected_triangles": {
+    "head_neck": 21508,
+    "skin": 1104,
+    "hair": 0
+  },
+  "after_protected_triangles": {
+    "head_neck": 21508,
+    "skin": 1104,
+    "hair": 0
+  },
+  "protected_removed_or_changed": 0,
+  "protected_added_or_changed": 0,
+  "precision": {
+    "position_uv_weights_morph_decimals": 7,
+    "normal_decimals": 5
+  },
+  "limitations": [
+    "Position payloads are compared without rounding; normals, UVs, weights and morphs use the reported decimal precision.",
+    "Protected triangles are selected by head/neck weights or skin/hair palette; garment skinning and intersections need separate visual review.",
+    "No Godot runtime or artistic acceptance claim."
+  ]
+}

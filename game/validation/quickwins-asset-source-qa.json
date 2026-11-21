@@ -1,0 +1,10 @@
+{
+  "checks": 43,
+  "failures": 0,
+  "archives_sha256_verified": 3,
+  "selected_assets": 10,
+  "unchanged_model_texture_bytes": 6,
+  "lossless_ogg_to_pcm_sample_equivalence": 4,
+  "original_license_bytes": 3,
+  "note": "Independent ZIP member hashes, manifest and exact decoded PCM samples checked; no hearing claim."
+}

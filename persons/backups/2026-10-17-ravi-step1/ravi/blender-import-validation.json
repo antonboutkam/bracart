@@ -1,0 +1,17 @@
+{
+  "file": "ravi.glb",
+  "fresh_Blender_import": "passed",
+  "height_m": 1.1499999399457757,
+  "meshes": 1,
+  "armatures": 1,
+  "morph_targets": 20,
+  "sampled_animations": [
+    "Cheer",
+    "Idle",
+    "Jump",
+    "Kart_Sit",
+    "Kart_Steer",
+    "Run"
+  ],
+  "Godot_runtime": "not tested"
+}

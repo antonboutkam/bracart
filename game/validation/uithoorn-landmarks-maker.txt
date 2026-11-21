@@ -1,0 +1,5 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+UITHOORN_PLACEMENTS variant=4 [{ "id": "rechthuis", "position": (60.0, -20.9, -150.0) }, { "id": "schanskerk", "position": (-190.0, -20.9, -180.0) }, { "id": "fort-aan-de-drecht", "position": (-140.0, -20.9, 100.0) }, { "id": "irenebrug", "position": (0.0, -21.74, 180.0) }, { "id": "thamerkerk", "position": (-60.0, -20.9, 180.0) }, { "id": "de-hoeksteen", "position": (-150.0, -20.9, -80.0) }]
+UITHOORN_PLACEMENTS variant=10 [{ "id": "rechthuis", "position": (-110.0, -20.9, 250.0) }, { "id": "schanskerk", "position": (160.0, -20.9, 220.0) }, { "id": "fort-aan-de-drecht", "position": (-130.0, -20.9, -220.0) }, { "id": "irenebrug", "position": (0.0, -21.74, 80.0) }, { "id": "thamerkerk", "position": (200.0, -20.9, -250.0) }, { "id": "de-hoeksteen", "position": (-210.0, -20.9, 10.0) }]
+UITHOORN_LANDMARKS checks=42199 failures=0

@@ -1,0 +1,10 @@
+{
+  "scenarios": 3,
+  "failures": 0,
+  "images_created": 0,
+  "sha256": {
+    "scripts/worlds/birds.gd": "42f27614053b177737e7eedcafce3fcc8bdd93ef8fb04ea85490e5d0bc5f7de8",
+    "scripts/worlds/dutch_sky.gd": "ab3d1d5d0039372eed6ad324b0211a7e4fbb3cfafa03eaa45bb318079ceb6276",
+    "tests/birds_capture.gd": "b8069a85eba42718947075f47185a8a785e9e71ec2d226571c6bb7dabbcaa022"
+  }
+}

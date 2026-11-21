@@ -1,0 +1,5 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+ARCHITECTURE world=3 houses=4 house_child_nodes=132
+ARCHITECTURE world=4 houses=4 house_child_nodes=120
+ARCHITECTURE checks=599 failures=0

@@ -1,0 +1,5 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+DISTRICT world=3 houses=198 draw_nodes=21 instances=7854 under_route=0 min_vertical_gap=inf min_horizontal_margin=3.18542957305908
+DISTRICT world=4 houses=99 draw_nodes=21 instances=2394 under_route=39 min_vertical_gap=28.4107830047607 min_horizontal_margin=inf
+STREET_DISTRICTS checks=179677 failures=0

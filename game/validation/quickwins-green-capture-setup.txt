@@ -1,0 +1,7 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+QUICKWINS SETUP groen-3-boomdetails (no image)
+QUICKWINS SETUP groen-3-straatcontext (no image)
+QUICKWINS SETUP groen-4-boomdetails (no image)
+QUICKWINS SETUP groen-4-straatcontext (no image)
+QUICKWINS SETUP VALIDATION; no images; scenarios=4; failures=0

@@ -1,0 +1,122 @@
+{
+  "baseline": "persons/ravi/review-step1/after/ravi.glb",
+  "candidate": "persons/ravi/ravi.glb",
+  "checks": {
+    "non_hair_geometry_normals_uv_weights_morphs_unchanged": false,
+    "rig_and_inverse_bind_matrices_unchanged": true,
+    "all_node_transforms_unchanged": true,
+    "all_animation_payloads_unchanged": true,
+    "embedded_images_unchanged": true,
+    "materials_unchanged": true,
+    "morph_names_unchanged": true,
+    "morph_default_weights_unchanged": true,
+    "hair_weighted_to_head": true,
+    "hair_geometry_changed": true
+  },
+  "passed": false,
+  "before": {
+    "hair_boundary_edges": 48,
+    "hair_nonmanifold_edges": 0,
+    "hair_head_weight_errors": 0,
+    "bounds": [
+      [
+        -0.30952784419059753,
+        0.30952784419059753
+      ],
+      [
+        0.0,
+        1.149999976158142
+      ],
+      [
+        -0.13155564665794373,
+        0.180279940366745
+      ]
+    ],
+    "degenerate_triangles": 0,
+    "morph_names": [
+      [
+        "neutral",
+        "smile",
+        "happy",
+        "laugh",
+        "surprised",
+        "angry",
+        "sad",
+        "wink_left",
+        "wink_right",
+        "mouth_open",
+        "blink",
+        "frown",
+        "brows_up",
+        "brows_down",
+        "confident",
+        "cheeky",
+        "playful",
+        "cheer",
+        "celebrate",
+        "nervous"
+      ]
+    ],
+    "triangles": 38902,
+    "non_hair_triangles": 31006,
+    "hair_palette_triangles": 7896
+  },
+  "after": {
+    "hair_boundary_edges": 0,
+    "hair_nonmanifold_edges": 0,
+    "hair_head_weight_errors": 0,
+    "bounds": [
+      [
+        -0.30952784419059753,
+        0.30952784419059753
+      ],
+      [
+        0.0,
+        1.149999976158142
+      ],
+      [
+        -0.13155564665794373,
+        0.180279940366745
+      ]
+    ],
+    "degenerate_triangles": 0,
+    "morph_names": [
+      [
+        "neutral",
+        "smile",
+        "happy",
+        "laugh",
+        "surprised",
+        "angry",
+        "sad",
+        "wink_left",
+        "wink_right",
+        "mouth_open",
+        "blink",
+        "frown",
+        "brows_up",
+        "brows_down",
+        "confident",
+        "cheeky",
+        "playful",
+        "cheer",
+        "celebrate",
+        "nervous"
+      ]
+    ],
+    "triangles": 37644,
+    "non_hair_triangles": 31006,
+    "hair_palette_triangles": 6638
+  },
+  "non_hair_triangles_removed_or_changed": 18,
+  "non_hair_triangles_added_or_changed": 18,
+  "hair_palette_triangles_retained_exactly": 648,
+  "limitations": [
+    "Hair palette includes eyebrows/lashes, so their identity needs visual review.",
+    "Topology edges are welded by rounded position; overlapping components can share edges. Boundary/nonmanifold counts are descriptive, not a watertightness certificate.",
+    "No visual quality, intersection, Godot runtime or motion quality claim."
+  ],
+  "baseline_sha256": "423a025c1679d2ee3121b89d161229585c7900b8ae3f9ee90fa301cdc08148cb",
+  "candidate_sha256": "f1aa1b6f79fc523023a4492c1350dd521a4e6a237f06ab308497667850bdf4a8",
+  "vertex_attribute_decimal_precision": 7
+}

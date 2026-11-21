@@ -1,0 +1,644 @@
+{
+  "haarlem-1888-v2": {
+    "airborne": {
+      "Boaz": [
+        "small_jump_1",
+        "small_jump_2",
+        "mega_jump"
+      ],
+      "Finn": [
+        "small_jump_1",
+        "small_jump_2",
+        "mega_jump"
+      ],
+      "Luna": [
+        "small_jump_1",
+        "small_jump_2",
+        "mega_jump"
+      ],
+      "Nova": [
+        "small_jump_1",
+        "small_jump_2",
+        "mega_jump"
+      ],
+      "Storm": [
+        "small_jump_1",
+        "small_jump_2",
+        "mega_jump"
+      ]
+    },
+    "landed": {
+      "Boaz": [
+        "small_jump_1",
+        "small_jump_2",
+        "mega_jump"
+      ],
+      "Finn": [
+        "small_jump_1",
+        "small_jump_2",
+        "mega_jump"
+      ],
+      "Luna": [
+        "small_jump_1",
+        "small_jump_2",
+        "mega_jump"
+      ],
+      "Nova": [
+        "small_jump_1",
+        "small_jump_2",
+        "mega_jump"
+      ],
+      "Storm": [
+        "small_jump_1",
+        "small_jump_2",
+        "mega_jump"
+      ]
+    },
+    "length": 2160.28608860075,
+    "min_table_edge_y": null,
+    "ratio": 2.99990882456316,
+    "ticks": 1051,
+    "visited": {
+      "Boaz": [
+        "loop",
+        "small_jump_1",
+        "corkscrew",
+        "downhill",
+        "small_jump_2",
+        "s_bends",
+        "mega_jump"
+      ],
+      "Finn": [
+        "loop",
+        "small_jump_1",
+        "corkscrew",
+        "downhill",
+        "small_jump_2",
+        "s_bends",
+        "mega_jump"
+      ],
+      "Luna": [
+        "loop",
+        "small_jump_1",
+        "corkscrew",
+        "downhill",
+        "small_jump_2",
+        "s_bends",
+        "mega_jump"
+      ],
+      "Nova": [
+        "loop",
+        "small_jump_1",
+        "corkscrew",
+        "downhill",
+        "small_jump_2",
+        "s_bends",
+        "mega_jump"
+      ],
+      "Storm": [
+        "loop",
+        "small_jump_1",
+        "corkscrew",
+        "downhill",
+        "small_jump_2",
+        "s_bends",
+        "mega_jump"
+      ]
+    }
+  },
+  "keukentafel-v2": {
+    "airborne": {
+      "Boaz": [
+        "small_jump_1",
+        "small_jump_2",
+        "mega_jump"
+      ],
+      "Finn": [
+        "small_jump_1",
+        "small_jump_2",
+        "mega_jump"
+      ],
+      "Luna": [
+        "small_jump_1",
+        "small_jump_2",
+        "mega_jump"
+      ],
+      "Nova": [
+        "small_jump_1",
+        "small_jump_2",
+        "mega_jump"
+      ],
+      "Storm": [
+        "small_jump_1",
+        "small_jump_2",
+        "mega_jump"
+      ]
+    },
+    "landed": {
+      "Boaz": [
+        "small_jump_1",
+        "small_jump_2",
+        "mega_jump"
+      ],
+      "Finn": [
+        "small_jump_1",
+        "small_jump_2",
+        "mega_jump"
+      ],
+      "Luna": [
+        "small_jump_1",
+        "small_jump_2",
+        "mega_jump"
+      ],
+      "Nova": [
+        "small_jump_1",
+        "small_jump_2",
+        "mega_jump"
+      ],
+      "Storm": [
+        "small_jump_1",
+        "small_jump_2",
+        "mega_jump"
+      ]
+    },
+    "length": 2055.70472709835,
+    "min_table_edge_y": 0.119983956217766,
+    "ratio": 2.99999061455924,
+    "ticks": 1033,
+    "visited": {
+      "Boaz": [
+        "loop",
+        "small_jump_1",
+        "corkscrew",
+        "downhill",
+        "small_jump_2",
+        "s_bends",
+        "mega_jump"
+      ],
+      "Finn": [
+        "loop",
+        "small_jump_1",
+        "corkscrew",
+        "downhill",
+        "small_jump_2",
+        "s_bends",
+        "mega_jump"
+      ],
+      "Luna": [
+        "loop",
+        "small_jump_1",
+        "corkscrew",
+        "downhill",
+        "small_jump_2",
+        "s_bends",
+        "mega_jump"
+      ],
+      "Nova": [
+        "loop",
+        "small_jump_1",
+        "corkscrew",
+        "downhill",
+        "small_jump_2",
+        "s_bends",
+        "mega_jump"
+      ],
+      "Storm": [
+        "loop",
+        "small_jump_1",
+        "corkscrew",
+        "downhill",
+        "small_jump_2",
+        "s_bends",
+        "mega_jump"
+      ]
+    }
+  },
+  "neon-city-v2": {
+    "airborne": {
+      "Boaz": [
+        "small_jump_1",
+        "small_jump_2",
+        "mega_jump"
+      ],
+      "Finn": [
+        "small_jump_1",
+        "small_jump_2",
+        "mega_jump"
+      ],
+      "Luna": [
+        "small_jump_1",
+        "small_jump_2",
+        "mega_jump"
+      ],
+      "Nova": [
+        "small_jump_1",
+        "small_jump_2",
+        "mega_jump"
+      ],
+      "Storm": [
+        "small_jump_1",
+        "small_jump_2",
+        "mega_jump"
+      ]
+    },
+    "landed": {
+      "Boaz": [
+        "small_jump_1",
+        "small_jump_2",
+        "mega_jump"
+      ],
+      "Finn": [
+        "small_jump_1",
+        "small_jump_2",
+        "mega_jump"
+      ],
+      "Luna": [
+        "small_jump_1",
+        "small_jump_2",
+        "mega_jump"
+      ],
+      "Nova": [
+        "small_jump_1",
+        "small_jump_2",
+        "mega_jump"
+      ],
+      "Storm": [
+        "small_jump_1",
+        "small_jump_2",
+        "mega_jump"
+      ]
+    },
+    "length": 2350.42573341727,
+    "min_table_edge_y": null,
+    "ratio": 2.99966592762833,
+    "ticks": 1203,
+    "visited": {
+      "Boaz": [
+        "loop",
+        "small_jump_1",
+        "corkscrew",
+        "downhill",
+        "small_jump_2",
+        "s_bends",
+        "mega_jump"
+      ],
+      "Finn": [
+        "loop",
+        "small_jump_1",
+        "corkscrew",
+        "downhill",
+        "small_jump_2",
+        "s_bends",
+        "mega_jump"
+      ],
+      "Luna": [
+        "loop",
+        "small_jump_1",
+        "corkscrew",
+        "downhill",
+        "small_jump_2",
+        "s_bends",
+        "mega_jump"
+      ],
+      "Nova": [
+        "loop",
+        "small_jump_1",
+        "corkscrew",
+        "downhill",
+        "small_jump_2",
+        "s_bends",
+        "mega_jump"
+      ],
+      "Storm": [
+        "loop",
+        "small_jump_1",
+        "corkscrew",
+        "downhill",
+        "small_jump_2",
+        "s_bends",
+        "mega_jump"
+      ]
+    }
+  },
+  "regenbogenrijk-v2": {
+    "airborne": {
+      "Boaz": [
+        "small_jump_1",
+        "small_jump_2",
+        "mega_jump"
+      ],
+      "Finn": [
+        "small_jump_1",
+        "small_jump_2",
+        "mega_jump"
+      ],
+      "Luna": [
+        "small_jump_1",
+        "small_jump_2",
+        "mega_jump"
+      ],
+      "Nova": [
+        "small_jump_1",
+        "small_jump_2",
+        "mega_jump"
+      ],
+      "Storm": [
+        "small_jump_1",
+        "small_jump_2",
+        "mega_jump"
+      ]
+    },
+    "landed": {
+      "Boaz": [
+        "small_jump_1",
+        "small_jump_2",
+        "mega_jump"
+      ],
+      "Finn": [
+        "small_jump_1",
+        "small_jump_2",
+        "mega_jump"
+      ],
+      "Luna": [
+        "small_jump_1",
+        "small_jump_2",
+        "mega_jump"
+      ],
+      "Nova": [
+        "small_jump_1",
+        "small_jump_2",
+        "mega_jump"
+      ],
+      "Storm": [
+        "small_jump_1",
+        "small_jump_2",
+        "mega_jump"
+      ]
+    },
+    "length": 2448.24628680944,
+    "min_table_edge_y": null,
+    "ratio": 2.99992036247027,
+    "ticks": 1222,
+    "visited": {
+      "Boaz": [
+        "loop",
+        "small_jump_1",
+        "corkscrew",
+        "downhill",
+        "small_jump_2",
+        "s_bends",
+        "mega_jump"
+      ],
+      "Finn": [
+        "loop",
+        "small_jump_1",
+        "corkscrew",
+        "downhill",
+        "small_jump_2",
+        "s_bends",
+        "mega_jump"
+      ],
+      "Luna": [
+        "loop",
+        "small_jump_1",
+        "corkscrew",
+        "downhill",
+        "small_jump_2",
+        "s_bends",
+        "mega_jump"
+      ],
+      "Nova": [
+        "loop",
+        "small_jump_1",
+        "corkscrew",
+        "downhill",
+        "small_jump_2",
+        "s_bends",
+        "mega_jump"
+      ],
+      "Storm": [
+        "loop",
+        "small_jump_1",
+        "corkscrew",
+        "downhill",
+        "small_jump_2",
+        "s_bends",
+        "mega_jump"
+      ]
+    }
+  },
+  "sunset-park-v2": {
+    "airborne": {
+      "Boaz": [
+        "small_jump_1",
+        "small_jump_2",
+        "mega_jump"
+      ],
+      "Finn": [
+        "small_jump_1",
+        "small_jump_2",
+        "mega_jump"
+      ],
+      "Luna": [
+        "small_jump_1",
+        "small_jump_2",
+        "mega_jump"
+      ],
+      "Nova": [
+        "small_jump_1",
+        "small_jump_2",
+        "mega_jump"
+      ],
+      "Storm": [
+        "small_jump_1",
+        "small_jump_2",
+        "mega_jump"
+      ]
+    },
+    "landed": {
+      "Boaz": [
+        "small_jump_1",
+        "small_jump_2",
+        "mega_jump"
+      ],
+      "Finn": [
+        "small_jump_1",
+        "small_jump_2",
+        "mega_jump"
+      ],
+      "Luna": [
+        "small_jump_1",
+        "small_jump_2",
+        "mega_jump"
+      ],
+      "Nova": [
+        "small_jump_1",
+        "small_jump_2",
+        "mega_jump"
+      ],
+      "Storm": [
+        "small_jump_1",
+        "small_jump_2",
+        "mega_jump"
+      ]
+    },
+    "length": 2079.82460412383,
+    "min_table_edge_y": null,
+    "ratio": 2.99999721039894,
+    "ticks": 1099,
+    "visited": {
+      "Boaz": [
+        "loop",
+        "small_jump_1",
+        "corkscrew",
+        "downhill",
+        "small_jump_2",
+        "s_bends",
+        "mega_jump"
+      ],
+      "Finn": [
+        "loop",
+        "small_jump_1",
+        "corkscrew",
+        "downhill",
+        "small_jump_2",
+        "s_bends",
+        "mega_jump"
+      ],
+      "Luna": [
+        "loop",
+        "small_jump_1",
+        "corkscrew",
+        "downhill",
+        "small_jump_2",
+        "s_bends",
+        "mega_jump"
+      ],
+      "Nova": [
+        "loop",
+        "small_jump_1",
+        "corkscrew",
+        "downhill",
+        "small_jump_2",
+        "s_bends",
+        "mega_jump"
+      ],
+      "Storm": [
+        "loop",
+        "small_jump_1",
+        "corkscrew",
+        "downhill",
+        "small_jump_2",
+        "s_bends",
+        "mega_jump"
+      ]
+    }
+  },
+  "uithoorn-2056-v2": {
+    "airborne": {
+      "Boaz": [
+        "small_jump_1",
+        "small_jump_2",
+        "mega_jump"
+      ],
+      "Finn": [
+        "small_jump_1",
+        "small_jump_2",
+        "mega_jump"
+      ],
+      "Luna": [
+        "small_jump_1",
+        "small_jump_2",
+        "mega_jump"
+      ],
+      "Nova": [
+        "small_jump_1",
+        "small_jump_2",
+        "mega_jump"
+      ],
+      "Storm": [
+        "small_jump_1",
+        "small_jump_2",
+        "mega_jump"
+      ]
+    },
+    "landed": {
+      "Boaz": [
+        "small_jump_1",
+        "small_jump_2",
+        "mega_jump"
+      ],
+      "Finn": [
+        "small_jump_1",
+        "small_jump_2",
+        "mega_jump"
+      ],
+      "Luna": [
+        "small_jump_1",
+        "small_jump_2",
+        "mega_jump"
+      ],
+      "Nova": [
+        "small_jump_1",
+        "small_jump_2",
+        "mega_jump"
+      ],
+      "Storm": [
+        "small_jump_1",
+        "small_jump_2",
+        "mega_jump"
+      ]
+    },
+    "length": 2273.45329219103,
+    "min_table_edge_y": null,
+    "ratio": 2.99997879695128,
+    "ticks": 1187,
+    "visited": {
+      "Boaz": [
+        "loop",
+        "small_jump_1",
+        "corkscrew",
+        "downhill",
+        "small_jump_2",
+        "s_bends",
+        "mega_jump"
+      ],
+      "Finn": [
+        "loop",
+        "small_jump_1",
+        "corkscrew",
+        "downhill",
+        "small_jump_2",
+        "s_bends",
+        "mega_jump"
+      ],
+      "Luna": [
+        "loop",
+        "small_jump_1",
+        "corkscrew",
+        "downhill",
+        "small_jump_2",
+        "s_bends",
+        "mega_jump"
+      ],
+      "Nova": [
+        "loop",
+        "small_jump_1",
+        "corkscrew",
+        "downhill",
+        "small_jump_2",
+        "s_bends",
+        "mega_jump"
+      ],
+      "Storm": [
+        "loop",
+        "small_jump_1",
+        "corkscrew",
+        "downhill",
+        "small_jump_2",
+        "s_bends",
+        "mega_jump"
+      ]
+    }
+  }
+}

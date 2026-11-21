@@ -1,0 +1,5 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+DUTCH_HORIZON world=3 records=336 nodes=4
+DUTCH_HORIZON world=4 records=310 nodes=9
+DUTCH_SKY_HORIZONS checks=9473 failures=0 cloud_pixels=974 clear_pixels=2273

@@ -1,0 +1,78 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+ERROR: Whole road/vehicle envelope fits actual polygonal bore throughout tunnel and approaches
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/kitchen_adventure_qa.gd:13)
+       [1] run (res://tests/kitchen_adventure_qa.gd:141)
+ERROR: Whole road/vehicle envelope fits actual polygonal bore throughout tunnel and approaches
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/kitchen_adventure_qa.gd:13)
+       [1] run (res://tests/kitchen_adventure_qa.gd:141)
+ERROR: Whole road/vehicle envelope fits actual polygonal bore throughout tunnel and approaches
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/kitchen_adventure_qa.gd:13)
+       [1] run (res://tests/kitchen_adventure_qa.gd:141)
+ERROR: Whole road/vehicle envelope fits actual polygonal bore throughout tunnel and approaches
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/kitchen_adventure_qa.gd:13)
+       [1] run (res://tests/kitchen_adventure_qa.gd:141)
+ERROR: Whole road/vehicle envelope fits actual polygonal bore throughout tunnel and approaches
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/kitchen_adventure_qa.gd:13)
+       [1] run (res://tests/kitchen_adventure_qa.gd:141)
+ERROR: Whole road/vehicle envelope fits actual polygonal bore throughout tunnel and approaches
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/kitchen_adventure_qa.gd:13)
+       [1] run (res://tests/kitchen_adventure_qa.gd:141)
+ERROR: Whole road/vehicle envelope fits actual polygonal bore throughout tunnel and approaches
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/kitchen_adventure_qa.gd:13)
+       [1] run (res://tests/kitchen_adventure_qa.gd:141)
+ERROR: Whole road/vehicle envelope fits actual polygonal bore throughout tunnel and approaches
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/kitchen_adventure_qa.gd:13)
+       [1] run (res://tests/kitchen_adventure_qa.gd:141)
+ERROR: Actual ramp sheet supports each sampled road/lane point
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/kitchen_adventure_qa.gd:13)
+       [1] run (res://tests/kitchen_adventure_qa.gd:158)
+ERROR: Actual ramp top stays near road, without buried entry or floating lane
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/kitchen_adventure_qa.gd:13)
+       [1] run (res://tests/kitchen_adventure_qa.gd:161)
+ERROR: Actual ramp sheet supports each sampled road/lane point
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/kitchen_adventure_qa.gd:13)
+       [1] run (res://tests/kitchen_adventure_qa.gd:158)
+ERROR: Actual ramp top stays near road, without buried entry or floating lane
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/kitchen_adventure_qa.gd:13)
+       [1] run (res://tests/kitchen_adventure_qa.gd:161)
+ERROR: Actual ramp sheet supports each sampled road/lane point
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/kitchen_adventure_qa.gd:13)
+       [1] run (res://tests/kitchen_adventure_qa.gd:158)
+ERROR: Actual ramp top stays near road, without buried entry or floating lane
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/kitchen_adventure_qa.gd:13)
+       [1] run (res://tests/kitchen_adventure_qa.gd:161)
+ERROR: Actual ramp sheet supports each sampled road/lane point
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/kitchen_adventure_qa.gd:13)
+       [1] run (res://tests/kitchen_adventure_qa.gd:158)
+BORACER KITCHEN ADVENTURE INDEPENDENT QA: 1724677 checks, 16 failures

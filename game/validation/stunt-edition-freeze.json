@@ -1,0 +1,14 @@
+{
+  "snapshot": "/tmp/boracer-stunt-edition-before",
+  "source_sha256": {
+    "scripts/catalog.gd": "26ed0464c680437c190176c6c6a81c0925bc626b8d9fe14bc52e20a79219140b",
+    "scripts/interface.gd": "95cac0ef6fb9a38da3d49aa2736a0688eae16283886dcc37d5b71eba2abbe81a",
+    "scripts/ui/stunt_ribbon.gd": "e0ca75ac127fff69beb525791e186fe1628ca338c4df65b2bff4279422404807",
+    "tests/stunt_edition_capture.gd": "2332cd6deb705511c532a01e39046b848340901ea1fd5eeb33237bc68be5bca3",
+    "tools/capture_step.py": "82892bbb31df4c6da1f97bd55f88ac3cff8c53ff49d16ab63b2dc8721464df68",
+    "tools/render_commands.py": "4eed8427b32e9b8039f415c2ebddb4bf6cd22da8af1a4ac18da95087693f4046"
+  },
+  "audit": "Catalog exact sole visible suffix replacement; original TRACKS descriptors and -v2 IDs unchanged. No profile/save/schema/route/physics/asset edits. Ribbon IGNORE and no focus.",
+  "native_capture": "../renders/GAME-10001/stap-23-stunt-edition/20261017T131421-645847Z",
+  "native_views_reviewed": 6
+}

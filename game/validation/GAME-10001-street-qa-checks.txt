@@ -1,0 +1,33 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+STREET QA elevated roof samples=198 minimum_gap=29.4653274536133
+BORACER STREET SCENE QA: 856755 checks, 0 failures
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+DISTRICT world=3 houses=198 draw_nodes=21 instances=7854 under_route=0 min_vertical_gap=inf min_horizontal_margin=3.18542957305908
+DISTRICT world=4 houses=104 draw_nodes=21 instances=2514 under_route=40 min_vertical_gap=28.4107830047607 min_horizontal_margin=inf
+STREET_DISTRICTS checks=179710 failures=0
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+BORACER TRAM: 1224 checks, 0 failures
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+ARCHITECTURE world=3 houses=4 house_child_nodes=132
+ARCHITECTURE world=4 houses=4 house_child_nodes=120
+ARCHITECTURE checks=599 failures=0
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+WORLD 0 length=693.3 min_clearance=55.4 max_gradient=0.14 min_bend_radius=17.0
+WORLD 1 length=783.6 min_clearance=49.3 max_gradient=0.11 min_bend_radius=11.8
+WORLD 2 length=816.1 min_clearance=51.8 max_gradient=0.23 min_bend_radius=13.2
+WORLD 3 length=720.1 min_clearance=50.5 max_gradient=0.14 min_bend_radius=11.1
+WORLD 4 length=757.8 min_clearance=53.2 max_gradient=0.09 min_bend_radius=15.5
+WORLD 5 length=630.0 min_clearance=52.3 max_gradient=0.00 min_bend_radius=11.1
+WORLD GEOMETRY: 27934 checks, 0 failures
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+WORLD ART: 362 checks, 0 failures
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+CAMERA COMPOSITION distance=4.313..8.663m head/center normalized_screen=(0.316619, 0.454044)..(0.679493, 0.715756)
+CAMERA COMPOSITION: 415480 checks, 0 failures

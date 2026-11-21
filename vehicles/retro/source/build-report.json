@@ -1,0 +1,34 @@
+{
+  "triangles": 39465,
+  "triangles_before_optimization": 83768,
+  "mesh_objects": 87,
+  "dimensions_blender_xyz": [
+    0.9447779439532564,
+    1.8930342430248857,
+    0.8522452116012575
+  ],
+  "dimensions_godot_xyz": [
+    0.9447779439532564,
+    0.8522452116012575,
+    1.8930342430248857
+  ],
+  "materials": 15,
+  "wheel_pivots": {
+    "Wheel_Rear_L": [
+      -0.36399999260902405,
+      -0.3869999945163727,
+      0.210999995470047
+    ],
+    "Wheel_Rear_R": [
+      0.36399999260902405,
+      -0.3869999945163727,
+      0.210999995470047
+    ],
+    "Wheel_Support_Front": [
+      0.0,
+      0.6600000262260437,
+      0.09200000017881393
+    ]
+  },
+  "dimension_measurement": "Final GLB vertex positions with complete node transforms"
+}

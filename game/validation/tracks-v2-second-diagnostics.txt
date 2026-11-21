@@ -1,0 +1,148 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+ERROR: Each 3D stunt carries actual track frame upside down
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/tracks_v2.gd:14)
+       [1] run (res://tests/tracks_v2.gd:60)
+ERROR: Each 3D stunt carries actual track frame upside down
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/tracks_v2.gd:14)
+       [1] run (res://tests/tracks_v2.gd:60)
+ERROR: Each 3D stunt carries actual track frame upside down
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/tracks_v2.gd:14)
+       [1] run (res://tests/tracks_v2.gd:60)
+ERROR: Each 3D stunt carries actual track frame upside down
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/tracks_v2.gd:14)
+       [1] run (res://tests/tracks_v2.gd:60)
+ERROR: Each 3D stunt carries actual track frame upside down
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/tracks_v2.gd:14)
+       [1] run (res://tests/tracks_v2.gd:60)
+ERROR: Kitchen road stays inside enlarged tabletop
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/tracks_v2.gd:14)
+       [1] run (res://tests/tracks_v2.gd:48)
+ERROR: Kitchen road stays inside enlarged tabletop
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/tracks_v2.gd:14)
+       [1] run (res://tests/tracks_v2.gd:48)
+ERROR: Kitchen road stays inside enlarged tabletop
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/tracks_v2.gd:14)
+       [1] run (res://tests/tracks_v2.gd:48)
+ERROR: Kitchen road stays inside enlarged tabletop
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/tracks_v2.gd:14)
+       [1] run (res://tests/tracks_v2.gd:48)
+ERROR: Kitchen road stays inside enlarged tabletop
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/tracks_v2.gd:14)
+       [1] run (res://tests/tracks_v2.gd:48)
+ERROR: Kitchen road stays inside enlarged tabletop
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/tracks_v2.gd:14)
+       [1] run (res://tests/tracks_v2.gd:48)
+ERROR: Kitchen road stays inside enlarged tabletop
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/tracks_v2.gd:14)
+       [1] run (res://tests/tracks_v2.gd:48)
+ERROR: Kitchen road stays inside enlarged tabletop
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/tracks_v2.gd:14)
+       [1] run (res://tests/tracks_v2.gd:48)
+ERROR: Kitchen road stays inside enlarged tabletop
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/tracks_v2.gd:14)
+       [1] run (res://tests/tracks_v2.gd:48)
+ERROR: Kitchen road stays inside enlarged tabletop
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/tracks_v2.gd:14)
+       [1] run (res://tests/tracks_v2.gd:48)
+ERROR: Kitchen road stays inside enlarged tabletop
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/tracks_v2.gd:14)
+       [1] run (res://tests/tracks_v2.gd:48)
+ERROR: Kitchen road stays inside enlarged tabletop
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/tracks_v2.gd:14)
+       [1] run (res://tests/tracks_v2.gd:48)
+ERROR: Kitchen road stays inside enlarged tabletop
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/tracks_v2.gd:14)
+       [1] run (res://tests/tracks_v2.gd:48)
+ERROR: Kitchen road stays inside enlarged tabletop
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/tracks_v2.gd:14)
+       [1] run (res://tests/tracks_v2.gd:48)
+ERROR: Kitchen road stays inside enlarged tabletop
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/tracks_v2.gd:14)
+       [1] run (res://tests/tracks_v2.gd:48)
+ERROR: Kitchen road stays inside enlarged tabletop
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/tracks_v2.gd:14)
+       [1] run (res://tests/tracks_v2.gd:48)
+ERROR: Kitchen road stays inside enlarged tabletop
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/tracks_v2.gd:14)
+       [1] run (res://tests/tracks_v2.gd:48)
+ERROR: Kitchen road stays inside enlarged tabletop
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/tracks_v2.gd:14)
+       [1] run (res://tests/tracks_v2.gd:48)
+ERROR: Kitchen road stays inside enlarged tabletop
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/tracks_v2.gd:14)
+       [1] run (res://tests/tracks_v2.gd:48)
+ERROR: Kitchen road stays inside enlarged tabletop
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/tracks_v2.gd:14)
+       [1] run (res://tests/tracks_v2.gd:48)
+ERROR: Kitchen road stays inside enlarged tabletop
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/tracks_v2.gd:14)
+       [1] run (res://tests/tracks_v2.gd:48)
+ERROR: Kitchen road stays inside enlarged tabletop
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/tracks_v2.gd:14)
+       [1] run (res://tests/tracks_v2.gd:48)
+ERROR: Kitchen road stays inside enlarged tabletop
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/tracks_v2.gd:14)
+       [1] run (res://tests/tracks_v2.gd:48)
+ERROR: Kitchen road stays inside enlarged tabletop
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/tracks_v2.gd:14)
+       [1] run (res://tests/tracks_v2.gd:48)
+BORACER TRACKS V2: 87173 checks, 7499 failures

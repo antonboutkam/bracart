@@ -1,0 +1,31 @@
+{
+  "file": "ravi.glb",
+  "bytes": 4338260,
+  "vertices": 30784,
+  "triangles": 38902,
+  "triangle_target_met": false,
+  "materials": 1,
+  "embedded_images": 2,
+  "joints": 51,
+  "max_weights": 2,
+  "bounds_min": [
+    -0.30952784419059753,
+    0.0,
+    -0.13155564665794373
+  ],
+  "bounds_max": [
+    0.30952784419059753,
+    1.149999976158142,
+    0.180279940366745
+  ],
+  "animations": [
+    "Cheer",
+    "Idle",
+    "Jump",
+    "Kart_Sit",
+    "Kart_Steer",
+    "Run"
+  ],
+  "structural_checks": "passed",
+  "Godot_runtime": "not tested"
+}

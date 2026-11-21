@@ -1,0 +1,8 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+QUICKWINS SETUP landingsstof-asfalt (no image)
+QUICKWINS SETUP landingsstof-houten-tafel (no image)
+QUICKWINS SETUP landingsstof-oranje-looping (no image)
+QUICKWINS SETUP botsingsvonken-haarlem (no image)
+QUICKWINS SETUP finishfeestje-met-uitslag (no image)
+QUICKWINS SETUP VALIDATION; no images; scenarios=5; failures=0

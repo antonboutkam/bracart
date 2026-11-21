@@ -1,0 +1,71 @@
+{
+  "checks": [
+    {
+      "id": "rechthuis",
+      "sha256": "52f9019407142b3fa332f454cde377ec85fa1d7441a355679ce50a71e9ae65e5",
+      "bytes": 604368,
+      "embedded_images": 3,
+      "materials": 8,
+      "triangles": 1444,
+      "closed_components": true,
+      "backface_culling": true,
+      "standalone_identical": true
+    },
+    {
+      "id": "schanskerk",
+      "sha256": "eeaa96f99978509abc3b5b8a37101e85f04736d9620eede7bafabf1256cc6269",
+      "bytes": 695044,
+      "embedded_images": 2,
+      "materials": 6,
+      "triangles": 3074,
+      "closed_components": true,
+      "backface_culling": true,
+      "standalone_identical": true
+    },
+    {
+      "id": "fort-aan-de-drecht",
+      "sha256": "33b9a04a7e7392ac80e8bcf8a21d955a40bf69d66827497cfa105705e9bb3817",
+      "bytes": 592036,
+      "embedded_images": 4,
+      "materials": 7,
+      "triangles": 2140,
+      "closed_components": true,
+      "backface_culling": true,
+      "standalone_identical": true
+    },
+    {
+      "id": "irenebrug",
+      "sha256": "5e4396d7ad4104b2556ae6a8fa2505d170c41578df2d253981aa8210308ac75c",
+      "bytes": 163260,
+      "embedded_images": 2,
+      "materials": 9,
+      "triangles": 2048,
+      "closed_components": true,
+      "backface_culling": true,
+      "standalone_identical": true
+    },
+    {
+      "id": "thamerkerk",
+      "sha256": "af34ad40c4753204cb34851c8bd8d7bc0ffec3878295fd51f323763a71689b66",
+      "bytes": 263328,
+      "embedded_images": 2,
+      "materials": 6,
+      "triangles": 2456,
+      "closed_components": true,
+      "backface_culling": true,
+      "standalone_identical": true
+    },
+    {
+      "id": "de-hoeksteen",
+      "sha256": "97f0122be3ea8181b90e2d92a8680622c9788b1b6917f439192416b4198af228",
+      "bytes": 1502920,
+      "embedded_images": 4,
+      "materials": 8,
+      "triangles": 2760,
+      "closed_components": true,
+      "backface_culling": true,
+      "standalone_identical": true
+    }
+  ],
+  "scope": "GLB structure/UV/embedded basecolor+PBR factors/bytes/Blender component topology. Godot rendering checked separately."
+}

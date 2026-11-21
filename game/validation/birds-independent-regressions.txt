@@ -1,0 +1,37 @@
+QA_SUITE birds
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+BORACER BIRDS: 2461 checks, 0 failures
+QA_EXIT birds 0
+QA_SUITE aircraft_qa
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+AIRCRAFT QA world=0 normal_views=32 max_width_pixels=23.0333709716797 nodes=14
+AIRCRAFT QA world=1 normal_views=32 max_width_pixels=24.0563201904297 nodes=14
+AIRCRAFT QA world=2 normal_views=30 max_width_pixels=23.0547714233398 nodes=14
+AIRCRAFT QA world=3 normal_views=33 max_width_pixels=18.9134521484375 nodes=14
+AIRCRAFT QA world=4 normal_views=27 max_width_pixels=18.4517822265625 nodes=14
+BORACER AIRCRAFT INDEPENDENT QA: 75258 checks, 0 failures
+QA_EXIT aircraft_qa 0
+QA_SUITE dutch_world_qa
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+BORACER DUTCH WORLD INDEPENDENT QA: 366193 checks, 0 failures
+QA_EXIT dutch_world_qa 0
+QA_SUITE smoke
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+BORACER TESTS: 162 checks, 0 failures
+QA_EXIT smoke 0
+QA_SUITE integration_audit
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+INTEGRATION world=0 finish=38.18s rank=1 coins=628 sim_ticks=167
+INTEGRATION world=1 finish=50.46s rank=1 coins=755 sim_ticks=216
+INTEGRATION world=2 finish=46.72s rank=1 coins=878 sim_ticks=201
+INTEGRATION world=3 finish=36.67s rank=1 coins=1065 sim_ticks=161
+INTEGRATION world=4 finish=42.13s rank=1 coins=1206 sim_ticks=183
+INTEGRATION world=5 finish=37.28s rank=1 coins=1329 sim_ticks=164
+INTEGRATION node baseline=1032 maximum_after_restart=1032
+INTEGRATION AUDIT: 98 checks, 0 failures
+QA_EXIT integration_audit 0

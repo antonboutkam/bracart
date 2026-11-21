@@ -1,0 +1,14 @@
+{
+  "baseline": "/tmp/haarlem-landmarks-baseline",
+  "files": {
+    "scripts/worlds/scenery.gd": "8c8acb94d9c265924cf1606c428bba02cbbd98148fade071c374ff2126dfc654",
+    "scripts/worlds/street_districts.gd": "cacf46eca01739d073145fe29c79f152e4c6a038a61cdc202820afc405f1395d",
+    "scripts/worlds/haarlem_landmarks.gd": "f3e07d66603475db5e9dc79ef18bc3c6a4e15f2237d5f541f63b3683c2c93f12",
+    "tests/haarlem_landmarks.gd": "693911f1d15edb98e27e01c62704b5577668f527235994e62b3a6ae8245b6813",
+    "tests/haarlem_landmarks_capture.gd": "bfa28ea93791551938b66d45a97bcf25dbf429ba1e66a50dc7985658455386b2",
+    "tools/capture_step.py": "3c0cce1b3c0ed615e70ce6d9459fe560df3b5a0667419c90e87a1f2efad4b2c6",
+    "tools/render_commands.py": "a2385986cb0ab24111b34ec3fbc69dc498d66b76cb2b90dc8e32ce73a1fbaf1c",
+    "docs/HAARLEM-LANDMARKS.md": "c8f9d448fff3edb83988e7806bb3f5c99a85a25e1bd816addd97e3a7931cefe0"
+  },
+  "native_run": "20261017T113556-003921Z"
+}

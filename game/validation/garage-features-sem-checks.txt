@@ -1,0 +1,17 @@
+Sem GD-005 garage 1-3 technical handoff, 2026-10-17
+Godot 4.7.2, headless/Dummy audio with isolated XDG directories.
+Observed outputs:
+BORACER GARAGE FEATURES: 667 checks, 0 failures
+BORACER UI LAYOUT: 32 checks, 0 failures
+BORACER GARAGE STUDIO: 56 checks, 0 failures
+
+No native screenshot or visual/art approval is claimed.
+Driver AtlasTexture crops reuse existing garage.png; no source asset writes.
+
+Handoff source SHA256:
+e4be446e1f97547aef8b9d782b0abc344732adbc467c9fb5994b05ef69fd45db  scripts/interface.gd
+2b8bde039d7bc54b342d62857f2b8230491fcd12e27ad20a7a981758600750aa  scripts/ui/garage_drivers.gd
+60fbbbdc32b6af131d7b3e37cc044c98a322e90a578259ada01dc70965de2afe  scripts/ui/garage_studio.gd
+1af7f283e24d43676afeca5ae405b1d1e1a7eeb75bb48d98a9662f8dac3f8d16  scripts/ui/vehicle_preview.gd
+7423d1fa265cbac1f6b3c9510c8c66f9aebd75bedb8ca38c68dc5e9ede15dfdc  tests/garage_features.gd
+15be12492a19bf79934e8b7227124e0c8e2dde409693e5800cfc54bf4966d704  tests/garage_presentation.gd

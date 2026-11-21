@@ -1,0 +1,51 @@
+{
+  "character": "boaz",
+  "stage": "costume geometry step 3 review candidate",
+  "vertices": 33407,
+  "triangles": 65518,
+  "bones": 51,
+  "materials": 1,
+  "height_m": 1.1500000916421391,
+  "glTF_forward": "-Z",
+  "clips": [
+    "Cheer",
+    "Idle",
+    "Jump",
+    "Kart_Sit",
+    "Kart_Steer",
+    "Run"
+  ],
+  "blendshapes": [
+    "neutral",
+    "smile",
+    "happy",
+    "laugh",
+    "surprised",
+    "angry",
+    "sad",
+    "wink_left",
+    "wink_right",
+    "mouth_open",
+    "blink",
+    "frown",
+    "brows_up",
+    "brows_down",
+    "confident",
+    "cheeky",
+    "playful",
+    "cheer",
+    "celebrate",
+    "nervous"
+  ],
+  "measured_from": "boaz.blend",
+  "source_sha256": {
+    "build_characters.py": "94b6b0dabfdd0d29ab6780e4ef348060b1c56bbad0ad5062ea8f2452d65e9199",
+    "character_clothes.py": "c4d10b2454aea09bee009fe1d5a7009bb5ad6cbf273b4f918ab3bc7f7b33b020",
+    "character_hair.py": "6e7fa7d7e9c8c16f3e86f820313b9fcde6c2001299d6e46f983b85bba594b62b"
+  },
+  "notes": [
+    "Real evaluated Blender geometry; use glb-validation.json for actual GLB triangle counts.",
+    "Shared palette UV tiles and textures intentionally preserved during clothing-only step 3.",
+    "Native Godot capture and all-animation intersection review remain separate validation."
+  ]
+}

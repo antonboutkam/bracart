@@ -1,0 +1,8 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+OUTDOOR QA world=0 clusters=24 projected_visible=23 actors=4 submitted_shapes=993
+OUTDOOR QA world=1 clusters=24 projected_visible=24 actors=4 submitted_shapes=936
+OUTDOOR QA world=2 clusters=24 projected_visible=23 actors=4 submitted_shapes=1032
+OUTDOOR QA world=3 clusters=24 projected_visible=24 actors=4 submitted_shapes=912
+OUTDOOR QA world=4 clusters=24 projected_visible=23 actors=4 submitted_shapes=921
+BORACER OUTDOOR LIFE QA: 169252 checks, 0 failures

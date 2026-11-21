@@ -1,0 +1,6 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+BIRDS SETUP vogeltje-vleugels-eerste-stand (no image)
+BIRDS SETUP vogeltje-vleugels-tweede-stand (no image)
+BIRDS SETUP vogeltje-haarlem-racecamera (no image)
+BIRDS SETUP VALIDATION; no images; scenarios=3; failures=0

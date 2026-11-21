@@ -1,0 +1,43 @@
+{
+  "render_engine": "Blender Cycles CPU",
+  "real_mesh_renders": true,
+  "samples": 16,
+  "denoising": false,
+  "native_Godot_images": "not produced: sandbox blocks AF_UNIX display sockets",
+  "final_glb_sha256": "e0221bbb8047c7aa362e18e8be259615cb440b6a073534e7e7ce2f483a33fd57",
+  "views": {
+    "01-front.png": {
+      "source_glb_sha256": "aecc28283c3522c4e192e2f01cfaf048906d9045ba10d470e3025952bf9f8e87",
+      "reused_unchanged_front_geometry": true,
+      "png_sha256": "c2308a2efc03e8aa5f339892930858b7b8deab6ad622b553156c8e2c66fa84cf",
+      "note": "Preserved from the preceding costume build; only rear cape-emblem interior/curve tessellation changed afterward. Front outfit, anatomy, hair, rig, camera and lighting unchanged. No pixel-identical rerender claim."
+    },
+    "02-three-quarter.png": {
+      "source_glb_sha256": "aecc28283c3522c4e192e2f01cfaf048906d9045ba10d470e3025952bf9f8e87",
+      "reused_unchanged_front_geometry": true,
+      "png_sha256": "7a293c288171a3f4aba7851860646013a4c09a04079d93bdb336e26856163ada",
+      "note": "Preserved from the preceding costume build; only rear cape-emblem interior/curve tessellation changed afterward. Front outfit, anatomy, hair, rig, camera and lighting unchanged. No pixel-identical rerender claim."
+    },
+    "03-side.png": {
+      "source_glb_sha256": "e0221bbb8047c7aa362e18e8be259615cb440b6a073534e7e7ce2f483a33fd57",
+      "reused_unchanged_front_geometry": false,
+      "png_sha256": "75cba04e7851c1d9686ba87293c36b6ee1003e522d14548f4769e5f6704599bf"
+    },
+    "04-back.png": {
+      "source_glb_sha256": "e0221bbb8047c7aa362e18e8be259615cb440b6a073534e7e7ce2f483a33fd57",
+      "reused_unchanged_front_geometry": false,
+      "png_sha256": "fe96c71d58a78386c5edd3cff16e379c3cf04ce5bf6174db7879065df5e54bdb"
+    },
+    "05-face.png": {
+      "source_glb_sha256": "aecc28283c3522c4e192e2f01cfaf048906d9045ba10d470e3025952bf9f8e87",
+      "reused_unchanged_front_geometry": true,
+      "png_sha256": "de9cb7aff1bc10f6ce1473e20f811bb5756737cd248a6a2644e89703bcb19fca",
+      "note": "Preserved from the preceding costume build; only rear cape-emblem interior/curve tessellation changed afterward. Front outfit, anatomy, hair, rig, camera and lighting unchanged. No pixel-identical rerender claim."
+    },
+    "06-kart-pose.png": {
+      "source_glb_sha256": "e0221bbb8047c7aa362e18e8be259615cb440b6a073534e7e7ce2f483a33fd57",
+      "reused_unchanged_front_geometry": false,
+      "png_sha256": "aa22dd6d74c2c62a34c761705a28273583341d7f10a7808d1ee35a6cac168d3c"
+    }
+  }
+}

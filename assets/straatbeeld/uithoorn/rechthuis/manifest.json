@@ -1,0 +1,150 @@
+{
+  "name": "Het Rechthuis aan den Amstel",
+  "slug": "het_rechthuis",
+  "location": "Schans 29-32, Uithoorn, Nederland",
+  "type": "historical brick hotel restaurant / landmark / race-game environment asset",
+  "source_mode": "AI-generated reference sheet divided into individual game-reference PNGs; originals also included",
+  "scale": {
+    "unit": "meter",
+    "known_real_dimensions": null,
+    "status": "estimated_for_gameplay",
+    "suggested_game_dimensions_m": {
+      "main_building_frontage": 22,
+      "main_building_depth": 14,
+      "main_building_total_height": 12
+    },
+    "notes": "The suggested dimensions are rough visual estimates for BoRacer blockout only; not verified measurements. Terrace and rear annex are extra volumes."
+  },
+  "views": [
+    {
+      "file": "het_rechthuis_01_front.png",
+      "label": "front",
+      "size_px": [
+        1024,
+        1024
+      ],
+      "description": "Three-quarter street-front view with brick facade, dark awnings, shutters and balcony.",
+      "background": "source scene retained; transparent padding only"
+    },
+    {
+      "file": "het_rechthuis_02_back.png",
+      "label": "back",
+      "size_px": [
+        1024,
+        1024
+      ],
+      "description": "Waterside elevation with the terrace and black awnings.",
+      "background": "source scene retained; transparent padding only"
+    },
+    {
+      "file": "het_rechthuis_03_left.png",
+      "label": "left",
+      "size_px": [
+        1024,
+        1024
+      ],
+      "description": "Left angled street/side reference including waterside terrace.",
+      "background": "source scene retained; transparent padding only"
+    },
+    {
+      "file": "het_rechthuis_04_right.png",
+      "label": "right",
+      "size_px": [
+        1024,
+        1024
+      ],
+      "description": "Facade reference with balcony and flags; not a mathematically orthographic projection.",
+      "background": "source scene retained; transparent padding only"
+    },
+    {
+      "file": "het_rechthuis_05_top.png",
+      "label": "top",
+      "size_px": [
+        1024,
+        1024
+      ],
+      "description": "AI-interpreted roof view and footprint; not a measured aerial survey.",
+      "background": "source scene retained; transparent padding only"
+    },
+    {
+      "file": "het_rechthuis_06_line.png",
+      "label": "line",
+      "size_px": [
+        1024,
+        1024
+      ],
+      "description": "Architectural line-art diagram including front, back, sides and footprint.",
+      "background": "source scene retained; transparent padding only"
+    }
+  ],
+  "textures": [
+    {
+      "file": "het_rechthuis_07_wall_texture.png",
+      "label": "wall_texture",
+      "size_px": [
+        512,
+        512
+      ],
+      "description": "Red-brown masonry brick reference patch.",
+      "seamless": false
+    },
+    {
+      "file": "het_rechthuis_08_window_texture.png",
+      "label": "window_texture",
+      "size_px": [
+        512,
+        512
+      ],
+      "description": "Window with geometric burgundy decorative shutters.",
+      "seamless": false
+    },
+    {
+      "file": "het_rechthuis_09_awning_texture.png",
+      "label": "awning_texture",
+      "size_px": [
+        512,
+        512
+      ],
+      "description": "Black awning detail.",
+      "seamless": false
+    },
+    {
+      "file": "het_rechthuis_10_roof_texture.png",
+      "label": "roof_texture",
+      "size_px": [
+        512,
+        512
+      ],
+      "description": "Gray curved roof tile reference.",
+      "seamless": false
+    }
+  ],
+  "supporting_files": [
+    "het_rechthuis_reference_sheet.png",
+    "het_rechthuis_asset_preview.jpg",
+    "het_rechthuis_06_line.svg",
+    "README.md",
+    "manifest.json"
+  ],
+  "source_photos": [
+    "source_photos/perspectief-2.jpg",
+    "source_photos/raam-venster.jpg",
+    "source_photos/vanaf-het-water-perspectief.jpg",
+    "source_photos/vooraanzicht-vanaf-het-water.jpg",
+    "source_photos/zij-aanzicht.jpg"
+  ],
+  "notes": [
+    "For BoRacer, preserve the recognizable burgundy-and-white shutters, dark black awnings, stepped dormers, hipped tiled roof, central balcony with flags, and waterside terrace.",
+    "The AI views are illustrative and not rigorously consistent orthographic projections. Reconcile features against original photographs when producing a 3D model.",
+    "All 1024-square views are placed within transparent padding; the original scene backgrounds inside their photographs are opaque.",
+    "Texture panels are reference details, not tested seamless/tiling materials; the SVG embeds the line-art raster, and is not vector path geometry."
+  ],
+  "sources": [
+    {
+      "type": "website",
+      "label": "Het Rechthuis aan den Amstel official website",
+      "url": "https://www.hetrechthuis.nl/",
+      "note": "Official identification and address; no verified measurements found."
+    }
+  ]
+}

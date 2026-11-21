@@ -1,0 +1,23 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+CAPTURE SETUP boaz-full-front (no image)
+CAPTURE SETUP boaz-full-quarter (no image)
+CAPTURE SETUP boaz-raketfiets-sit-front (no image)
+CAPTURE SETUP boaz-raketfiets-sit-quarter (no image)
+CAPTURE SETUP ravi-full-front (no image)
+CAPTURE SETUP ravi-full-quarter (no image)
+CAPTURE SETUP ravi-raketfiets-sit-front (no image)
+CAPTURE SETUP ravi-raketfiets-sit-quarter (no image)
+CAPTURE SETUP boaz-hud-haarlem-1888 (no image)
+CAPTURE SETUP boaz-hud-uithoorn-2056 (no image)
+CAPTURE SETUP ravi-hud-haarlem-1888 (no image)
+CAPTURE SETUP ravi-hud-uithoorn-2056 (no image)
+CAPTURE SETUP splash (no image)
+CAPTURE SETUP dashboard (no image)
+CAPTURE SETUP wereldselectie (no image)
+CAPTURE SETUP garage (no image)
+CAPTURE SETUP instellingen (no image)
+CAPTURE SETUP touch-dashboard (no image)
+CAPTURE SETUP nacht-dashboard (no image)
+CAPTURE SETUP touch-dashboard-compact (no image)
+CAPTURE SETUP VALIDATION; no images; scenarios=20; failures=0

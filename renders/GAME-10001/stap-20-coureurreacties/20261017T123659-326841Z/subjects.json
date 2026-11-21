@@ -1,0 +1,258 @@
+[
+  {
+    "boost": 0.0,
+    "category": "driver-reactions",
+    "filename": "boaz-00-neutraal-race.png",
+    "label": "Boaz • 00-neutraal • gewone racecamera",
+    "turn": 0.0,
+    "wink": 0.0
+  },
+  {
+    "boost": 0.0,
+    "category": "driver-reactions",
+    "filename": "boaz-00-neutraal-close.png",
+    "label": "Boaz • 00-neutraal • gezicht/romp",
+    "turn": 0.0,
+    "wink": 0.0
+  },
+  {
+    "boost": 0.0,
+    "category": "driver-reactions",
+    "filename": "boaz-01-aanloop-race.png",
+    "label": "Boaz • 01-aanloop • gewone racecamera",
+    "turn": 0.464312709210668,
+    "wink": 0.0
+  },
+  {
+    "boost": 0.0,
+    "category": "driver-reactions",
+    "filename": "boaz-01-aanloop-close.png",
+    "label": "Boaz • 01-aanloop • gezicht/romp",
+    "turn": 0.464312709210668,
+    "wink": 0.0
+  },
+  {
+    "boost": 0.0,
+    "category": "driver-reactions",
+    "filename": "boaz-02-knipoog-race.png",
+    "label": "Boaz • 02-knipoog • gewone racecamera",
+    "turn": 1.0,
+    "wink": 1.0
+  },
+  {
+    "boost": 0.0,
+    "category": "driver-reactions",
+    "filename": "boaz-02-knipoog-close.png",
+    "label": "Boaz • 02-knipoog • gezicht/romp",
+    "turn": 1.0,
+    "wink": 1.0
+  },
+  {
+    "boost": 0.0,
+    "category": "driver-reactions",
+    "filename": "boaz-03-terugkeer-race.png",
+    "label": "Boaz • 03-terugkeer • gewone racecamera",
+    "turn": 0.876242008746365,
+    "wink": 0.0
+  },
+  {
+    "boost": 0.0,
+    "category": "driver-reactions",
+    "filename": "boaz-03-terugkeer-close.png",
+    "label": "Boaz • 03-terugkeer • gezicht/romp",
+    "turn": 0.876242008746365,
+    "wink": 0.0
+  },
+  {
+    "boost": 0.0,
+    "category": "driver-reactions",
+    "filename": "boaz-04-hersteld-race.png",
+    "label": "Boaz • 04-hersteld • gewone racecamera",
+    "turn": 0.0,
+    "wink": 0.0
+  },
+  {
+    "boost": 0.0,
+    "category": "driver-reactions",
+    "filename": "boaz-04-hersteld-close.png",
+    "label": "Boaz • 04-hersteld • gezicht/romp",
+    "turn": 0.0,
+    "wink": 0.0
+  },
+  {
+    "boost": 1.0,
+    "category": "driver-reactions",
+    "filename": "boaz-05-turbo-race.png",
+    "label": "Boaz • 05-turbo • gewone racecamera",
+    "turn": 0.0,
+    "wink": 0.0
+  },
+  {
+    "boost": 1.0,
+    "category": "driver-reactions",
+    "filename": "boaz-05-turbo-close.png",
+    "label": "Boaz • 05-turbo • gezicht/romp",
+    "turn": 0.0,
+    "wink": 0.0
+  },
+  {
+    "boost": 1.0,
+    "category": "driver-reactions",
+    "filename": "boaz-06-turbo-knipoog-race.png",
+    "label": "Boaz • 06-turbo-knipoog • gewone racecamera",
+    "turn": 1.0,
+    "wink": 1.0
+  },
+  {
+    "boost": 1.0,
+    "category": "driver-reactions",
+    "filename": "boaz-06-turbo-knipoog-close.png",
+    "label": "Boaz • 06-turbo-knipoog • gezicht/romp",
+    "turn": 1.0,
+    "wink": 1.0
+  },
+  {
+    "boost": 0.0,
+    "category": "driver-reactions",
+    "filename": "boaz-07-losgelaten-race.png",
+    "label": "Boaz • 07-losgelaten • gewone racecamera",
+    "turn": 0.0,
+    "wink": 0.0
+  },
+  {
+    "boost": 0.0,
+    "category": "driver-reactions",
+    "filename": "boaz-07-losgelaten-close.png",
+    "label": "Boaz • 07-losgelaten • gezicht/romp",
+    "turn": 0.0,
+    "wink": 0.0
+  },
+  {
+    "boost": 0.0,
+    "category": "driver-reactions",
+    "filename": "ravi-00-neutraal-race.png",
+    "label": "Ravi • 00-neutraal • gewone racecamera",
+    "turn": 0.0,
+    "wink": 0.0
+  },
+  {
+    "boost": 0.0,
+    "category": "driver-reactions",
+    "filename": "ravi-00-neutraal-close.png",
+    "label": "Ravi • 00-neutraal • gezicht/romp",
+    "turn": 0.0,
+    "wink": 0.0
+  },
+  {
+    "boost": 0.0,
+    "category": "driver-reactions",
+    "filename": "ravi-01-aanloop-race.png",
+    "label": "Ravi • 01-aanloop • gewone racecamera",
+    "turn": 0.464312709210668,
+    "wink": 0.0
+  },
+  {
+    "boost": 0.0,
+    "category": "driver-reactions",
+    "filename": "ravi-01-aanloop-close.png",
+    "label": "Ravi • 01-aanloop • gezicht/romp",
+    "turn": 0.464312709210668,
+    "wink": 0.0
+  },
+  {
+    "boost": 0.0,
+    "category": "driver-reactions",
+    "filename": "ravi-02-knipoog-race.png",
+    "label": "Ravi • 02-knipoog • gewone racecamera",
+    "turn": 1.0,
+    "wink": 1.0
+  },
+  {
+    "boost": 0.0,
+    "category": "driver-reactions",
+    "filename": "ravi-02-knipoog-close.png",
+    "label": "Ravi • 02-knipoog • gezicht/romp",
+    "turn": 1.0,
+    "wink": 1.0
+  },
+  {
+    "boost": 0.0,
+    "category": "driver-reactions",
+    "filename": "ravi-03-terugkeer-race.png",
+    "label": "Ravi • 03-terugkeer • gewone racecamera",
+    "turn": 0.876242008746365,
+    "wink": 0.0
+  },
+  {
+    "boost": 0.0,
+    "category": "driver-reactions",
+    "filename": "ravi-03-terugkeer-close.png",
+    "label": "Ravi • 03-terugkeer • gezicht/romp",
+    "turn": 0.876242008746365,
+    "wink": 0.0
+  },
+  {
+    "boost": 0.0,
+    "category": "driver-reactions",
+    "filename": "ravi-04-hersteld-race.png",
+    "label": "Ravi • 04-hersteld • gewone racecamera",
+    "turn": 0.0,
+    "wink": 0.0
+  },
+  {
+    "boost": 0.0,
+    "category": "driver-reactions",
+    "filename": "ravi-04-hersteld-close.png",
+    "label": "Ravi • 04-hersteld • gezicht/romp",
+    "turn": 0.0,
+    "wink": 0.0
+  },
+  {
+    "boost": 1.0,
+    "category": "driver-reactions",
+    "filename": "ravi-05-turbo-race.png",
+    "label": "Ravi • 05-turbo • gewone racecamera",
+    "turn": 0.0,
+    "wink": 0.0
+  },
+  {
+    "boost": 1.0,
+    "category": "driver-reactions",
+    "filename": "ravi-05-turbo-close.png",
+    "label": "Ravi • 05-turbo • gezicht/romp",
+    "turn": 0.0,
+    "wink": 0.0
+  },
+  {
+    "boost": 1.0,
+    "category": "driver-reactions",
+    "filename": "ravi-06-turbo-knipoog-race.png",
+    "label": "Ravi • 06-turbo-knipoog • gewone racecamera",
+    "turn": 1.0,
+    "wink": 1.0
+  },
+  {
+    "boost": 1.0,
+    "category": "driver-reactions",
+    "filename": "ravi-06-turbo-knipoog-close.png",
+    "label": "Ravi • 06-turbo-knipoog • gezicht/romp",
+    "turn": 1.0,
+    "wink": 1.0
+  },
+  {
+    "boost": 0.0,
+    "category": "driver-reactions",
+    "filename": "ravi-07-losgelaten-race.png",
+    "label": "Ravi • 07-losgelaten • gewone racecamera",
+    "turn": 0.0,
+    "wink": 0.0
+  },
+  {
+    "boost": 0.0,
+    "category": "driver-reactions",
+    "filename": "ravi-07-losgelaten-close.png",
+    "label": "Ravi • 07-losgelaten • gezicht/romp",
+    "turn": 0.0,
+    "wink": 0.0
+  }
+]

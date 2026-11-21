@@ -1,0 +1,119 @@
+{
+  "name": "Fort aan de Drecht",
+  "slug": "fort_aan_de_drecht",
+  "location": "Uithoorn, Netherlands",
+  "type": "fort / landmark / race-game environment asset",
+  "source_mode": "AI-generated reference sheet converted into individual game-reference assets",
+  "scale": {
+    "unit": "meter",
+    "known_real_dimensions": null,
+    "status": "unknown",
+    "notes": "No reliable dimensions were added to this package. Use as recognizable game-scale reference rather than exact survey data."
+  },
+  "views": [
+    {
+      "file": "fort_aan_de_drecht_01_front.png",
+      "label": "front",
+      "size_px": [
+        1024,
+        1024
+      ],
+      "description": "Primary entrance/front approach over the bridge and open gate."
+    },
+    {
+      "file": "fort_aan_de_drecht_02_back.png",
+      "label": "back",
+      "size_px": [
+        1024,
+        1024
+      ],
+      "description": "Rear/exterior waterside elevation."
+    },
+    {
+      "file": "fort_aan_de_drecht_03_left.png",
+      "label": "left",
+      "size_px": [
+        1024,
+        1024
+      ],
+      "description": "Left-side elongated fort wall elevation."
+    },
+    {
+      "file": "fort_aan_de_drecht_04_right.png",
+      "label": "right",
+      "size_px": [
+        1024,
+        1024
+      ],
+      "description": "Right-side elevation with rounded bunker/casemate form."
+    },
+    {
+      "file": "fort_aan_de_drecht_05_top.png",
+      "label": "top",
+      "size_px": [
+        1024,
+        1024
+      ],
+      "description": "Top view showing island footprint, moat, access bridge and internal layout."
+    },
+    {
+      "file": "fort_aan_de_drecht_06_line.png",
+      "label": "line",
+      "size_px": [
+        1024,
+        1024
+      ],
+      "description": "Line-art reference sheet with simplified orthographic views."
+    }
+  ],
+  "textures": [
+    {
+      "file": "fort_aan_de_drecht_07_wall_texture.png",
+      "label": "wall_texture",
+      "size_px": [
+        512,
+        512
+      ],
+      "description": "Weathered concrete / masonry wall texture."
+    },
+    {
+      "file": "fort_aan_de_drecht_08_gate_texture.png",
+      "label": "gate_texture",
+      "size_px": [
+        512,
+        512
+      ],
+      "description": "Dark green plank-and-hardware gate texture."
+    },
+    {
+      "file": "fort_aan_de_drecht_09_opening_texture.png",
+      "label": "opening_texture",
+      "size_px": [
+        512,
+        512
+      ],
+      "description": "Arched door/opening texture reference."
+    },
+    {
+      "file": "fort_aan_de_drecht_10_roof_texture.png",
+      "label": "roof_texture",
+      "size_px": [
+        512,
+        512
+      ],
+      "description": "Grass-covered roof / berm texture."
+    }
+  ],
+  "supporting_files": [
+    "fort_aan_de_drecht_reference_sheet.png",
+    "fort_aan_de_drecht_asset_preview.jpg",
+    "fort_aan_de_drecht_06_line.svg",
+    "README.md",
+    "manifest.json"
+  ],
+  "notes": [
+    "This package is intended for game-world landmark reconstruction and stylized 3D modeling.",
+    "The fort is low, wide and earth-covered; preserve the moat, bridge and ring-like island shape for recognizability.",
+    "Assets were extracted from an AI-generated reference sheet, so treat them as game-ready interpretation rather than strict documentation."
+  ]
+}

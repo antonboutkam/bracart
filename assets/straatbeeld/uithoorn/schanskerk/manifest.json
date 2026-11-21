@@ -1,0 +1,159 @@
+{
+  "name": "De Schanskerk (Sint-Jan de Doperkerk / St.-Joannes Onthoofdingkerk)",
+  "slug": "de_schanskerk",
+  "location": "Schans 14, Uithoorn, Nederland",
+  "type": "historische kerk / landmark / BoRacer 3D environment asset",
+  "source_mode": "10 beelden uitgesneden uit AI-referentiesheet; oorspronkelijke foto’s en tekeningen zijn bijgevoegd",
+  "scale": {
+    "unit": "meter",
+    "known_real_dimensions": {
+      "tower_height_m": 38
+    },
+    "status": "partial_plus_estimated_for_gameplay",
+    "suggested_game_dimensions_m": {
+      "overall_length": 55,
+      "overall_width": 24,
+      "tower_height": 38,
+      "nave_roof_ridge_height": 19
+    },
+    "notes": "Torens circa 38 m volgens historische berichtgeving 2012. Lengte, breedte en nokhoogte zijn uitsluitend onzekere schattingen voor een spelmodel; niet geverifieerd."
+  },
+  "views": [
+    {
+      "file": "de_schanskerk_01_front.png",
+      "label": "front",
+      "size_px": [
+        1024,
+        1024
+      ],
+      "description": "Dubbele torens met klok, roosvenster en hoofdentree in artistiek frontaanzicht.",
+      "background": "original generated scene remains; only outside panel is transparent"
+    },
+    {
+      "file": "de_schanskerk_02_back.png",
+      "label": "back",
+      "size_px": [
+        1024,
+        1024
+      ],
+      "description": "Gereconstrueerde koorzijde/achteraanzicht.",
+      "background": "original generated scene remains; only outside panel is transparent"
+    },
+    {
+      "file": "de_schanskerk_03_left.png",
+      "label": "left",
+      "size_px": [
+        1024,
+        1024
+      ],
+      "description": "Zijgevel met herhaalde hoge kerkramen, steunberen en dakspitsen.",
+      "background": "original generated scene remains; only outside panel is transparent"
+    },
+    {
+      "file": "de_schanskerk_04_right.png",
+      "label": "right",
+      "size_px": [
+        1024,
+        1024
+      ],
+      "description": "Tegenoverliggende zijgevel met kerktorens bij voorzijde.",
+      "background": "original generated scene remains; only outside panel is transparent"
+    },
+    {
+      "file": "de_schanskerk_05_top.png",
+      "label": "top",
+      "size_px": [
+        1024,
+        1024
+      ],
+      "description": "Artistiek bovenaanzicht van langgerekte kap en zijvolumes.",
+      "background": "original generated scene remains; only outside panel is transparent"
+    },
+    {
+      "file": "de_schanskerk_06_line.png",
+      "label": "line",
+      "size_px": [
+        1024,
+        1024
+      ],
+      "description": "Samengesteld line-art blad met aanzichten en dakplan.",
+      "background": "original generated scene remains; only outside panel is transparent"
+    }
+  ],
+  "textures": [
+    {
+      "file": "de_schanskerk_07_wall_texture.png",
+      "label": "wall_texture",
+      "size_px": [
+        512,
+        512
+      ],
+      "description": "Roodbruine bakstenen geveltextuur.",
+      "seamless": false
+    },
+    {
+      "file": "de_schanskerk_08_window_texture.png",
+      "label": "window_texture",
+      "size_px": [
+        512,
+        512
+      ],
+      "description": "Boogvormig gebrandschilderd raam met maaswerk.",
+      "seamless": false
+    },
+    {
+      "file": "de_schanskerk_09_door_texture.png",
+      "label": "door_texture",
+      "size_px": [
+        512,
+        512
+      ],
+      "description": "Stenen spitsboogportaal met houten dubbele deur.",
+      "seamless": false
+    },
+    {
+      "file": "de_schanskerk_10_roof_texture.png",
+      "label": "roof_texture",
+      "size_px": [
+        512,
+        512
+      ],
+      "description": "Donkergrijze leien dakbedekking.",
+      "seamless": false
+    }
+  ],
+  "supporting_files": [
+    "de_schanskerk_06_line.svg",
+    "de_schanskerk_reference_sheet.png",
+    "de_schanskerk_asset_preview.jpg",
+    "manifest.json",
+    "README.md"
+  ],
+  "source_photos": [
+    "source_photos/constructie.webp",
+    "source_photos/luchtfoto.png",
+    "source_photos/schanskerk-perspectief.jpg",
+    "source_photos/toren.jpg",
+    "source_photos/lijnenschets.jpg"
+  ],
+  "notes": [
+    "De gegenereerde aanzichten zijn voor BoRacer ontworpen, niet bouwkundig opgemeten of strikt onderling orthografisch consistent.",
+    "De gegenereerde sheet beeldt een sterker neogotische kerk af; historische bronnen beschrijven de echte Schanskerk als neoromaans. Gebruik originele foto/torendetail en bouwsketch om karakteristieke onderdelen goed te modelleren.",
+    "Waarschuwing: het door gebruiker meegestuurde bestand lijnenschets.jpg toont de kathedraal van Clermont-Ferrand, niet de Schanskerk. Dit is alleen een mogelijke stijlreferentie en mag niet worden gebruikt voor de echte kerkgeometrie.",
+    "De aanzichten zijn uitgesneden en gecentreerd binnen 1024px canvas; interieur van de panelen bevat ondoorzichtige achtergrond en niet volledig transparant vrijstaand object.",
+    "De detailtextures zijn geen gegarandeerd naadloos tegelbare PBR-materialen.",
+    "De SVG is alleen een wrapper die de lijntekening PNG linkt; het bevat geen echte vectorpaden."
+  ],
+  "sources": [
+    {
+      "url": "https://www.at5.nl/artikelen/80919/",
+      "label": "AT5 (2012)",
+      "detail": "toren circa 38 meter hoog"
+    },
+    {
+      "url": "https://www.dbnl.org/tekst/sten009monu11_01/sten009monu11_01_0163.php",
+      "label": "Monumenten in Nederland",
+      "detail": "kerk met neoromaanse kenmerken, bouw 1866-1867, torens 1884"
+    }
+  ]
+}

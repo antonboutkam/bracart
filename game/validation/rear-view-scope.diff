@@ -1,0 +1,462 @@
+--- before/scripts/main.gd
++++ after/scripts/main.gd
+@@ -9,6 +9,7 @@
+ const VehicleAudio = preload("res://scripts/effects/vehicle_audio.gd")
+ const RaceFeedback = preload("res://scripts/effects/race_feedback.gd")
+ const FinishConfetti = preload("res://scripts/ui/finish_confetti.gd")
++const RearView = preload("res://scripts/rear_view.gd")
+ const FollowCamera = preload("res://scripts/follow_camera.gd")
+ const WorldArt = preload("res://scripts/worlds/world_art.gd")
+ const Weather = preload("res://scripts/effects/weather.gd")
+@@ -28,6 +29,7 @@
+ var menu_time: float = 0
+ var mode: String = "menu"
+ var follow_camera
++var rear_view
+ var last_save_error: String = ""
+ var weather
+ 
+@@ -55,6 +57,10 @@
+  camera.current = true
+  add_child(camera)
+  follow_camera = FollowCamera.new(camera)
++ rear_view = RearView.new()
++ add_child(rear_view)
++ rear_view.setup(camera)
++ Input.joy_connection_changed.connect(_rear_device_changed)
+  ui = Interface.new()
+  add_child(ui)
+  ui.setup(self)
+@@ -70,7 +76,7 @@
+   "accelerate":[KEY_W, KEY_UP], "brake":[KEY_S, KEY_DOWN],
+   "steer_left":[KEY_A, KEY_LEFT], "steer_right":[KEY_D, KEY_RIGHT],
+   "boost":[KEY_SHIFT], "power":[KEY_E], "jump":[KEY_SPACE],
+-  "pause":[KEY_ESCAPE, KEY_P], "reset_kart":[KEY_R]
++  "pause":[KEY_ESCAPE, KEY_P], "reset_kart":[KEY_R], "rear_look":[KEY_C]
+  }
+  for action in bindings:
+   if not InputMap.has_action(action):
+@@ -79,7 +85,7 @@
+    var key = InputEventKey.new()
+    key.physical_keycode = code
+    InputMap.action_add_event(action, key)
+- var buttons = {"jump":JOY_BUTTON_A, "power":JOY_BUTTON_X, "boost":JOY_BUTTON_RIGHT_SHOULDER, "pause":JOY_BUTTON_START, "reset_kart":JOY_BUTTON_Y}
++ var buttons = {"jump":JOY_BUTTON_A, "power":JOY_BUTTON_X, "boost":JOY_BUTTON_RIGHT_SHOULDER, "pause":JOY_BUTTON_START, "reset_kart":JOY_BUTTON_Y, "rear_look":JOY_BUTTON_LEFT_SHOULDER}
+  for action in buttons:
+   var event = InputEventJoypadButton.new()
+   event.button_index = buttons[action]
+@@ -129,6 +135,7 @@
+  weather.setup(track, env, sun, camera)
+ 
+ func _clear_race() -> void:
++ rear_view.reset()
+  if is_instance_valid(race_feedback):
+   race_feedback.clear()
+  race_feedback = null
+@@ -206,6 +213,7 @@
+  audio.play_impact(kind,at,intensity,surface,race.player.global_position)
+ 
+ func _finish() -> void:
++ rear_view.reset()
+  vehicle_audio.clear()
+  if not race.claim_reward(profile, track_index):
+   last_save_error = profile.last_error
+@@ -227,6 +235,7 @@
+    if race.paused:
+     ui.resume()
+    else:
++    rear_view.reset()
+     ui.show_pause()
+    get_viewport().set_input_as_handled()
+   elif mode == "menu":
+@@ -288,9 +297,18 @@
+  if not is_instance_valid(race):
+   return
+  if race.paused and not snap:
++  rear_view.reset()
+   return
+  follow_camera.update(track, race.player, delta, profile.settings.camera_motion, snap)
++ rear_view.update(track,race.player,not race.paused and not race.done)
++
++func _rear_device_changed(_device: int, connected: bool) -> void:
++ if not connected:
++  rear_view.reset()
++  Input.action_release("rear_look")
+ 
+ func _notification(what: int) -> void:
++ if what == NOTIFICATION_APPLICATION_FOCUS_OUT and is_instance_valid(rear_view):
++  rear_view.reset()
+  if what == NOTIFICATION_APPLICATION_FOCUS_OUT and mode == "race" and is_instance_valid(race) and not race.done:
+   ui.show_pause()
+--- before/scripts/kart.gd
++++ after/scripts/kart.gd
+@@ -90,6 +90,7 @@
+   _fallback_materials(model, Color(Catalog.VEHICLES[index].color), int(asset.get("materials", 1)) == 0)
+  else:
+   Geo.ball(visual, Vector3(0, 0.5, 0), Vector3(0.9, 0.7, 2), Color(Catalog.VEHICLES[index].color))
++ _add_side_mirrors()
+  var driver_path = "res://assets/models/%s.glb" % character_id
+  if ResourceLoader.exists(driver_path):
+   driver_mount = Node3D.new()
+@@ -137,6 +138,24 @@
+   gun.visible = false
+   cannons.append(gun)
+ 
++func _add_side_mirrors() -> void:
++ # Runtime wrapper coordinates are normalized metres, independent of GLB axes.
++ var mounts = Node3D.new()
++ mounts.name = "SideMirrors"
++ visual.add_child(mounts)
++ var height: float = maxf(driver_seat.y+0.38,0.72)
++ for side in [-1,1]:
++  var mirror = Node3D.new()
++  mirror.name = "LeftMirror" if side < 0 else "RightMirror"
++  mounts.add_child(mirror)
++  Geo.beam(mirror,Vector3(side*0.37,height-0.22,-0.38),Vector3(side*0.73,height,-0.5),0.025,Color("283b50"))
++  var housing = Geo.ball(mirror,Vector3(side*0.76,height,-0.5),Vector3(0.34,0.23,0.09),Color("233548"))
++  housing.name = "Housing"
++  var glass = Geo.ball(mirror,Vector3(side*0.76,height,-0.447),Vector3(0.285,0.18,0.025),Color("b6e2ed"))
++  glass.name = "Glass"
++  glass.material_override.metallic = 0.82
++  glass.material_override.roughness = 0.12
++
+ func _bounds(node: Node3D, parent_transform: Transform3D) -> AABB:
+  var t = parent_transform * node.transform
+  var result = AABB()
+--- before/scripts/interface.gd
++++ after/scripts/interface.gd
+@@ -301,7 +301,7 @@
+   tiles[i].focus_previous = tiles[i].get_path_to(before)
+   tiles[i].focus_next = tiles[i].get_path_to(after)
+  tiles[0].grab_focus()
+- at(screen, "WASD / pijltjes rijden  •  Shift boost  •  E power-up  •  Spatie springen  •  Esc pauze", Vector2(48, 753), 13, MUTED)
++ at(screen, "WASD / pijltjes rijden  •  Shift boost  •  E power-up  •  Spatie springen  •  C achterom  •  Esc pauze", Vector2(48, 753), 13, MUTED)
+  at(screen, "ENTER / A kiezen", Vector2(1083, 753), 13, CYAN)
+  var badge = panel(screen, Rect2(858, 45, 370, 100), Color(0.015, 0.06, 0.15, 0.9))
+  var box = VBoxContainer.new()
+@@ -533,7 +533,7 @@
+   toggle.toggled.connect(func(enabled):
+    game.profile.settings[setting_key] = not enabled if setting_key == "camera_motion" else enabled
+    game.persist())
+- label(box, "WASD / pijltjes: rijden    Shift: boost    E: power-up\nSpatie: springen    R: terug naar het midden    Esc: pauze\nController: stick / RT / LT / A / X / RB / Start", 15, MUTED)
++ label(box, "WASD / pijltjes: rijden    Shift: boost    E: power-up\nSpatie: springen    R: terug naar het midden    Esc: pauze\nC / LB vasthouden: achterom kijken (vooruitbeeld in venster)\nController: stick / RT / LT / A / X / RB / Start", 15, MUTED)
+  label(box, "Stuurhulp is actief. Alle instellingen gelden bij je volgende race.", 14, GOLD)
+ 
+ func show_hud() -> void:
+@@ -622,7 +622,7 @@
+  section_label.size.x = 650
+  section_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+  _outline(section_label, 3)
+- at(hud, "WASD rijden   •   E power-up   •   Spatie springen   •   Esc pauze", Vector2(405, 753), 13, MUTED)
++ at(hud, "WASD rijden   •   E power-up   •   Spatie springen   •   C / LB achterom   •   Esc pauze", Vector2(405, 753), 13, MUTED)
+  if game.profile.settings.get("touch_controls", false) or DisplayServer.is_touchscreen_available() or "--touch" in OS.get_cmdline_user_args():
+   race_gauge.scale = Vector2(0.55, 0.55)
+   race_gauge.position = Vector2(1090, 616)
+--- before/README.md
++++ after/README.md
+@@ -87,6 +87,8 @@
+ 
+ Boaz en Ravi zitten op het stoelanker van ieder voertuig. De game gebruikt de huidige karakterexports en afgeleide zittende animaties voor sturen, springen en finishen; de benen blijven daarbij in de cockpit. Treffereacties, wielrotatie, meesturende voorwielen, boostvlam, schildreactie en magneet zijn zichtbaar. De normalisatie gebruikt echte meshvertices, zodat gedraaide wielbounds de kart niet meer boven het wegdek tillen.
+ 
++Alle zes runtimevoertuigen hebben een linker- en rechterspiegel. Houd **C** of **LB** ingedrukt: achteruit wordt het hoofdbeeld en het actuele vooruitbeeld verschijnt in een klein venster. Loslaten herstelt het vooruitbeeld. De spiegels op de voertuigen hebben een chromen oppervlak; de live beelden worden door de racecamera's getoond. Pauze, focusverlies, een losgekoppelde controller en finish sluiten het achteruitbeeld. Laat de knop los voordat je opnieuw achterom kijkt.
++
+ ## Besturing en instellingen
+ 
+ | Actie | Toetsenbord | Controller |
+@@ -98,6 +100,7 @@
+ | Power-up / kanonnen | E | X |
+ | Springen | Spatie | A |
+ | Terug naar baanmidden | R | Y |
++| Achterom kijken (vasthouden) | C | LB |
+ | Pauze | Esc / P | Start |
+ | Terug in menu | Esc | B |
+ 
+--- before/tools/check.sh
++++ after/tools/check.sh
+@@ -8,6 +8,6 @@
+ export XDG_CONFIG_HOME="$boracer_test_dir/config"
+ export XDG_DATA_HOME="$boracer_test_dir/data"
+ "$boracer_engine" --headless --path "$boracer_game" --import --quiet
+-for boracer_test in profile_storage default_vehicle vehicle_audio vehicle_audio_qa world_geometry outdoor_life street_walkers street_walkers_main outdoor_life_qa kitchen_props kitchen_photo_qa kitchen_course kitchen_adventure_props kitchen_course_qa kitchen_adventure_qa nature_accents race_feedback quickwins_qa world_art architecture street_districts street_scene_qa tram_motion reward_weather kart_visuals garage_presentation garage_features garage_interaction_qa dutch_sky_horizons dutch_world_qa aircraft aircraft_qa birds birds_qa race_behavior follow_camera camera_composition home_duo_preview home_dashboard_qa ui_layout ui_sfeer world_concepts ui_input_devices game10001_integration smoke input_flow integration_audit tracks_v2 tracks_v2_flight tracks_v2_ui tracks_v2_clearance victory_podium; do
++for boracer_test in profile_storage default_vehicle vehicle_audio vehicle_audio_qa world_geometry outdoor_life street_walkers street_walkers_main outdoor_life_qa kitchen_props kitchen_photo_qa kitchen_course kitchen_adventure_props kitchen_course_qa kitchen_adventure_qa nature_accents race_feedback quickwins_qa world_art architecture street_districts street_scene_qa tram_motion reward_weather kart_visuals garage_presentation garage_features garage_interaction_qa dutch_sky_horizons dutch_world_qa aircraft aircraft_qa birds birds_qa race_behavior rear_view rear_view_qa follow_camera camera_composition home_duo_preview home_dashboard_qa ui_layout ui_sfeer world_concepts ui_input_devices game10001_integration smoke input_flow integration_audit tracks_v2 tracks_v2_flight tracks_v2_ui tracks_v2_clearance victory_podium; do
+   "$boracer_engine" --headless --audio-driver Dummy --path "$boracer_game" --script "tests/$boracer_test.gd"
+ done
+--- before/tools/capture_step.py
++++ after/tools/capture_step.py
+@@ -9,11 +9,23 @@
+ from pathlib import Path
+ import re
+ import subprocess
++import struct
+ import tempfile
+ from render_commands import update_page, latest_successful_run, write_overview_indexes
+ 
+ GAME = Path(__file__).resolve().parents[1]
+-STEPS = ('stap-00-start', 'stap-03-kleding', 'stap-04-materialen', 'stap-05-animatie', 'stap-06-werelden', 'stap-07-effecten', 'stap-08-interface', 'stap-09-keukentafel', 'stap-10-dashboard', 'stap-11-straatleven', 'stap-12-gebouwen-objecten', 'stap-13-garage-hemel', 'stap-14-vliegtuig', 'stap-15-keuken-avontuur', 'stap-16-vogeltje', 'stap-17-groen-cc0', 'stap-18-racefeedback', 'stap-19-haarlem-landmarks', 'stap-20-coureurreacties', 'stap-21-tracks-v2', 'stap-22-overwinningspodium', 'stap-23-stunt-edition')
++STEPS = ('stap-24-achteruitkijkspiegels', 'stap-00-start', 'stap-03-kleding', 'stap-04-materialen', 'stap-05-animatie', 'stap-06-werelden', 'stap-07-effecten', 'stap-08-interface', 'stap-09-keukentafel', 'stap-10-dashboard', 'stap-11-straatleven', 'stap-12-gebouwen-objecten', 'stap-13-garage-hemel', 'stap-14-vliegtuig', 'stap-15-keuken-avontuur', 'stap-16-vogeltje', 'stap-17-groen-cc0', 'stap-18-racefeedback', 'stap-19-haarlem-landmarks', 'stap-20-coureurreacties', 'stap-21-tracks-v2', 'stap-22-overwinningspodium', 'stap-23-stunt-edition')
++
++def inspect_capture_frames(run, captures):
++    invalid_frames = []
++    for capture in captures:
++        png = (run / capture['filename']).read_bytes()
++        width, height = struct.unpack('>II', png[16:24]) if len(png) >= 24 and png[:8] == b'\x89PNG\r\n\x1a\n' else (0, 0)
++        capture['width'], capture['height'] = width, height
++        if width < 640 or height < 360:
++            invalid_frames.append(capture['filename'])
++    distinct_frames = len({item['sha256'] for item in captures})
++    return invalid_frames, distinct_frames
+ 
+ def write_context_gallery(project):
+     folder = project / 'gebouwen-en-objecten'
+@@ -66,7 +78,7 @@
+         parser.error('project must be a plain directory name')
+     run = GAME.parent / 'renders' / args.project / args.step / dt.datetime.now(dt.timezone.utc).strftime('%Y%m%dT%H%M%S-%fZ')
+     run.mkdir(parents=True, exist_ok=False)
+-    script = {'stap-23-stunt-edition': 'tests/stunt_edition_capture.gd', 'stap-22-overwinningspodium': 'tests/victory_podium_capture.gd', 'stap-21-tracks-v2': 'tests/tracks_v2_capture.gd', 'stap-20-coureurreacties': 'tests/driver_reactions_capture.gd', 'stap-19-haarlem-landmarks': 'tests/haarlem_landmarks_capture.gd',
++    script = {'stap-24-achteruitkijkspiegels': 'tests/rear_view_capture.gd', 'stap-23-stunt-edition': 'tests/stunt_edition_capture.gd', 'stap-22-overwinningspodium': 'tests/victory_podium_capture.gd', 'stap-21-tracks-v2': 'tests/tracks_v2_capture.gd', 'stap-20-coureurreacties': 'tests/driver_reactions_capture.gd', 'stap-19-haarlem-landmarks': 'tests/haarlem_landmarks_capture.gd',
+               'stap-07-effecten': 'tests/effects_capture.gd',
+               'stap-09-keukentafel': 'tests/kitchen_capture.gd',
+               'stap-10-dashboard': 'tests/dashboard_capture.gd',
+@@ -78,7 +90,7 @@
+               'stap-16-vogeltje': 'tests/birds_capture.gd',
+               'stap-17-groen-cc0': 'tests/quickwins_capture.gd',
+               'stap-18-racefeedback': 'tests/quickwins_capture.gd'}.get(args.step, 'tests/step_capture.gd')
+-    expected = {'stap-23-stunt-edition': 6, 'stap-22-overwinningspodium': 18, 'stap-21-tracks-v2': 56, 'stap-20-coureurreacties': 36, 'stap-19-haarlem-landmarks': 6, 'stap-06-werelden': 22, 'stap-07-effecten': 10, 'stap-08-interface': 20,
++    expected = {'stap-24-achteruitkijkspiegels': 10, 'stap-23-stunt-edition': 6, 'stap-22-overwinningspodium': 18, 'stap-21-tracks-v2': 56, 'stap-20-coureurreacties': 36, 'stap-19-haarlem-landmarks': 6, 'stap-06-werelden': 22, 'stap-07-effecten': 10, 'stap-08-interface': 20,
+                 'stap-09-keukentafel': 13, 'stap-10-dashboard': 6, 'stap-11-straatleven': 20,
+                 'stap-12-gebouwen-objecten': 20, 'stap-13-garage-hemel': 15, 'stap-14-vliegtuig': 3, 'stap-15-keuken-avontuur': 20, 'stap-16-vogeltje': 3, 'stap-17-groen-cc0': 4, 'stap-18-racefeedback': 5}.get(args.step, 12)
+     assets = []
+@@ -102,7 +114,10 @@
+     if (run / 'subjects.json').is_file():
+         metadata['subjects_sha256'] = hashlib.sha256((run / 'subjects.json').read_bytes()).hexdigest()
+     metadata['captures'] = [{'filename': p.name, 'sha256': hashlib.sha256(p.read_bytes()).hexdigest(), 'bytes': p.stat().st_size} for p in sorted(run.glob('*.png'))]
+-    metadata['complete'] = result.returncode == 0 and len(metadata['captures']) >= expected
++    invalid_frames, distinct_frames = inspect_capture_frames(run, metadata['captures'])
++    metadata['invalid_frames'] = invalid_frames
++    metadata['distinct_frames'] = distinct_frames
++    metadata['complete'] = result.returncode == 0 and len(metadata['captures']) >= expected and not invalid_frames and distinct_frames >= 2
+     (run / 'metadata.json').write_text(json.dumps(metadata, indent=2) + '\n')
+     labels = {item['filename']: item['label'] for item in json.loads((run / 'subjects.json').read_text())} if (run / 'subjects.json').is_file() else {}
+     cards = ''.join(f'<figure><a href="{html.escape(c["filename"])}"><img loading="lazy" src="{html.escape(c["filename"])}"></a><figcaption>{html.escape(labels.get(c["filename"], c["filename"]))}</figcaption></figure>' for c in metadata['captures'])
+--- /dev/null
++++ after/scripts/rear_view.gd
+@@ -0,0 +1,99 @@
++extends Node
++## Keep the forward rig running, swapping only the viewport's active camera.
++var forward: Camera3D
++var rear: Camera3D
++var inset_camera: Camera3D
++var viewport: SubViewport
++var layer: CanvasLayer
++var panel: PanelContainer
++var active: bool = false
++var blocked_until_release: bool = false
++
++func setup(camera: Camera3D) -> void:
++ forward = camera
++ rear = Camera3D.new()
++ rear.name = "RearLookCamera"
++ add_child(rear)
++ viewport = SubViewport.new()
++ viewport.name = "ForwardInsetViewport"
++ viewport.size = Vector2i(400,225)
++ viewport.world_3d = forward.get_world_3d()
++ viewport.render_target_update_mode = SubViewport.UPDATE_DISABLED
++ add_child(viewport)
++ inset_camera = Camera3D.new()
++ inset_camera.current = true
++ viewport.add_child(inset_camera)
++ layer = CanvasLayer.new()
++ layer.layer = 3
++ add_child(layer)
++ var screen = Control.new()
++ screen.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
++ screen.mouse_filter = Control.MOUSE_FILTER_IGNORE
++ layer.add_child(screen)
++ panel = PanelContainer.new()
++ panel.name = "ForwardViewInset"
++ panel.set_anchors_and_offsets_preset(Control.PRESET_CENTER_BOTTOM)
++ panel.offset_left = -142
++ panel.offset_right = 142
++ panel.offset_top = -236
++ panel.offset_bottom = -52
++ panel.mouse_filter = Control.MOUSE_FILTER_IGNORE
++ screen.add_child(panel)
++ var style = StyleBoxFlat.new()
++ style.bg_color = Color("102638")
++ style.border_color = Color("56d9e9")
++ style.set_border_width_all(2)
++ style.content_margin_left = 5
++ style.content_margin_right = 5
++ style.content_margin_top = 3
++ style.content_margin_bottom = 5
++ panel.add_theme_stylebox_override("panel",style)
++ var column = VBoxContainer.new()
++ column.mouse_filter = Control.MOUSE_FILTER_IGNORE
++ panel.add_child(column)
++ var caption = Label.new()
++ caption.text = "VOORUIT  ·  C / LB loslaten"
++ caption.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
++ caption.add_theme_font_size_override("font_size",13)
++ column.add_child(caption)
++ var image = TextureRect.new()
++ image.texture = viewport.get_texture()
++ image.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
++ image.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
++ image.custom_minimum_size = Vector2(270,152)
++ image.mouse_filter = Control.MOUSE_FILTER_IGNORE
++ column.add_child(image)
++ panel.hide()
++
++func reset() -> void:
++ blocked_until_release = Input.is_action_pressed("rear_look")
++ _set_active(false)
++
++func update(track, kart, enabled: bool) -> void:
++ var pressed = Input.is_action_pressed("rear_look")
++ if not pressed: blocked_until_release = false
++ if not enabled:
++  reset()
++  return
++ _set_active(pressed and not blocked_until_release)
++ if not active: return
++ var frame: Transform3D = track.frame(kart.progress)
++ # Eye behind the vehicle clears the rider/body; loops retain their local up.
++ var eye: Vector3 = track.position_at(kart.progress,kart.lateral,kart.jump_height+1.15)+frame.basis.z*1.6
++ rear.global_position = eye
++ rear.look_at(eye+frame.basis.z*10,frame.basis.y)
++ rear.fov = 78
++ rear.far = forward.far
++ inset_camera.global_transform = forward.global_transform
++ inset_camera.fov = forward.fov
++ inset_camera.near = forward.near
++ inset_camera.far = forward.far
++
++func _set_active(value: bool) -> void:
++ active = value
++ panel.visible = value
++ viewport.render_target_update_mode = SubViewport.UPDATE_ALWAYS if value else SubViewport.UPDATE_DISABLED
++ if value:
++  rear.make_current()
++ else:
++  forward.make_current()
+--- /dev/null
++++ after/tests/rear_view.gd
+@@ -0,0 +1,56 @@
++extends SceneTree
++const Main = preload("res://scripts/main.gd")
++var failures: int = 0
++var checks: int = 0
++func check(ok: bool,label: String) -> void:
++ checks += 1
++ if not ok:
++  failures += 1
++  push_error(label)
++func _initialize() -> void: call_deferred("run")
++func run() -> void:
++ var game = Main.new()
++ root.add_child(game)
++ game.set_process(false)
++ game.set_physics_process(false)
++ game.audio.muted = true
++ for vehicle in 6:
++  game.profile.selected = vehicle
++  game.start_race(11)
++  game.race.set_process(false)
++  check(game.race.player.visual.get_node_or_null("SideMirrors/LeftMirror/Glass")!=null,"left mirror vehicle %d"%vehicle)
++  check(game.race.player.visual.get_node_or_null("SideMirrors/RightMirror/Glass")!=null,"right mirror vehicle %d"%vehicle)
++  Input.action_press("rear_look")
++  game._camera(0,true)
++  check(game.rear_view.active,"rear activates")
++  var eye_local: Vector3 = game.track.frame(game.race.player.progress).affine_inverse()*game.rear_view.rear.global_position
++  check(eye_local.z>1.5,"rear eye clears normalized vehicle rear on type %d"%vehicle)
++  check(game.get_viewport().get_camera_3d()==game.rear_view.rear,"rear main camera")
++  check(game.rear_view.viewport.world_3d==game.camera.get_world_3d(),"inset shares actual world")
++  check(game.rear_view.inset_camera.global_transform.is_equal_approx(game.camera.global_transform),"inset is forward rig")
++  var before: Transform3D = game.camera.global_transform
++  Input.action_release("rear_look")
++  game._camera(0)
++  check(game.get_viewport().get_camera_3d()==game.camera,"release main forward")
++  check(game.camera.global_position.distance_to(before.origin)<0.001,"no forward camera jump")
++  check(game.rear_view.viewport.render_target_update_mode==SubViewport.UPDATE_DISABLED,"idle inset does not render")
++  for sample in 100:
++   game.race.player.progress = game.track.length*sample/100.0
++   game.race.player.update_visual(game.track,0)
++   Input.action_press("rear_look")
++   game._camera(0,true)
++   var f: Transform3D = game.track.frame(game.race.player.progress)
++   check((-game.rear_view.rear.global_basis.z).dot(f.basis.z)>0.999,"rear follows course tangent")
++   check(game.rear_view.rear.global_basis.y.dot(f.basis.y)>0.999,"rear follows stunt up")
++  game.rear_view.reset()
++  game._camera(0,true)
++  check(not game.rear_view.active,"held reset blocks")
++  Input.action_release("rear_look")
++  game._camera(0,true)
++  await process_frame
++ game.go_home()
++ check(not game.rear_view.active and not game.rear_view.panel.visible,"menu cleanup")
++ game.queue_free()
++ await process_frame
++ print("BORACER REAR VIEW: %d checks, %d failures"%[checks,failures])
++ quit(0 if failures==0 else 1)
+--- /dev/null
++++ after/tests/rear_view_capture.gd
+@@ -0,0 +1,58 @@
++extends SceneTree
++const Main=preload("res://scripts/main.gd")
++var output:String
++var subjects:Array[Dictionary]=[]
++var game
++var failures:=0
++func _initialize(): call_deferred("run")
++func capture(filename:String,label:String):
++ for frame in 4: await process_frame
++ await RenderingServer.frame_post_draw
++ if root.get_texture().get_image().save_png(output.path_join(filename+".png"))!=OK: failures+=1
++ subjects.append({"filename":filename+".png","label":label,"category":"rear-view"})
++func run():
++ output=OS.get_environment("BORACER_CAPTURE_DIR")
++ if output.is_empty() or DisplayServer.get_name()=="headless":
++  quit(2)
++  return
++ root.size=Vector2i(1280,800)
++ root.gui_disable_input=true
++ game=Main.new()
++ root.add_child(game)
++ game.set_process(false)
++ game.set_physics_process(false)
++ game.audio.muted=true
++ game.audio.music.stop()
++ for index in 6:
++  game.profile.selected=index
++  game.start_race(0)
++  game.race.set_process(false)
++  game.race.countdown=0
++  game.race.player.progress=25
++  game.race.player.update_visual(game.track,0)
++  game.ui.hud.hide()
++  var kart=game.race.player
++  var f:Transform3D=game.track.frame(kart.progress)
++  game.camera.position=kart.position+f.basis*Vector3(2.7,1.8,3.1)
++  game.camera.look_at(kart.position+f.basis.y*0.65,f.basis.y)
++  game.camera.fov=37
++  await capture("spiegels-"+str(index),"Twee fysieke spiegels · "+str(game.Catalog.VEHICLES[index].name))
++ game.ui.hud.show()
++ game._camera(0,true)
++ await capture("vooruit","Vooruitbeeld · C of LB vasthouden voor achterom")
++ Input.action_press("rear_look")
++ game._camera(0,true)
++ await capture("achterom","Achteruit als hoofdbeeld · actueel vooruitbeeld in venster")
++ game.race.player.progress+=20
++ game.race.player.update_visual(game.track,0)
++ game._camera(0,true)
++ await capture("achterom-verder","Beide camera's volgen het voertuig tijdens achterom kijken")
++ Input.action_release("rear_look")
++ game._camera(0)
++ await capture("losgelaten","Losgelaten · direct terug naar vooruitbeeld")
++ var file=FileAccess.open(output.path_join("subjects.json"),FileAccess.WRITE)
++ file.store_string(JSON.stringify(subjects,"  "))
++ game.queue_free()
++ await process_frame
++ print("REAR VIEW CAPTURES=",subjects.size()," failures=",failures)
++ quit(0 if failures==0 and subjects.size()==10 else 1)

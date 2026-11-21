@@ -1,0 +1,146 @@
+[
+  {
+    "category": "race",
+    "filename": "startheuvel.png",
+    "label": "Afdaling vanaf de start",
+    "world": 4
+  },
+  {
+    "category": "race",
+    "filename": "rechthuis.png",
+    "label": "Rechthuisbocht",
+    "longest_run": 14,
+    "progress": 15.5563507080078,
+    "readable_samples": 29,
+    "visibility": {
+      "body_points": 164,
+      "pixel_size": [
+        86.9804382324219,
+        49.5491333007812
+      ],
+      "score": -221.068237611558,
+      "viewport_size": [
+        1280.0,
+        800.0
+      ],
+      "visible_points": 173
+    },
+    "world": 4
+  },
+  {
+    "category": "race",
+    "filename": "schanskerk.png",
+    "label": "Schanskerkbocht",
+    "longest_run": 68,
+    "progress": 270.254699707031,
+    "readable_samples": 68,
+    "visibility": {
+      "body_points": 129,
+      "pixel_size": [
+        67.2066955566406,
+        24.3370361328125
+      ],
+      "score": -129.08086448539,
+      "viewport_size": [
+        1280.0,
+        800.0
+      ],
+      "visible_points": 129
+    },
+    "world": 4
+  },
+  {
+    "category": "race",
+    "filename": "fort-aan-de-drecht.png",
+    "label": "Fortbocht",
+    "longest_run": 38,
+    "progress": 589.655395507812,
+    "readable_samples": 50,
+    "visibility": {
+      "body_points": 50,
+      "pixel_size": [
+        195.373046875,
+        39.7235717773438
+      ],
+      "score": -100.398009015322,
+      "viewport_size": [
+        1280.0,
+        800.0
+      ],
+      "visible_points": 51
+    },
+    "world": 4
+  },
+  {
+    "category": "race",
+    "filename": "de-hoeksteen.png",
+    "label": "Hoeksteenhaarspeld",
+    "longest_run": 54,
+    "progress": 884.268310546875,
+    "readable_samples": 54,
+    "visibility": {
+      "body_points": 188,
+      "pixel_size": [
+        69.8855590820312,
+        45.9289855957031
+      ],
+      "score": -312.428691499028,
+      "viewport_size": [
+        1280.0,
+        800.0
+      ],
+      "visible_points": 188
+    },
+    "world": 4
+  },
+  {
+    "category": "race",
+    "filename": "thamerkerk.png",
+    "label": "Thamerkerkbocht",
+    "longest_run": 26,
+    "progress": 1331.17639160156,
+    "readable_samples": 27,
+    "visibility": {
+      "body_points": 165,
+      "pixel_size": [
+        160.813415527344,
+        122.742340087891
+      ],
+      "score": -256.891123758759,
+      "viewport_size": [
+        1280.0,
+        800.0
+      ],
+      "visible_points": 184
+    },
+    "world": 4
+  },
+  {
+    "category": "race",
+    "filename": "irenebrug.png",
+    "label": "Irenebrugkade",
+    "longest_run": 20,
+    "progress": 1567.88146972656,
+    "readable_samples": 38,
+    "visibility": {
+      "body_points": 231,
+      "pixel_size": [
+        208.798400878906,
+        32.0037231445312
+      ],
+      "score": -497.010296754427,
+      "viewport_size": [
+        1280.0,
+        800.0
+      ],
+      "visible_points": 266
+    },
+    "world": 4
+  },
+  {
+    "category": "overview",
+    "filename": "overzicht.png",
+    "label": "Straatcircuit en startheuvel",
+    "world": 4
+  }
+]

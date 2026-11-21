@@ -1,0 +1,52 @@
+{
+  "retro": {
+    "source": "vehicles/retro/retro-improved.glb",
+    "sha256": "681ca3e3928c3cf894700415c5c06d68b0bb6ba025525e906eb42fc271702ff5",
+    "materials": 15,
+    "playable": true
+  },
+  "golden-rocket-racer": {
+    "source": "vehicles/golden-rocket-racer/golden-rocket-racer-improved.glb",
+    "sha256": "59a4065a5562bf2d63ba1aaed19527e5a6ca3692f7d466584ee0264af6834f7c",
+    "materials": 15,
+    "playable": true
+  },
+  "raketfiets": {
+    "source": "vehicles/raketfiets/raketfiets-improved.glb",
+    "sha256": "630d46939969f34bdb7784601d8544c595a623817a43d47e925a3dd133e4d04c",
+    "materials": 18,
+    "playable": true
+  },
+  "purple-passion": {
+    "source": "vehicles/purple-passion/purple-passion-improved.glb",
+    "sha256": "651c1bf33b1176e75002cdef7d82c7116b25f478453b124c8c0db57073af3bc4",
+    "materials": 15,
+    "playable": true
+  },
+  "toxic-turbo": {
+    "source": "vehicles/toxic-turbo/toxic-turbo-improved.glb",
+    "sha256": "bafc443886177384ee9c7c0591531f7a866be85b37ef6810c67be5fe535b2399",
+    "materials": 14,
+    "playable": true
+  },
+  "rainbow": {
+    "source": "vehicles/rainbow/rainbow-improved.glb",
+    "sha256": "13812f1cdb5cf7f00508ad0167a69e4ef78c3e99e8b67ad8aa8e82b5e2ab5c0f",
+    "materials": 16,
+    "playable": true
+  },
+  "boaz": {
+    "source": "persons/boaz/review-step2/after/boaz.glb",
+    "sha256": "bfe7550b22bd4cf836c8c68f297a0d0afbe005e058b971aa4dbe7824c6f279b0",
+    "materials": 1,
+    "integration_stage": "hair-step2",
+    "visual_review": "pending before step 3"
+  },
+  "ravi": {
+    "source": "persons/ravi/review-step2/after/ravi.glb",
+    "sha256": "f1aa1b6f79fc523023a4492c1350dd521a4e6a237f06ab308497667850bdf4a8",
+    "materials": 1,
+    "integration_stage": "hair-step2",
+    "visual_review": "pending before step 3"
+  }
+}

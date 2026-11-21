@@ -1,0 +1,183 @@
+extends RefCounted
+## World-only art. No collision or route ownership; repeatable textures use world UVs.
+const Geo = preload("res://scripts/geometry.gd")
+static var materials: Dictionary = {}
+
+static func material(kind: String, tint: Color = Color.WHITE, density: float = 0.2) -> StandardMaterial3D:
+ var cache_key = kind + str(tint) + str(density)
+ if materials.has(cache_key): return materials[cache_key]
+ var mat = StandardMaterial3D.new()
+ mat.albedo_color = tint
+ var file = kind
+ if kind in ["wood", "brick"] and not ResourceLoader.exists("res://assets/textures/worlds/" + kind + ".png"):
+  file = kind + "_fallback"
+ var path = "res://assets/textures/worlds/" + file
+ if ResourceLoader.exists(path + ".png"):
+  mat.albedo_texture = load(path + ".png")
+ if ResourceLoader.exists(path + "_normal.png"):
+  mat.normal_enabled = true
+  mat.normal_texture = load(path + "_normal.png")
+  mat.normal_scale = 0.18 if kind == "grass" else (0.25 if kind in ["paper","metal"] else 0.65)
+ mat.uv1_triplanar = true
+ mat.uv1_world_triplanar = true
+ mat.uv1_triplanar_sharpness = 12.0
+ mat.uv1_scale = Vector3.ONE * density
+ mat.texture_filter = BaseMaterial3D.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS_ANISOTROPIC
+ mat.roughness = {"wood":0.72,"brick":0.93,"grass":0.96,"stone":0.91,"roof":0.79,"metal":0.31,"paper":0.9,"solar":0.22}.get(kind,0.7)
+ mat.metallic = 0.78 if kind == "metal" else 0.0
+ mat.metallic_specular = 0.16 if kind in ["grass","paper","brick","stone"] else 0.5
+ materials[cache_key] = mat
+ return mat
+
+static func apply(mesh: MeshInstance3D, kind: String, tint: Color = Color.WHITE, density: float = 0.2) -> MeshInstance3D:
+ mesh.material_override = material(kind,tint,density)
+ mesh.set_meta("world_material",kind)
+ return mesh
+
+static func box(parent: Node3D, p: Vector3, size: Vector3, kind: String, tint: Color = Color.WHITE, density: float = 0.2) -> MeshInstance3D:
+ return apply(Geo.box(parent,p,size,tint),kind,tint,density)
+
+static func batch_boxes(parent: Node3D, positions: Array[Vector3], size: Vector3, color: Color, glow: float = 0.0) -> void:
+ if positions.is_empty(): return
+ var mm = MultiMesh.new()
+ mm.transform_format = MultiMesh.TRANSFORM_3D
+ var mesh = BoxMesh.new()
+ mesh.size = size
+ mesh.material = Geo.material(color,glow)
+ mm.mesh = mesh
+ mm.instance_count = positions.size()
+ for i in positions.size(): mm.set_instance_transform(i,Transform3D(Basis.IDENTITY,positions[i]))
+ var node = MultiMeshInstance3D.new()
+ node.multimesh = mm
+ parent.add_child(node)
+
+static func finish(track: Node3D, first_scenery: int) -> void:
+ # Retexture pre-existing decorative primitives; emissive and transparent accents survive.
+ var targets: Array[Node] = []
+ for i in range(first_scenery,track.get_child_count()): targets.append(track.get_child(i))
+ for target in targets: _surface_pass(target,track.world_index)
+ if track.world_index == 5:
+  for child in track.get_children():
+   if child is MeshInstance3D and child.mesh is BoxMesh and child.mesh.size.x == 235:
+    apply(child,"wood",Color("c2c6cc"),0.045)
+ _background(track)
+ track.set_meta("world_art_version",3)
+
+static func _surface_pass(node: Node, world: int) -> void:
+ # Only predictable landscape geometry is inferred. Props retain authored glass,
+ # emissive, plastic, canvas and cloud surfaces unless explicitly materialized.
+ if node is MeshInstance3D and node.material_override is StandardMaterial3D and not node.has_meta("world_material"):
+  var mat: StandardMaterial3D = node.material_override
+  var c = mat.albedo_color
+  if not mat.emission_enabled and mat.transparency == BaseMaterial3D.TRANSPARENCY_DISABLED:
+   var kind = ""
+   if node.mesh is BoxMesh and node.mesh.size.x > 800: kind = "grass" if world != 5 else "wood"
+   elif node.mesh is SphereMesh and world != 5 and c.g > c.r * 1.15 and c.g > c.b * 1.1: kind = "grass"
+   elif node.mesh is CylinderMesh and world in [0,3,4] and c.r > c.b * 1.4 and c.g < c.r and node.mesh.height > 7: kind = "wood"
+   if not kind.is_empty(): apply(node,kind,c.lightened(0.3),0.18 if kind != "grass" else 0.45)
+ for child in node.get_children(): _surface_pass(child,world)
+
+static func _background(track: Node3D) -> void:
+ var bg = Node3D.new()
+ bg.name = "LayeredWorldBackground"
+ track.add_child(bg)
+ if track.world_index == 5:
+  _room(bg)
+  return
+ var world: int = track.world_index
+ # Solid terrain extends to the horizon; soft skyline ridges give atmospheric depth.
+ if world in [0,3,4]:
+  var hill_shape = SphereMesh.new()
+  hill_shape.radial_segments = 32
+  hill_shape.rings = 12
+  for ring in 3:
+   for i in 14:
+    var a = TAU * (float(i) / 14 + ring * 0.035)
+    var r = 380 + ring * 155
+    var p = Vector3(sin(a)*r,-36-ring*7,cos(a)*r)
+    var color = [Color("72a78c"),Color("8fb4a3"),Color("b0c5b4")][ring]
+    if world == 0: color = [Color("8d9190"),Color("aeaaa3"),Color("c9beb1")][ring]
+    var hill = Geo.ball(bg,p,Vector3(200 + ring*48,155 + sin(i*2)*55 + ring*25,175 + ring*30),color)
+    hill.mesh = hill_shape
+    hill.material_override.roughness = 0.99
+    hill.material_override.metallic_specular = 0.08
+    hill.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+  # Textured banks frame the water and visually connect the elevated race supports.
+  for side in [-1,1]:
+   box(bg,Vector3(side*49,-21.4,0),Vector3(45,1,590),"grass",Color("c7dbb1"),0.22)
+   box(bg,Vector3(side*26,-21.9,0),Vector3(2,1,590),"stone",Color("ded2bb"),0.23)
+ elif world == 1:
+  var windows: Array[Vector3] = []
+  for i in 42:
+   var a = TAU*i/42.0
+   var p = Vector3(sin(a)*420,-22,cos(a)*420)
+   var h = 60 + 75 * (sin(i*7.31)*0.5+0.5)
+   var tower = box(bg,p+Vector3.UP*h/2,Vector3(20,h,23),"metal",Color("354762"),0.18)
+   tower.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+   for row in int(h/5):
+    for col in 3: windows.append(p+Vector3(-6+col*6,4+row*5,-11.6))
+   box(bg,p+Vector3.UP*(h+1),Vector3(22,1,25),"metal",Color("8398b3"))
+  batch_boxes(bg,windows,Vector3(2.8,1.6,0.15),Color("5ea6c1"),0.35)
+ elif world == 2:
+  for layer in 3:
+   for i in 20:
+    var a = TAU*i/20.0+layer*0.17
+    var p = Vector3(sin(a)*(300+layer*150),-45-layer*24,cos(a)*(300+layer*150))
+    Geo.ball(bg,p,Vector3(130+layer*45,25+sin(i*3)*8,100+layer*40),[Color("f5e9dc"),Color("e4ddeb"),Color("c7d9e8")][layer])
+  for i in 7:
+   var a = i*TAU/7
+   var p = Vector3(sin(a)*390,5+sin(i*4)*35,cos(a)*390)
+   apply(Geo.ball(bg,p,Vector3(53,14,44),Color.WHITE),"grass",Color("bbd9a5"))
+   apply(Geo.cylinder(bg,p-Vector3.UP*18,8,35,Color.WHITE,24),"stone",Color("b3abc5"),0.15)
+   Geo.box(bg,p+Vector3(8,-32,0),Vector3(3,61,3),Color("99dbe6"))
+
+static func _room(parent: Node3D) -> void:
+ # A complete room, with long-distance scale cues outside the tabletop footprint.
+ box(parent,Vector3(0,-63,0),Vector3(1000,2,1000),"wood",Color("929b99"),0.014)
+ box(parent,Vector3(0,247,0),Vector3(950,4,720),"paper",Color("fff1dd"),0.025)
+ for z in [-360,360]: box(parent,Vector3(0,90,z),Vector3(950,310,4),"paper",Color("f1e4cf"),0.035)
+ for x in [-470,470]: box(parent,Vector3(x,90,0),Vector3(4,310,720),"paper",Color("e7ddcb"),0.035)
+ # Countertop, cabinet frames, inset doors and brass handles: clear household architecture.
+ box(parent,Vector3(0,-5,320),Vector3(660,8,75),"stone",Color("f3e8d5"),0.04)
+ for i in 9:
+  var x = -288+i*72
+  box(parent,Vector3(x,-35,320),Vector3(69,54,70),"wood",Color("c2d4b8"),0.04)
+  box(parent,Vector3(x,-34,283),Vector3(60,43,2),"wood",Color("d6e1c7"),0.04)
+  box(parent,Vector3(x,-18,280),Vector3(15,1.6,1.6),"metal",Color("e4c68d"),0.1)
+  box(parent,Vector3(x,113,333),Vector3(68,58,48),"wood",Color("e4e4d0"),0.04)
+  box(parent,Vector3(x,113,307),Vector3(60,49,2),"wood",Color("f1e9d8"),0.04)
+ # Tiled backsplash rather than an unbroken rear plane.
+ box(parent,Vector3(0,32,355),Vector3(660,61,1),"brick",Color("e2f0df"),0.027)
+ box(parent,Vector3(160,1,317),Vector3(70,1,47),"metal",Color("c0c8c5"),0.08)
+ box(parent,Vector3(160,1.7,317),Vector3(59,1,36),"metal",Color("536b70"),0.08)
+ Geo.beam(parent,Vector3(160,2,343),Vector3(160,25,343),2,Color("bfc3b5"))
+ Geo.beam(parent,Vector3(160,25,343),Vector3(160,25,326),2,Color("bfc3b5"))
+ # Large sunlit window with mullions, sill, curtains and a quiet landscape outside.
+ Geo.box(parent,Vector3(-468,90,-80),Vector3(1,130,220),Color("9dcad0"))
+ for z in [-193,-80,33]: box(parent,Vector3(-463,90,z),Vector3(5,140,5),"wood",Color("fff1d6"))
+ for y in [20,90,160]: box(parent,Vector3(-463,y,-80),Vector3(5,5,230),"wood",Color("fff1d6"))
+ box(parent,Vector3(-455,17,-80),Vector3(30,5,245),"wood",Color("f0dfc6"))
+ for z in [-215,55]: box(parent,Vector3(-450,87,z),Vector3(12,153,27),"paper",Color("d8b790"),0.08)
+ for x in [-170,170]:
+  for z in [-165,165]:
+   box(parent,Vector3(x,-28,z),Vector3(44,5,45),"wood",Color("b2c8b4"),0.04)
+   box(parent,Vector3(x,-3,z+20),Vector3(44,50,5),"wood",Color("b2c8b4"),0.04)
+   for dx in [-17,17]:
+    for dz in [-17,17]: box(parent,Vector3(x+dx,-46,z+dz),Vector3(4,33,4),"wood",Color("b6a18a"),0.05)
+ # Pendant canopy stays well above both camera and racers.
+ Geo.cylinder(parent,Vector3(0,220,0),0.8,65,Color("9b9b8b"))
+ var shade = Geo.cylinder(parent,Vector3(0,178,0),33,25,Color("d8b78b"),12)
+ shade.material_override = material("metal",Color("e9c893"),0.08)
+
+static func setup_environment(environment: Environment, sun: DirectionalLight3D, world_index: int) -> void:
+ # Compatibility renderer friendly atmospheric perspective; no expensive volumetrics.
+ environment.fog_enabled = true
+ environment.fog_light_color = [Color("e5b8a7"),Color("34466b"),Color("d7e3ed"),Color("d5c5ad"),Color("c5dece"),Color("e6d6ba")][world_index]
+ environment.fog_density = 0.0011 if world_index != 5 else 0.00035
+ environment.fog_sky_affect = 0.25
+ environment.ambient_light_color = Color("c5d7f0") if world_index in [1,2] else Color("fff0d6")
+ environment.ambient_light_energy = 0.3 if world_index in [2,4] else 0.35
+ if sun:
+  sun.light_color = Color("ffdcb1") if world_index in [0,3,5] else Color("f5f3df")
+  sun.light_energy = 0.5 if world_index in [2,4] else 0.65
+  if world_index == 2: sun.light_color = Color("f1f6ff")

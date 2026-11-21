@@ -1,0 +1,424 @@
+QA_SUITE profile_storage
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+BORACER PROFILE STORAGE: 28 checks, 0 failures
+QA_EXIT profile_storage 0
+QA_SUITE default_vehicle
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+BORACER DEFAULT VEHICLE: 60 checks, 0 failures
+QA_EXIT default_vehicle 0
+QA_SUITE vehicle_audio
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+BORACER VEHICLE AUDIO: 1638 checks, 0 failures
+WARNING: 23 ObjectDB instances were leaked at exit (run with `--verbose` for details).
+   at: cleanup (core/object/object.cpp:2536)
+QA_EXIT vehicle_audio 0
+QA_SUITE vehicle_audio_qa
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+ERROR: Menu starts without vehicle voices
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/vehicle_audio_qa.gd:12)
+       [1] run (res://tests/vehicle_audio_qa.gd:43)
+ERROR: Only twenty racing layer voices exist after vehicle0 rebind
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/vehicle_audio_qa.gd:12)
+       [1] run (res://tests/vehicle_audio_qa.gd:52)
+ERROR: Actual race rebind frees old voices before keeping one bank
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/vehicle_audio_qa.gd:12)
+       [1] run (res://tests/vehicle_audio_qa.gd:108)
+ERROR: Only twenty racing layer voices exist after vehicle1 rebind
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/vehicle_audio_qa.gd:12)
+       [1] run (res://tests/vehicle_audio_qa.gd:52)
+ERROR: Actual race rebind frees old voices before keeping one bank
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/vehicle_audio_qa.gd:12)
+       [1] run (res://tests/vehicle_audio_qa.gd:108)
+ERROR: Only twenty racing layer voices exist after vehicle2 rebind
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/vehicle_audio_qa.gd:12)
+       [1] run (res://tests/vehicle_audio_qa.gd:52)
+ERROR: Actual race rebind frees old voices before keeping one bank
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/vehicle_audio_qa.gd:12)
+       [1] run (res://tests/vehicle_audio_qa.gd:108)
+ERROR: Only twenty racing layer voices exist after vehicle3 rebind
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/vehicle_audio_qa.gd:12)
+       [1] run (res://tests/vehicle_audio_qa.gd:52)
+ERROR: Actual race rebind frees old voices before keeping one bank
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/vehicle_audio_qa.gd:12)
+       [1] run (res://tests/vehicle_audio_qa.gd:108)
+ERROR: Only twenty racing layer voices exist after vehicle4 rebind
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/vehicle_audio_qa.gd:12)
+       [1] run (res://tests/vehicle_audio_qa.gd:52)
+ERROR: Actual race rebind frees old voices before keeping one bank
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/vehicle_audio_qa.gd:12)
+       [1] run (res://tests/vehicle_audio_qa.gd:108)
+ERROR: Only twenty racing layer voices exist after vehicle5 rebind
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/vehicle_audio_qa.gd:12)
+       [1] run (res://tests/vehicle_audio_qa.gd:52)
+BORACER VEHICLE AUDIO QA: 829 checks, 15 failures
+QA_EXIT vehicle_audio_qa 1
+QA_SUITE world_geometry
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+WORLD 0 length=693.3 min_clearance=55.4 max_gradient=0.14 min_bend_radius=17.0
+WORLD 1 length=783.6 min_clearance=49.3 max_gradient=0.11 min_bend_radius=11.8
+WORLD 2 length=816.1 min_clearance=51.8 max_gradient=0.23 min_bend_radius=13.2
+WORLD 3 length=720.1 min_clearance=50.5 max_gradient=0.14 min_bend_radius=11.1
+WORLD 4 length=757.8 min_clearance=53.2 max_gradient=0.09 min_bend_radius=15.5
+WORLD 5 length=685.2 min_clearance=18.3 max_gradient=0.93 min_bend_radius=8.2
+WORLD GEOMETRY: 53909 checks, 0 failures
+QA_EXIT world_geometry 0
+QA_SUITE outdoor_life
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+DISTANCES median=57.1418647766113 max=100.5048828125
+OUTDOOR_LIFE world=0 clusters=24 walker_routes=4 nodes=254 static_instances=993
+DISTANCES median=44.5076751708984 max=76.4154052734375
+OUTDOOR_LIFE world=1 clusters=24 walker_routes=4 nodes=256 static_instances=936
+DISTANCES median=72.5011367797852 max=128.497802734375
+OUTDOOR_LIFE world=2 clusters=24 walker_routes=4 nodes=258 static_instances=1032
+DISTANCES median=51.5065231323242 max=105.292610168457
+OUTDOOR_LIFE world=3 clusters=24 walker_routes=4 nodes=254 static_instances=912
+DISTANCES median=75.9677200317383 max=141.001113891602
+OUTDOOR_LIFE world=4 clusters=24 walker_routes=4 nodes=255 static_instances=921
+OUTDOOR_LIFE checks=157043 failures=0
+QA_EXIT outdoor_life 0
+QA_SUITE street_walkers
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+BORACER STREET WALKERS: 120817 checks, 0 failures
+QA_EXIT street_walkers 0
+QA_SUITE street_walkers_main
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+BORACER STREET WALKERS MAIN: 6 checks, 0 failures
+QA_EXIT street_walkers_main 0
+QA_SUITE outdoor_life_qa
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+OUTDOOR QA world=0 clusters=24 projected_visible=23 actors=4 submitted_shapes=993
+OUTDOOR QA world=1 clusters=24 projected_visible=24 actors=4 submitted_shapes=936
+OUTDOOR QA world=2 clusters=24 projected_visible=23 actors=4 submitted_shapes=1032
+OUTDOOR QA world=3 clusters=24 projected_visible=24 actors=4 submitted_shapes=912
+OUTDOOR QA world=4 clusters=24 projected_visible=23 actors=4 submitted_shapes=921
+BORACER OUTDOOR LIFE QA: 169348 checks, 0 failures
+QA_EXIT outdoor_life_qa 0
+QA_SUITE kitchen_props
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+KITCHEN_PROPS objects=11 mesh_nodes=219 checks=17817 failures=0
+QA_EXIT kitchen_props 0
+QA_SUITE kitchen_photo_qa
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+KITCHEN PHOTO IMPORT res://assets/textures/kitchen/photos/IMG_20261017_093242.jpg size=(1536.0, 2048.0) format=17 compressed=true payload=2097176
+KITCHEN PHOTO IMPORT res://assets/textures/kitchen/photos/IMG_20261017_093236.jpg size=(1536.0, 2048.0) format=17 compressed=true payload=2097176
+KITCHEN PHOTO IMPORT res://assets/textures/kitchen/photos/IMG_20261017_093205.jpg size=(1536.0, 2048.0) format=17 compressed=true payload=2097176
+KITCHEN PHOTO IMPORT res://assets/textures/kitchen/photos/IMG_20261017_093239.jpg size=(1536.0, 2048.0) format=17 compressed=true payload=2097176
+KITCHEN PHOTO IMPORT res://assets/textures/kitchen/photos/IMG_20261017_093220.jpg size=(1536.0, 2048.0) format=17 compressed=true payload=2097176
+KITCHEN PHOTO QA mesh_count=219 imported_textures=5 image_payload_bytes=10485880
+BORACER KITCHEN PHOTO QA: 24900 checks, 0 failures
+QA_EXIT kitchen_photo_qa 0
+QA_SUITE kitchen_course
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+BORACER KITCHEN COURSE: 15209 checks, 0 failures
+QA_EXIT kitchen_course 0
+QA_SUITE kitchen_adventure_props
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+TUBE_BOUNDS toilet_rolls [P: (25.34761, 0.1, -92.71606), S: (18.24954, 26.4, 26.70227)]
+TUBE_BOUNDS pvc_rainbow [P: (-23.55237, 0.1, 52.82073), S: (22.71104, 32.6, 34.94194)]
+KITCHEN_ADVENTURE_PROPS groups=6 nodes=119
+KITCHEN_ADVENTURE_PROPS checks=5600 failures=0
+QA_EXIT kitchen_adventure_props 0
+QA_SUITE kitchen_course_qa
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+KITCHEN COURSE QA vehicle=0 finish=37.7491866382187 collected=33 inverted=[true, true, true, true, true]
+KITCHEN COURSE QA vehicle=1 finish=38.2249006989495 collected=41 inverted=[true, true, true, true, true]
+KITCHEN COURSE QA vehicle=2 finish=35.0990603015514 collected=40 inverted=[true, true, true, true, true]
+KITCHEN COURSE QA vehicle=3 finish=36.8465903319034 collected=36 inverted=[true, true, true, true, true]
+KITCHEN COURSE QA vehicle=4 finish=46.1242904740692 collected=58 inverted=[true, true, true, true, true]
+KITCHEN COURSE QA vehicle=5 finish=37.2634617751942 collected=67 inverted=[true, true, true, true, true]
+BORACER KITCHEN COURSE INDEPENDENT QA: 132108 checks, 0 failures
+QA_EXIT kitchen_course_qa 0
+QA_SUITE kitchen_adventure_qa
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+BORACER KITCHEN ADVENTURE INDEPENDENT QA: 1731637 checks, 0 failures
+QA_EXIT kitchen_adventure_qa 0
+QA_SUITE nature_accents
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+Nature accents: 9220 checks, 0 failures
+QA_EXIT nature_accents 0
+QA_SUITE race_feedback
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+BORACER RACE FEEDBACK: 740 checks, 0 failures
+QA_EXIT race_feedback 0
+QA_SUITE quickwins_qa
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+QUICKWINS NATURE world=3 instances=12 projected_views=202
+QUICKWINS NATURE world=4 instances=12 projected_views=216
+BORACER QUICKWINS INDEPENDENT QA: 356828 checks, 0 failures
+QA_EXIT quickwins_qa 0
+QA_SUITE world_art
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+WORLD ART: 368 checks, 0 failures
+QA_EXIT world_art 0
+QA_SUITE architecture
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+ARCHITECTURE world=3 houses=4 house_child_nodes=132
+ARCHITECTURE world=4 houses=4 house_child_nodes=120
+ARCHITECTURE checks=599 failures=0
+QA_EXIT architecture 0
+QA_SUITE street_districts
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+DISTRICT world=3 houses=198 draw_nodes=21 instances=7854 under_route=0 min_vertical_gap=inf min_horizontal_margin=3.18542957305908
+DISTRICT world=4 houses=99 draw_nodes=21 instances=2394 under_route=39 min_vertical_gap=28.4107830047607 min_horizontal_margin=inf
+STREET_DISTRICTS checks=179677 failures=0
+QA_EXIT street_districts 0
+QA_SUITE street_scene_qa
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+STREET QA elevated roof samples=192 minimum_gap=29.4653274536133
+BORACER STREET SCENE QA: 856749 checks, 0 failures
+QA_EXIT street_scene_qa 0
+QA_SUITE tram_motion
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+BORACER TRAM: 1224 checks, 0 failures
+QA_EXIT tram_motion 0
+QA_SUITE reward_weather
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+REWARD_WEATHER: 21 checks; 0 failures
+QA_EXIT reward_weather 0
+QA_SUITE kart_visuals
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+KART VISUAL CHECKS: 888; failures: 0
+QA_EXIT kart_visuals 0
+QA_SUITE garage_presentation
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+BORACER GARAGE STUDIO: 56 checks, 0 failures
+QA_EXIT garage_presentation 0
+QA_SUITE garage_features
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+BORACER GARAGE FEATURES: 667 checks, 0 failures
+QA_EXIT garage_features 0
+QA_SUITE garage_interaction_qa
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+BORACER GARAGE INDEPENDENT QA: 104281 checks, 0 failures
+QA_EXIT garage_interaction_qa 0
+QA_SUITE dutch_sky_horizons
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+DUTCH_HORIZON world=3 records=336 nodes=4
+DUTCH_HORIZON world=4 records=310 nodes=9
+DUTCH_SKY_HORIZONS checks=9473 failures=0 cloud_pixels=974 clear_pixels=2273
+QA_EXIT dutch_sky_horizons 0
+QA_SUITE dutch_world_qa
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+BORACER DUTCH WORLD INDEPENDENT QA: 366193 checks, 0 failures
+QA_EXIT dutch_world_qa 0
+QA_SUITE aircraft
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+BORACER AIRCRAFT: 8771 checks, 0 failures
+QA_EXIT aircraft 0
+QA_SUITE aircraft_qa
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+AIRCRAFT QA world=0 normal_views=32 max_width_pixels=23.0333709716797 nodes=14
+AIRCRAFT QA world=1 normal_views=32 max_width_pixels=24.0563201904297 nodes=14
+AIRCRAFT QA world=2 normal_views=30 max_width_pixels=23.0547714233398 nodes=14
+AIRCRAFT QA world=3 normal_views=33 max_width_pixels=18.9134521484375 nodes=14
+AIRCRAFT QA world=4 normal_views=27 max_width_pixels=18.4517822265625 nodes=14
+BORACER AIRCRAFT INDEPENDENT QA: 75258 checks, 0 failures
+QA_EXIT aircraft_qa 0
+QA_SUITE birds
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+BORACER BIRDS: 2461 checks, 0 failures
+QA_EXIT birds 0
+QA_SUITE birds_qa
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+BIRDS QA world=0 normal_views=68 max_width_pixels=39.3578338623047 nodes=9
+BIRDS QA world=1 normal_views=47 max_width_pixels=29.4519348144531 nodes=9
+BIRDS QA world=2 normal_views=60 max_width_pixels=33.6482620239258 nodes=9
+BIRDS QA world=3 normal_views=71 max_width_pixels=45.1982498168945 nodes=9
+BIRDS QA world=4 normal_views=62 max_width_pixels=36.298828125 nodes=9
+BORACER BIRDS INDEPENDENT QA: 35198 checks, 0 failures
+QA_EXIT birds_qa 0
+QA_SUITE race_behavior
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+SCRIPT ERROR: Invalid access to property or key 'world_index' on a base object of type 'RefCounted (FlatTrack)'.
+          at: _feedback_at (res://scripts/race.gd:399)
+          GDScript backtrace (most recent call first):
+              [0] _feedback_at (res://scripts/race.gd:399)
+              [1] _weapon_hit (res://scripts/race.gd:354)
+              [2] run (res://tests/race_behavior.gd:96)
+SCRIPT ERROR: Invalid access to property or key 'world_index' on a base object of type 'RefCounted (FlatTrack)'.
+          at: _feedback_at (res://scripts/race.gd:399)
+          GDScript backtrace (most recent call first):
+              [0] _feedback_at (res://scripts/race.gd:399)
+              [1] _weapon_hit (res://scripts/race.gd:354)
+              [2] _update_projectiles (res://scripts/race.gd:342)
+              [3] run (res://tests/race_behavior.gd:110)
+SCRIPT ERROR: Invalid access to property or key 'world_index' on a base object of type 'RefCounted (FlatTrack)'.
+          at: _feedback_at (res://scripts/race.gd:399)
+          GDScript backtrace (most recent call first):
+              [0] _feedback_at (res://scripts/race.gd:399)
+              [1] _weapon_hit (res://scripts/race.gd:354)
+              [2] _update_projectiles (res://scripts/race.gd:342)
+              [3] run (res://tests/race_behavior.gd:126)
+SCRIPT ERROR: Invalid access to property or key 'world_index' on a base object of type 'RefCounted (FlatTrack)'.
+          at: _feedback_at (res://scripts/race.gd:399)
+          GDScript backtrace (most recent call first):
+              [0] _feedback_at (res://scripts/race.gd:399)
+              [1] _simulate (res://scripts/race.gd:132)
+              [2] step (res://scripts/race.gd:95)
+              [3] run (res://tests/race_behavior.gd:178)
+SCRIPT ERROR: Invalid access to property or key 'world_index' on a base object of type 'RefCounted (FlatTrack)'.
+          at: _feedback_at (res://scripts/race.gd:399)
+          GDScript backtrace (most recent call first):
+              [0] _feedback_at (res://scripts/race.gd:399)
+              [1] _collision_feedback (res://scripts/race.gd:372)
+              [2] _collisions (res://scripts/race.gd:244)
+              [3] _simulate (res://scripts/race.gd:111)
+              [4] step (res://scripts/race.gd:95)
+              [5] run (res://tests/race_behavior.gd:194)
+SCRIPT ERROR: Invalid access to property or key 'world_index' on a base object of type 'RefCounted (FlatTrack)'.
+          at: _feedback_at (res://scripts/race.gd:399)
+          GDScript backtrace (most recent call first):
+              [0] _feedback_at (res://scripts/race.gd:399)
+              [1] _collision_feedback (res://scripts/race.gd:372)
+              [2] _collisions (res://scripts/race.gd:244)
+              [3] _simulate (res://scripts/race.gd:111)
+              [4] step (res://scripts/race.gd:95)
+              [5] run (res://tests/race_behavior.gd:194)
+SCRIPT ERROR: Invalid access to property or key 'world_index' on a base object of type 'RefCounted (FlatTrack)'.
+          at: _feedback_at (res://scripts/race.gd:399)
+          GDScript backtrace (most recent call first):
+              [0] _feedback_at (res://scripts/race.gd:399)
+              [1] _collision_feedback (res://scripts/race.gd:372)
+              [2] _collisions (res://scripts/race.gd:244)
+              [3] _simulate (res://scripts/race.gd:111)
+              [4] step (res://scripts/race.gd:95)
+              [5] run (res://tests/race_behavior.gd:194)
+SCRIPT ERROR: Invalid access to property or key 'world_index' on a base object of type 'RefCounted (FlatTrack)'.
+          at: _feedback_at (res://scripts/race.gd:399)
+          GDScript backtrace (most recent call first):
+              [0] _feedback_at (res://scripts/race.gd:399)
+              [1] _collision_feedback (res://scripts/race.gd:372)
+              [2] _collisions (res://scripts/race.gd:244)
+              [3] _simulate (res://scripts/race.gd:111)
+              [4] step (res://scripts/race.gd:95)
+              [5] run (res://tests/race_behavior.gd:198)
+BORACER RACE BEHAVIOR: 34 checks, 0 failures
+QA_EXIT race_behavior 0
+QA_SUITE follow_camera
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+BORACER FOLLOW CAMERA: 1464 checks, 0 failures
+QA_EXIT follow_camera 0
+QA_SUITE camera_composition
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+CAMERA COMPOSITION distance=4.313..8.663m head/center normalized_screen=(0.316619, 0.336735)..(0.679493, 0.715756)
+CAMERA COMPOSITION: 420628 checks, 0 failures
+QA_EXIT camera_composition 0
+QA_SUITE home_duo_preview
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+DUO bounds radius=1.59976577758789 spacing=1.89976577758789 orthosize=4.89934396743774
+BORACER HOME DUO: 1254 checks, 0 failures
+QA_EXIT home_duo_preview 0
+QA_SUITE home_dashboard_qa
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+BORACER HOME DASHBOARD QA: 20066 checks, 0 failures
+QA_EXIT home_dashboard_qa 0
+QA_SUITE ui_layout
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+BORACER UI LAYOUT: 32 checks, 0 failures
+QA_EXIT ui_layout 0
+QA_SUITE ui_sfeer
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+BORACER UI SFEER: 30 checks, 0 failures
+QA_EXIT ui_sfeer 0
+QA_SUITE world_concepts
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+BORACER WORLD CONCEPTS: 111 checks, 0 failures
+QA_EXIT world_concepts 0
+QA_SUITE ui_input_devices
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+BORACER INPUT DEVICES: 37 checks, 0 failures
+QA_EXIT ui_input_devices 0
+QA_SUITE game10001_integration
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+BORACER GAME10001 INTEGRATION: 17 checks, 0 failures
+QA_EXIT game10001_integration 0
+QA_SUITE smoke
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+BORACER TESTS: 162 checks, 0 failures
+QA_EXIT smoke 0
+QA_SUITE input_flow
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+BORACER INPUT FLOW: 17 checks, 0 failures
+QA_EXIT input_flow 0
+QA_SUITE integration_audit
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+INTEGRATION world=0 finish=38.18s rank=1 coins=628 sim_ticks=167
+INTEGRATION world=1 finish=50.46s rank=1 coins=755 sim_ticks=216
+INTEGRATION world=2 finish=46.72s rank=1 coins=878 sim_ticks=201
+INTEGRATION world=3 finish=36.67s rank=1 coins=1065 sim_ticks=161
+INTEGRATION world=4 finish=42.13s rank=1 coins=1206 sim_ticks=183
+INTEGRATION world=5 finish=37.28s rank=1 coins=1329 sim_ticks=164
+INTEGRATION node baseline=1036 maximum_after_restart=1036
+INTEGRATION AUDIT: 98 checks, 0 failures
+QA_EXIT integration_audit 0

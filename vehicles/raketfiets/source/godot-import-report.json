@@ -1,0 +1,10 @@
+{
+  "checks_passed": true,
+  "godot_version": "4.7.2-stable (official)",
+  "instantiated": true,
+  "material_surfaces_checked": 103,
+  "mesh_instances": 94,
+  "packed_scene_loaded": true,
+  "scope": "Headless Godot editor import and scene instantiation; no visual lighting, physics or driving test.",
+  "wheel_pivots": 3
+}

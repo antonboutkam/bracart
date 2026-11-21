@@ -1,0 +1,139 @@
+{
+  "author": "Kenney (www.kenney.nl)",
+  "license": "CC0-1.0",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "attribution_required": false,
+  "retrieved_date": "2026-10-17",
+  "archives": [
+    {
+      "pack": "nature-kit",
+      "source": "https://kenney.nl/assets/nature-kit",
+      "url": "https://kenney.nl/media/pages/assets/nature-kit/37ac38a37b-1677698939/kenney_nature-kit.zip",
+      "sha256": "fa7974a0d342bfe63c38664ba9f8ec1a4aab8ea25f099bdc56870e33588c4d9d",
+      "bytes": 10537521
+    },
+    {
+      "pack": "particle-pack",
+      "source": "https://kenney.nl/assets/particle-pack",
+      "url": "https://kenney.nl/media/pages/assets/particle-pack/f8fe0f8cb8-1677578741/kenney_particle-pack.zip",
+      "sha256": "b631d4b07f7002549fdcf155f01141ad482f79f3440e4e301eed49ce5f1d8958",
+      "bytes": 15001764
+    },
+    {
+      "pack": "impact-sounds",
+      "source": "https://kenney.nl/assets/impact-sounds",
+      "url": "https://kenney.nl/media/pages/assets/impact-sounds/87b4ddecda-1677589768/kenney_impact-sounds.zip",
+      "sha256": "029d734af1582474edf3a694d1b0cebc97c1c152f2f39fa34d4c2bafc5de77f8",
+      "bytes": 800850
+    }
+  ],
+  "assets": [
+    {
+      "path": "nature/tree_oak.glb",
+      "pack": "nature-kit",
+      "member": "Models/GLTF format/tree_oak.glb",
+      "source_sha256": "d7fd8773674928c50c11b66d12c636d49bdcc15a8b1c7fbb98e6f63a3439a3f3",
+      "sha256": "d7fd8773674928c50c11b66d12c636d49bdcc15a8b1c7fbb98e6f63a3439a3f3",
+      "bytes": 14644,
+      "changes": "none; original bytes, filename may differ"
+    },
+    {
+      "path": "nature/tree_default.glb",
+      "pack": "nature-kit",
+      "member": "Models/GLTF format/tree_default.glb",
+      "source_sha256": "562d29638c902de3c7bee465d3a53bb77117efbc392ae04ed894faf6b5dc691d",
+      "sha256": "562d29638c902de3c7bee465d3a53bb77117efbc392ae04ed894faf6b5dc691d",
+      "bytes": 9428,
+      "changes": "none; original bytes, filename may differ"
+    },
+    {
+      "path": "nature/plant_bush.glb",
+      "pack": "nature-kit",
+      "member": "Models/GLTF format/plant_bush.glb",
+      "source_sha256": "ae7b1beb39e242b13f5f29e3ec23ef21034b814f82297b8aa00a9bf4e1b09590",
+      "sha256": "ae7b1beb39e242b13f5f29e3ec23ef21034b814f82297b8aa00a9bf4e1b09590",
+      "bytes": 4396,
+      "changes": "none; original bytes, filename may differ"
+    },
+    {
+      "path": "nature/flower_redA.glb",
+      "pack": "nature-kit",
+      "member": "Models/GLTF format/flower_redA.glb",
+      "source_sha256": "171930b7789ddbf735af3745576b5393750beb9133b9ff4a444bb6bb2986c020",
+      "sha256": "171930b7789ddbf735af3745576b5393750beb9133b9ff4a444bb6bb2986c020",
+      "bytes": 7104,
+      "changes": "none; original bytes, filename may differ"
+    },
+    {
+      "path": "particles/smoke.png",
+      "pack": "particle-pack",
+      "member": "PNG (Transparent)/smoke_01.png",
+      "source_sha256": "e8724c219e8d35859167fc0a7e207e13c72ccf0c29704909b9bb3d3dc71c6cf7",
+      "sha256": "e8724c219e8d35859167fc0a7e207e13c72ccf0c29704909b9bb3d3dc71c6cf7",
+      "bytes": 97452,
+      "changes": "none; original bytes, filename may differ"
+    },
+    {
+      "path": "particles/spark.png",
+      "pack": "particle-pack",
+      "member": "PNG (Transparent)/spark_01.png",
+      "source_sha256": "5902da3a324cad0a4b5a88ce1e3c9cc18fee50922c358ce93d8c9f1ad7708f0a",
+      "sha256": "5902da3a324cad0a4b5a88ce1e3c9cc18fee50922c358ce93d8c9f1ad7708f0a",
+      "bytes": 95070,
+      "changes": "none; original bytes, filename may differ"
+    },
+    {
+      "path": "impacts/wood_light.wav",
+      "pack": "impact-sounds",
+      "member": "Audio/impactWood_light_000.ogg",
+      "source_sha256": "eb45e35b4bed784d3f120de4afec4b0d6ac09d9e143cce8cfcb7d739e1b1f3c3",
+      "sha256": "6094fb62cbb91f0a6f2dbccb3c2ef4743a0710aa569d006a02bb8efdf65dbcc9",
+      "bytes": 24270,
+      "changes": "OGG decoded to mono PCM16 WAV 44100 Hz; no EQ/gain/trim"
+    },
+    {
+      "path": "impacts/wood_plank.wav",
+      "pack": "impact-sounds",
+      "member": "Audio/impactPlank_medium_000.ogg",
+      "source_sha256": "8403cd7a043f0391574c88c55dd205743725b5363d2407f6de145f201690b68f",
+      "sha256": "ed4ec33a084308ded223e502768344ff04526e8234176d2d43e706d2698d3f29",
+      "bytes": 69582,
+      "changes": "OGG decoded to mono PCM16 WAV 44100 Hz; no EQ/gain/trim"
+    },
+    {
+      "path": "impacts/generic_light.wav",
+      "pack": "impact-sounds",
+      "member": "Audio/impactGeneric_light_000.ogg",
+      "source_sha256": "f0e982611e97512fee5f777986b67e8b435434b601f94992ec044f7e89fb5acb",
+      "sha256": "c3625875af874a2194a3ed5177eeef8dab097327581537b0dde07f38de8e9806",
+      "bytes": 14286,
+      "changes": "OGG decoded to mono PCM16 WAV 44100 Hz; no EQ/gain/trim"
+    },
+    {
+      "path": "impacts/soft_medium.wav",
+      "pack": "impact-sounds",
+      "member": "Audio/impactSoft_medium_000.ogg",
+      "source_sha256": "7d3ba0bb5e60a11b5d3e558c141303dcf494256675fbf753c0d252d2cf0481e3",
+      "sha256": "37489fd49fffe2d80971e346eb215285b67c6d2b40036f8d64e3b4259e53307f",
+      "bytes": 11726,
+      "changes": "OGG decoded to mono PCM16 WAV 44100 Hz; no EQ/gain/trim"
+    }
+  ],
+  "licenses": [
+    {
+      "path": "licenses/nature-kit-License.txt",
+      "pack": "nature-kit",
+      "sha256": "cb96b75e3560ac78d7a53ce6f083f4cdb5c53faea6141b62d63458dcfe1e4b9d"
+    },
+    {
+      "path": "licenses/particle-pack-License.txt",
+      "pack": "particle-pack",
+      "sha256": "f9e70b81d8cc07c4e07c9f2eff1d94fd371a06070b18cb67c651c41158ec2975"
+    },
+    {
+      "path": "licenses/impact-sounds-License.txt",
+      "pack": "impact-sounds",
+      "sha256": "b49aa9c56b04528b95913de13e506a0f7c5e807b9925db9bfef86af1f91120db"
+    }
+  ]
+}

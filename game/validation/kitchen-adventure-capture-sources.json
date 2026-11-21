@@ -1,0 +1,17 @@
+{
+  "headless_setup_scenarios": 20,
+  "failures": 0,
+  "images_created": 0,
+  "sha256": {
+    "scripts/worlds/kitchen_course.gd": "484f30b4358d30c0959670b3bfc0af38db20f9a93f5782b9e1b4a1831b37b315",
+    "scripts/worlds/kitchen_adventure_props.gd": "c6a7839ec26efbe28bb66e424ce68ee9ca037541fcd1e85f0d497601e5c7a51e",
+    "scripts/effects/kitchen_rainbow.gd": "ad586d30fcf9a203687d08d2456cb9a47cfe778f7fdbdce2d76efe0c7a332732",
+    "scripts/track.gd": "05aae22c22c1d16bc0fa9fb08abf0958117283cfd6ecbe2940be4cd84ddbd367",
+    "scripts/race.gd": "4c893ae6170cb55a45fdfdbdd4fc4c38ff86d383d05b9351627a285cdf63b1d9",
+    "scripts/main.gd": "c37e7cf6b880090dbff5ed00d5cea7262c91f5398e14ef44a68f6dbf6bec9ef6",
+    "scripts/follow_camera.gd": "e0c07d2b12f5747f29f183245d353bf7fca76e18ed622c60809ab150bd51e942",
+    "scripts/worlds/scenery.gd": "b09dc5a4f03924075f652707463d9ca1f8252c74202fd41dafe1858e8fcaad9f",
+    "scripts/worlds/world_art.gd": "91e71540b1c519bcba38f16eebc993137c5788df4ee8efeefb5dc365a1915459",
+    "tests/kitchen_adventure_capture.gd": "093204355bdf0eec8d89527af6e306603a51dadfa4a16f92198a9ee3f641dd72"
+  }
+}

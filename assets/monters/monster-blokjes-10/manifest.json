@@ -1,0 +1,274 @@
+{
+  "format": "destructible-block-monsters-v1",
+  "grid_cell_size": [
+    1,
+    1,
+    1
+  ],
+  "axes": {
+    "up": "+Y",
+    "front": "+Z"
+  },
+  "support_rule": "six-face adjacency to a block on y=0",
+  "monsters": [
+    {
+      "id": "01-gifspuwer-rood",
+      "name": "Gifspuwer",
+      "count": 1741,
+      "unique": true,
+      "ground_blocks": 64,
+      "connected_to_ground": true,
+      "unconnected": 0,
+      "dimensions": [
+        26,
+        30,
+        8
+      ],
+      "num_colors": 8,
+      "single_block_breakpoints": 1,
+      "breakpoint_examples": [
+        [
+          21,
+          22,
+          5
+        ]
+      ],
+      "raw_voxels": 3276,
+      "hollowed": true,
+      "bridge_blocks_added": 0,
+      "source": "01-gifspuwer-rood-voorkant-zijkant-achterkant.png"
+    },
+    {
+      "id": "02-schouderreus-turkoois",
+      "name": "Schouderreus",
+      "count": 1780,
+      "unique": true,
+      "ground_blocks": 54,
+      "connected_to_ground": true,
+      "unconnected": 0,
+      "dimensions": [
+        23,
+        30,
+        7
+      ],
+      "num_colors": 8,
+      "single_block_breakpoints": 0,
+      "breakpoint_examples": [],
+      "raw_voxels": 1780,
+      "hollowed": false,
+      "bridge_blocks_added": 0,
+      "source": "02-schouderreus-turkoois-voorkant-zijkant-achterkant.png"
+    },
+    {
+      "id": "03-slakkenoog-blauw",
+      "name": "Slakkenoog",
+      "count": 1290,
+      "unique": true,
+      "ground_blocks": 60,
+      "connected_to_ground": true,
+      "unconnected": 0,
+      "dimensions": [
+        13,
+        30,
+        5
+      ],
+      "num_colors": 8,
+      "single_block_breakpoints": 0,
+      "breakpoint_examples": [],
+      "raw_voxels": 1290,
+      "hollowed": false,
+      "bridge_blocks_added": 0,
+      "source": "03-slakkenoog-blauw-voorkant-zijkant-achterkant.png"
+    },
+    {
+      "id": "04-bolle-stippelmonster",
+      "name": "Bolle Stippel",
+      "count": 1961,
+      "unique": true,
+      "ground_blocks": 42,
+      "connected_to_ground": true,
+      "unconnected": 0,
+      "dimensions": [
+        24,
+        28,
+        7
+      ],
+      "num_colors": 8,
+      "single_block_breakpoints": 0,
+      "breakpoint_examples": [],
+      "raw_voxels": 1961,
+      "hollowed": false,
+      "bridge_blocks_added": 0,
+      "source": "04-bolle-stippelmonster-voorkant-zijkant-achterkant.png"
+    },
+    {
+      "id": "05-paars-stekelig-monster",
+      "name": "Stekelmonster",
+      "count": 864,
+      "unique": true,
+      "ground_blocks": 11,
+      "connected_to_ground": true,
+      "unconnected": 0,
+      "dimensions": [
+        17,
+        30,
+        5
+      ],
+      "num_colors": 7,
+      "single_block_breakpoints": 1,
+      "breakpoint_examples": [
+        [
+          13,
+          5,
+          2
+        ]
+      ],
+      "raw_voxels": 864,
+      "hollowed": false,
+      "bridge_blocks_added": 0,
+      "source": "05-paars-stekelig-monster-voorkant-zijkant-achterkant.png"
+    },
+    {
+      "id": "06-oranje-pluismonster",
+      "name": "Pluismonster",
+      "count": 1906,
+      "unique": true,
+      "ground_blocks": 42,
+      "connected_to_ground": true,
+      "unconnected": 0,
+      "dimensions": [
+        16,
+        30,
+        5
+      ],
+      "num_colors": 8,
+      "single_block_breakpoints": 0,
+      "breakpoint_examples": [],
+      "raw_voxels": 1906,
+      "hollowed": false,
+      "bridge_blocks_added": 0,
+      "source": "06-oranje-pluismonster-voorkant-zijkant-achterkant.png"
+    },
+    {
+      "id": "07-gele-girafnek",
+      "name": "Girafnek",
+      "count": 732,
+      "unique": true,
+      "ground_blocks": 8,
+      "connected_to_ground": true,
+      "unconnected": 0,
+      "dimensions": [
+        12,
+        32,
+        4
+      ],
+      "num_colors": 7,
+      "single_block_breakpoints": 0,
+      "breakpoint_examples": [],
+      "raw_voxels": 732,
+      "hollowed": false,
+      "bridge_blocks_added": 0,
+      "source": "07-gele-girafnek-voorkant-zijkant-achterkant.png"
+    },
+    {
+      "id": "08-robotmonster-mini",
+      "name": "Robotmonster",
+      "count": 272,
+      "unique": true,
+      "ground_blocks": 3,
+      "connected_to_ground": true,
+      "unconnected": 0,
+      "dimensions": [
+        28,
+        26,
+        5
+      ],
+      "num_colors": 6,
+      "single_block_breakpoints": 5,
+      "breakpoint_examples": [
+        [
+          19,
+          24,
+          2
+        ],
+        [
+          26,
+          14,
+          2
+        ],
+        [
+          26,
+          15,
+          2
+        ],
+        [
+          26,
+          16,
+          2
+        ],
+        [
+          26,
+          17,
+          2
+        ]
+      ],
+      "raw_voxels": 270,
+      "hollowed": false,
+      "bridge_blocks_added": 2,
+      "source": "08-robotmonster-mini-voorkant-zijkant-achterkant.png"
+    },
+    {
+      "id": "09-paarse-spook",
+      "name": "Paars Spook",
+      "count": 1134,
+      "unique": true,
+      "ground_blocks": 20,
+      "connected_to_ground": true,
+      "unconnected": 0,
+      "dimensions": [
+        19,
+        30,
+        6
+      ],
+      "num_colors": 7,
+      "single_block_breakpoints": 0,
+      "breakpoint_examples": [],
+      "raw_voxels": 2313,
+      "hollowed": true,
+      "bridge_blocks_added": 0,
+      "source": "09-paarse-spook-voorkant-zijkant-achterkant.png"
+    },
+    {
+      "id": "10-geelgroene-spook",
+      "name": "Groen Spook",
+      "count": 1293,
+      "unique": true,
+      "ground_blocks": 60,
+      "connected_to_ground": true,
+      "unconnected": 0,
+      "dimensions": [
+        19,
+        30,
+        6
+      ],
+      "num_colors": 7,
+      "single_block_breakpoints": 2,
+      "breakpoint_examples": [
+        [
+          8,
+          28,
+          2
+        ],
+        [
+          8,
+          29,
+          2
+        ]
+      ],
+      "raw_voxels": 2784,
+      "hollowed": true,
+      "bridge_blocks_added": 51,
+      "source": "10-geelgroene-spook-voorkant-zijkant-achterkant.png"
+    }
+  ]
+}

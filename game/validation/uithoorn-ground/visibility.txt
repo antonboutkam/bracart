@@ -1,0 +1,21 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+GROUND CAPTURE: creating game
+GROUND CAPTURE: building street circuit
+GROUND CAPTURE: checking visibility
+GROUND CAPTURE: visibility ready
+UITHOORN VIEW SETUP startheuvel (no image)
+GROUND VIEW rechthuis progress=15.5563507080078 readable_samples=29 visibility={ "score": -221.068237611558, "visible_points": 173, "body_points": 164, "pixel_size": [86.9804382324219, 49.5491333007812], "viewport_size": [1280.0, 800.0] }
+UITHOORN VIEW SETUP rechthuis (no image)
+GROUND VIEW schanskerk progress=270.254699707031 readable_samples=68 visibility={ "score": -129.08086448539, "visible_points": 129, "body_points": 129, "pixel_size": [67.2066955566406, 24.3370361328125], "viewport_size": [1280.0, 800.0] }
+UITHOORN VIEW SETUP schanskerk (no image)
+GROUND VIEW fort-aan-de-drecht progress=589.655395507812 readable_samples=50 visibility={ "score": -100.398009015322, "visible_points": 51, "body_points": 50, "pixel_size": [195.373046875, 39.7235717773438], "viewport_size": [1280.0, 800.0] }
+UITHOORN VIEW SETUP fort-aan-de-drecht (no image)
+GROUND VIEW de-hoeksteen progress=884.268310546875 readable_samples=54 visibility={ "score": -312.428691499028, "visible_points": 188, "body_points": 188, "pixel_size": [69.8855590820312, 45.9289855957031], "viewport_size": [1280.0, 800.0] }
+UITHOORN VIEW SETUP de-hoeksteen (no image)
+GROUND VIEW thamerkerk progress=1331.17639160156 readable_samples=27 visibility={ "score": -256.891123758759, "visible_points": 184, "body_points": 165, "pixel_size": [160.813415527344, 122.742340087891], "viewport_size": [1280.0, 800.0] }
+UITHOORN VIEW SETUP thamerkerk (no image)
+GROUND VIEW irenebrug progress=1567.88146972656 readable_samples=38 visibility={ "score": -497.010296754427, "visible_points": 266, "body_points": 231, "pixel_size": [208.798400878906, 32.0037231445312], "viewport_size": [1280.0, 800.0] }
+UITHOORN VIEW SETUP irenebrug (no image)
+UITHOORN VIEW SETUP overzicht (no image)
+UITHOORN GROUND VIEWS: 8 views, 0 failures; setup_only=true

@@ -1,0 +1,150 @@
+{
+  "id": "de_hoeksteen",
+  "name": "De Hoeksteen",
+  "place": "Uithoorn, Nederland",
+  "architect": "Gerrit Thomas Rietveld",
+  "building_type": "voormalige kerk en cultureel centrum",
+  "real_world_dimensions": {
+    "unit": "metre",
+    "main_block": {
+      "width": 25.0,
+      "depth": 25.0,
+      "height": 12.5
+    },
+    "extension": {
+      "width": null,
+      "depth": null,
+      "height": null,
+      "note": "Buiten hoofdmaten; niet betrouwbaar vastgesteld uit beschikbare bronnen"
+    },
+    "note": "25 x 25 x 12.5 meter geldt voor het rechthoekige hoofdgebouw, niet voor lagere aanbouw of uitstekende elementen",
+    "source_url": "https://www.architectuur.org/bouwwerk/983/De_Hoeksteen.html"
+  },
+  "game_modeling": {
+    "engine": "Godot",
+    "scale": "1 unit = 1 metre",
+    "suggested_main_block_size_xyz": [
+      25.0,
+      12.5,
+      25.0
+    ],
+    "coordinate_system": "Godot: X=width, Y=height, Z=depth",
+    "front_definition": "front is water-facing facade with GERRIT. windows, not necessarily the west-facing entrance",
+    "views_are": [
+      "orthographic-style reconstructions",
+      "not metrically exact blueprints"
+    ],
+    "notes": "Use orthographic images as visual reference/texture source; build main block as square footprint first. The top view is a hand-crafted approximate reconstruction to match a 25 m square footprint."
+  },
+  "technical": {
+    "views": {
+      "image_size_px": [
+        1024,
+        1024
+      ],
+      "format": "RGBA PNG",
+      "background": "transparent",
+      "source_detail": "from AI-generated atlas, digitally isolated and resampled; interpolated output resolution is not native generation resolution"
+    },
+    "textures": {
+      "image_size_px": [
+        512,
+        512
+      ],
+      "format": "RGB PNG",
+      "seamless_repetition": [
+        "wall_texture",
+        "base_texture"
+      ],
+      "source_detail": "crops from generated atlas; interpolated to 512 square"
+    },
+    "line_art": {
+      "formats": [
+        "PNG",
+        "SVG"
+      ],
+      "size_px": [
+        1024,
+        1024
+      ]
+    }
+  },
+  "assets": [
+    {
+      "file": "de_hoeksteen_01_front.png",
+      "kind": "view",
+      "description_nl": "Gevel aan het water met hoge raampartijen en tekst GERRIT.",
+      "derived_from_reference_sheet": true
+    },
+    {
+      "file": "de_hoeksteen_02_back.png",
+      "kind": "view",
+      "description_nl": "Tegenoverliggende gevel met trappenhuis en rode deuren; artistieke reconstructie",
+      "derived_from_reference_sheet": true
+    },
+    {
+      "file": "de_hoeksteen_03_left.png",
+      "kind": "view",
+      "description_nl": "Zijgevel met horizontale raamstroken; artistieke reconstructie",
+      "derived_from_reference_sheet": true
+    },
+    {
+      "file": "de_hoeksteen_04_right.png",
+      "kind": "view",
+      "description_nl": "Zijaanzicht met luifel, entree en glastrappenhuis; artistieke reconstructie",
+      "derived_from_reference_sheet": true
+    },
+    {
+      "file": "de_hoeksteen_05_top.png",
+      "kind": "view",
+      "description_nl": "Schematisch loodrecht bovenaanzicht met vierkant hoofddak en benaderde aanbouw",
+      "derived_from_reference_sheet": false
+    },
+    {
+      "file": "de_hoeksteen_06_line.png",
+      "kind": "drawing",
+      "description_nl": "Schaalvaste gestileerde lijntekening van watergevel",
+      "derived_from_reference_sheet": true
+    },
+    {
+      "file": "de_hoeksteen_07_wall_texture.png",
+      "kind": "texture",
+      "description_nl": "Gevelblokjes textuur, gespiegeld naadloos herhaalbaar",
+      "derived_from_reference_sheet": true
+    },
+    {
+      "file": "de_hoeksteen_08_window_texture.png",
+      "kind": "texture",
+      "description_nl": "Raampartij uit atlas, niet naadloos",
+      "derived_from_reference_sheet": true
+    },
+    {
+      "file": "de_hoeksteen_09_door_texture.png",
+      "kind": "texture",
+      "description_nl": "Rode dubbele deur, niet naadloos",
+      "derived_from_reference_sheet": true
+    },
+    {
+      "file": "de_hoeksteen_10_base_texture.png",
+      "kind": "texture",
+      "description_nl": "Lichte tegelstenen plint, gespiegeld naadloos herhaalbaar",
+      "derived_from_reference_sheet": true
+    }
+  ],
+  "additional_files": [
+    "de_hoeksteen_06_line.svg",
+    "de_hoeksteen_reference_sheet.png",
+    "README.md"
+  ],
+  "references": [
+    {
+      "role": "historical dimensions and building details",
+      "url": "https://www.architectuur.org/bouwwerk/983/De_Hoeksteen.html"
+    },
+    {
+      "role": "historical context",
+      "url": "https://gerrit-rietveld.nl/architectuur/naoorlogse-gebouwen/"
+    }
+  ],
+  "source_note": "Input: user-provided photos and an earlier AI-generated reference atlas. Side/back/window locations, top fixtures and some façade details can be invented or simplified; these are game references, not architectural surveys."
+}

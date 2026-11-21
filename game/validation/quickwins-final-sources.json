@@ -1,0 +1,18 @@
+{
+  "sha256": {
+    "scripts/main.gd": "29d6ad946c9c9e8221cfb8013a10d2bdb2d5d9d04bc433389f64bd346b1f4356",
+    "scripts/audio.gd": "441e9fa2fbacc99a55da460ac0fc62183473c8683ba98885613645ddec12608d",
+    "scripts/race.gd": "40d44a04407a5ca79d5f60c549b0ade7edbe98eacefcd5ea4771e45e247312d9",
+    "scripts/effects/race_feedback.gd": "33daef4e9a7a8ffb0f136a4839db809824e25b4e760f51f384271798b577d163",
+    "scripts/worlds/nature_accents.gd": "818bc1709eb8ef102deb0396589a93e7cf6002e994152b6bd98a111f9e929ed5",
+    "scripts/worlds/outdoor_life.gd": "fa36a6b0a978c8879ffbcc56b4b0007e15f5444620587a1b0aad8e4a684d049f",
+    "scripts/ui/finish_confetti.gd": "cadb5d0288fb4af07225e79c1c3ce5d2721bcce4917a86e8241ea1d8fdc2d4d7",
+    "assets/third_party/kenney/manifest.json": "17d5361ee4044a9b8adb33284d6f43415d1e99952b3b8b32de12a83e6534e45a",
+    "tests/quickwins_qa.gd": "0fff4f050e966085dc5cb1d2645129a477bf39578ee24a6bf46918214ae62e4a",
+    "tests/vehicle_audio_qa.gd": "459b9437c147d0766d896e6583b9f7b9ecf168ea739cc861ef9738807209359f",
+    "tests/race_feedback.gd": "69f031c9b7d518355a367947c346a4730409a7464c15762d76b3b91c380fb935"
+  },
+  "git_index_before": "021d31b298a48734f388f602890ace18513bf0d16c7690169b5144e46cdacfb9",
+  "git_index_after": "021d31b298a48734f388f602890ace18513bf0d16c7690169b5144e46cdacfb9",
+  "original_preserved_files": 111
+}

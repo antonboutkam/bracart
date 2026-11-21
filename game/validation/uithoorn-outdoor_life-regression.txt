@@ -1,0 +1,13 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+DISTANCES median=57.1418647766113 max=100.5048828125
+OUTDOOR_LIFE world=0 clusters=24 walker_routes=4 nodes=254 static_instances=993
+DISTANCES median=44.5076751708984 max=76.4154052734375
+OUTDOOR_LIFE world=1 clusters=24 walker_routes=4 nodes=256 static_instances=936
+DISTANCES median=72.5011367797852 max=128.497802734375
+OUTDOOR_LIFE world=2 clusters=24 walker_routes=4 nodes=258 static_instances=1032
+DISTANCES median=51.5065231323242 max=105.292610168457
+OUTDOOR_LIFE world=3 clusters=24 walker_routes=4 nodes=254 static_instances=912
+DISTANCES median=92.3065567016602 max=141.001113891602
+OUTDOOR_LIFE world=4 clusters=24 walker_routes=4 nodes=255 static_instances=921
+OUTDOOR_LIFE checks=157043 failures=0

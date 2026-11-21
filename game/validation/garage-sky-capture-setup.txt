@@ -1,0 +1,18 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+GARAGE SKY SETUP garage-boaz-vooraan (no image)
+GARAGE SKY SETUP garage-ravi-hover (no image)
+GARAGE SKY SETUP garage-ravi-geselecteerd (no image)
+GARAGE SKY SETUP garage-voldoende-muntjes (no image)
+GARAGE SKY SETUP garage-voertuigen-gedraaid (no image)
+GARAGE SKY SETUP garage-onvoldoende-muntjes (no image)
+GARAGE SKY SETUP sunset-park-hemel (no image)
+GARAGE SKY SETUP neon-city-hemel (no image)
+GARAGE SKY SETUP regenbogenrijk-hemel (no image)
+GARAGE SKY SETUP haarlem-1888-hemel (no image)
+GARAGE SKY SETUP haarlem-duinen (no image)
+GARAGE SKY SETUP haarlem-hemel-rain (no image)
+GARAGE SKY SETUP haarlem-hemel-night (no image)
+GARAGE SKY SETUP uithoorn-2056-hemel (no image)
+GARAGE SKY SETUP uithoorn-polder-amstel (no image)
+GARAGE SKY SETUP VALIDATION; no images; scenarios=15; failures=0

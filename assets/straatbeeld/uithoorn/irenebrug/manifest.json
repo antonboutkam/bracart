@@ -1,0 +1,130 @@
+{
+  "name": "Irenebrug",
+  "slug": "irenebrug",
+  "location": "Uithoorn, Netherlands",
+  "type": "bridge / landmark / race-game environment asset",
+  "source_mode": "AI-generated reference sheet converted into individual game-reference assets",
+  "scale": {
+    "unit": "meter",
+    "known_real_dimensions": {
+      "navigation_openings_count": 4,
+      "navigation_opening_width_m": 10.5,
+      "closed_clearance_height_m": 2.8
+    },
+    "status": "partial",
+    "notes": "Known scale anchors are based on reported navigation opening dimensions rather than a full engineering drawing of the total bridge."
+  },
+  "views": [
+    {
+      "file": "irenebrug_01_front.png",
+      "label": "front",
+      "size_px": [
+        1024,
+        1024
+      ],
+      "description": "Front approach view along the bridge deck with traffic lights, barriers and bridge keeper house."
+    },
+    {
+      "file": "irenebrug_02_back.png",
+      "label": "back",
+      "size_px": [
+        1024,
+        1024
+      ],
+      "description": "Reverse approach view with the bridge keeper house on the opposite side."
+    },
+    {
+      "file": "irenebrug_03_left.png",
+      "label": "left",
+      "size_px": [
+        1024,
+        1024
+      ],
+      "description": "Left side elevation of the bridge over the water."
+    },
+    {
+      "file": "irenebrug_04_right.png",
+      "label": "right",
+      "size_px": [
+        1024,
+        1024
+      ],
+      "description": "Right side elevation of the bridge over the water."
+    },
+    {
+      "file": "irenebrug_05_top.png",
+      "label": "top",
+      "size_px": [
+        1024,
+        1024
+      ],
+      "description": "Top view of the bridge deck, sidewalks, openings and barrier positions."
+    },
+    {
+      "file": "irenebrug_06_line.png",
+      "label": "line",
+      "size_px": [
+        1024,
+        1024
+      ],
+      "description": "Line-art reference with simplified front, side and top bridge views."
+    }
+  ],
+  "textures": [
+    {
+      "file": "irenebrug_07_road_texture.png",
+      "label": "road_texture",
+      "size_px": [
+        512,
+        512
+      ],
+      "description": "Road surface texture with lane markings and bridge seam detail."
+    },
+    {
+      "file": "irenebrug_08_railing_texture.png",
+      "label": "railing_texture",
+      "size_px": [
+        512,
+        512
+      ],
+      "description": "Blue-and-white railing texture/detail."
+    },
+    {
+      "file": "irenebrug_09_house_texture.png",
+      "label": "house_texture",
+      "size_px": [
+        512,
+        512
+      ],
+      "description": "Bridge keeper house texture/reference."
+    },
+    {
+      "file": "irenebrug_10_barrier_texture.png",
+      "label": "barrier_texture",
+      "size_px": [
+        512,
+        512
+      ],
+      "description": "Barrier pole and traffic light texture/reference."
+    }
+  ],
+  "supporting_files": [
+    "irenebrug_reference_sheet.png",
+    "irenebrug_asset_preview.jpg",
+    "irenebrug_06_line.svg",
+    "README.md",
+    "manifest.json"
+  ],
+  "notes": [
+    "Model this bridge primarily as a readable game landmark rather than an engineering-accurate civil structure.",
+    "The most distinctive elements are the blue-white railings, striped barriers, traffic lights and the green-roof bridge keeper house.",
+    "Use the top view to block out roadway, sidewalks and water openings before refining the side details."
+  ],
+  "sources": [
+    {
+      "type": "web",
+      "label": "Waterkaart Live",
+      "note": "Lists 4 navigable openings, each 10.5 m wide and 2.8 m high in closed state."
+    }
+  ]
+}

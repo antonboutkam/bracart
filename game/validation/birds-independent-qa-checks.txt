@@ -1,0 +1,8 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+BIRDS QA world=0 normal_views=68 max_width_pixels=39.3578338623047 nodes=9
+BIRDS QA world=1 normal_views=47 max_width_pixels=29.4519348144531 nodes=9
+BIRDS QA world=2 normal_views=60 max_width_pixels=33.6482620239258 nodes=9
+BIRDS QA world=3 normal_views=71 max_width_pixels=45.1982498168945 nodes=9
+BIRDS QA world=4 normal_views=62 max_width_pixels=36.298828125 nodes=9
+BORACER BIRDS INDEPENDENT QA: 35198 checks, 0 failures

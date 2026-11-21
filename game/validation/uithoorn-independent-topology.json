@@ -1,0 +1,56 @@
+[
+  {
+    "id": "uithoorn-de-hoeksteen",
+    "sha256": "97f0122be3ea8181b90e2d92a8680622c9788b1b6917f439192416b4198af228",
+    "triangles": 2760,
+    "degenerate": 0,
+    "open_boundary_edges": 0,
+    "coordinate_weld_shared_edges": 0,
+    "note": "Coordinate welding can join coincident closed parts into multiplicity-four shared edges; not a monolithic-manifold claim."
+  },
+  {
+    "id": "uithoorn-fort-aan-de-drecht",
+    "sha256": "33b9a04a7e7392ac80e8bcf8a21d955a40bf69d66827497cfa105705e9bb3817",
+    "triangles": 2140,
+    "degenerate": 0,
+    "open_boundary_edges": 0,
+    "coordinate_weld_shared_edges": 0,
+    "note": "Coordinate welding can join coincident closed parts into multiplicity-four shared edges; not a monolithic-manifold claim."
+  },
+  {
+    "id": "uithoorn-irenebrug",
+    "sha256": "5e4396d7ad4104b2556ae6a8fa2505d170c41578df2d253981aa8210308ac75c",
+    "triangles": 2048,
+    "degenerate": 0,
+    "open_boundary_edges": 0,
+    "coordinate_weld_shared_edges": 144,
+    "note": "Coordinate welding can join coincident closed parts into multiplicity-four shared edges; not a monolithic-manifold claim."
+  },
+  {
+    "id": "uithoorn-rechthuis",
+    "sha256": "52f9019407142b3fa332f454cde377ec85fa1d7441a355679ce50a71e9ae65e5",
+    "triangles": 1444,
+    "degenerate": 0,
+    "open_boundary_edges": 0,
+    "coordinate_weld_shared_edges": 0,
+    "note": "Coordinate welding can join coincident closed parts into multiplicity-four shared edges; not a monolithic-manifold claim."
+  },
+  {
+    "id": "uithoorn-schanskerk",
+    "sha256": "eeaa96f99978509abc3b5b8a37101e85f04736d9620eede7bafabf1256cc6269",
+    "triangles": 3074,
+    "degenerate": 0,
+    "open_boundary_edges": 0,
+    "coordinate_weld_shared_edges": 24,
+    "note": "Coordinate welding can join coincident closed parts into multiplicity-four shared edges; not a monolithic-manifold claim."
+  },
+  {
+    "id": "uithoorn-thamerkerk",
+    "sha256": "af34ad40c4753204cb34851c8bd8d7bc0ffec3878295fd51f323763a71689b66",
+    "triangles": 2456,
+    "degenerate": 0,
+    "open_boundary_edges": 0,
+    "coordinate_weld_shared_edges": 0,
+    "note": "Coordinate welding can join coincident closed parts into multiplicity-four shared edges; not a monolithic-manifold claim."
+  }
+]

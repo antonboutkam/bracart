@@ -1,0 +1,349 @@
+{
+  "character": "boaz",
+  "passed": true,
+  "triangles": 5990,
+  "components": [
+    {
+      "name": "Hair_continuous_sculpted_mass",
+      "vertices": 522,
+      "triangles": 1040,
+      "signed_volume": 0.003924624829331454,
+      "checks": {
+        "head_attachment": true,
+        "finite_vertices": true,
+        "closed_manifold_edges": true,
+        "consistent_winding": true,
+        "positive_signed_volume": true
+      }
+    },
+    {
+      "name": "Hair_boaz_crown_crest",
+      "vertices": 101,
+      "triangles": 198,
+      "signed_volume": 2.7199886641325892e-05,
+      "checks": {
+        "head_attachment": true,
+        "finite_vertices": true,
+        "closed_manifold_edges": true,
+        "consistent_winding": true,
+        "positive_signed_volume": true
+      }
+    },
+    {
+      "name": "Hair_boaz_crown_left",
+      "vertices": 101,
+      "triangles": 198,
+      "signed_volume": 4.600875175363818e-05,
+      "checks": {
+        "head_attachment": true,
+        "finite_vertices": true,
+        "closed_manifold_edges": true,
+        "consistent_winding": true,
+        "positive_signed_volume": true
+      }
+    },
+    {
+      "name": "Hair_boaz_crown_right",
+      "vertices": 101,
+      "triangles": 198,
+      "signed_volume": 7.160909521907478e-05,
+      "checks": {
+        "head_attachment": true,
+        "finite_vertices": true,
+        "closed_manifold_edges": true,
+        "consistent_winding": true,
+        "positive_signed_volume": true
+      }
+    },
+    {
+      "name": "Hair_boaz_crown_back",
+      "vertices": 101,
+      "triangles": 198,
+      "signed_volume": 7.363466889479461e-05,
+      "checks": {
+        "head_attachment": true,
+        "finite_vertices": true,
+        "closed_manifold_edges": true,
+        "consistent_winding": true,
+        "positive_signed_volume": true
+      }
+    },
+    {
+      "name": "Hair_boaz_crown_back_left",
+      "vertices": 101,
+      "triangles": 198,
+      "signed_volume": 6.64929429969144e-05,
+      "checks": {
+        "head_attachment": true,
+        "finite_vertices": true,
+        "closed_manifold_edges": true,
+        "consistent_winding": true,
+        "positive_signed_volume": true
+      }
+    },
+    {
+      "name": "Hair_boaz_crown_back_right",
+      "vertices": 101,
+      "triangles": 198,
+      "signed_volume": 6.220527745276667e-05,
+      "checks": {
+        "head_attachment": true,
+        "finite_vertices": true,
+        "closed_manifold_edges": true,
+        "consistent_winding": true,
+        "positive_signed_volume": true
+      }
+    },
+    {
+      "name": "Hair_boaz_fringe_sweep",
+      "vertices": 101,
+      "triangles": 198,
+      "signed_volume": 8.949552684948351e-05,
+      "checks": {
+        "head_attachment": true,
+        "finite_vertices": true,
+        "closed_manifold_edges": true,
+        "consistent_winding": true,
+        "positive_signed_volume": true
+      }
+    },
+    {
+      "name": "Hair_boaz_fringe_center",
+      "vertices": 101,
+      "triangles": 198,
+      "signed_volume": 6.073743188997251e-05,
+      "checks": {
+        "head_attachment": true,
+        "finite_vertices": true,
+        "closed_manifold_edges": true,
+        "consistent_winding": true,
+        "positive_signed_volume": true
+      }
+    },
+    {
+      "name": "Hair_boaz_fringe_right",
+      "vertices": 101,
+      "triangles": 198,
+      "signed_volume": 4.8850197261036154e-05,
+      "checks": {
+        "head_attachment": true,
+        "finite_vertices": true,
+        "closed_manifold_edges": true,
+        "consistent_winding": true,
+        "positive_signed_volume": true
+      }
+    },
+    {
+      "name": "Hair_boaz_fringe_left",
+      "vertices": 101,
+      "triangles": 198,
+      "signed_volume": 6.798046823417746e-05,
+      "checks": {
+        "head_attachment": true,
+        "finite_vertices": true,
+        "closed_manifold_edges": true,
+        "consistent_winding": true,
+        "positive_signed_volume": true
+      }
+    },
+    {
+      "name": "Hair_boaz_fringe_short",
+      "vertices": 101,
+      "triangles": 198,
+      "signed_volume": 2.9104634717150615e-05,
+      "checks": {
+        "head_attachment": true,
+        "finite_vertices": true,
+        "closed_manifold_edges": true,
+        "consistent_winding": true,
+        "positive_signed_volume": true
+      }
+    },
+    {
+      "name": "Hair_boaz_left_temple",
+      "vertices": 101,
+      "triangles": 198,
+      "signed_volume": 3.5006683588241646e-05,
+      "checks": {
+        "head_attachment": true,
+        "finite_vertices": true,
+        "closed_manifold_edges": true,
+        "consistent_winding": true,
+        "positive_signed_volume": true
+      }
+    },
+    {
+      "name": "Hair_boaz_left_over_ear",
+      "vertices": 101,
+      "triangles": 198,
+      "signed_volume": 2.630029354216627e-05,
+      "checks": {
+        "head_attachment": true,
+        "finite_vertices": true,
+        "closed_manifold_edges": true,
+        "consistent_winding": true,
+        "positive_signed_volume": true
+      }
+    },
+    {
+      "name": "Hair_boaz_left_behind_ear",
+      "vertices": 101,
+      "triangles": 198,
+      "signed_volume": 3.188756222505449e-05,
+      "checks": {
+        "head_attachment": true,
+        "finite_vertices": true,
+        "closed_manifold_edges": true,
+        "consistent_winding": true,
+        "positive_signed_volume": true
+      }
+    },
+    {
+      "name": "Hair_boaz_left_rear_diagonal",
+      "vertices": 101,
+      "triangles": 198,
+      "signed_volume": 6.234765249805585e-05,
+      "checks": {
+        "head_attachment": true,
+        "finite_vertices": true,
+        "closed_manifold_edges": true,
+        "consistent_winding": true,
+        "positive_signed_volume": true
+      }
+    },
+    {
+      "name": "Hair_boaz_right_temple",
+      "vertices": 101,
+      "triangles": 198,
+      "signed_volume": 3.562611391584977e-05,
+      "checks": {
+        "head_attachment": true,
+        "finite_vertices": true,
+        "closed_manifold_edges": true,
+        "consistent_winding": true,
+        "positive_signed_volume": true
+      }
+    },
+    {
+      "name": "Hair_boaz_right_over_ear",
+      "vertices": 101,
+      "triangles": 198,
+      "signed_volume": 2.4860936109081783e-05,
+      "checks": {
+        "head_attachment": true,
+        "finite_vertices": true,
+        "closed_manifold_edges": true,
+        "consistent_winding": true,
+        "positive_signed_volume": true
+      }
+    },
+    {
+      "name": "Hair_boaz_right_behind_ear",
+      "vertices": 101,
+      "triangles": 198,
+      "signed_volume": 2.9205429624353047e-05,
+      "checks": {
+        "head_attachment": true,
+        "finite_vertices": true,
+        "closed_manifold_edges": true,
+        "consistent_winding": true,
+        "positive_signed_volume": true
+      }
+    },
+    {
+      "name": "Hair_boaz_right_rear_diagonal",
+      "vertices": 101,
+      "triangles": 198,
+      "signed_volume": 6.0938833657561764e-05,
+      "checks": {
+        "head_attachment": true,
+        "finite_vertices": true,
+        "closed_manifold_edges": true,
+        "consistent_winding": true,
+        "positive_signed_volume": true
+      }
+    },
+    {
+      "name": "Hair_boaz_rear_center_sweep",
+      "vertices": 101,
+      "triangles": 198,
+      "signed_volume": 5.919820451346742e-05,
+      "checks": {
+        "head_attachment": true,
+        "finite_vertices": true,
+        "closed_manifold_edges": true,
+        "consistent_winding": true,
+        "positive_signed_volume": true
+      }
+    },
+    {
+      "name": "Hair_boaz_rear_left_sweep",
+      "vertices": 101,
+      "triangles": 198,
+      "signed_volume": 6.875062852084975e-05,
+      "checks": {
+        "head_attachment": true,
+        "finite_vertices": true,
+        "closed_manifold_edges": true,
+        "consistent_winding": true,
+        "positive_signed_volume": true
+      }
+    },
+    {
+      "name": "Hair_boaz_rear_right_sweep",
+      "vertices": 101,
+      "triangles": 198,
+      "signed_volume": 5.832469330230119e-05,
+      "checks": {
+        "head_attachment": true,
+        "finite_vertices": true,
+        "closed_manifold_edges": true,
+        "consistent_winding": true,
+        "positive_signed_volume": true
+      }
+    },
+    {
+      "name": "Hair_boaz_nape_left",
+      "vertices": 101,
+      "triangles": 198,
+      "signed_volume": 2.1112355890838132e-05,
+      "checks": {
+        "head_attachment": true,
+        "finite_vertices": true,
+        "closed_manifold_edges": true,
+        "consistent_winding": true,
+        "positive_signed_volume": true
+      }
+    },
+    {
+      "name": "Hair_boaz_nape_right",
+      "vertices": 101,
+      "triangles": 198,
+      "signed_volume": 2.113053728395769e-05,
+      "checks": {
+        "head_attachment": true,
+        "finite_vertices": true,
+        "closed_manifold_edges": true,
+        "consistent_winding": true,
+        "positive_signed_volume": true
+      }
+    },
+    {
+      "name": "Hair_boaz_nape_outer_left",
+      "vertices": 101,
+      "triangles": 198,
+      "signed_volume": 1.8319217168137042e-05,
+      "checks": {
+        "head_attachment": true,
+        "finite_vertices": true,
+        "closed_manifold_edges": true,
+        "consistent_winding": true,
+        "positive_signed_volume": true
+      }
+    }
+  ],
+  "limitations": [
+    "Checks generator output, not exported/imported GLB.",
+    "Closed components can overlap or self-intersect; visual review remains necessary."
+  ]
+}

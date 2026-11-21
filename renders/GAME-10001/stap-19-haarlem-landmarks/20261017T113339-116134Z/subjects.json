@@ -1,0 +1,38 @@
+[
+  {
+    "category": "landmarks",
+    "filename": "amsterdamse-poort-voorkant.png",
+    "label": "Amsterdamse Poort • voorgevel in echte Haarlemwereld",
+    "world": 3
+  },
+  {
+    "category": "landmarks",
+    "filename": "amsterdamse-poort-achterkant.png",
+    "label": "Amsterdamse Poort • gesloten achterzijde en dak",
+    "world": 3
+  },
+  {
+    "category": "landmarks",
+    "filename": "amsterdamse-poort-racecamera.png",
+    "label": "Amsterdamse Poort • gewone racecamera vlak voor de sectie",
+    "world": 3
+  },
+  {
+    "category": "landmarks",
+    "filename": "teylers-museum-voorkant.png",
+    "label": "Teylers Museum • voorgevel in echte Haarlemwereld",
+    "world": 3
+  },
+  {
+    "category": "landmarks",
+    "filename": "teylers-museum-achterkant.png",
+    "label": "Teylers Museum • gesloten achterzijde en dak",
+    "world": 3
+  },
+  {
+    "category": "landmarks",
+    "filename": "teylers-museum-racecamera.png",
+    "label": "Teylers Museum • gewone racecamera vlak voor de sectie",
+    "world": 3
+  }
+]

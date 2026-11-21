@@ -1,0 +1,129 @@
+{
+  "name": "Thamerkerk",
+  "slug": "thamerkerk",
+  "location": "Uithoorn, Netherlands",
+  "type": "church / landmark / race-game environment asset",
+  "source_mode": "AI-generated reference sheet converted into individual game-reference assets, plus original user-provided source photos",
+  "scale": {
+    "unit": "meter",
+    "known_real_dimensions": {
+      "estimated_width_m": 22,
+      "estimated_depth_m": 17,
+      "estimated_height_main_roof_m": 14,
+      "estimated_total_height_with_tower_m": 23
+    },
+    "status": "indicative",
+    "notes": "These are practical visual estimates for game modeling, not surveyed or official architectural measurements."
+  },
+  "views": [
+    {
+      "file": "thamerkerk_01_front.png",
+      "label": "front",
+      "size_px": [
+        1024,
+        1024
+      ],
+      "description": "Front elevation with central doorway, pilasters and cupola tower."
+    },
+    {
+      "file": "thamerkerk_02_back.png",
+      "label": "back",
+      "size_px": [
+        1024,
+        1024
+      ],
+      "description": "Rear elevation with central arched window and small side windows."
+    },
+    {
+      "file": "thamerkerk_03_left.png",
+      "label": "left",
+      "size_px": [
+        1024,
+        1024
+      ],
+      "description": "Left-side elevation showing the side door and long wall rhythm."
+    },
+    {
+      "file": "thamerkerk_04_right.png",
+      "label": "right",
+      "size_px": [
+        1024,
+        1024
+      ],
+      "description": "Right-side elevation with three tall arched windows."
+    },
+    {
+      "file": "thamerkerk_05_top.png",
+      "label": "top",
+      "size_px": [
+        1024,
+        1024
+      ],
+      "description": "Top view showing the hipped roof form and centered cupola."
+    },
+    {
+      "file": "thamerkerk_06_line.png",
+      "label": "line",
+      "size_px": [
+        1024,
+        1024
+      ],
+      "description": "Line-art reference with front, back, left, right and top views."
+    }
+  ],
+  "textures": [
+    {
+      "file": "thamerkerk_07_wall_texture.png",
+      "label": "wall_texture",
+      "size_px": [
+        512,
+        512
+      ],
+      "description": "Brick wall texture."
+    },
+    {
+      "file": "thamerkerk_08_window_texture.png",
+      "label": "window_texture",
+      "size_px": [
+        512,
+        512
+      ],
+      "description": "Tall arched window texture."
+    },
+    {
+      "file": "thamerkerk_09_door_texture.png",
+      "label": "door_texture",
+      "size_px": [
+        512,
+        512
+      ],
+      "description": "Main entrance / portico doorway texture."
+    },
+    {
+      "file": "thamerkerk_10_roof_texture.png",
+      "label": "roof_texture",
+      "size_px": [
+        512,
+        512
+      ],
+      "description": "Dark roof tile texture."
+    }
+  ],
+  "supporting_files": [
+    "thamerkerk_reference_sheet.png",
+    "thamerkerk_asset_preview.jpg",
+    "thamerkerk_06_line.svg",
+    "README.md",
+    "manifest.json",
+    "source_01.jpg",
+    "source_02.jpg",
+    "source_03.jpg",
+    "source_04.jpg",
+    "source_05.jpg"
+  ],
+  "notes": [
+    "This pack is intended for recognizable in-game reconstruction rather than exact architectural documentation.",
+    "The most distinctive features are the compact hall-church volume, the white entrance portico, and the white octagonal cupola tower with clock faces.",
+    "Use the front and top views as the primary blockout references."
+  ]
+}

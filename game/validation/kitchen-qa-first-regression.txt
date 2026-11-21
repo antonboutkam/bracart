@@ -1,0 +1,26 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+KITCHEN PHOTO IMPORT res://assets/textures/kitchen/photos/IMG_20261017_093242.jpg size=(1536.0, 2048.0) format=17 compressed=true payload=2097176
+KITCHEN PHOTO IMPORT res://assets/textures/kitchen/photos/IMG_20261017_093236.jpg size=(1536.0, 2048.0) format=17 compressed=true payload=2097176
+KITCHEN PHOTO IMPORT res://assets/textures/kitchen/photos/IMG_20261017_093205.jpg size=(1536.0, 2048.0) format=17 compressed=true payload=2097176
+KITCHEN PHOTO IMPORT res://assets/textures/kitchen/photos/IMG_20261017_093239.jpg size=(1536.0, 2048.0) format=17 compressed=true payload=2097176
+KITCHEN PHOTO IMPORT res://assets/textures/kitchen/photos/IMG_20261017_093220.jpg size=(1536.0, 2048.0) format=17 compressed=true payload=2097176
+KITCHEN PHOTO QA mesh_count=219 imported_textures=5 image_payload_bytes=10485880
+BORACER KITCHEN PHOTO QA: 24075 checks, 0 failures
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+KITCHEN_PROPS objects=11 mesh_nodes=219 checks=16607 failures=0
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+WORLD 0 length=693.3 min_clearance=55.4 max_gradient=0.14 min_bend_radius=17.0
+WORLD 1 length=783.6 min_clearance=49.3 max_gradient=0.11 min_bend_radius=11.8
+WORLD 2 length=816.1 min_clearance=51.8 max_gradient=0.23 min_bend_radius=13.2
+WORLD 3 length=720.1 min_clearance=50.5 max_gradient=0.14 min_bend_radius=11.1
+WORLD 4 length=757.8 min_clearance=53.2 max_gradient=0.09 min_bend_radius=15.5
+ERROR: kitchen contains its full household landmark set
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/world_geometry.gd:9)
+       [1] run (res://tests/world_geometry.gd:52)
+WORLD 5 length=630.0 min_clearance=52.3 max_gradient=0.00 min_bend_radius=11.1
+WORLD GEOMETRY: 27274 checks, 1 failures

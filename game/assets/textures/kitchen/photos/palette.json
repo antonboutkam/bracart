@@ -1,0 +1,62 @@
+{
+  "can_cyan": {
+    "hex": "#7eb9d6",
+    "photo": "093242",
+    "normalized_sample_rect": [
+      0.54,
+      0.47,
+      0.59,
+      0.55
+    ]
+  },
+  "logo_red": {
+    "hex": "#67100e",
+    "photo": "093242",
+    "normalized_sample_rect": [
+      0.37,
+      0.27,
+      0.41,
+      0.28
+    ]
+  },
+  "remote_black": {
+    "hex": "#1d2732",
+    "photo": "093239",
+    "normalized_sample_rect": [
+      0.68,
+      0.56,
+      0.74,
+      0.6
+    ]
+  },
+  "table_wood": {
+    "hex": "#9a896f",
+    "photo": "093239",
+    "normalized_sample_rect": [
+      0.45,
+      0.8,
+      0.55,
+      0.84
+    ]
+  },
+  "megaphone_red": {
+    "hex": "#550e15",
+    "photo": "093220",
+    "normalized_sample_rect": [
+      0.5,
+      0.31,
+      0.55,
+      0.35
+    ]
+  },
+  "megaphone_white": {
+    "hex": "#717377",
+    "photo": "093220",
+    "normalized_sample_rect": [
+      0.38,
+      0.47,
+      0.48,
+      0.55
+    ]
+  }
+}

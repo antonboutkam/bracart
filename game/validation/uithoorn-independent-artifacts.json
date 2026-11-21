@@ -1,0 +1,81 @@
+{
+  "source_files": 144,
+  "source_hash_failures": [],
+  "glbs": [
+    {
+      "id": "de-hoeksteen",
+      "sha256": "97f0122be3ea8181b90e2d92a8680622c9788b1b6917f439192416b4198af228",
+      "bytes": 1502920,
+      "materials": 8,
+      "images": 4,
+      "standalone_identical": true,
+      "uv": true,
+      "backface_cull": true
+    },
+    {
+      "id": "fort-aan-de-drecht",
+      "sha256": "33b9a04a7e7392ac80e8bcf8a21d955a40bf69d66827497cfa105705e9bb3817",
+      "bytes": 592036,
+      "materials": 7,
+      "images": 4,
+      "standalone_identical": true,
+      "uv": true,
+      "backface_cull": true
+    },
+    {
+      "id": "irenebrug",
+      "sha256": "5e4396d7ad4104b2556ae6a8fa2505d170c41578df2d253981aa8210308ac75c",
+      "bytes": 163260,
+      "materials": 9,
+      "images": 2,
+      "standalone_identical": true,
+      "uv": true,
+      "backface_cull": true
+    },
+    {
+      "id": "rechthuis",
+      "sha256": "52f9019407142b3fa332f454cde377ec85fa1d7441a355679ce50a71e9ae65e5",
+      "bytes": 604368,
+      "materials": 8,
+      "images": 3,
+      "standalone_identical": true,
+      "uv": true,
+      "backface_cull": true
+    },
+    {
+      "id": "schanskerk",
+      "sha256": "eeaa96f99978509abc3b5b8a37101e85f04736d9620eede7bafabf1256cc6269",
+      "bytes": 695044,
+      "materials": 6,
+      "images": 2,
+      "standalone_identical": true,
+      "uv": true,
+      "backface_cull": true
+    },
+    {
+      "id": "thamerkerk",
+      "sha256": "af34ad40c4753204cb34851c8bd8d7bc0ffec3878295fd51f323763a71689b66",
+      "bytes": 263328,
+      "materials": 6,
+      "images": 2,
+      "standalone_identical": true,
+      "uv": true,
+      "backface_cull": true
+    }
+  ],
+  "budget": 79500,
+  "budget_balanced": true,
+  "acceptance": "pending",
+  "paid": 0,
+  "stage": "final placement freeze",
+  "reviewed_runtime_sources": {
+    "public_html/boracer/game/scripts/worlds/uithoorn_landmarks.gd": "e0d0a8f2f02f3e6ceb7c4291ac858e1b1defb30dba1680d569579da6615387be",
+    "public_html/boracer/game/scripts/worlds/scenery.gd": "ee3dd0e74f957d16eda49d627f02d4a220b9c845c83727eadc337c4fe8aa1cb5",
+    "public_html/boracer/game/scripts/worlds/street_districts.gd": "45770f427992182b2b78a546871620278f306f873d497c538e8e4c8492a6f4e4",
+    "public_html/boracer/game/tests/uithoorn_landmarks.gd": "cf65ea1dee982d229a57a98183cd8b7431412f3c44f36b889d474a186b673d95"
+  },
+  "native_run": "20261018T142424-440362Z",
+  "native_images": 38,
+  "native_visual_review": "pass: all 38 viewed; 3 critical race views additionally opened full resolution",
+  "preview_matches_studio_front": 6
+}

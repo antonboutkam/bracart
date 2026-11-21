@@ -1,0 +1,28 @@
+Lokale gerichte controles, 2026-11-14. Godot 4.7.2, headless.
+Tijdelijke gebruikersmappen onder /tmp; geen echte spelvoortgang gewijzigd.
+Aantallen zijn assertions, inclusief veel herhaalde geometrische meetpunten.
+De volledige historische suite is niet opnieuw uitgevoerd.
+
+monster_breaker:
+MONSTER PROTOTYPE: 167 checks, 0 failures
+
+garage_features:
+BORACER GARAGE FEATURES: 776 checks, 0 failures
+
+garage_interaction_qa:
+BORACER GARAGE INDEPENDENT QA: 122071 checks, 0 failures
+
+garage_presentation:
+BORACER GARAGE STUDIO: 61 checks, 0 failures
+
+ui_layout:
+BORACER UI LAYOUT: 33 checks, 0 failures
+
+ui_sfeer:
+BORACER UI SFEER: 30 checks, 0 failures
+
+Native beelden: lokaal gerenderd met Mesa llvmpipe en visueel bekeken.
+Starttegels, garage, voertuigkeuze, pauzetegels, afdaling en vlucht gecontroleerd.
+De laatste losse camera-capture eindigde met code 0, maar meldde bij afsluiten
+twee GL-texture-leaks van elk 87380 bytes. De headless tests meldden geen fouten.
+Geen prestatieclaim voor de echte GPU of beoordeling van fysiek controllergevoel.

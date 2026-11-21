@@ -1,0 +1,17 @@
+{
+  "blend": "/home/anton/Documents/sites/boracart/public_html/boracer/persons/boaz/boaz.blend",
+  "red_cape_triangles": 3968,
+  "gold_emblem_triangles": 15926,
+  "samples_with_red_surface": 15926,
+  "samples_missing_red_surface": 0,
+  "occluded_centroids_more_than_0_5mm": 0,
+  "minimum_gold_clearance_m": 0.0010774284601211548,
+  "maximum_gold_clearance_m": 0.005024261772632599,
+  "centroids_more_than_6mm_above_cloth": 0,
+  "passed": true,
+  "limits": [
+    "Rest pose only, triangle centroids; this is not exhaustive intersection detection.",
+    "Centroids lacking a red ray hit are reported separately.",
+    "Sign convention uses this generator saved Blender -Y-facing cape."
+  ]
+}

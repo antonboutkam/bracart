@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+ <g fill="none" stroke="#24272b" stroke-width="3.1" stroke-linejoin="miter">
+ <path d="M72 305 H952 V760 H72 Z" stroke-width="5"/>
+ <path d="M72 330 H952 M72 700 H952 M72 742 H952" stroke-width="5"/>
+ <path d="M245 331 V702 M430 331 V702 M754 331 V702" stroke-width="5"/>
+ <path d="M72 511 H952" stroke-width="5"/>
+ <path d="M90 351 H226 V696 H90 Z M450 351 H735 V696 H450 Z"/>
+ <path d="M90 522 H226 M450 522 H735" stroke-width="4"/>
+ <path d="M72 725 H952" stroke-width="1.5"/>
+ </g>
+ <g fill="none" stroke="#34383b" stroke-width="2.2"><path d="M113 351 V696"/><path d="M136 351 V696"/><path d="M159 351 V696"/><path d="M182 351 V696"/><path d="M205 351 V696"/><path d="M473 351 V696"/><path d="M496 351 V696"/><path d="M519 351 V696"/><path d="M542 351 V696"/><path d="M565 351 V696"/><path d="M588 351 V696"/><path d="M611 351 V696"/><path d="M634 351 V696"/><path d="M657 351 V696"/><path d="M680 351 V696"/><path d="M703 351 V696"/></g>
+<g fill="none" stroke="#66696b" stroke-width="1.7"><path d="M90 395 H226 M450 395 H735"/><path d="M90 438 H226 M450 438 H735"/><path d="M90 477 H226 M450 477 H735"/><path d="M90 552 H226 M450 552 H735"/><path d="M90 595 H226 M450 595 H735"/><path d="M90 638 H226 M450 638 H735"/></g>
+<text x="572" y="500" font-family="sans-serif" font-size="24" letter-spacing="3" text-anchor="middle" fill="#333">GERRIT.</text>
+</svg>

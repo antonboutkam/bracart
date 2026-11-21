@@ -1,0 +1,93 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+ERROR: Additive kitchen keeps old mesh path adapter/@MeshInstance3D@247
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/kitchen_adventure_qa.gd:13)
+       [1] check_preserved (res://tests/kitchen_adventure_qa.gd:24)
+       [2] run (res://tests/kitchen_adventure_qa.gd:70)
+ERROR: Additive kitchen keeps old mesh path adapter/@MeshInstance3D@248
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/kitchen_adventure_qa.gd:13)
+       [1] check_preserved (res://tests/kitchen_adventure_qa.gd:24)
+       [2] run (res://tests/kitchen_adventure_qa.gd:70)
+ERROR: Additive kitchen keeps old mesh path adapter/@MeshInstance3D@249
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/kitchen_adventure_qa.gd:13)
+       [1] check_preserved (res://tests/kitchen_adventure_qa.gd:24)
+       [2] run (res://tests/kitchen_adventure_qa.gd:70)
+ERROR: Original photo-object mesh triangles remain byte-equivalent
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/kitchen_adventure_qa.gd:13)
+       [1] check_preserved (res://tests/kitchen_adventure_qa.gd:27)
+       [2] run (res://tests/kitchen_adventure_qa.gd:70)
+ERROR: Original photo-object transforms remain unchanged
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/kitchen_adventure_qa.gd:13)
+       [1] check_preserved (res://tests/kitchen_adventure_qa.gd:31)
+       [2] run (res://tests/kitchen_adventure_qa.gd:70)
+ERROR: Original photo-object transforms remain unchanged
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/kitchen_adventure_qa.gd:13)
+       [1] check_preserved (res://tests/kitchen_adventure_qa.gd:31)
+       [2] run (res://tests/kitchen_adventure_qa.gd:70)
+ERROR: Original photo-object palette/PBR/transparency retained
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/kitchen_adventure_qa.gd:13)
+       [1] check_preserved (res://tests/kitchen_adventure_qa.gd:37)
+       [2] run (res://tests/kitchen_adventure_qa.gd:70)
+ERROR: Original photo-object mesh triangles remain byte-equivalent
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/kitchen_adventure_qa.gd:13)
+       [1] check_preserved (res://tests/kitchen_adventure_qa.gd:27)
+       [2] run (res://tests/kitchen_adventure_qa.gd:70)
+ERROR: Original photo-object transforms remain unchanged
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/kitchen_adventure_qa.gd:13)
+       [1] check_preserved (res://tests/kitchen_adventure_qa.gd:31)
+       [2] run (res://tests/kitchen_adventure_qa.gd:70)
+ERROR: Original photo-object transforms remain unchanged
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/kitchen_adventure_qa.gd:13)
+       [1] check_preserved (res://tests/kitchen_adventure_qa.gd:31)
+       [2] run (res://tests/kitchen_adventure_qa.gd:70)
+ERROR: Original photo-object transforms remain unchanged
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/kitchen_adventure_qa.gd:13)
+       [1] check_preserved (res://tests/kitchen_adventure_qa.gd:31)
+       [2] run (res://tests/kitchen_adventure_qa.gd:70)
+ERROR: Original photo-object transforms remain unchanged
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/kitchen_adventure_qa.gd:13)
+       [1] check_preserved (res://tests/kitchen_adventure_qa.gd:31)
+       [2] run (res://tests/kitchen_adventure_qa.gd:70)
+ERROR: Original photo-object transforms remain unchanged
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/kitchen_adventure_qa.gd:13)
+       [1] check_preserved (res://tests/kitchen_adventure_qa.gd:31)
+       [2] run (res://tests/kitchen_adventure_qa.gd:70)
+ERROR: Original photo-object transforms remain unchanged
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/kitchen_adventure_qa.gd:13)
+       [1] check_preserved (res://tests/kitchen_adventure_qa.gd:31)
+       [2] run (res://tests/kitchen_adventure_qa.gd:70)
+ERROR: Original photo-object transforms remain unchanged
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/kitchen_adventure_qa.gd:13)
+       [1] check_preserved (res://tests/kitchen_adventure_qa.gd:31)
+       [2] run (res://tests/kitchen_adventure_qa.gd:70)
+BORACER KITCHEN ADVENTURE INDEPENDENT QA: 1722485 checks, 464 failures

@@ -1,0 +1,18 @@
+Independent final QA; headless, isolated XDG, Dummy audio.
+
+d2ac3a8eb946d5997c385c4abb878f99a2be38bf4e8338aa4a9a5a13219630fb  public_html/boracer/game/scripts/ui/garage_drivers.gd
+60fbbbdc32b6af131d7b3e37cc044c98a322e90a578259ada01dc70965de2afe  public_html/boracer/game/scripts/ui/garage_studio.gd
+1af7f283e24d43676afeca5ae405b1d1e1a7eeb75bb48d98a9662f8dac3f8d16  public_html/boracer/game/scripts/ui/vehicle_preview.gd
+e4be446e1f97547aef8b9d782b0abc344732adbc467c9fb5994b05ef69fd45db  public_html/boracer/game/scripts/interface.gd
+223a04e5db307129ce5fffc2d411b518861fad7c0811881051b33c6fd1c64583  public_html/boracer/game/scripts/worlds/dutch_sky.gd
+9f99420e512b373a21a691fd4eac9bd7e48144cab64a732fd231672a9654a652  public_html/boracer/game/scripts/worlds/dutch_horizons.gd
+422bb6701aefa22daeb9da86c127dc967b464f7f977e416e5374ffbc38742c81  public_html/boracer/game/scripts/worlds/world_art.gd
+
+QA_SUITE garage_interaction_qa
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+BORACER GARAGE INDEPENDENT QA: 104281 checks, 0 failures
+QA_SUITE dutch_world_qa
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+BORACER DUTCH WORLD INDEPENDENT QA: 366193 checks, 0 failures

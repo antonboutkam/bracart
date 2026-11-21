@@ -1,0 +1,32 @@
+[
+  {
+    "category": "ui",
+    "filename": "selectie-1.png",
+    "label": "Baanselectie · Versie 1"
+  },
+  {
+    "category": "ui",
+    "filename": "cockpit-1.png",
+    "label": "Cockpit · De Keukentafel · Versie 1"
+  },
+  {
+    "category": "ui",
+    "filename": "home-1.png",
+    "label": "Dashboard Racen-tegel · Versie 1"
+  },
+  {
+    "category": "ui",
+    "filename": "selectie-2.png",
+    "label": "Baanselectie · Stunt Edition"
+  },
+  {
+    "category": "ui",
+    "filename": "cockpit-2.png",
+    "label": "Cockpit · De Keukentafel · Stunt Edition"
+  },
+  {
+    "category": "ui",
+    "filename": "home-2.png",
+    "label": "Dashboard Racen-tegel · Stunt Edition"
+  }
+]

@@ -1,0 +1,13 @@
+Sem GD-005 technical handoff, 2026-10-17
+Godot 4.7.2, headless, Dummy audio, isolated XDG directories under /tmp.
+Observed test output:
+BORACER STREET WALKERS: 120817 checks, 0 failures
+BORACER STREET WALKERS MAIN: 6 checks, 0 failures
+
+No native rendering or visual quality approval is claimed.
+Independent placement/support review belongs to Ruben/Eva.
+
+Handoff file hashes:
+9973381a3faaec93d3c447191a42f9502335be249f6828cd883515fc5d7e5f28  scripts/worlds/street_walkers.gd
+1803e4a5c339660a5ac9028441fcfc3aad32384c54faf51e915d9e7f8c5a7afd  tests/street_walkers.gd
+1941c9522256bc45661ebf0f3ea065805109a01fe1de5c3114ca545ef2c93dc6  tests/street_walkers_main.gd

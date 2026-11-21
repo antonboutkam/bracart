@@ -1,0 +1,17 @@
+{
+  "Godot_version": "4.7.2-stable (official)",
+  "bounds": "[P: (-0.325037, 0.0, -0.137124), S: (0.650074, 1.15, 0.313411)]",
+  "candidate": "/home/anton/Documents/sites/boracart/public_html/boracer/game/../persons/boaz/boaz.glb",
+  "checks": 75,
+  "clips": [
+    "Cheer",
+    "Idle",
+    "Jump",
+    "Kart_Sit",
+    "Kart_Steer",
+    "Run"
+  ],
+  "failures": [],
+  "rendering": "headless; no native image or visual gameplay approval",
+  "runtime_import": "passed"
+}

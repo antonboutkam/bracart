@@ -1,0 +1,31 @@
+{
+  "file": "boaz.glb",
+  "bytes": 3486964,
+  "vertices": 28144,
+  "triangles": 33306,
+  "triangle_target_met": false,
+  "materials": 1,
+  "embedded_images": 2,
+  "joints": 51,
+  "max_weights": 4,
+  "bounds_min": [
+    -0.3246903419494629,
+    0.0,
+    -0.1380000114440918
+  ],
+  "bounds_max": [
+    0.3246903419494629,
+    1.1500000953674316,
+    0.17071112990379333
+  ],
+  "animations": [
+    "Cheer",
+    "Idle",
+    "Jump",
+    "Kart_Sit",
+    "Kart_Steer",
+    "Run"
+  ],
+  "structural_checks": "passed",
+  "Godot_runtime": "not tested"
+}
