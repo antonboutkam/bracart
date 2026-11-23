@@ -1,0 +1,36 @@
+{
+  "format": "destructible-block-monsters-v1",
+  "grid_cell_size": [
+    1,
+    1,
+    1
+  ],
+  "axes": {
+    "up": "+Y",
+    "front": "+Z"
+  },
+  "support_rule": "six-face adjacency to a block on y=0",
+  "monsters": [
+    {
+      "id": "02-schouderreus-turkoois",
+      "name": "Schouderreus",
+      "count": 1780,
+      "unique": true,
+      "ground_blocks": 54,
+      "connected_to_ground": true,
+      "unconnected": 0,
+      "dimensions": [
+        23,
+        30,
+        7
+      ],
+      "num_colors": 8,
+      "single_block_breakpoints": 0,
+      "breakpoint_examples": [],
+      "raw_voxels": 1780,
+      "hollowed": false,
+      "bridge_blocks_added": 0,
+      "source": "02-schouderreus-turkoois-voorkant-zijkant-achterkant.png"
+    }
+  ]
+}

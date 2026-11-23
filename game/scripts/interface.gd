@@ -19,6 +19,8 @@ var monster_players: int = 2
 var race_gauge
 var rank_rows: Array = []
 var layout_root: Control
+var fps_label: Label
+var fps_interval: float = 0.0
 var active_page: String = "home"
 var previous_focus: Control
 var current_lap_label: Label
@@ -34,6 +36,7 @@ var lap_label: Label
 var time_label: Label
 var coin_label: Label
 var power_label: Label
+var ammo_label: Label
 var standings_label: Label
 var effect_label: Label
 var count_label: Label
@@ -78,8 +81,23 @@ func setup(owner_game) -> void:
  base.add_child(overlay)
  overlay.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
  overlay.mouse_filter = Control.MOUSE_FILTER_IGNORE
+ fps_label = at(base, "FPS: --", Vector2(1150, 4), 15, GOLD)
+ fps_label.name = "FpsCounter"
+ fps_label.mouse_filter = Control.MOUSE_FILTER_IGNORE
+ fps_label.z_index = 100
+ fps_label.add_theme_color_override("font_outline_color", INK)
+ fps_label.add_theme_constant_override("outline_size", 4)
+ fps_label.visible = game.profile.settings.show_fps
  get_viewport().size_changed.connect(_resize_layout)
  _resize_layout()
+
+func update_fps(delta: float) -> void:
+ fps_label.visible = game.profile.settings.show_fps
+ if not fps_label.visible: return
+ fps_interval -= delta
+ if fps_interval <= 0:
+  fps_interval = 0.5
+  fps_label.text = "FPS: %d" % Engine.get_frames_per_second()
 
 func _resize_layout() -> void:
  var available = get_viewport().get_visible_rect().size
@@ -339,12 +357,17 @@ func show_monsters(players: int = 2) -> void:
  monster_players = clampi(players, 1, 2)
  active_page = "monsters"
  page("Kies je monster", "Solo: versla het monster in zo weinig mogelijk sprongen." if monster_players == 1 else "Samen: speel om de beurt. De meeste punten winnen bij 70% in het water.")
+ var scroll = ScrollContainer.new()
+ scroll.position = Vector2(48, 170)
+ scroll.size = Vector2(535, 440)
+ scroll.follow_focus = true
+ scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
+ screen.add_child(scroll)
  var list = GridContainer.new()
  list.columns = 2
  list.add_theme_constant_override("h_separation", 12)
  list.add_theme_constant_override("v_separation", 12)
- screen.add_child(list)
- list.position = Vector2(48, 170)
+ scroll.add_child(list)
  var entries: Array = MonsterCatalog.entries()
  for entry in entries:
   var id: String = entry.id
@@ -475,9 +498,15 @@ func show_garage() -> void:
   game.audio.cue("click")
   game.refresh_preview()
   show_garage())
+ var scroll = ScrollContainer.new()
+ screen.add_child(scroll)
+ scroll.name = "GarageVehicleScroll"
+ scroll.position = Vector2(48, 264)
+ scroll.size = Vector2(1184, 472)
+ scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
+ scroll.follow_focus = true
  var grid = GridContainer.new()
- screen.add_child(grid)
- grid.position = Vector2(48, 264)
+ scroll.add_child(grid)
  grid.columns = 3
  grid.add_theme_constant_override("h_separation", 18)
  grid.add_theme_constant_override("v_separation", 16)
@@ -527,7 +556,7 @@ func show_garage() -> void:
   var inspect: Button = button(row, "Bekijk", func(): show_vehicle(index))
   inspect.custom_minimum_size.y = 38
   inspect.disabled = not available
- at(screen, "Racebeloning: 10–60 muntjes + verzamelde muntjes. De Raketfiets en Retro zijn gratis.", Vector2(50, 751), 13, MUTED)
+ at(screen, "Racebeloning: 10–60 muntjes + verzamelde muntjes. De Raketfiets, Retro en Kermis-UFO zijn gratis.", Vector2(50, 751), 13, MUTED)
 
 func _garage_purchase_style(choose: Button) -> void:
  for state in ["normal","hover","pressed","focus"]:
@@ -601,10 +630,10 @@ func show_settings() -> void:
  difficulty.item_selected.connect(func(index):
   game.profile.settings.difficulty = index
   game.persist())
- label(box, "Spelresolutie", 22)
+ label(box, "Scherpte van het spel (3D)", 22)
  var resolution = OptionButton.new()
  resolution.name = "RenderResolution"
- for entry in [["Volledige schermresolutie", 0], ["1440p — minder zwaar", 1440], ["1080p — licht", 1080], ["720p — extra licht", 720]]:
+ for entry in [["Volledige schermresolutie", 0], ["1800p", 1800], ["1440p", 1440], ["1200p", 1200], ["1080p", 1080], ["900p", 900], ["720p", 720], ["540p", 540]]:
   resolution.add_item(entry[0], entry[1])
  resolution.select(resolution.get_item_index(game.profile.settings.render_height))
  resolution.custom_minimum_size.y = 44
@@ -613,7 +642,7 @@ func show_settings() -> void:
   game.profile.settings.render_height = resolution.get_item_id(index)
   game.apply_render_resolution()
   game.persist())
- label(box, "Lagere resolutie maakt het 3D-beeld minder scherp en lichter voor je GPU.\nTekst en knoppen blijven scherp. Werkt direct, ook in Monsterbreker.", 14, MUTED)
+ label(box, "Kies bijvoorbeeld 900p voor een middenweg tussen scherpte en snelheid.\nDe breedte volgt je scherm; tekst en knoppen blijven scherp.", 14, MUTED)
  var shadows = CheckButton.new()
  shadows.text = "Schaduwen (uitzetten voor lichtere computers)"
  shadows.button_pressed = game.profile.settings.shadows
@@ -621,6 +650,32 @@ func show_settings() -> void:
  shadows.toggled.connect(func(enabled):
   game.profile.settings.shadows = enabled
   game.sun.shadow_enabled = enabled
+  game.persist())
+ var antialias = CheckButton.new()
+ antialias.name = "AntialiasSetting"
+ antialias.text = "Zachte randen (uit voor meer snelheid)"
+ antialias.button_pressed = game.profile.settings.antialias
+ box.add_child(antialias)
+ antialias.toggled.connect(func(enabled):
+  game.profile.settings.antialias = enabled
+  game.apply_render_resolution()
+  game.persist())
+ var replay = CheckButton.new()
+ replay.name = "ImpactReplaySetting"
+ replay.text = "Herhaling na botsing in Monsterbreker"
+ replay.button_pressed = game.profile.settings.impact_replay
+ box.add_child(replay)
+ replay.toggled.connect(func(enabled):
+  game.profile.settings.impact_replay = enabled
+  game.persist())
+ var fps = CheckButton.new()
+ fps.name = "FpsSetting"
+ fps.text = "Toon FPS-teller"
+ fps.button_pressed = game.profile.settings.show_fps
+ box.add_child(fps)
+ fps.toggled.connect(func(enabled):
+  game.profile.settings.show_fps = enabled
+  update_fps(0)
   game.persist())
  for entry in [["Rustige camera (minder boostbeweging)", "camera_motion"], ["Automatisch gas geven", "auto_accelerate"], ["Aanraakknoppen op het scherm", "touch_controls"]]:
   var setting_key: String = entry[1]
@@ -631,7 +686,7 @@ func show_settings() -> void:
   toggle.toggled.connect(func(enabled):
    game.profile.settings[setting_key] = not enabled if setting_key == "camera_motion" else enabled
    game.persist())
- label(box, "WASD / pijltjes: rijden    Shift: boost    E: power-up\nSpatie: springen    R: terug naar het midden    Esc: pauze\nC / LB vasthouden: achterom kijken (vooruitbeeld in venster)\nController: stick / RT / LT / A / X / RB / Start", 15, MUTED)
+ label(box, "WASD / pijltjes: rijden    Shift: boost    E: power-up    F: schieten\nSpatie: springen    R: terug naar het midden    Esc: pauze\nC / LB vasthouden: achterom kijken (vooruitbeeld in venster)\nController: stick / RT / LT / A / X / B / RB / Start", 15, MUTED)
  label(box, "Stuurhulp is actief. Resolutie en geluid veranderen direct.", 14, GOLD)
 
 func show_hud() -> void:
@@ -701,6 +756,7 @@ func show_hud() -> void:
  coin_label = label(power_box, "0 MUNTJES", 25, GOLD)
  power_label = label(power_box, "E / X   •   Vind een verrassingsblok", 15)
  power_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+ ammo_label = label(power_box, "F / B • 5/5", 14, GOLD)
  effect_label = label(power_box, "", 13, MUTED)
  effect_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
  count_label = at(hud, "3", Vector2(540, 240), 96, GOLD)
@@ -720,7 +776,7 @@ func show_hud() -> void:
  section_label.size.x = 650
  section_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
  _outline(section_label, 3)
- at(hud, "WASD rijden   •   E power-up   •   Spatie springen   •   C / LB achterom   •   Esc pauze", Vector2(405, 753), 13, MUTED)
+ at(hud, "WASD rijden   •   E power-up   •   F schieten   •   Spatie springen   •   C / LB achterom", Vector2(405, 753), 13, MUTED)
  if game.profile.settings.get("touch_controls", false) or DisplayServer.is_touchscreen_available() or "--touch" in OS.get_cmdline_user_args():
   race_gauge.scale = Vector2(0.55, 0.55)
   race_gauge.position = Vector2(1090, 616)
@@ -737,8 +793,8 @@ func _bar_style(color: Color) -> StyleBoxFlat:
  return style
 
 func _touch_controls() -> void:
- var entries = [["←", "steer_left"], ["→", "steer_right"], ["Rem", "brake"], ["Gas", "accelerate"], ["Boost", "boost"], ["Power", "power"], ["Spring", "jump"]]
- var positions = [Vector2(28, 550), Vector2(124, 550), Vector2(1068, 550), Vector2(1164, 550), Vector2(1164, 464), Vector2(28, 464), Vector2(124, 464)]
+ var entries = [["←", "steer_left"], ["→", "steer_right"], ["Rem", "brake"], ["Gas", "accelerate"], ["Boost", "boost"], ["Power", "power"], ["Spring", "jump"], ["Schiet", "shoot"]]
+ var positions = [Vector2(28, 550), Vector2(124, 550), Vector2(1068, 550), Vector2(1164, 550), Vector2(1164, 464), Vector2(28, 464), Vector2(124, 464), Vector2(220, 464)]
  for i in entries.size():
   var touch = TouchAction.new()
   hud.add_child(touch)
@@ -764,6 +820,7 @@ func update_hud(delta: float) -> void:
  record_label.text = "Beste race  " + time_string(record) if record > 0 else "Beste race  —"
  section_label.text = race.track.section_name(race.player.progress) if race.track.has_method("section_name") else ""
  coin_label.text = "%d MUNTJES" % race.collected
+ ammo_label.text = "F / B  •  Schoten " + race.player.ammo.label()
  power_label.text = "E / X  •  " + (race.player.power if race.player.power != "" else "Vind een verrassingsblok")
  if race.player.cannon_time > 0:
   power_label.text = "E / X  •  Kanonnen — schieten!"

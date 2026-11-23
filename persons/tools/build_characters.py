@@ -14,6 +14,7 @@ if str(Path(__file__).resolve().parent) not in sys.path:
     sys.path.insert(0, str(Path(__file__).resolve().parent))
 from character_hair import build_hair
 import character_clothes
+import character_materials
 
 def finish_batch():
     # Optional workaround for PulseAudio hanging during Blender's final teardown.
@@ -32,6 +33,7 @@ PALETTE = [
  ('Olive','#648B41',.9,0),('Orange','#D77A31',.83,0),('Denim','#185C92',.94,0),
  ('DenimLight','#3475A4',.92,0),('Glove','#303630',.78,0),('Stitch','#CDAE68',.85,0),
  ('Feather','#E85327',.8,0),('Leaf','#35854B',.83,0),('Highlight','#FFFFFF',.25,0),
+ ('EyeWhite','#EEE6D7',.21,0),('EyeIris','#78491F',.24,0),
 ]
 COLORS={name:i for i,(name,*_) in enumerate(PALETTE)}
 parts=[]; bones={}; FACE={}
@@ -79,32 +81,24 @@ def apply_anatomy(ob, rig, profile):
 def srgb(v): return v/12.92 if v<=.04045 else ((v+.055)/1.055)**2.4
 
 def atlas(name):
-    size=1024; al=array('f',[0.0])*(size*size*4); orm=array('f',[0.0])*(size*size*4)
-    for y in range(size):
-        for x in range(size):
-            k=(y//128)*8+x//128
-            _,hexcol,rough,metal=PALETTE[k%len(PALETTE)]
-            rgb=[int(hexcol[i:i+2],16)/255 for i in (1,3,5)]
-            # Low-amplitude woven grain, kept inside each padded palette tile.
-            d=1+(.012 if (x+y)%4==0 else -.004)
-            p=(y*size+x)*4
-            al[p:p+4]=array('f',[min(1,c*d) for c in rgb]+[1])
-            orm[p:p+4]=array('f',[1,rough,metal,1])
+    size=2048; al,orm=character_materials.textures(PALETTE,size)
     ims=[]
     for suffix,pix in [('basecolor',al),('orm',orm)]:
         im=bpy.data.images.new(name+'_'+suffix,size,size,alpha=True)
         im.colorspace_settings.name='sRGB' if suffix=='basecolor' else 'Non-Color'
-        im.pixels.foreach_set(pix); im.update()
+        im.pixels.foreach_set(pix.ravel()); im.update()
         im.filepath_raw=str(ROOT/name/(name+'_'+suffix+'.png')); im.file_format='PNG'; im.save(); im.pack(); ims.append(im)
     mat=bpy.data.materials.new(name+'_Atlas_PBR'); mat.use_nodes=True
     n=mat.node_tree.nodes; l=mat.node_tree.links; p=n.get('Principled BSDF')
-    tex=n.new('ShaderNodeTexImage'); tex.image=ims[0]; tex.label='Shared 1024px colour atlas'
+    tex=n.new('ShaderNodeTexImage'); tex.image=ims[0]; tex.label='2048px PBR atlas with dedicated head UV region'
     tex2=n.new('ShaderNodeTexImage'); tex2.image=ims[1]
     sep=n.new('ShaderNodeSeparateColor'); l.new(tex.outputs['Color'],p.inputs['Base Color'])
     l.new(tex2.outputs['Color'],sep.inputs['Color']); l.new(sep.outputs['Green'],p.inputs['Roughness']); l.new(sep.outputs['Blue'],p.inputs['Metallic'])
     return mat
 
 def mesh(name,verts,faces,color,bone='spine',weights=None,tag=None):
+    if name.startswith('Eye_white_'): color='EyeWhite'
+    elif name.startswith('Iris_'): color='EyeIris'
     m=bpy.data.meshes.new(name); m.from_pydata(verts,[],faces); m.update()
     ob=bpy.data.objects.new(name,m); bpy.context.collection.objects.link(ob); parts.append(ob)
     ob.data.materials.append(MAT)
@@ -113,6 +107,10 @@ def mesh(name,verts,faces,color,bone='spine',weights=None,tag=None):
     lo=Vector((min(v[0] for v in verts),min(v[1] for v in verts),min(v[2] for v in verts)))
     hi=Vector((max(v[0] for v in verts),max(v[1] for v in verts),max(v[2] for v in verts)))
     for f in m.polygons:
+        if name=='Body_Head_sculpted':
+            for li,coord in zip(f.loop_indices,character_materials.head_uv(verts,f.vertices)):
+                uv.data[li].uv=coord
+            continue
         axes=(0,2) if abs(f.normal.y)>.5 else ((1,2) if abs(f.normal.x)>.5 else (0,1))
         for li in f.loop_indices:
             v=Vector(verts[m.loops[li].vertex_index]); a,b=axes
@@ -578,6 +576,7 @@ def setup_stage():
     light('STUDIO_Key',(-1.6,2.0,2.7),180,2)
     light('STUDIO_Fill',(1.4,1.2,1.5),95,1.5)
     light('STUDIO_Rim',(0,-1.6,2.2),220,1.3)
+    character_materials.configure_preview(scene)
     camdat=bpy.data.cameras.new('STUDIO_Camera'); cam=bpy.data.objects.new('STUDIO_Camera',camdat); scene.collection.objects.link(cam); scene.camera=cam
     camdat.type='ORTHO'; camdat.ortho_scale=1.43; camdat.lens=55
     cam.location=(1.4,2.4,1.0); cam.rotation_euler=(Vector((0,0,.57))-cam.location).to_track_quat('-Z','Y').to_euler()
@@ -613,8 +612,8 @@ def main(name):
     mod=ob.modifiers.new('Humanoid_skin','ARMATURE'); mod.object=rig; ob.parent=rig
     tri=ob.modifiers.new('Export_triangles','TRIANGULATE')
     seat=animations(rig)
-    ob['source']='character-sheet.png + '+name+'-stijl.md'; ob['stage']=name.capitalize()+' sculpted costume step 3 review candidate'; ob['forward']='-Z in glTF / Godot'; ob['height_m']=1.15
-    ob['UV_note']='Shared palette tiles deliberately overlap. Unique unwrap/paint atlas is a later art pass.'
+    ob['source']='character-sheet.png + '+name+'-stijl.md'; ob['stage']=name.capitalize()+' material refinement 2026-11-21'; ob['forward']='-Z in glTF / Godot'; ob['height_m']=1.15
+    ob['UV_note']='Dedicated head region with rear cylindrical seam; other parts share padded material swatches. Not a full unique production unwrap.'
     ob['rear_hair_refined']=True
     rig['clips']='Idle, Run, Jump, Cheer, Kart_Sit, Kart_Steer'; rig['facial_note']='Prototype geometry expressions; validate close-up before production.'
     bpy.ops.object.select_all(action='DESELECT'); ob.select_set(True); rig.select_set(True); bpy.context.view_layer.objects.active=rig
@@ -636,7 +635,7 @@ def main(name):
     rig.animation_data.action=None; bpy.context.scene.frame_set(1)
     bpy.context.view_layer.update()
     deps=bpy.context.evaluated_depsgraph_get(); ev=ob.evaluated_get(deps); me=ev.to_mesh(); me.calc_loop_triangles()
-    report={'character':name,'vertices':len(me.vertices),'triangles':len(me.loop_triangles),'bones':len(rig.data.bones),'materials':len(me.materials),'height_m':1.15,'glTF_forward':'-Z','clips':[a.name for a in bpy.data.actions if a.users],'blendshapes':[k.name for k in ob.data.shape_keys.key_blocks][1:],'notes':['First-pass procedural reconstruction, not an exact sculpt of the supplied illustrations.','Shared palette UV tiles intentionally overlap.','Godot runtime import and full gameplay animation require separate verification.']}
+    report={'character':name,'vertices':len(me.vertices),'triangles':len(me.loop_triangles),'bones':len(rig.data.bones),'materials':len(me.materials),'height_m':1.15,'glTF_forward':'-Z','clips':[a.name for a in bpy.data.actions if a.users],'blendshapes':[k.name for k in ob.data.shape_keys.key_blocks][1:],'notes':['Procedural reconstruction, not an exact sculpt of the supplied illustrations.','Dedicated head UV; other parts share material swatches.','Godot runtime import and full gameplay animation require separate verification.']}
     ev.to_mesh_clear(); (OUT/'validation.json').write_text(json.dumps(report,indent=2))
     print('CHARACTER_COMPLETE',json.dumps(report))
 

@@ -1,0 +1,134 @@
+{
+  "character": "boaz",
+  "identical_position_morph_groups": [
+    [
+      "smile",
+      "happy",
+      "cheer",
+      "celebrate"
+    ],
+    [
+      "laugh",
+      "mouth_open"
+    ],
+    [
+      "sad",
+      "frown"
+    ],
+    [
+      "brows_up",
+      "nervous"
+    ],
+    [
+      "confident",
+      "cheeky",
+      "playful"
+    ]
+  ],
+  "states": [
+    {
+      "name": "neutral",
+      "moved_vertices": 0,
+      "max_coordinate_delta_m": 0.0
+    },
+    {
+      "name": "smile",
+      "moved_vertices": 122,
+      "max_coordinate_delta_m": 0.006876647472381592
+    },
+    {
+      "name": "happy",
+      "moved_vertices": 122,
+      "max_coordinate_delta_m": 0.006876647472381592
+    },
+    {
+      "name": "laugh",
+      "moved_vertices": 124,
+      "max_coordinate_delta_m": 0.03209108114242554
+    },
+    {
+      "name": "surprised",
+      "moved_vertices": 2918,
+      "max_coordinate_delta_m": 0.03209108114242554
+    },
+    {
+      "name": "angry",
+      "moved_vertices": 274,
+      "max_coordinate_delta_m": 0.013753414154052734
+    },
+    {
+      "name": "sad",
+      "moved_vertices": 274,
+      "max_coordinate_delta_m": 0.013753414154052734
+    },
+    {
+      "name": "wink_left",
+      "moved_vertices": 1896,
+      "max_coordinate_delta_m": 0.024671196937561035
+    },
+    {
+      "name": "wink_right",
+      "moved_vertices": 1898,
+      "max_coordinate_delta_m": 0.024671196937561035
+    },
+    {
+      "name": "mouth_open",
+      "moved_vertices": 124,
+      "max_coordinate_delta_m": 0.03209108114242554
+    },
+    {
+      "name": "blink",
+      "moved_vertices": 3794,
+      "max_coordinate_delta_m": 0.024671196937561035
+    },
+    {
+      "name": "frown",
+      "moved_vertices": 274,
+      "max_coordinate_delta_m": 0.013753414154052734
+    },
+    {
+      "name": "brows_up",
+      "moved_vertices": 152,
+      "max_coordinate_delta_m": 0.013753414154052734
+    },
+    {
+      "name": "brows_down",
+      "moved_vertices": 152,
+      "max_coordinate_delta_m": 0.009107708930969238
+    },
+    {
+      "name": "confident",
+      "moved_vertices": 76,
+      "max_coordinate_delta_m": 0.01031506061553955
+    },
+    {
+      "name": "cheeky",
+      "moved_vertices": 76,
+      "max_coordinate_delta_m": 0.01031506061553955
+    },
+    {
+      "name": "playful",
+      "moved_vertices": 76,
+      "max_coordinate_delta_m": 0.01031506061553955
+    },
+    {
+      "name": "cheer",
+      "moved_vertices": 122,
+      "max_coordinate_delta_m": 0.006876647472381592
+    },
+    {
+      "name": "celebrate",
+      "moved_vertices": 122,
+      "max_coordinate_delta_m": 0.006876647472381592
+    },
+    {
+      "name": "nervous",
+      "moved_vertices": 152,
+      "max_coordinate_delta_m": 0.013753414154052734
+    }
+  ],
+  "limit": "This compares exported position deltas, not the appearance of combined facial controls.",
+  "measured_source": "boaz/boaz.glb",
+  "measured_source_sha256": "1cf9efb612f508b80b1ac387fffc5ff4276b4bb92541d282b2a9063027b8e7cd",
+  "scope_evidence": "scope-audit.json confirms all morph deltas unchanged in the new material export"
+}

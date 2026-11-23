@@ -1,0 +1,254 @@
+{
+  "monster_id": "01-gifspuwer-rood",
+  "exclusief": [
+    "bestanden.json"
+  ],
+  "bestanden": [
+    {
+      "pad": "LEESMIJ.md",
+      "bytes": 2760,
+      "sha256": "0dd2b612e4f71ef753eeff3a357ecf97e88e4a9bdf248ef4bb0509d88895b323",
+      "bron": "Gegenereerde documentatie of metagegevens voor dit monster"
+    },
+    {
+      "pad": "OPDRACHT-CHATGPT.md",
+      "bytes": 1611,
+      "sha256": "2fe0bcd50af985a7e007c6feda375877661a434fd8e489f967d44859a0b0eb8e",
+      "bron": "Gegenereerde documentatie of metagegevens voor dit monster"
+    },
+    {
+      "pad": "TECHNISCHE-EISEN.md",
+      "bytes": 2644,
+      "sha256": "81e5a78f8d72ea4f22879856c7574e29d42244216a4979636a101cd034ca1638",
+      "bron": "Gegenereerde documentatie of metagegevens voor dit monster"
+    },
+    {
+      "pad": "afbeeldingen/illustratie.png",
+      "bytes": 2014333,
+      "sha256": "7825a0a326870b9fc01efa506067cfe884a69d0afd2f7557cef5c82a9c809214",
+      "bron": "assets/monters/losse-monsters/01-gifspuwer-rood.png"
+    },
+    {
+      "pad": "afbeeldingen/voorbeeld-blokjesmodel.png",
+      "bytes": 919257,
+      "sha256": "815be12ec28eb4bd11efcbd9460f047c1166a71bf069fbf3773bf72cee044d72",
+      "bron": "assets/monters/monster-blokjes-10/voorbeelden/01-gifspuwer-rood.png"
+    },
+    {
+      "pad": "afbeeldingen/voorbeeld-organisch-proefmodel.png",
+      "bytes": 1101532,
+      "sha256": "e77cc55f06136862360505c4f309038edd36b064b02ae56a02907e94d0f82b14",
+      "bron": "assets/monters/monsters-3d-proefmodellen/voorbeelden/01-gifspuwer-rood.png"
+    },
+    {
+      "pad": "afbeeldingen/voorkant-zijkant-achterkant.png",
+      "bytes": 3359176,
+      "sha256": "3c02dfd07c72d1de7ae7b2aa588068bbcc6f6e64913fafd8ee2fbc2d9bdc2375",
+      "bron": "assets/monters/monsters-drie-aanzichten/01-gifspuwer-rood-voorkant-zijkant-achterkant.png"
+    },
+    {
+      "pad": "blokjes/blokken.json",
+      "bytes": 68231,
+      "sha256": "f44f603612849611b79a2a1e0aaee0b9e94f74314f89141351fa31cf429a837d",
+      "bron": "assets/monters/monster-blokjes-10/json/01-gifspuwer-rood.json"
+    },
+    {
+      "pad": "blokjes/bronmanifest.json",
+      "bytes": 802,
+      "sha256": "e51dbb35329f62c8aa946c8e960a708ba90c762109a97520235cf15860c40802",
+      "bron": "Gegenereerde documentatie of metagegevens voor dit monster"
+    },
+    {
+      "pad": "breekbaar/LEESMIJ.md",
+      "bytes": 2620,
+      "sha256": "f7f9d07ca2db431b0ef2e49baf363694578fde9eb953a1f65afad2b06b7b864a",
+      "bron": "assets/monters/gifspuwer-monsterbreker-test/LEESMIJ.md"
+    },
+    {
+      "pad": "breekbaar/breekstukken.json",
+      "bytes": 143480,
+      "sha256": "3a9e5f786b101bf3591c0bb32ddbb0426a484f2d9336d34f16f12e158ccf871e",
+      "bron": "assets/monters/gifspuwer-monsterbreker-test/breekstukken.json"
+    },
+    {
+      "pad": "breekbaar/gif-effect.glb",
+      "bytes": 684428,
+      "sha256": "1a1de12bc6599cbdf219a3a9c44ba675d2cd6fd2b6f006fcab2be17d08c1d2f8",
+      "bron": "assets/monters/gifspuwer-monsterbreker-test/gif-effect.glb"
+    },
+    {
+      "pad": "breekbaar/gifspuwer-breekbaar.blend",
+      "bytes": 801477,
+      "sha256": "9763e7ae2d15cf6314610324725652fac653e6a0a9809beb0ee8b58fa9cc456e",
+      "bron": "assets/monters/gifspuwer-monsterbreker-test/gifspuwer-breekbaar.blend"
+    },
+    {
+      "pad": "breekbaar/gifspuwer-breekbaar.glb",
+      "bytes": 1329624,
+      "sha256": "b40491f12cf540cdfaeff594546cafc7acfd11a290082ed7265415c2e6a3a45b",
+      "bron": "assets/monters/gifspuwer-monsterbreker-test/gifspuwer-breekbaar.glb"
+    },
+    {
+      "pad": "breekbaar/voorbeeld.png",
+      "bytes": 658292,
+      "sha256": "7715f8a12fbaae24e35e3ebbbee7083e6cf218fa8a43c6768fce571d563a8e07",
+      "bron": "assets/monters/gifspuwer-monsterbreker-test/voorbeeld.png"
+    },
+    {
+      "pad": "bronnotities/blokjesmodellen.md",
+      "bytes": 2736,
+      "sha256": "97b148fb754912b91649e51143b86f93e388dd827d0a690fca26612ec06b34f1",
+      "bron": "assets/monters/monster-blokjes-10/README.md"
+    },
+    {
+      "pad": "bronnotities/organische-proefmodellen.md",
+      "bytes": 1279,
+      "sha256": "444850a659f100e38c2f0e284ee49b5c8d7882ee853a5db261c35033307dd01a",
+      "bron": "assets/monters/monsters-3d-proefmodellen/README.md"
+    },
+    {
+      "pad": "gegevens.json",
+      "bytes": 1709,
+      "sha256": "2c26697d7715fc1aef11aeaadf6dc5377a8677b985f1cbb5d7a38b6da7726ff7",
+      "bron": "Gegenereerde documentatie of metagegevens voor dit monster"
+    },
+    {
+      "pad": "historische-spelcontrole/01-selection.png",
+      "bytes": 194401,
+      "sha256": "0f015729e4a3b55790bb7674e90b46e10df714a00526ed4a27d8bc22bb440479",
+      "bron": "game/validation/gifspuwer/01-selection.png"
+    },
+    {
+      "pad": "historische-spelcontrole/02-intact.png",
+      "bytes": 196984,
+      "sha256": "b2a08ee151d11e32d4b436fc0f4a9f435e25d0c6b790fab0d7ce24a486c67db4",
+      "bron": "game/validation/gifspuwer/02-intact.png"
+    },
+    {
+      "pad": "historische-spelcontrole/03-approach.png",
+      "bytes": 242219,
+      "sha256": "cd0c1c4cbca208803a51cfc9f154e63f7938e5890011fdb098a2478f42a22431",
+      "bron": "game/validation/gifspuwer/03-approach.png"
+    },
+    {
+      "pad": "historische-spelcontrole/04-damaged.png",
+      "bytes": 196440,
+      "sha256": "a5f69685557ede59e4b321953b5268c6691aee83828c2effe2530d8b05f20985",
+      "bron": "game/validation/gifspuwer/04-damaged.png"
+    },
+    {
+      "pad": "historische-spelcontrole/05-collapse.png",
+      "bytes": 191325,
+      "sha256": "41f5b98b93e98a071236389645bbddd4cbbfbfbe8ecd43d8ea20c19cc7c80a2e",
+      "bron": "game/validation/gifspuwer/05-collapse.png"
+    },
+    {
+      "pad": "historische-spelcontrole/06-finished.png",
+      "bytes": 166847,
+      "sha256": "a9313954d688f96659c53816fbb118daad266cf8f0d16558d8e7cd09c20820e4",
+      "bron": "game/validation/gifspuwer/06-finished.png"
+    },
+    {
+      "pad": "historische-spelcontrole/README.md",
+      "bytes": 2710,
+      "sha256": "42e039d1ac8f959fa7c794b63053bbc087dd0533a9951b028f2d6f1fce0a4283",
+      "bron": "game/validation/gifspuwer/README.md"
+    },
+    {
+      "pad": "historische-spelcontrole/fractured.txt",
+      "bytes": 243,
+      "sha256": "3c2938008fd6746522d70db75584fea252c7511da09a555739399a5b585d004e",
+      "bron": "game/validation/gifspuwer/fractured.txt"
+    },
+    {
+      "pad": "historische-spelcontrole/regression.txt",
+      "bytes": 115,
+      "sha256": "8af9978df2382ab3f43e883de21382b43eae826bee7d73ce96d4af2d2955ba2e",
+      "bron": "game/validation/gifspuwer/regression.txt"
+    },
+    {
+      "pad": "historische-spelcontrole/smoke.txt",
+      "bytes": 380,
+      "sha256": "52c90ff789b0f11c0d7049ef5a832d6eabc8c557cb07b64a9f278ee41b7c9db8",
+      "bron": "game/validation/gifspuwer/smoke.txt"
+    },
+    {
+      "pad": "historische-spelcontrole/ui.txt",
+      "bytes": 114,
+      "sha256": "3e8124a7bf84e7c57d99b23982e740ec8dd0be59f64fd1da54c325d00264f4ca",
+      "bron": "game/validation/gifspuwer/ui.txt"
+    },
+    {
+      "pad": "historische-spelcontrole/visual.txt",
+      "bytes": 501,
+      "sha256": "a1e9559572dfe50822feb3d394dc4c153201c7785865fbb6c55db231705fb4b8",
+      "bron": "game/validation/gifspuwer/visual.txt"
+    },
+    {
+      "pad": "modellen/blokjesmodel.glb",
+      "bytes": 167100,
+      "sha256": "26fdd06da7b85010594bd61425c1240c36a167eb41fd8de85375917813700e40",
+      "bron": "assets/monters/monster-blokjes-10/glb/01-gifspuwer-rood.glb"
+    },
+    {
+      "pad": "modellen/organisch-proefmodel.glb",
+      "bytes": 3180264,
+      "sha256": "ed2a5f4e4855d1248dd49640acf44882acec78b2213ec33ccc70fe3d48710c30",
+      "bron": "assets/monters/monsters-3d-proefmodellen/01-gifspuwer-rood.glb"
+    },
+    {
+      "pad": "spelgegevens/catalogus-item.json",
+      "bytes": 275,
+      "sha256": "fbf67ec7dd60bf8199d92d06fdca6c1a31e58d1a3894837a866633c1e688bb47",
+      "bron": "Gegenereerde documentatie of metagegevens voor dit monster"
+    },
+    {
+      "pad": "spelgegevens/collision-planes.json",
+      "bytes": 98678,
+      "sha256": "182c92c59209ad22a4af175b03c45c51108bdd0d8d388b7aa9584c0b7149805a",
+      "bron": "game/assets/monsters/gifspuwer-breekbaar/collision-planes.json"
+    },
+    {
+      "pad": "verfijnd-fase1/LEESMIJ.txt",
+      "bytes": 1585,
+      "sha256": "82e867938cb39dce2f76750b0955dd0448dcb0d976fd00420663c12acb7d932e",
+      "bron": "assets/monters/gifspuwer-verfijnd-fase1/LEESMIJ.txt"
+    },
+    {
+      "pad": "verfijnd-fase1/gifspuwer-achterkant.png",
+      "bytes": 1273490,
+      "sha256": "96db45e53cea15dd138508dc59ec64d8e0875f10ac4bcd1ab31236a4e72864ae",
+      "bron": "assets/monters/gifspuwer-verfijnd-fase1/gifspuwer-achterkant.png"
+    },
+    {
+      "pad": "verfijnd-fase1/gifspuwer-perspectief.png",
+      "bytes": 1354048,
+      "sha256": "51af27b52a42eec9234437dbbbc19a8f9b2a07230286ef116652b20de144f717",
+      "bron": "assets/monters/gifspuwer-verfijnd-fase1/gifspuwer-perspectief.png"
+    },
+    {
+      "pad": "verfijnd-fase1/gifspuwer-verfijnd-fase1.blend",
+      "bytes": 8827812,
+      "sha256": "3532ef2da1c7b2eb13d50e1a1161a05cf56fa5472424224316768adeb3c96bb5",
+      "bron": "assets/monters/gifspuwer-verfijnd-fase1/gifspuwer-verfijnd-fase1.blend"
+    },
+    {
+      "pad": "verfijnd-fase1/gifspuwer-verfijnd-fase1.glb",
+      "bytes": 3330640,
+      "sha256": "d33b35f03a59327fca173f35f29effbabecb3d07e78f8f6e2a9c79129d704021",
+      "bron": "assets/monters/gifspuwer-verfijnd-fase1/gifspuwer-verfijnd-fase1.glb"
+    },
+    {
+      "pad": "verfijnd-fase1/gifspuwer-voorkant.png",
+      "bytes": 1271329,
+      "sha256": "eec93dbbdb6c8442b12c5e3349f7f13e039da6f9f5ba54f6d8956b6dcbf22661",
+      "bron": "assets/monters/gifspuwer-verfijnd-fase1/gifspuwer-voorkant.png"
+    },
+    {
+      "pad": "verfijnd-fase1/gifspuwer-zijkant.png",
+      "bytes": 1263175,
+      "sha256": "ef5955f0980ae3a034da025511ed0bdb294bb6776ff8e9856095c04e4c8dbd9c",
+      "bron": "assets/monters/gifspuwer-verfijnd-fase1/gifspuwer-zijkant.png"
+    }
+  ]
+}

@@ -80,12 +80,11 @@ Deze herstelstart kiest OpenGL ES en schakelt geluid tijdelijk uit. De gewone st
 
 ## Lagere spelresolutie op een groot scherm
 
-Open **Instellingen → Spelresolutie** en kies **1440p**, **1080p** of **720p**.
+Open **Instellingen → Spelresolutie** en kies een instelling van **540p** tot **1800p**, bijvoorbeeld **900p** als tussenstap tussen 720p en 1080p.
 **Volledige schermresolutie** behoudt de oorspronkelijke scherpte. De keuze
 werkt direct, wordt lokaal bewaard en geldt ook voor Monsterbreker.
 
-De instelling begrenst de hoogte van het 3D-beeld; de beeldverhouding blijft
-behouden. Op een volledig gevuld 3840×2160-scherm geeft 1080p een 3D-beeld van
+De instelling begrenst de hoogte van het 3D-beeld; de beeldverhouding volgt het venster. Op een 16:9-scherm levert 900p bijvoorbeeld ongeveer 1600×900 3D-pixels. Breedbeeld gebruikt de extra ruimte voor de wereld; de bediening blijft gecentreerd. Op een volledig gevuld 3840×2160-scherm geeft 1080p een 3D-beeld van
 1920×1080, met een kwart van het oorspronkelijke aantal pixels. Teksten en
 knoppen blijven op de normale schermresolutie. Een kleiner venster wordt niet
 extra groot gerenderd. Garagevoorbeelden gebruiken hun bestaande kleine buffers.
@@ -94,9 +93,7 @@ Dit gebruikt Godots [3D-resolutieschaling met bilineaire filtering](https://docs
 die de Compatibility-renderer ondersteunt. Minder pixels betekent niet automatisch
 een evenredig hogere beeldsnelheid; deze wijziging bevat geen GPU-prestatiemeting.
 Controle: `tests/render_resolution.gd`, ook opgenomen in `game/tools/check.sh`.
-Lokaal slagen 25 resolutiecontroles, 28 opslagcontroles en 32 interfacecontroles;
-zie de [testuitvoer](validation/resolution-checks.txt) en het
-[nagekeken instellingenvenster](validation/resolution-settings.png).
+De nieuwe opties en breedbeeldindeling zijn ook headless te controleren; beeldkwaliteit en FPS moeten op de gebruikte computer zelf worden beoordeeld.
 
 ## Garage en coureurs
 
@@ -134,7 +131,9 @@ Alle zes runtimevoertuigen hebben een linker- en rechterspiegel. Houd **C** of *
 
 Menu's ondersteunen muis en focusbesturing met toetsenbord/controller. Instellingen bevatten muziek, geluid, drie moeilijkheidsniveaus, schaduwen, **rustige camera**, **automatisch gas geven** en **aanraakknoppen**. Aanraakknoppen verschijnen ook automatisch op een touchscreen; forceer ze met `./start.sh -- --touch`. Gas en sturen kunnen tegelijk worden ingedrukt. Pauzeren, resultaten tonen en een race verlaten laten ingedrukte aanraakacties los.
 
-Controller- en multitouchinvoer zijn met synthetische Godot-events gecontroleerd. Een fysieke controller of touchscreen is nog niet gebruikt voor de eindcontrole.
+Een aangesloten **DragonRise Wired Wheel** (USB `0079:189c`) is op Linux herkend als Xbox-controller. Sturen werkt met het stuur; het rechterpedaal geeft gas en het linkerpedaal remt. Ook de rechter- en linkerflipper geven respectievelijk gas en rem door. Bij een controle met het fysieke stuur ontving Godot de vier bijbehorende spelacties; het rijgevoel in een echte race is daarbij nog niet beoordeeld. Andere stuurmodellen kunnen anders werken.
+
+De overige controller- en multitouchinvoer is met synthetische Godot-events gecontroleerd. Een fysiek touchscreen is nog niet gebruikt voor de eindcontrole.
 
 De **stuurhulp** blijft actief: de kart volgt de lengterichting van het circuit. Je regelt zelf snelheid, remmen, laterale rijlijn, boost, springen en power-ups. Er is geen vrije banden-/ophangingssimulatie en nog geen achteruitrijden. Bij stilstaan schuift de kart niet meer zijwaarts; na een treffer kun je kort niet springen. Randen begeleiden zacht terug naar de rijbaan. Botsingen tussen racers geven een zet en kosten snelheid.
 
@@ -195,8 +194,9 @@ Gamevoertuigen worden op ongeveer 1,95 meter lengte genormaliseerd en met hun wi
 ## Monsterbreker voor één of twee spelers
 
 Het startscherm heeft aparte tegels voor **1 speler** en **2 spelers**. Kies uit
-de tien aangeleverde blokjesmonsters, **Gifspuwer · verfijnd** met 76 breekstukken,
-of de tweekoppige proefdraak. Rijd vanuit
+de tien aangeleverde blokjesmonsters, acht verfijnde monsters met 72 of 76
+breekstukken, of de tweekoppige proefdraak. Scroll in de lijst om alle monsters
+te zien. Rijd vanuit
 vlak achter het zitje een lange, steile helling af, neem de schans en vlieg naar het monster.
 De richtcirkel laat zien of je op het monster of een steun afvliegt. Stuur bij
 in de lucht en druk opnieuw op Shift of RB voor één duikboost per sprong.
@@ -210,7 +210,7 @@ speel je om de beurt. Vóór iedere sprong kies je zelf een raketje. In pauze
 kun je direct op een monstertegel klikken om een nieuw spel te starten.
 De blokjesmonsters zijn 50% groter. Een monsterblokje in het water levert 10
 punten op. Bij 70% in het water wint in een duel de hoogste score.
-Bij de verfijnde Gifspuwer tellen volledig gezonken stukken naar hun volumegewicht:
+Bij de verfijnde monsters tellen volledig gezonken stukken naar hun volumegewicht:
 het hele monster is 10.000 punten, de wedstrijdgrens is 7.000. De breekbare torens
 tellen niet mee voor punten. Zie
 [bediening, spelregels, monsterimport en controles](docs/MONSTERBREKER.md).
@@ -412,3 +412,15 @@ en een korte finishviering zijn geïntegreerd. Zie [selectie, commando’s en QA
 In de garage staat het gekozen voertuig naast de coureurs. Bij de kaart van
 dat voertuig vervalt de selectieknop; de andere voertuigen kun je blijven
 selecteren of kopen.
+
+## Altijd kunnen schieten
+
+In races en Monsterbreker heeft iedere speler vijf gewone schoten. Druk op **F** of de **B-knop** van de controller; in de race is ook een aanraakknop beschikbaar. Na het vijfde schot duurt het 30 seconden speeltijd voordat de voorraad weer vol is. Tijdens pauze staat de timer stil. Monsterbreker toont een schietknop en geeft iedere speler een eigen voorraad. Gewone schoten staan los van de bestaande power-up **Kanonnen** (E / X).
+
+Schoten in Monsterbreker maken bij een treffer stukken los; punten worden toegekend wanneer de stukken het water bereiken. Controle: `tests/standard_ammo.gd`, opgenomen in `tools/check.sh`.
+
+## Meer FPS zonder de resolutie aan te passen
+
+Onder **Instellingen** kun je **Zachte randen** uitschakelen (minder randverzachting), **Schaduwen** uitschakelen en de **herhaling na botsing in Monsterbreker** uitzetten. De herhaling uitschakelen voorkomt ook het opnemen ervan; de normale botsingen en score blijven werken. De instellingen staan standaard aan zoals voorheen.
+
+Met **Toon FPS-teller** vergelijk je zelf dezelfde situatie vóór en na een aanpassing. Begin bijvoorbeeld met alleen de herhaling uit in Monsterbreker, en vergelijk daarna zachte randen of schaduwen. FPS hangt af van je computer en de scène; een hogere FPS is niet vooraf gegarandeerd. De 3D-resolutie blijft bij deze opties gelijk.

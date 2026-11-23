@@ -1,0 +1,85 @@
+--- a/game/scripts/catalog.gd
++++ b/game/scripts/catalog.gd
+@@ -7,7 +7,8 @@
+  {"id":"golden-rocket-racer", "name":"Golden Rocket", "price":140, "speed":44.0, "accel":12.0, "handling":0.9, "color":"ffc44e"},
+  {"id":"toxic-turbo", "name":"Toxic Turbo", "price":200, "speed":46.0, "accel":15.0, "handling":0.85, "color":"a4ee35"},
+  {"id":"retro", "name":"Retro Racer", "price":0, "speed":41.0, "accel":16.0, "handling":1.1, "color":"ff944f"},
+- {"id":"rainbow", "name":"Rainbow Jet", "price":160, "speed":43.0, "accel":14.0, "handling":1.2, "color":"ff79b9"}
++ {"id":"rainbow", "name":"Rainbow Jet", "price":160, "speed":43.0, "accel":14.0, "handling":1.2, "color":"ff79b9"},
++ {"id":"ufo", "name":"Kermis-UFO", "price":0, "speed":41.0, "accel":14.0, "handling":1.0, "color":"008f82"}
+ ]
+ const WORLDS = [
+  {"id":"sunset-park", "name":"Sunset Park", "subtitle":"Raketpret aan de kust", "tag":"KERMIS • GLOOIEND", "sky":"dc7f99", "ground":"26576b", "road":"334c70", "accent":"ffbf61", "image":"sunset"},
+--- a/game/scripts/kart.gd
++++ b/game/scripts/kart.gd
+@@ -63,7 +63,7 @@
+   var manifest = JSON.parse_string(FileAccess.get_file_as_string("res://assets/manifest.json"))
+   var asset: Dictionary = manifest.get(Catalog.VEHICLES[index].id, {})
+   # Legacy raw exports use Z-up with different forward axes. Improved GLBs use Y-up.
+-  var legacy: bool = not "-improved" in str(asset.get("source", ""))
++  var legacy: bool = not bool(asset.get("gltf_y_up", "-improved" in str(asset.get("source", ""))))
+   if legacy:
+    if index == 0:
+     model.basis = Basis(Vector3.RIGHT, Vector3.FORWARD, Vector3.UP)
+--- a/game/scripts/interface.gd
++++ b/game/scripts/interface.gd
+@@ -480,9 +480,15 @@
+   game.audio.cue("click")
+   game.refresh_preview()
+   show_garage())
++ var scroll = ScrollContainer.new()
++ screen.add_child(scroll)
++ scroll.name = "GarageVehicleScroll"
++ scroll.position = Vector2(48, 264)
++ scroll.size = Vector2(1184, 472)
++ scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
++ scroll.follow_focus = true
+  var grid = GridContainer.new()
+- screen.add_child(grid)
+- grid.position = Vector2(48, 264)
++ scroll.add_child(grid)
+  grid.columns = 3
+  grid.add_theme_constant_override("h_separation", 18)
+  grid.add_theme_constant_override("v_separation", 16)
+@@ -532,7 +538,7 @@
+   var inspect: Button = button(row, "Bekijk", func(): show_vehicle(index))
+   inspect.custom_minimum_size.y = 38
+   inspect.disabled = not available
+- at(screen, "Racebeloning: 10–60 muntjes + verzamelde muntjes. De Raketfiets en Retro zijn gratis.", Vector2(50, 751), 13, MUTED)
++ at(screen, "Racebeloning: 10–60 muntjes + verzamelde muntjes. De Raketfiets, Retro en Kermis-UFO zijn gratis.", Vector2(50, 751), 13, MUTED)
+ 
+ func _garage_purchase_style(choose: Button) -> void:
+  for state in ["normal","hover","pressed","focus"]:
+--- a/game/assets/manifest.json
++++ b/game/assets/manifest.json
+@@ -120,5 +120,12 @@
+     "visual_review": "pending; native phase25 and independent QA",
+     "source_note": "User-supplied photographs and reconstructed AI references; embedded cropped base-color textures; artistic roughness/metallic; no baked normal-map claim",
+     "playable": false
++  },
++  "ufo": {
++    "source": "vehicles/ufo/ufo-spel.glb",
++    "sha256": "88bbaeb391c0fafc60c1e4a7f573daa3dc5cedf9f672c8ee6e07426b1f80a177",
++    "materials": 8,
++    "gltf_y_up": true,
++    "playable": true
+   }
+ }
+--- a/game/tests/garage_features.gd
++++ b/game/tests/garage_features.gd
+@@ -1,5 +1,6 @@
+ extends SceneTree
+ const Main = preload("res://scripts/main.gd")
++const Catalog = preload("res://scripts/catalog.gd")
+ const Profile = preload("res://scripts/profile.gd")
+ const Preview = preload("res://scripts/ui/vehicle_preview.gd")
+ var checks := 0
+@@ -70,7 +71,7 @@
+  check(action == null,"Selected vehicle has no redundant selection button")
+  check(main.ui.screen.get_node("GarageSelectedVehicle").studio.kart.vehicle_index == 1,"Chosen vehicle is displayed beside the drivers")
+  var cards: Array = previews(main.ui.screen)
+- check(cards.size() == 7,"Six vehicle cards and the selected vehicle beside the drivers have studios")
++ check(cards.size() == Catalog.VEHICLES.size() + 1,"Every vehicle and the selected vehicle have studios")
+  for preview in cards:
+   preview.set_process(false)
+   check(preview.studio.has_node("TrackDiorama/RaceAsphalt") and preview.studio.has_node("TrackDiorama/TracksideTree"),"Actual road/grass/kerbs/tree diorama supports each preview")

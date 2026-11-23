@@ -1,0 +1,39 @@
+{
+  "Godot": "4.7.2-stable (official)",
+  "checks": 60,
+  "failures": [],
+  "passed": true,
+  "scope": "Actual imported game PackedScenes and cached material pixels; no rendered visual approval.",
+  "textures": {
+    "boaz albedo": {
+      "height": 2048,
+      "sampled_max_rgb_delta": 0.0,
+      "width": 2048
+    },
+    "boaz metallic": {
+      "height": 2048,
+      "sampled_max_rgb_delta": 0.0,
+      "width": 2048
+    },
+    "boaz roughness": {
+      "height": 2048,
+      "sampled_max_rgb_delta": 0.0,
+      "width": 2048
+    },
+    "ravi albedo": {
+      "height": 2048,
+      "sampled_max_rgb_delta": 0.0,
+      "width": 2048
+    },
+    "ravi metallic": {
+      "height": 2048,
+      "sampled_max_rgb_delta": 0.0,
+      "width": 2048
+    },
+    "ravi roughness": {
+      "height": 2048,
+      "sampled_max_rgb_delta": 0.0,
+      "width": 2048
+    }
+  }
+}

@@ -1,5 +1,7 @@
 extends Node3D
 ## Cockpit stunt mode; one player or local alternating turns, with imported targets.
+const Ammo = preload("res://scripts/combat/ammo.gd")
+const Geo = preload("res://scripts/geometry.gd")
 const Arena = preload("res://scripts/monster/arena.gd")
 const Kart = preload("res://scripts/kart.gd")
 const Catalog = preload("res://scripts/catalog.gd")
@@ -78,6 +80,9 @@ var aim_style: StyleBoxFlat
 var aim_caption: Label
 var vehicle_picker: PanelContainer
 var vehicle_buttons: Array[Button] = []
+var player_ammo: Array = [Ammo.new(), Ammo.new()]
+var shots: Array[Dictionary] = []
+var shoot_button: Button
 
 func setup(owner_game, model, players: int = 2) -> void:
  game = owner_game
@@ -97,19 +102,19 @@ func setup(owner_game, model, players: int = 2) -> void:
  add_child(sounds)
  var env = Environment.new()
  env.background_mode = Environment.BG_COLOR
- env.background_color = Color("9dd8e4")
+ env.background_color = Color("526c82")
  env.ambient_light_source = Environment.AMBIENT_SOURCE_COLOR
- env.ambient_light_color = Color("d8eff3")
- env.ambient_light_energy = 0.35
+ env.ambient_light_color = Color("a7bdcc")
+ env.ambient_light_energy = 0.27
  env.tonemap_mode = Environment.TONE_MAPPER_FILMIC
- env.tonemap_exposure = 0.85
+ env.tonemap_exposure = 0.74
  env.tonemap_white = 2.5
  env.fog_enabled = true
- env.fog_light_color = Color("9dd8e4")
+ env.fog_light_color = Color("526c82")
  env.fog_density = 0.0009
  game.environment.environment = env
  game.sun.light_color = Color("fff0d3")
- game.sun.light_energy = 0.75
+ game.sun.light_energy = 0.58
  _build_ui()
  _prepare_turn()
  _camera(0, true)
@@ -163,6 +168,9 @@ func _build_ui() -> void:
  speed_label.custom_minimum_size.x = 200
  detail_label = ui.label(controls, "", 17, ui.GOLD)
  detail_label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+ shoot_button = ui.button(controls, "Schiet 5/5", shoot)
+ shoot_button.name = "ShootButton"
+ shoot_button.custom_minimum_size.x = 135
  action_button = ui.button(controls, "Start afdaling", action, true)
  action_button.custom_minimum_size.x = 230
  controls_label = ui.label(column, "", 14, ui.MUTED)
@@ -184,23 +192,41 @@ func _build_ui() -> void:
  aim_caption.add_theme_color_override("font_outline_color", ui.INK)
  aim_caption.add_theme_constant_override("outline_size", 5)
  aim_marker.hide()
- vehicle_picker = ui.panel(ui.screen, Rect2(24, 244, 1232, 100), Color("071a34"))
+ vehicle_picker = ui.panel(ui.screen, Rect2(24, 244, 1232, 156), Color("071a34"))
  vehicle_picker.name = "VehiclePicker"
  var choices = VBoxContainer.new()
  vehicle_picker.add_child(choices)
  ui.label(choices, "Kies je voertuig voor deze sprong", 18)
+ var scroll = ScrollContainer.new()
+ scroll.name = "VehicleScroll"
+ scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_AUTO
+ scroll.vertical_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
+ scroll.follow_focus = true
+ scroll.custom_minimum_size = Vector2(0, 105)
+ scroll.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+ choices.add_child(scroll)
  var options = HBoxContainer.new()
- options.add_theme_constant_override("separation", 10)
- choices.add_child(options)
+ options.add_theme_constant_override("separation", 8)
+ scroll.add_child(options)
  for index in vehicles:
   var choice = ui.button(options, Catalog.VEHICLES[index].name, func(): select_vehicle(index))
   choice.name = "Vehicle_" + Catalog.VEHICLES[index].id
-  choice.custom_minimum_size = Vector2(190, 48)
-  choice.add_theme_font_size_override("font_size", 16)
+  choice.custom_minimum_size = Vector2(150, 90)
+  choice.add_theme_font_size_override("font_size", 13)
+  choice.tooltip_text = Catalog.VEHICLES[index].name
+  choice.expand_icon = true
+  choice.icon_alignment = HORIZONTAL_ALIGNMENT_CENTER
+  choice.vertical_icon_alignment = VERTICAL_ALIGNMENT_TOP
+  var thumbnail_path = "res://assets/vehicle-thumbnails/%s.jpg" % Catalog.VEHICLES[index].id
+  if ResourceLoader.exists(thumbnail_path):
+   choice.icon = load(thumbnail_path)
   vehicle_buttons.append(choice)
 
 func _prepare_turn(keep_vehicle: bool = false) -> void:
  impact_replay.reset()
+ for shot in shots:
+  shot.node.queue_free()
+ shots.clear()
  phase = "ready"
  phase_time = 0
  turn_time = 0
@@ -316,6 +342,9 @@ func _simulate(delta: float, gas: float, brake: float, steer: float, boost: bool
    _finish_replay()
   return
  phase_time += delta
+ for ammo in player_ammo:
+  ammo.advance(delta)
+ _advance_shots(delta)
  bird_notice = maxf(0, bird_notice - delta)
  hit_sound_timer = maxf(0, hit_sound_timer - delta)
  dive_notice = maxf(0, dive_notice - delta)
@@ -383,7 +412,8 @@ func _simulate(delta: float, gas: float, brake: float, steer: float, boost: bool
   var momentum = velocity * (0.26 if dive_used else 0.12)
   var broken: int = arena.impact(before + STRIKE_HEIGHT, rocket.position + STRIKE_HEIGHT, _impact_radius(), player, momentum)
   if broken > 0:
-   impact_replay.mark_hit(rocket.position)
+   if game.profile.settings.impact_replay:
+    impact_replay.mark_hit(rocket.position)
    hit_count += broken
    for i in range(chunk_start, arena.chunks.size()):
     pending_points += arena.chunks[i].target_count * arena.structure.score_multiplier
@@ -398,7 +428,7 @@ func _simulate(delta: float, gas: float, brake: float, steer: float, boost: bool
     _camera(0, true)
   if rocket.position.y <= 0 or phase_time >= 16:
    _splash_down()
- elif phase == "settling" and arena.chunks.is_empty() and phase_time >= 1.4 and not impact_replay.pending():
+ elif phase == "settling" and arena.chunks.is_empty() and shots.is_empty() and phase_time >= 1.4 and not impact_replay.pending():
   if float(arena.submerged) / arena.structure.total >= WIN_FRACTION:
    phase = "finished"
    action_button.text = "Nog een keer" if player_count == 1 else "Nog een duel"
@@ -409,7 +439,7 @@ func _simulate(delta: float, gas: float, brake: float, steer: float, boost: bool
   action_button.disabled = false
   action_button.grab_focus()
  rocket.update_effects(delta)
- if phase in ["flight", "settling"]:
+ if game.profile.settings.impact_replay and phase in ["flight", "settling"]:
   impact_replay.record(delta, self)
  if phase == "settling" and impact_replay.complete():
   phase = "replay"
@@ -522,6 +552,36 @@ func _trace_aim(at: Vector3, speed: Vector3, steer: float) -> void:
     aim_text = "Te kort"
    return
 
+func shoot() -> bool:
+ if paused or phase not in ["ramp", "flight"] or not is_instance_valid(rocket):
+  return false
+ var ammo = player_ammo[player]
+ if not ammo.fire(): return false
+ var direction = (-rocket.basis.z).normalized()
+ var start = rocket.position + STRIKE_HEIGHT + direction * 3.0
+ var node = Geo.ball(self, start, Vector3.ONE * 1.2, Color("ffb24a"))
+ shots.append({"node":node, "direction":direction, "life":3.5, "owner":player})
+ game.audio.cue("shot")
+ return true
+
+func _advance_shots(delta: float) -> void:
+ for i in range(shots.size() - 1, -1, -1):
+  var shot: Dictionary = shots[i]
+  var before: Vector3 = shot.node.position
+  var after: Vector3 = before + shot.direction * 180.0 * delta
+  var chunk_start = arena.chunks.size()
+  var broken = arena.impact(before, after, 1.0, shot.owner, shot.direction * 30.0)
+  if broken > 0:
+   hit_count += broken
+   for j in range(chunk_start, arena.chunks.size()):
+    pending_points += arena.chunks[j].target_count * arena.structure.score_multiplier
+   game.audio.cue("hit")
+  shot.node.position = after
+  shot.life -= delta
+  if broken > 0 or shot.life <= 0 or after.y < 0:
+   shot.node.queue_free()
+   shots.remove_at(i)
+
 func _finish_replay() -> void:
  impact_replay.finish()
  phase = "settling"
@@ -554,7 +614,9 @@ func refresh_ui() -> void:
  turn_label.text = "%s %d · %s%s" % ["SPRONG" if player_count == 1 else "BEURT", turn + 1, "SPELER %d · " % (player + 1) if player_count == 2 else "", Catalog.VEHICLES[vehicle_index].name]
  title.text = "MONSTERBREKER · " + arena.structure.monster_name.to_upper()
  speed_label.text = "%d KM/U" % roundi(rocket.speed * 3.6)
- controls_label.text = "W / ↑ / RT: gas · S / ↓ / LT: rem · A/D / ← → / stick: sturen · Shift / RB: boost · R / Y: herstart aanloop"
+ shoot_button.text = "F / B · " + player_ammo[player].label()
+ shoot_button.disabled = paused or phase not in ["ramp", "flight"] or not player_ammo[player].can_fire()
+ controls_label.text = "W / ↑ / RT: gas · S / ↓ / LT: rem · A/D / ← → / stick: sturen · Shift / RB: boost · F / B: schieten · R / Y: herstart"
  detail_label.text = "+%d punten · %d %s los" % [turn_score, hit_count, arena.structure.debris_label]
  if phase in ["flight", "settling"] and pending_points > 0:
   detail_label.text = "%d punten onderweg naar het water · +%d binnen" % [pending_points, turn_score]
@@ -568,7 +630,7 @@ func refresh_ui() -> void:
    if aim_ring >= 0:
     detail_label.text = FlightRings.ROUTES[aim_ring].name + " op je koers · " + detail_label.text
   "flight":
-   controls_label.text = "A/D / ← → / stick: bijsturen · Shift / RB: één duikboost per sprong"
+   controls_label.text = "A/D / ← → / stick: bijsturen · Shift / RB: duikboost · F / B: schieten"
    if hit_count > 0:
     status.text = _hit_status()
     if _past_target(rocket.position.z):
@@ -683,7 +745,10 @@ func _position_aim_marker() -> void:
 func _input(event: InputEvent) -> void:
  if paused or phase not in ["ramp", "flight"]:
   return
- if event is InputEventKey and event.physical_keycode in [KEY_W, KEY_A, KEY_S, KEY_D, KEY_UP, KEY_DOWN, KEY_LEFT, KEY_RIGHT]:
+ if event.is_action_pressed("shoot") and not event.is_echo():
+  shoot()
+  get_viewport().set_input_as_handled()
+ elif event is InputEventKey and event.physical_keycode in [KEY_W, KEY_A, KEY_S, KEY_D, KEY_UP, KEY_DOWN, KEY_LEFT, KEY_RIGHT]:
   get_viewport().set_input_as_handled()
  elif event is InputEventJoypadMotion:
   get_viewport().set_input_as_handled()
@@ -724,12 +789,17 @@ func toggle_pause() -> void:
  ui.button(actions, "Hoofdmenu", game.go_home)
  ui.label(box, "Speel een ander monster", 26)
  ui.label(box, "Klik op een tegel om opnieuw te beginnen. Je punten beginnen dan weer bij 0.", 16, ui.MUTED)
+ var scroll = ScrollContainer.new()
+ scroll.follow_focus = true
+ scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
+ scroll.size_flags_vertical = Control.SIZE_EXPAND_FILL
+ box.add_child(scroll)
  var grid = GridContainer.new()
  grid.name = "PauseMonsters"
  grid.columns = 6
  grid.add_theme_constant_override("h_separation", 12)
  grid.add_theme_constant_override("v_separation", 12)
- box.add_child(grid)
+ scroll.add_child(grid)
  for entry in MonsterCatalog.entries():
   var id: String = entry.id
   var tile = ui.button(grid, "", func(): game.start_monster(id, player_count))

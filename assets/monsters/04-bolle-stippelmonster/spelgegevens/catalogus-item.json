@@ -1,0 +1,12 @@
+{
+  "id": "04-bolle-stippelmonster",
+  "name": "Bolle Stippel",
+  "blocks": 1961,
+  "dimensions": [
+    24,
+    27,
+    7
+  ],
+  "source": "assets/monters/monster-blokjes-10/json/04-bolle-stippelmonster.json",
+  "sha256": "8eed65a797a95871b6b74570f41f09cbd3f6edd50da1d390ffebed0c564b7615"
+}

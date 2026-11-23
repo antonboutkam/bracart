@@ -1,7 +1,7 @@
 extends "res://scripts/monster/structure.gd"
 ## Visible pieces plus a support graph, on the existing breakable block tower.
 const ID = "gifspuwer-breekbaar"
-const DIRECTORY = "res://assets/monsters/gifspuwer-breekbaar/"
+const DIRECTORY = "res://assets/monsters/"
 const MODEL_SCALE = 8.0
 const SCORE_UNITS = 10000
 var pieces: Dictionary = {}
@@ -17,16 +17,18 @@ func _init() -> void:
  debris_label = "onderdelen"
 
 func load_monster(id: String) -> bool:
- last_error = "De breekbare Gifspuwer kan niet worden geladen."
- if id != ID:
+ last_error = "Het breekbare monster kan niet worden geladen."
+ var entry = Catalog.find(id)
+ if entry.get("format") != "fractured":
   return false
- var data = JSON.parse_string(FileAccess.get_file_as_string(DIRECTORY + "breekstukken.json"))
- var derived = JSON.parse_string(FileAccess.get_file_as_string(DIRECTORY + "collision-planes.json"))
+ var directory = DIRECTORY + id + "/"
+ var data = JSON.parse_string(FileAccess.get_file_as_string(directory + "breekstukken.json"))
+ var derived = JSON.parse_string(FileAccess.get_file_as_string(directory + "collision-planes.json"))
  if not data is Dictionary or not derived is Dictionary or not data.get("pieces") is Array:
   return false
- if derived.get("source_sha256") != FileAccess.get_sha256(DIRECTORY + "breekstukken.json"):
+ if derived.get("source_sha256") != FileAccess.get_sha256(directory + "breekstukken.json"):
   return false
- packed = load(DIRECTORY + "gifspuwer-breekbaar.glb") as PackedScene
+ packed = load(directory + data.get("model", "")) as PackedScene
  if packed == null:
   return false
  var scene = packed.instantiate()
@@ -73,8 +75,8 @@ func load_monster(id: String) -> bool:
    piece.anchor = Vector3i(roundi(at.x / CELL), 0, roundi((at.z + 160) / CELL))
    cells[piece.anchor] = Color.WHITE
  total = SCORE_UNITS
- monster_id = ID
- monster_name = "Gifspuwer · verfijnd"
+ monster_id = id
+ monster_name = entry.name
  last_error = ""
  return true
 

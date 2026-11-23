@@ -1,0 +1,61 @@
+{
+  "Godot": "4.7.2-stable (official)",
+  "display": "X11",
+  "images": [
+    "boaz-garage.png",
+    "boaz-race.png",
+    "boaz-race-close.png",
+    "ravi-garage.png",
+    "ravi-race.png",
+    "ravi-race-close.png"
+  ],
+  "scope": "Actual garage and race instances using imported game assets; isolated temporary profile.",
+  "image_evidence": {
+    "boaz-garage.png": {
+      "sha256": "905f9e4305b77657569a32ba7f8885d6e09d1ffc54ad3e95dc6aff350defe48e",
+      "size": [
+        541,
+        338
+      ]
+    },
+    "boaz-race.png": {
+      "sha256": "9b43d2e91b8473faf5d33af1f63b06513169cf6fa53e3ab127317b7ec51a6b27",
+      "size": [
+        541,
+        338
+      ]
+    },
+    "boaz-race-close.png": {
+      "sha256": "7305bdf382a9d2f8e1c96d11d29da23ab2e2a32bb26100ac99a2e57a6b43d581",
+      "size": [
+        541,
+        338
+      ]
+    },
+    "ravi-garage.png": {
+      "sha256": "13a69519d8628a00c1d2e8b6c672adc2d8b1f936f6ed5b44bb37581090d0b245",
+      "size": [
+        541,
+        338
+      ]
+    },
+    "ravi-race.png": {
+      "sha256": "fcc9b8715235ab94b168026efa83455fbf934df076674b2750b7ea68ca6cea61",
+      "size": [
+        541,
+        338
+      ]
+    },
+    "ravi-race-close.png": {
+      "sha256": "70f98f8e8c6a09730879f3ece4d15f6786b5763ad057e2ab6a758b3308a47c2c",
+      "size": [
+        541,
+        338
+      ]
+    }
+  },
+  "game_assets": {
+    "boaz": "1cf9efb612f508b80b1ac387fffc5ff4276b4bb92541d282b2a9063027b8e7cd",
+    "ravi": "d753d51709dcffe4c289d51a376d4d7187ef5e48e5f051c5641575cf2caef819"
+  }
+}

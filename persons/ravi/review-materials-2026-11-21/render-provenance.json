@@ -1,0 +1,178 @@
+{
+  "before/02-three-quarter.png": {
+    "blend_sha256": "8555efbdae9c1f1a30fe4beb880f4ec4bf99801f55518b574d8db636bc76edb4",
+    "glb_sha256": "69bae3d32cc5e240b9f1c42c57ddacbfa9822ef5a00a6f9f8dacb29110efcf6d",
+    "render_sha256": "0e532b47e4c7f387054c38b425ce9281cf5e5ee02f0d63cc7e619e1185633f7b",
+    "Blender": "5.3.0",
+    "samples": 32,
+    "denoising": true,
+    "camera": [
+      32,
+      9,
+      0.57,
+      1.43
+    ],
+    "adaptive_threshold": 0.05000000074505806,
+    "max_bounces": 6,
+    "look": "AgX - Medium High Contrast",
+    "exposure": -0.3499999940395355,
+    "kind": "Actual Blender mesh, not Godot gameplay"
+  },
+  "before/05-face.png": {
+    "blend_sha256": "8555efbdae9c1f1a30fe4beb880f4ec4bf99801f55518b574d8db636bc76edb4",
+    "glb_sha256": "69bae3d32cc5e240b9f1c42c57ddacbfa9822ef5a00a6f9f8dacb29110efcf6d",
+    "render_sha256": "b57f50e51e4a9fa02aeeee7271d0dc39586dfb2106b93024a8243a2ab9b81718",
+    "Blender": "5.3.0",
+    "samples": 32,
+    "denoising": true,
+    "camera": [
+      12,
+      4,
+      0.91,
+      0.44
+    ],
+    "adaptive_threshold": 0.05000000074505806,
+    "max_bounces": 6,
+    "look": "AgX - Medium High Contrast",
+    "exposure": -0.3499999940395355,
+    "kind": "Actual Blender mesh, not Godot gameplay"
+  },
+  "after/01-front.png": {
+    "blend_sha256": "a318bca029c927db1c78567881303b6180a3a9ad1a49073f1ada28f2db0c1e35",
+    "glb_sha256": "d753d51709dcffe4c289d51a376d4d7187ef5e48e5f051c5641575cf2caef819",
+    "render_sha256": "08234c0ba4c551fe84ac45e7fc94e45cfdd4a5dea5fc7e51fa41cf9393c9f676",
+    "Blender": "5.3.0",
+    "samples": 16,
+    "denoising": true,
+    "camera": [
+      0,
+      9,
+      0.57,
+      1.43
+    ],
+    "adaptive_threshold": 0.05000000074505806,
+    "max_bounces": 6,
+    "resolution": [
+      480,
+      576
+    ],
+    "look": "AgX - Medium High Contrast",
+    "exposure": -0.3499999940395355,
+    "kind": "Actual Blender mesh, not Godot gameplay"
+  },
+  "after/02-three-quarter.png": {
+    "blend_sha256": "a318bca029c927db1c78567881303b6180a3a9ad1a49073f1ada28f2db0c1e35",
+    "glb_sha256": "d753d51709dcffe4c289d51a376d4d7187ef5e48e5f051c5641575cf2caef819",
+    "render_sha256": "16c095ede3be4509a624e870992b78637f924a71802d52cc13497f5758cd6d8c",
+    "Blender": "5.3.0",
+    "samples": 32,
+    "denoising": true,
+    "camera": [
+      32,
+      9,
+      0.57,
+      1.43
+    ],
+    "adaptive_threshold": 0.05000000074505806,
+    "max_bounces": 6,
+    "resolution": [
+      600,
+      720
+    ],
+    "look": "AgX - Medium High Contrast",
+    "exposure": -0.3499999940395355,
+    "kind": "Actual Blender mesh, not Godot gameplay"
+  },
+  "after/03-side.png": {
+    "blend_sha256": "a318bca029c927db1c78567881303b6180a3a9ad1a49073f1ada28f2db0c1e35",
+    "glb_sha256": "d753d51709dcffe4c289d51a376d4d7187ef5e48e5f051c5641575cf2caef819",
+    "render_sha256": "91dddffca4282c0603f5e37ac661740277a7d697f7c810c785c280e6eb802e8d",
+    "Blender": "5.3.0",
+    "samples": 16,
+    "denoising": true,
+    "camera": [
+      90,
+      9,
+      0.57,
+      1.43
+    ],
+    "adaptive_threshold": 0.05000000074505806,
+    "max_bounces": 6,
+    "resolution": [
+      480,
+      576
+    ],
+    "look": "AgX - Medium High Contrast",
+    "exposure": -0.3499999940395355,
+    "kind": "Actual Blender mesh, not Godot gameplay"
+  },
+  "after/04-back.png": {
+    "blend_sha256": "a318bca029c927db1c78567881303b6180a3a9ad1a49073f1ada28f2db0c1e35",
+    "glb_sha256": "d753d51709dcffe4c289d51a376d4d7187ef5e48e5f051c5641575cf2caef819",
+    "render_sha256": "981f6501586904a572b8514f82e4a3b986c00afc47c826d3e408ee7463c030de",
+    "Blender": "5.3.0",
+    "samples": 16,
+    "denoising": true,
+    "camera": [
+      180,
+      9,
+      0.57,
+      1.43
+    ],
+    "adaptive_threshold": 0.05000000074505806,
+    "max_bounces": 6,
+    "resolution": [
+      480,
+      576
+    ],
+    "look": "AgX - Medium High Contrast",
+    "exposure": -0.3499999940395355,
+    "kind": "Actual Blender mesh, not Godot gameplay"
+  },
+  "after/05-face.png": {
+    "blend_sha256": "a318bca029c927db1c78567881303b6180a3a9ad1a49073f1ada28f2db0c1e35",
+    "glb_sha256": "d753d51709dcffe4c289d51a376d4d7187ef5e48e5f051c5641575cf2caef819",
+    "render_sha256": "956d04b423c23f9ef07a6c358083320cbfae2efde5cf0b3bea5bf79be043b407",
+    "Blender": "5.3.0",
+    "samples": 32,
+    "denoising": true,
+    "camera": [
+      12,
+      4,
+      0.91,
+      0.44
+    ],
+    "adaptive_threshold": 0.05000000074505806,
+    "max_bounces": 6,
+    "resolution": [
+      600,
+      720
+    ],
+    "look": "AgX - Medium High Contrast",
+    "exposure": -0.3499999940395355,
+    "kind": "Actual Blender mesh, not Godot gameplay"
+  },
+  "after/06-kart-pose.png": {
+    "blend_sha256": "a318bca029c927db1c78567881303b6180a3a9ad1a49073f1ada28f2db0c1e35",
+    "glb_sha256": "d753d51709dcffe4c289d51a376d4d7187ef5e48e5f051c5641575cf2caef819",
+    "render_sha256": "3d2fe2fd58f5dfcee6a785080c1d5331184984f4080ef09f8c15de4e672ebe89",
+    "Blender": "5.3.0",
+    "samples": 16,
+    "denoising": true,
+    "camera": [
+      40,
+      11,
+      0.6,
+      1.35
+    ],
+    "adaptive_threshold": 0.05000000074505806,
+    "max_bounces": 6,
+    "resolution": [
+      480,
+      576
+    ],
+    "look": "AgX - Medium High Contrast",
+    "exposure": -0.3499999940395355,
+    "kind": "Actual Blender mesh, not Godot gameplay"
+  }
+}

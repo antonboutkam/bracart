@@ -1,6 +1,7 @@
 extends SceneTree
 const Main = preload("res://scripts/main.gd")
 const Profile = preload("res://scripts/profile.gd")
+const Catalog = preload("res://scripts/catalog.gd")
 const Preview = preload("res://scripts/ui/vehicle_preview.gd")
 const TouchAction = preload("res://scripts/ui/touch_action.gd")
 var checks = 0
@@ -40,14 +41,14 @@ func run() -> void:
  for candidate in descendants(ui.screen, "TextureRect"):
   if candidate is Preview:
    previews.append(candidate)
- check(previews.size() == 7, "Garage shows six model cards and the current vehicle beside the drivers")
+ check(previews.size() == Catalog.VEHICLES.size() + 1, "Garage shows all vehicle cards and the current vehicle")
  for preview in previews:
   check(preview.viewport.own_world_3d and preview.viewport.msaa_3d == Viewport.MSAA_4X, "Preview isolates lighting and provides antialiasing")
  var choose_buttons = 0
  for candidate in descendants(ui.screen, "Button"):
   if candidate.text in ["Selecteren", "Geselecteerd", "Kopen"]:
    choose_buttons += 1
- check(choose_buttons == 5, "Only the five vehicles that are not selected have a selection or purchase action")
+ check(choose_buttons == Catalog.VEHICLES.size() - 1, "Only vehicles that are not selected have a selection or purchase action")
  var garage_panels = descendants(ui.screen, "PanelContainer")
  for card in garage_panels:
   check(card.position.y + card.size.y < 752, "Garage content remains above footer")
@@ -55,7 +56,7 @@ func run() -> void:
  await process_frame
  await process_frame
  var toggles = descendants(ui.screen, "CheckButton")
- check(toggles.size() == 4, "Settings expose shadows, quiet camera, auto acceleration and touch")
+ check(toggles.size() == 7, "Settings expose graphics, replay, FPS and input preferences")
  for toggle in toggles:
   var bounds: Rect2 = toggle.get_global_rect()
   check(bounds.end.y <= ui.layout_root.get_global_rect().end.y, "Setting controls remain within logical page")
@@ -82,7 +83,7 @@ func run() -> void:
  for child in ui.hud.get_children():
   if child is TouchAction:
    touch_count += 1
- check(touch_count == 7, "Touch setting exposes seven independent action targets")
+ check(touch_count == 8, "Touch setting exposes eight independent action targets")
  ui.update_hud(0)
  check("Ronde" in ui.current_lap_label.text and "Beste race" in ui.record_label.text, "HUD exposes lap timer and world record")
  check(not ui.section_label.text.is_empty(), "HUD describes current track section")

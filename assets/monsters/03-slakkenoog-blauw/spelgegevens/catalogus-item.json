@@ -1,0 +1,12 @@
+{
+  "id": "03-slakkenoog-blauw",
+  "name": "Slakkenoog",
+  "blocks": 1290,
+  "dimensions": [
+    13,
+    30,
+    5
+  ],
+  "source": "assets/monters/monster-blokjes-10/json/03-slakkenoog-blauw.json",
+  "sha256": "ea30a5c0c4e034fbe60118c453d6601d74e6f5b41a0e5d999d1e45b67cc1befb"
+}

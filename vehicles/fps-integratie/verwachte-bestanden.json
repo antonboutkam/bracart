@@ -1,0 +1,9 @@
+{
+  "scripts/profile.gd": "a38adea7ab71df52f7afc5f15ec3a21fce9e3bd6f9a44e8d16530e04dccc9061",
+  "scripts/main.gd": "68fe8ab6af887ae3f0b13553ac5d2369a9b240ef3ed1329022135f2c929c1fdf",
+  "scripts/interface.gd": "0e2c4529c52c73536675076266a5d51ea057889308e5d58da137935018d3ed2e",
+  "scripts/monster/mode.gd": "8dc60c298b0636381f86e7edc8092a52ab6494012d345903621b3a1eb07b345c",
+  "tests/ui_layout.gd": "cac77f81e98626504d70c8ea2489e852bc8c61e44f0fe7f8b92b1adac9615115",
+  "tools/check.sh": "c7846783779df18f959e3a69dd633c17c3ffaec9cc4921683814a32082bb938f",
+  "README.md": "14d5cb54dd3370b597ca1c5741b3e6970a1561cf8c031b45252664448c32ae7a"
+}

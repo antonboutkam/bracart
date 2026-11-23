@@ -10,9 +10,10 @@ en druk op **Start solo** of **Start duel**.
 ./start.sh -- --monster
 ```
 
-De tien aangeleverde blokjesmonsters, **Gifspuwer · verfijnd** en de oorspronkelijke
-tweekoppige proefdraak zijn speelbaar: twaalf keuzes. De verfijnde Gifspuwer
-gebruikt de 76 afzonderlijke stukken uit `gifspuwer-monsterbreker-test`.
+De tien aangeleverde blokjesmonsters, acht verfijnde monsters en de oorspronkelijke
+tweekoppige proefdraak zijn speelbaar: negentien keuzes. Scroll in de lijst om
+ze allemaal te zien. De verfijnde Gifspuwer gebruikt 76 afzonderlijke stukken;
+de zeven andere verfijnde monsters gebruiken elk 72 stukken.
 De eerdere gladde fase-1-modellen worden niet gebruikt.
 
 ## Afdaling, vlucht en camera
@@ -155,7 +156,7 @@ geeft een melding en start geen kapotte wedstrijd.
 | `scripts/monster/birds.gd` | Bewegende vogels, botsingen en herstel |
 | `scripts/monster/sounds.gd` | Eigen glijfluit, vogelgeluid en lanceergeluid |
 | `tools/sync_monsters.py` | Herhaalbare validatie en runtimekopieën |
-| `tools/sync_fractured_monster.py` | Gifspuwer kopiëren en convexe botsingsvlakken afleiden |
+| `tools/sync_fractured_monster.py` | Verfijnde monsters kopiëren en convexe botsingsvlakken afleiden |
 
 De constructie gebruikt verbindingen via blokzijvlakken. Een losgeraakte groep
 valt met behoud van zijn vorm onder zwaartekracht. Er zijn geen onderlinge

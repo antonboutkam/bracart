@@ -1,0 +1,8 @@
+{
+  "scripts/profile.gd": "5668e9ed9bee1114c61854dbcd9f0d2aaceb2a89439f0e9c99774daa326ff5a4",
+  "scripts/interface.gd": "427b2de83cea528cab7efae2b4454a5e1cd0fea17877aef161ac0a6296a20d62",
+  "project.godot": "020a09db572b4e55b113a89b51384b4df2045a3b563af7515c5e6f3db2e2c037",
+  "tests/render_resolution.gd": "7548b77bb797cf594104c74021777508bbabc3a059505223b417d2b12ed76ba3",
+  "tests/ui_layout.gd": "2bbd673174fddccdbe9d55deb78e55ce715a819fddbc776758808a30da1d746e",
+  "README.md": "10fcc327ef9ff958345c88a8404b457ecc3c5f6850635240b4dd8e06efeadb59"
+}

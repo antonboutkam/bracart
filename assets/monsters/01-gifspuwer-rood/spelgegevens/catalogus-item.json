@@ -1,0 +1,12 @@
+{
+  "id": "01-gifspuwer-rood",
+  "name": "Gifspuwer",
+  "blocks": 1741,
+  "dimensions": [
+    26,
+    30,
+    8
+  ],
+  "source": "assets/monters/monster-blokjes-10/json/01-gifspuwer-rood.json",
+  "sha256": "f44f603612849611b79a2a1e0aaee0b9e94f74314f89141351fa31cf429a837d"
+}

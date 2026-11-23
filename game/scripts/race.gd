@@ -139,6 +139,7 @@ func _step_kart(kart, index: int, delta: float, gas: float, brake: float, steer:
   return
  for key in ["shield_time", "magnet_time", "cannon_time", "stun_time", "boost_time", "hit_cooldown"]:
   kart.set(key, maxf(0, float(kart.get(key)) - delta))
+ kart.ammo.advance(delta)
  var stats: Dictionary = Catalog.VEHICLES[kart.vehicle_index]
  var throttle = clampf(gas, 0, 1)
  var stopping = clampf(brake, 0, 1)
@@ -325,16 +326,25 @@ func use_power(kart = null) -> void:
  if kart == player:
   notice.emit(power + " actief" + (" — E om te schieten" if power == "Kanonnen" else ""))
 
-func fire(owner_kart, kind: String) -> void:
+func fire_standard(owner_kart = null) -> bool:
+ if owner_kart == null: owner_kart = player
+ if countdown > 0 or paused or done or owner_kart.finish_time >= 0 or not owner_kart.ammo.can_fire():
+  return false
+ if not fire(owner_kart, "bullet"):
+  return false
+ return owner_kart.ammo.fire()
+
+func fire(owner_kart, kind: String) -> bool:
  # Cooldown applies to repeat cannon fire; each activation remains time limited.
  if kind == "bullet" and owner_kart.has_meta("shot") and elapsed - float(owner_kart.get_meta("shot")) < 0.3:
-  return
+  return false
  if kind == "bullet":
   owner_kart.set_meta("shot", elapsed)
  owner_kart.react_to_shot()
  var mesh = Geo.ball(self, Vector3.ZERO, Vector3.ONE * (0.65 if kind == "bomb" else 0.35), Color("ff8e4b") if kind != "bomb" else Color("303b57"))
  projectiles.append({"owner":owner_kart, "kind":kind, "progress":owner_kart.progress + (-2 if kind == "bomb" else 2), "lane":owner_kart.lateral, "life":9.0 if kind == "bomb" else 3.0, "node":mesh})
  sound.emit("shot")
+ return true
 
 func _update_projectiles(delta: float) -> void:
  for i in range(projectiles.size() - 1, -1, -1):

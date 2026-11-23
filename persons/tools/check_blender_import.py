@@ -1,5 +1,5 @@
 """Fresh Blender roundtrip check of exported GLBs; not a Godot runtime test."""
-import bpy, sys, json, math, os
+import bpy, sys, json, math, os, hashlib
 from pathlib import Path
 
 for arg in sys.argv[sys.argv.index('--')+1:]:
@@ -35,7 +35,8 @@ for arg in sys.argv[sys.argv.index('--')+1:]:
             assert all(all(math.isfinite(x) for x in v.co) for v in me.vertices)
             ev.to_mesh_clear()
         sampled.append(action.name)
-    report={'file':path.name,'fresh_Blender_import':'passed','height_m':height,'meshes':len(meshes),'armatures':len(rigs),'morph_targets':len(ob.data.shape_keys.key_blocks)-1,'sampled_animations':sampled,'Godot_runtime':'not tested'}
+    image_sizes={node.image.name:list(node.image.size) for material in ob.data.materials if material.use_nodes for node in material.node_tree.nodes if node.type=='TEX_IMAGE' and node.image}
+    report={'file':path.name,'source_sha256':hashlib.sha256(path.read_bytes()).hexdigest(),'Blender':bpy.app.version_string,'fresh_Blender_import':'passed','height_m':height,'meshes':len(meshes),'armatures':len(rigs),'morph_targets':len(ob.data.shape_keys.key_blocks)-1,'sampled_animations':sampled,'embedded_image_sizes':image_sizes,'Godot_runtime':'not tested'}
     path.with_name('blender-import-validation.json').write_text(json.dumps(report,indent=2)+'\n')
     print('IMPORT_CHECK',json.dumps(report),flush=True)
 if bpy.app.background and os.environ.get('BORACER_FAST_EXIT')=='1':

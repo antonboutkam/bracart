@@ -4,7 +4,7 @@ signal storage_failed(message: String)
 const Catalog = preload("res://scripts/catalog.gd")
 const SAVE_VERSION = 3
 const SAVE_PATH = "user://profile.json"
-const RENDER_HEIGHTS = [0, 1440, 1080, 720] # 0 follows the window's native resolution.
+const RENDER_HEIGHTS = [0, 1800, 1440, 1200, 1080, 900, 720, 540] # 0 follows the window's native resolution.
 const LEGACY_WORLDS = ["sunset-park", "neon-city", "regenbogenrijk", "haarlem-1888", "uithoorn-2056", "keukentafel"]
 var coins: int = 0
 var owned: Array = ["retro"]
@@ -12,7 +12,8 @@ var selected: int = Catalog.DEFAULT_VEHICLE
 var character: String = "boaz"
 var records: Dictionary = {}
 var settings: Dictionary = {"music":0.35, "sound":0.65, "difficulty":0, "shadows":true,
- "camera_motion":true, "auto_accelerate":false, "touch_controls":false, "render_height":0}
+ "camera_motion":true, "auto_accelerate":false, "touch_controls":false, "render_height":0,
+ "antialias":true, "impact_replay":true, "show_fps":false}
 var storage_path: String = SAVE_PATH
 var available: Array
 var last_error: String = ""
@@ -81,7 +82,7 @@ func load_profile() -> void:
   var render_height = _number(data.settings.get("render_height"), 0)
   var height_id = int(render_height)
   settings.render_height = height_id if float(height_id) == render_height and height_id in RENDER_HEIGHTS else 0
-  for key in ["shadows", "camera_motion", "auto_accelerate", "touch_controls"]:
+  for key in ["shadows", "camera_motion", "auto_accelerate", "touch_controls", "antialias", "impact_replay", "show_fps"]:
    if data.settings.get(key) is bool:
     settings[key] = data.settings[key]
 

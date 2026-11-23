@@ -1,0 +1,44 @@
+{
+  "id": "02-schouderreus-turkoois",
+  "naam": "Schouderreus",
+  "verzameld_op": "2026-11-21",
+  "bronmap": "assets/monters",
+  "status_organisch_model": "proefmodel",
+  "verfijnd_breekbaar_spelmodel_aanwezig": false,
+  "blokjes": {
+    "aantal": 1780,
+    "afmetingen_gemeten_xyz": [
+      23,
+      30,
+      5
+    ],
+    "afmetingen_historisch_manifest_xyz": [
+      23,
+      30,
+      7
+    ],
+    "manifest_afmetingen_komen_overeen": false,
+    "identiek_aan_spel_json": true
+  },
+  "modellen": {
+    "modellen/blokjesmodel.glb": {
+      "bytes": 171964,
+      "nodes": 1781,
+      "meshes": 8,
+      "materials": 8,
+      "external_resources": [],
+      "header_and_json_valid": true
+    },
+    "modellen/organisch-proefmodel.glb": {
+      "bytes": 3675904,
+      "nodes": 1,
+      "meshes": 1,
+      "materials": 1,
+      "external_resources": [],
+      "header_and_json_valid": true
+    }
+  },
+  "ontbrekende_proefmodel_render": false,
+  "ontbrekende_blokjesmodel_render": false,
+  "opmerking": "Bronnotities en historische spelcontrole zijn oorspronkelijke momentopnamen; geen nieuwe goedkeuring."
+}

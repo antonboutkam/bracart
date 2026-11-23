@@ -1,0 +1,126 @@
+--- a/game/scripts/profile.gd
++++ b/game/scripts/profile.gd
+@@ -4,7 +4,7 @@
+ const Catalog = preload("res://scripts/catalog.gd")
+ const SAVE_VERSION = 3
+ const SAVE_PATH = "user://profile.json"
+-const RENDER_HEIGHTS = [0, 1440, 1080, 720] # 0 follows the window's native resolution.
++const RENDER_HEIGHTS = [0, 1800, 1440, 1200, 1080, 900, 720, 540] # 0 follows the window's native resolution.
+ const LEGACY_WORLDS = ["sunset-park", "neon-city", "regenbogenrijk", "haarlem-1888", "uithoorn-2056", "keukentafel"]
+ var coins: int = 0
+ var owned: Array = ["retro"]
+--- a/game/scripts/interface.gd
++++ b/game/scripts/interface.gd
+@@ -612,10 +612,10 @@
+  difficulty.item_selected.connect(func(index):
+   game.profile.settings.difficulty = index
+   game.persist())
+- label(box, "Spelresolutie", 22)
++ label(box, "Scherpte van het spel (3D)", 22)
+  var resolution = OptionButton.new()
+  resolution.name = "RenderResolution"
+- for entry in [["Volledige schermresolutie", 0], ["1440p — minder zwaar", 1440], ["1080p — licht", 1080], ["720p — extra licht", 720]]:
++ for entry in [["Volledige schermresolutie", 0], ["1800p", 1800], ["1440p", 1440], ["1200p", 1200], ["1080p", 1080], ["900p", 900], ["720p", 720], ["540p", 540]]:
+   resolution.add_item(entry[0], entry[1])
+  resolution.select(resolution.get_item_index(game.profile.settings.render_height))
+  resolution.custom_minimum_size.y = 44
+@@ -624,7 +624,7 @@
+   game.profile.settings.render_height = resolution.get_item_id(index)
+   game.apply_render_resolution()
+   game.persist())
+- label(box, "Lagere resolutie maakt het 3D-beeld minder scherp en lichter voor je GPU.\nTekst en knoppen blijven scherp. Werkt direct, ook in Monsterbreker.", 14, MUTED)
++ label(box, "Kies bijvoorbeeld 900p voor een middenweg tussen scherpte en snelheid.\nDe breedte volgt je scherm; tekst en knoppen blijven scherp.", 14, MUTED)
+  var shadows = CheckButton.new()
+  shadows.text = "Schaduwen (uitzetten voor lichtere computers)"
+  shadows.button_pressed = game.profile.settings.shadows
+--- a/game/project.godot
++++ b/game/project.godot
+@@ -13,6 +13,7 @@
+ window/size/window_width_override=1280
+ window/size/window_height_override=800
+ window/stretch/mode="canvas_items"
++window/stretch/aspect="expand"
+ 
+ [rendering]
+ renderer/rendering_method="gl_compatibility"
+--- a/game/tests/render_resolution.gd
++++ b/game/tests/render_resolution.gd
+@@ -37,13 +37,22 @@
+  check(choice is OptionButton and choice.get_selected_id() == 1080, "Settings show the saved resolution")
+  var ui_scale: Vector2 = main.ui.layout_root.scale
+  var stretch_size: Vector2i = root.content_scale_size
+- for entry in [[0, 1.0], [1440, 2.0 / 3], [1080, 0.5], [720, 1.0 / 3]]:
++ for entry in [[0, 1.0], [1800, 1800.0 / 2160], [1440, 2.0 / 3], [1200, 1200.0 / 2160], [1080, 0.5], [900, 900.0 / 2160], [720, 1.0 / 3], [540, 0.25]]:
+   var index: int = choice.get_item_index(entry[0])
+   choice.select(index)
+   choice.item_selected.emit(index)
+   check(is_equal_approx(root.scaling_3d_scale, entry[1]), "Dropdown immediately applies %dp" % entry[0])
+   check(Profile.new().settings.render_height == entry[0], "Dropdown persists %dp" % entry[0])
+  check(root.size == Vector2i(3840, 2160) and root.content_scale_size == stretch_size and main.ui.layout_root.scale == ui_scale, "Resolution choice preserves window size and sharp UI layout")
++ root.size = Vector2i(1920, 1080)
++ await process_frame
++ check(is_equal_approx(root.scaling_3d_scale, 0.5), "540p scales a 16:9 window without changing its aspect")
++ check(root.content_scale_aspect == Window.CONTENT_SCALE_ASPECT_EXPAND, "Widescreen expands the world instead of cropping it")
++ check(root.get_visible_rect().size.x > 1400, "16:9 displays a wider world than the 16:10 base")
++ var widescreen_rect: Rect2 = main.ui.layout_root.get_global_rect()
++ check(root.get_visible_rect().encloses(widescreen_rect), "Complete UI remains visible on widescreen")
++ main.profile.settings.render_height = 720
++ main.apply_render_resolution()
+  root.size = Vector2i(1280, 720)
+  await process_frame
+  check(is_equal_approx(root.scaling_3d_scale, 1.0), "Smaller windows are never upscaled internally")
+--- a/game/tests/ui_layout.gd
++++ b/game/tests/ui_layout.gd
+@@ -1,6 +1,7 @@
+ extends SceneTree
+ const Main = preload("res://scripts/main.gd")
+ const Profile = preload("res://scripts/profile.gd")
++const Catalog = preload("res://scripts/catalog.gd")
+ const Preview = preload("res://scripts/ui/vehicle_preview.gd")
+ const TouchAction = preload("res://scripts/ui/touch_action.gd")
+ var checks = 0
+@@ -40,14 +41,14 @@
+  for candidate in descendants(ui.screen, "TextureRect"):
+   if candidate is Preview:
+    previews.append(candidate)
+- check(previews.size() == 7, "Garage shows six model cards and the current vehicle beside the drivers")
++ check(previews.size() == Catalog.VEHICLES.size() + 1, "Garage shows all vehicle cards and the current vehicle")
+  for preview in previews:
+   check(preview.viewport.own_world_3d and preview.viewport.msaa_3d == Viewport.MSAA_4X, "Preview isolates lighting and provides antialiasing")
+  var choose_buttons = 0
+  for candidate in descendants(ui.screen, "Button"):
+   if candidate.text in ["Selecteren", "Geselecteerd", "Kopen"]:
+    choose_buttons += 1
+- check(choose_buttons == 5, "Only the five vehicles that are not selected have a selection or purchase action")
++ check(choose_buttons == Catalog.VEHICLES.size() - 1, "Only vehicles that are not selected have a selection or purchase action")
+  var garage_panels = descendants(ui.screen, "PanelContainer")
+  for card in garage_panels:
+   check(card.position.y + card.size.y < 752, "Garage content remains above footer")
+--- a/game/README.md
++++ b/game/README.md
+@@ -80,12 +80,11 @@
+ 
+ ## Lagere spelresolutie op een groot scherm
+ 
+-Open **Instellingen → Spelresolutie** en kies **1440p**, **1080p** of **720p**.
++Open **Instellingen → Spelresolutie** en kies een instelling van **540p** tot **1800p**, bijvoorbeeld **900p** als tussenstap tussen 720p en 1080p.
+ **Volledige schermresolutie** behoudt de oorspronkelijke scherpte. De keuze
+ werkt direct, wordt lokaal bewaard en geldt ook voor Monsterbreker.
+ 
+-De instelling begrenst de hoogte van het 3D-beeld; de beeldverhouding blijft
+-behouden. Op een volledig gevuld 3840×2160-scherm geeft 1080p een 3D-beeld van
++De instelling begrenst de hoogte van het 3D-beeld; de beeldverhouding volgt het venster. Op een 16:9-scherm levert 900p bijvoorbeeld ongeveer 1600×900 3D-pixels. Breedbeeld gebruikt de extra ruimte voor de wereld; de bediening blijft gecentreerd. Op een volledig gevuld 3840×2160-scherm geeft 1080p een 3D-beeld van
+ 1920×1080, met een kwart van het oorspronkelijke aantal pixels. Teksten en
+ knoppen blijven op de normale schermresolutie. Een kleiner venster wordt niet
+ extra groot gerenderd. Garagevoorbeelden gebruiken hun bestaande kleine buffers.
+@@ -94,9 +93,7 @@
+ die de Compatibility-renderer ondersteunt. Minder pixels betekent niet automatisch
+ een evenredig hogere beeldsnelheid; deze wijziging bevat geen GPU-prestatiemeting.
+ Controle: `tests/render_resolution.gd`, ook opgenomen in `game/tools/check.sh`.
+-Lokaal slagen 25 resolutiecontroles, 28 opslagcontroles en 32 interfacecontroles;
+-zie de [testuitvoer](validation/resolution-checks.txt) en het
+-[nagekeken instellingenvenster](validation/resolution-settings.png).
++De nieuwe opties en breedbeeldindeling zijn ook headless te controleren; beeldkwaliteit en FPS moeten op de gebruikte computer zelf worden beoordeeld.
+ 
+ ## Garage en coureurs
+ 

@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "images": [
+    {
+      "embedded_image": "boaz_basecolor",
+      "size": [
+        2048,
+        2048
+      ],
+      "pixels_equal_to_saved_texture": true
+    },
+    {
+      "embedded_image": "boaz_orm",
+      "size": [
+        2048,
+        2048
+      ],
+      "pixels_equal_to_saved_texture": true
+    }
+  ]
+}

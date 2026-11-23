@@ -1,0 +1,12 @@
+{
+  "id": "10-geelgroene-spook",
+  "name": "Groen Spook",
+  "blocks": 1293,
+  "dimensions": [
+    19,
+    30,
+    6
+  ],
+  "source": "assets/monters/monster-blokjes-10/json/10-geelgroene-spook.json",
+  "sha256": "4690f16de8c627641077ca0b739147930026ae0bdfe49c4d1cbd453b89d647df"
+}

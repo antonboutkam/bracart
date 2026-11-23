@@ -1,0 +1,4 @@
+[
+  "scripts/combat/ammo.gd",
+  "tests/standard_ammo.gd"
+]

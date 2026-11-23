@@ -1,0 +1,86 @@
+{
+  "monster_id": "07-gele-girafnek",
+  "exclusief": [
+    "bestanden.json"
+  ],
+  "bestanden": [
+    {
+      "pad": "LEESMIJ.md",
+      "bytes": 2228,
+      "sha256": "783a5206e6951e8418b1af41f5ba1c779f434bd3e5d54ddc8bf7900e1dbe7791",
+      "bron": "Gegenereerde documentatie of metagegevens voor dit monster"
+    },
+    {
+      "pad": "OPDRACHT-CHATGPT.md",
+      "bytes": 1636,
+      "sha256": "4d7dd6f34dd0b598e5701d5b1313d4d15b66dd0ed06feb7b4639f1c7510937cf",
+      "bron": "Gegenereerde documentatie of metagegevens voor dit monster"
+    },
+    {
+      "pad": "TECHNISCHE-EISEN.md",
+      "bytes": 2644,
+      "sha256": "81e5a78f8d72ea4f22879856c7574e29d42244216a4979636a101cd034ca1638",
+      "bron": "Gegenereerde documentatie of metagegevens voor dit monster"
+    },
+    {
+      "pad": "afbeeldingen/illustratie.png",
+      "bytes": 1778800,
+      "sha256": "e93df78b5c4e4d349f3247037b8c2916de26e87d6fc58d0168bb9b2da32f8049",
+      "bron": "assets/monters/losse-monsters/07-gele-girafnek.png"
+    },
+    {
+      "pad": "afbeeldingen/voorkant-zijkant-achterkant.png",
+      "bytes": 1187645,
+      "sha256": "5be035ba537bfafe61597c5b245ab58190ecf417f2f6b4d7ac513cb7bc4802f9",
+      "bron": "assets/monters/monsters-drie-aanzichten/07-gele-girafnek-voorkant-zijkant-achterkant.png"
+    },
+    {
+      "pad": "blokjes/blokken.json",
+      "bytes": 28352,
+      "sha256": "4157850ee87b5c169dfcedb8bffa90643e29ba3110a667285eec3627dd39b92b",
+      "bron": "assets/monters/monster-blokjes-10/json/07-gele-girafnek.json"
+    },
+    {
+      "pad": "blokjes/bronmanifest.json",
+      "bytes": 730,
+      "sha256": "da70db6f15d8f016a27768340021a07d602e3a5c003a650b1e453b4fcc3170f8",
+      "bron": "Gegenereerde documentatie of metagegevens voor dit monster"
+    },
+    {
+      "pad": "bronnotities/blokjesmodellen.md",
+      "bytes": 2736,
+      "sha256": "97b148fb754912b91649e51143b86f93e388dd827d0a690fca26612ec06b34f1",
+      "bron": "assets/monters/monster-blokjes-10/README.md"
+    },
+    {
+      "pad": "bronnotities/organische-proefmodellen.md",
+      "bytes": 1279,
+      "sha256": "444850a659f100e38c2f0e284ee49b5c8d7882ee853a5db261c35033307dd01a",
+      "bron": "assets/monters/monsters-3d-proefmodellen/README.md"
+    },
+    {
+      "pad": "gegevens.json",
+      "bytes": 1093,
+      "sha256": "09eb492aa2be54056177f7b5317bf318e20738b775c587b3480476412c2aeeef",
+      "bron": "Gegenereerde documentatie of metagegevens voor dit monster"
+    },
+    {
+      "pad": "modellen/blokjesmodel.glb",
+      "bytes": 70644,
+      "sha256": "ab233cd2581863b0ea9e4171d820ae2406218525782bb1525be470173fa97ee0",
+      "bron": "assets/monters/monster-blokjes-10/glb/07-gele-girafnek.glb"
+    },
+    {
+      "pad": "modellen/organisch-proefmodel.glb",
+      "bytes": 4001448,
+      "sha256": "baa35909866c93f4b582763f963d9037184082f0ad894394745eabbda5438b79",
+      "bron": "assets/monters/monsters-3d-proefmodellen/07-gele-girafnek.glb"
+    },
+    {
+      "pad": "spelgegevens/catalogus-item.json",
+      "bytes": 271,
+      "sha256": "0fc6e6dac6ec5c66fb18b9ecff7a5c6e5a4738c02b8246926edb65e6e1d8a14e",
+      "bron": "Gegenereerde documentatie of metagegevens voor dit monster"
+    }
+  ]
+}

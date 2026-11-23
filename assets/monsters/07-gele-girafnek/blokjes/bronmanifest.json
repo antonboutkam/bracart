@@ -1,0 +1,36 @@
+{
+  "format": "destructible-block-monsters-v1",
+  "grid_cell_size": [
+    1,
+    1,
+    1
+  ],
+  "axes": {
+    "up": "+Y",
+    "front": "+Z"
+  },
+  "support_rule": "six-face adjacency to a block on y=0",
+  "monsters": [
+    {
+      "id": "07-gele-girafnek",
+      "name": "Girafnek",
+      "count": 732,
+      "unique": true,
+      "ground_blocks": 8,
+      "connected_to_ground": true,
+      "unconnected": 0,
+      "dimensions": [
+        12,
+        32,
+        4
+      ],
+      "num_colors": 7,
+      "single_block_breakpoints": 0,
+      "breakpoint_examples": [],
+      "raw_voxels": 732,
+      "hollowed": false,
+      "bridge_blocks_added": 0,
+      "source": "07-gele-girafnek-voorkant-zijkant-achterkant.png"
+    }
+  ]
+}

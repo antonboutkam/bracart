@@ -1,5 +1,7 @@
 {
   "file": "boaz.glb",
+  "source_sha256": "1cf9efb612f508b80b1ac387fffc5ff4276b4bb92541d282b2a9063027b8e7cd",
+  "Blender": "5.3.0",
   "fresh_Blender_import": "passed",
   "height_m": 1.1500001511623452,
   "meshes": 1,
@@ -13,5 +15,15 @@
     "Kart_Steer",
     "Run"
   ],
+  "embedded_image_sizes": {
+    "boaz_basecolor": [
+      2048,
+      2048
+    ],
+    "boaz_orm": [
+      2048,
+      2048
+    ]
+  },
   "Godot_runtime": "not tested"
 }

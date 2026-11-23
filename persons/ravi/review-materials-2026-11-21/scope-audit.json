@@ -1,0 +1,23 @@
+{
+  "passed": true,
+  "checks": {
+    "triangle_attributes_preserved_at_reported_precision": true,
+    "rig_and_inverse_bind_matrices_exact": true,
+    "node_transforms_exact": true,
+    "animations_preserved_within_1e_7": true,
+    "morph_names_exact": true,
+    "morph_defaults_exact": true,
+    "one_material_two_images": true,
+    "textures_changed": true
+  },
+  "triangle_attributes_bit_exact": true,
+  "animation_payloads_bit_exact": true,
+  "animation_max_abs_delta": 0.0,
+  "triangle_attribute_decimals": null,
+  "removed_or_changed_triangles": 0,
+  "added_or_changed_triangles": 0,
+  "baseline_sha256": "69bae3d32cc5e240b9f1c42c57ddacbfa9822ef5a00a6f9f8dacb29110efcf6d",
+  "candidate_sha256": "d753d51709dcffe4c289d51a376d4d7187ef5e48e5f051c5641575cf2caef819",
+  "scope": "UVs and embedded material images may change. All other triangle attributes, including every morph delta, are checked.",
+  "limits": "No artistic acceptance, intersection or performance claim."
+}

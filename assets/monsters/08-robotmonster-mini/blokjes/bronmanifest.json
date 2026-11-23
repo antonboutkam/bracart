@@ -1,0 +1,62 @@
+{
+  "format": "destructible-block-monsters-v1",
+  "grid_cell_size": [
+    1,
+    1,
+    1
+  ],
+  "axes": {
+    "up": "+Y",
+    "front": "+Z"
+  },
+  "support_rule": "six-face adjacency to a block on y=0",
+  "monsters": [
+    {
+      "id": "08-robotmonster-mini",
+      "name": "Robotmonster",
+      "count": 272,
+      "unique": true,
+      "ground_blocks": 3,
+      "connected_to_ground": true,
+      "unconnected": 0,
+      "dimensions": [
+        28,
+        26,
+        5
+      ],
+      "num_colors": 6,
+      "single_block_breakpoints": 5,
+      "breakpoint_examples": [
+        [
+          19,
+          24,
+          2
+        ],
+        [
+          26,
+          14,
+          2
+        ],
+        [
+          26,
+          15,
+          2
+        ],
+        [
+          26,
+          16,
+          2
+        ],
+        [
+          26,
+          17,
+          2
+        ]
+      ],
+      "raw_voxels": 270,
+      "hollowed": false,
+      "bridge_blocks_added": 2,
+      "source": "08-robotmonster-mini-voorkant-zijkant-achterkant.png"
+    }
+  ]
+}

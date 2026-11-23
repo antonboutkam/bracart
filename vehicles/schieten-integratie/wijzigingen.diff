@@ -1,0 +1,292 @@
+--- a/game/scripts/main.gd
++++ b/game/scripts/main.gd
+@@ -91,7 +91,7 @@
+  var bindings = {
+   "accelerate":[KEY_W, KEY_UP], "brake":[KEY_S, KEY_DOWN],
+   "steer_left":[KEY_A, KEY_LEFT], "steer_right":[KEY_D, KEY_RIGHT],
+-  "boost":[KEY_SHIFT], "power":[KEY_E], "jump":[KEY_SPACE],
++  "boost":[KEY_SHIFT], "power":[KEY_E], "shoot":[KEY_F], "jump":[KEY_SPACE],
+   "pause":[KEY_ESCAPE, KEY_P], "reset_kart":[KEY_R], "rear_look":[KEY_C]
+  }
+  for action in bindings:
+@@ -101,7 +101,7 @@
+    var key = InputEventKey.new()
+    key.physical_keycode = code
+    InputMap.action_add_event(action, key)
+- var buttons = {"jump":JOY_BUTTON_A, "power":JOY_BUTTON_X, "boost":JOY_BUTTON_RIGHT_SHOULDER, "pause":JOY_BUTTON_START, "reset_kart":JOY_BUTTON_Y, "rear_look":JOY_BUTTON_LEFT_SHOULDER}
++ var buttons = {"jump":JOY_BUTTON_A, "power":JOY_BUTTON_X, "shoot":JOY_BUTTON_B, "boost":JOY_BUTTON_RIGHT_SHOULDER, "pause":JOY_BUTTON_START, "reset_kart":JOY_BUTTON_Y, "rear_look":JOY_BUTTON_LEFT_SHOULDER}
+  for action in buttons:
+   var event = InputEventJoypadButton.new()
+   event.button_index = buttons[action]
+@@ -289,6 +289,8 @@
+  if not race.paused and not race.done:
+   if Input.is_action_just_pressed("jump"):
+    race.jump()
++  if Input.is_action_just_pressed("shoot"):
++   race.fire_standard()
+   if Input.is_action_pressed("power"):
+    if Input.is_action_just_pressed("power") or race.player.cannon_time > 0:
+     race.use_power()
+--- a/game/scripts/kart.gd
++++ b/game/scripts/kart.gd
+@@ -1,4 +1,6 @@
+ extends Node3D
++const Ammo = preload("res://scripts/combat/ammo.gd")
++var ammo = Ammo.new()
+ const DriverReactions = preload("res://scripts/driver_reactions.gd")
+ var reactions = DriverReactions.new()
+ const Geo = preload("res://scripts/geometry.gd")
+--- a/game/scripts/race.gd
++++ b/game/scripts/race.gd
+@@ -139,6 +139,7 @@
+   return
+  for key in ["shield_time", "magnet_time", "cannon_time", "stun_time", "boost_time", "hit_cooldown"]:
+   kart.set(key, maxf(0, float(kart.get(key)) - delta))
++ kart.ammo.advance(delta)
+  var stats: Dictionary = Catalog.VEHICLES[kart.vehicle_index]
+  var throttle = clampf(gas, 0, 1)
+  var stopping = clampf(brake, 0, 1)
+@@ -325,16 +326,25 @@
+  if kart == player:
+   notice.emit(power + " actief" + (" — E om te schieten" if power == "Kanonnen" else ""))
+ 
+-func fire(owner_kart, kind: String) -> void:
++func fire_standard(owner_kart = null) -> bool:
++ if owner_kart == null: owner_kart = player
++ if countdown > 0 or paused or done or owner_kart.finish_time >= 0 or not owner_kart.ammo.can_fire():
++  return false
++ if not fire(owner_kart, "bullet"):
++  return false
++ return owner_kart.ammo.fire()
++
++func fire(owner_kart, kind: String) -> bool:
+  # Cooldown applies to repeat cannon fire; each activation remains time limited.
+  if kind == "bullet" and owner_kart.has_meta("shot") and elapsed - float(owner_kart.get_meta("shot")) < 0.3:
+-  return
++  return false
+  if kind == "bullet":
+   owner_kart.set_meta("shot", elapsed)
+  owner_kart.react_to_shot()
+  var mesh = Geo.ball(self, Vector3.ZERO, Vector3.ONE * (0.65 if kind == "bomb" else 0.35), Color("ff8e4b") if kind != "bomb" else Color("303b57"))
+  projectiles.append({"owner":owner_kart, "kind":kind, "progress":owner_kart.progress + (-2 if kind == "bomb" else 2), "lane":owner_kart.lateral, "life":9.0 if kind == "bomb" else 3.0, "node":mesh})
+  sound.emit("shot")
++ return true
+ 
+ func _update_projectiles(delta: float) -> void:
+  for i in range(projectiles.size() - 1, -1, -1):
+--- a/game/scripts/monster/mode.gd
++++ b/game/scripts/monster/mode.gd
+@@ -1,5 +1,7 @@
+ extends Node3D
+ ## Cockpit stunt mode; one player or local alternating turns, with imported targets.
++const Ammo = preload("res://scripts/combat/ammo.gd")
++const Geo = preload("res://scripts/geometry.gd")
+ const Arena = preload("res://scripts/monster/arena.gd")
+ const Kart = preload("res://scripts/kart.gd")
+ const Catalog = preload("res://scripts/catalog.gd")
+@@ -78,6 +80,9 @@
+ var aim_caption: Label
+ var vehicle_picker: PanelContainer
+ var vehicle_buttons: Array[Button] = []
++var player_ammo: Array = [Ammo.new(), Ammo.new()]
++var shots: Array[Dictionary] = []
++var shoot_button: Button
+ 
+ func setup(owner_game, model, players: int = 2) -> void:
+  game = owner_game
+@@ -163,6 +168,9 @@
+  speed_label.custom_minimum_size.x = 200
+  detail_label = ui.label(controls, "", 17, ui.GOLD)
+  detail_label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
++ shoot_button = ui.button(controls, "Schiet 5/5", shoot)
++ shoot_button.name = "ShootButton"
++ shoot_button.custom_minimum_size.x = 135
+  action_button = ui.button(controls, "Start afdaling", action, true)
+  action_button.custom_minimum_size.x = 230
+  controls_label = ui.label(column, "", 14, ui.MUTED)
+@@ -216,6 +224,9 @@
+ 
+ func _prepare_turn(keep_vehicle: bool = false) -> void:
+  impact_replay.reset()
++ for shot in shots:
++  shot.node.queue_free()
++ shots.clear()
+  phase = "ready"
+  phase_time = 0
+  turn_time = 0
+@@ -331,6 +342,9 @@
+    _finish_replay()
+   return
+  phase_time += delta
++ for ammo in player_ammo:
++  ammo.advance(delta)
++ _advance_shots(delta)
+  bird_notice = maxf(0, bird_notice - delta)
+  hit_sound_timer = maxf(0, hit_sound_timer - delta)
+  dive_notice = maxf(0, dive_notice - delta)
+@@ -413,7 +427,7 @@
+     _camera(0, true)
+   if rocket.position.y <= 0 or phase_time >= 16:
+    _splash_down()
+- elif phase == "settling" and arena.chunks.is_empty() and phase_time >= 1.4 and not impact_replay.pending():
++ elif phase == "settling" and arena.chunks.is_empty() and shots.is_empty() and phase_time >= 1.4 and not impact_replay.pending():
+   if float(arena.submerged) / arena.structure.total >= WIN_FRACTION:
+    phase = "finished"
+    action_button.text = "Nog een keer" if player_count == 1 else "Nog een duel"
+@@ -537,6 +551,36 @@
+     aim_text = "Te kort"
+    return
+ 
++func shoot() -> bool:
++ if paused or phase not in ["ramp", "flight"] or not is_instance_valid(rocket):
++  return false
++ var ammo = player_ammo[player]
++ if not ammo.fire(): return false
++ var direction = (-rocket.basis.z).normalized()
++ var start = rocket.position + STRIKE_HEIGHT + direction * 3.0
++ var node = Geo.ball(self, start, Vector3.ONE * 1.2, Color("ffb24a"))
++ shots.append({"node":node, "direction":direction, "life":3.5, "owner":player})
++ game.audio.cue("shot")
++ return true
++
++func _advance_shots(delta: float) -> void:
++ for i in range(shots.size() - 1, -1, -1):
++  var shot: Dictionary = shots[i]
++  var before: Vector3 = shot.node.position
++  var after: Vector3 = before + shot.direction * 180.0 * delta
++  var chunk_start = arena.chunks.size()
++  var broken = arena.impact(before, after, 1.0, shot.owner, shot.direction * 30.0)
++  if broken > 0:
++   hit_count += broken
++   for j in range(chunk_start, arena.chunks.size()):
++    pending_points += arena.chunks[j].target_count * arena.structure.score_multiplier
++   game.audio.cue("hit")
++  shot.node.position = after
++  shot.life -= delta
++  if broken > 0 or shot.life <= 0 or after.y < 0:
++   shot.node.queue_free()
++   shots.remove_at(i)
++
+ func _finish_replay() -> void:
+  impact_replay.finish()
+  phase = "settling"
+@@ -569,7 +613,9 @@
+  turn_label.text = "%s %d · %s%s" % ["SPRONG" if player_count == 1 else "BEURT", turn + 1, "SPELER %d · " % (player + 1) if player_count == 2 else "", Catalog.VEHICLES[vehicle_index].name]
+  title.text = "MONSTERBREKER · " + arena.structure.monster_name.to_upper()
+  speed_label.text = "%d KM/U" % roundi(rocket.speed * 3.6)
+- controls_label.text = "W / ↑ / RT: gas · S / ↓ / LT: rem · A/D / ← → / stick: sturen · Shift / RB: boost · R / Y: herstart aanloop"
++ shoot_button.text = "F / B · " + player_ammo[player].label()
++ shoot_button.disabled = paused or phase not in ["ramp", "flight"] or not player_ammo[player].can_fire()
++ controls_label.text = "W / ↑ / RT: gas · S / ↓ / LT: rem · A/D / ← → / stick: sturen · Shift / RB: boost · F / B: schieten · R / Y: herstart"
+  detail_label.text = "+%d punten · %d %s los" % [turn_score, hit_count, arena.structure.debris_label]
+  if phase in ["flight", "settling"] and pending_points > 0:
+   detail_label.text = "%d punten onderweg naar het water · +%d binnen" % [pending_points, turn_score]
+@@ -583,7 +629,7 @@
+    if aim_ring >= 0:
+     detail_label.text = FlightRings.ROUTES[aim_ring].name + " op je koers · " + detail_label.text
+   "flight":
+-   controls_label.text = "A/D / ← → / stick: bijsturen · Shift / RB: één duikboost per sprong"
++   controls_label.text = "A/D / ← → / stick: bijsturen · Shift / RB: duikboost · F / B: schieten"
+    if hit_count > 0:
+     status.text = _hit_status()
+     if _past_target(rocket.position.z):
+@@ -698,7 +744,10 @@
+ func _input(event: InputEvent) -> void:
+  if paused or phase not in ["ramp", "flight"]:
+   return
+- if event is InputEventKey and event.physical_keycode in [KEY_W, KEY_A, KEY_S, KEY_D, KEY_UP, KEY_DOWN, KEY_LEFT, KEY_RIGHT]:
++ if event.is_action_pressed("shoot") and not event.is_echo():
++  shoot()
++  get_viewport().set_input_as_handled()
++ elif event is InputEventKey and event.physical_keycode in [KEY_W, KEY_A, KEY_S, KEY_D, KEY_UP, KEY_DOWN, KEY_LEFT, KEY_RIGHT]:
+   get_viewport().set_input_as_handled()
+  elif event is InputEventJoypadMotion:
+   get_viewport().set_input_as_handled()
+--- a/game/scripts/interface.gd
++++ b/game/scripts/interface.gd
+@@ -34,6 +34,7 @@
+ var time_label: Label
+ var coin_label: Label
+ var power_label: Label
++var ammo_label: Label
+ var standings_label: Label
+ var effect_label: Label
+ var count_label: Label
+@@ -642,7 +643,7 @@
+   toggle.toggled.connect(func(enabled):
+    game.profile.settings[setting_key] = not enabled if setting_key == "camera_motion" else enabled
+    game.persist())
+- label(box, "WASD / pijltjes: rijden    Shift: boost    E: power-up\nSpatie: springen    R: terug naar het midden    Esc: pauze\nC / LB vasthouden: achterom kijken (vooruitbeeld in venster)\nController: stick / RT / LT / A / X / RB / Start", 15, MUTED)
++ label(box, "WASD / pijltjes: rijden    Shift: boost    E: power-up    F: schieten\nSpatie: springen    R: terug naar het midden    Esc: pauze\nC / LB vasthouden: achterom kijken (vooruitbeeld in venster)\nController: stick / RT / LT / A / X / B / RB / Start", 15, MUTED)
+  label(box, "Stuurhulp is actief. Resolutie en geluid veranderen direct.", 14, GOLD)
+ 
+ func show_hud() -> void:
+@@ -712,6 +713,7 @@
+  coin_label = label(power_box, "0 MUNTJES", 25, GOLD)
+  power_label = label(power_box, "E / X   •   Vind een verrassingsblok", 15)
+  power_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
++ ammo_label = label(power_box, "F / B • 5/5", 14, GOLD)
+  effect_label = label(power_box, "", 13, MUTED)
+  effect_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+  count_label = at(hud, "3", Vector2(540, 240), 96, GOLD)
+@@ -731,7 +733,7 @@
+  section_label.size.x = 650
+  section_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+  _outline(section_label, 3)
+- at(hud, "WASD rijden   •   E power-up   •   Spatie springen   •   C / LB achterom   •   Esc pauze", Vector2(405, 753), 13, MUTED)
++ at(hud, "WASD rijden   •   E power-up   •   F schieten   •   Spatie springen   •   C / LB achterom", Vector2(405, 753), 13, MUTED)
+  if game.profile.settings.get("touch_controls", false) or DisplayServer.is_touchscreen_available() or "--touch" in OS.get_cmdline_user_args():
+   race_gauge.scale = Vector2(0.55, 0.55)
+   race_gauge.position = Vector2(1090, 616)
+@@ -748,8 +750,8 @@
+  return style
+ 
+ func _touch_controls() -> void:
+- var entries = [["←", "steer_left"], ["→", "steer_right"], ["Rem", "brake"], ["Gas", "accelerate"], ["Boost", "boost"], ["Power", "power"], ["Spring", "jump"]]
+- var positions = [Vector2(28, 550), Vector2(124, 550), Vector2(1068, 550), Vector2(1164, 550), Vector2(1164, 464), Vector2(28, 464), Vector2(124, 464)]
++ var entries = [["←", "steer_left"], ["→", "steer_right"], ["Rem", "brake"], ["Gas", "accelerate"], ["Boost", "boost"], ["Power", "power"], ["Spring", "jump"], ["Schiet", "shoot"]]
++ var positions = [Vector2(28, 550), Vector2(124, 550), Vector2(1068, 550), Vector2(1164, 550), Vector2(1164, 464), Vector2(28, 464), Vector2(124, 464), Vector2(220, 464)]
+  for i in entries.size():
+   var touch = TouchAction.new()
+   hud.add_child(touch)
+@@ -775,6 +777,7 @@
+  record_label.text = "Beste race  " + time_string(record) if record > 0 else "Beste race  —"
+  section_label.text = race.track.section_name(race.player.progress) if race.track.has_method("section_name") else ""
+  coin_label.text = "%d MUNTJES" % race.collected
++ ammo_label.text = "F / B  •  Schoten " + race.player.ammo.label()
+  power_label.text = "E / X  •  " + (race.player.power if race.player.power != "" else "Vind een verrassingsblok")
+  if race.player.cannon_time > 0:
+   power_label.text = "E / X  •  Kanonnen — schieten!"
+--- a/game/tests/ui_layout.gd
++++ b/game/tests/ui_layout.gd
+@@ -83,7 +83,7 @@
+  for child in ui.hud.get_children():
+   if child is TouchAction:
+    touch_count += 1
+- check(touch_count == 7, "Touch setting exposes seven independent action targets")
++ check(touch_count == 8, "Touch setting exposes eight independent action targets")
+  ui.update_hud(0)
+  check("Ronde" in ui.current_lap_label.text and "Beste race" in ui.record_label.text, "HUD exposes lap timer and world record")
+  check(not ui.section_label.text.is_empty(), "HUD describes current track section")
+--- a/game/tools/check.sh
++++ b/game/tools/check.sh
+@@ -8,6 +8,6 @@
+ export XDG_CONFIG_HOME="$boracer_test_dir/config"
+ export XDG_DATA_HOME="$boracer_test_dir/data"
+ "$boracer_engine" --headless --path "$boracer_game" --import --quiet
+-for boracer_test in render_resolution monster_breaker monster_selection_responsive fractured_monster fractured_collection impact_replay profile_storage default_vehicle vehicle_audio vehicle_audio_qa world_geometry uithoorn_ground uithoorn_landmarks outdoor_life street_walkers street_walkers_main outdoor_life_qa kitchen_props kitchen_photo_qa kitchen_course kitchen_adventure_props kitchen_course_qa kitchen_adventure_qa nature_accents race_feedback quickwins_qa world_art architecture street_districts street_scene_qa tram_motion reward_weather kart_visuals garage_presentation garage_features garage_interaction_qa dutch_sky_horizons dutch_world_qa aircraft aircraft_qa birds birds_qa race_behavior rear_view rear_view_qa follow_camera camera_composition home_duo_preview home_dashboard_qa ui_layout ui_sfeer world_concepts ui_input_devices game10001_integration smoke input_flow integration_audit tracks_v2 tracks_v2_flight tracks_v2_ui tracks_v2_clearance victory_podium; do
++for boracer_test in standard_ammo render_resolution monster_breaker monster_selection_responsive fractured_monster fractured_collection impact_replay profile_storage default_vehicle vehicle_audio vehicle_audio_qa world_geometry uithoorn_ground uithoorn_landmarks outdoor_life street_walkers street_walkers_main outdoor_life_qa kitchen_props kitchen_photo_qa kitchen_course kitchen_adventure_props kitchen_course_qa kitchen_adventure_qa nature_accents race_feedback quickwins_qa world_art architecture street_districts street_scene_qa tram_motion reward_weather kart_visuals garage_presentation garage_features garage_interaction_qa dutch_sky_horizons dutch_world_qa aircraft aircraft_qa birds birds_qa race_behavior rear_view rear_view_qa follow_camera camera_composition home_duo_preview home_dashboard_qa ui_layout ui_sfeer world_concepts ui_input_devices game10001_integration smoke input_flow integration_audit tracks_v2 tracks_v2_flight tracks_v2_ui tracks_v2_clearance victory_podium; do
+   "$boracer_engine" --headless --audio-driver Dummy --path "$boracer_game" --script "tests/$boracer_test.gd"
+ done
+--- a/game/README.md
++++ b/game/README.md
+@@ -412,3 +412,9 @@
+ In de garage staat het gekozen voertuig naast de coureurs. Bij de kaart van
+ dat voertuig vervalt de selectieknop; de andere voertuigen kun je blijven
+ selecteren of kopen.
++
++## Altijd kunnen schieten
++
++In races en Monsterbreker heeft iedere speler vijf gewone schoten. Druk op **F** of de **B-knop** van de controller; in de race is ook een aanraakknop beschikbaar. Na het vijfde schot duurt het 30 seconden speeltijd voordat de voorraad weer vol is. Tijdens pauze staat de timer stil. Monsterbreker toont een schietknop en geeft iedere speler een eigen voorraad. Gewone schoten staan los van de bestaande power-up **Kanonnen** (E / X).
++
++Schoten in Monsterbreker maken bij een treffer stukken los; punten worden toegekend wanneer de stukken het water bereiken. Controle: `tests/standard_ammo.gd`, opgenomen in `tools/check.sh`.

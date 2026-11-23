@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-"""Copy the reviewed Gifspuwer and derive convex clipping planes without dependencies."""
+"""Copy breakable monsters and derive convex clipping planes without dependencies."""
 import hashlib
 import itertools
 import json
 import math
-import shutil
+import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -43,10 +43,10 @@ def planes_for(points):
     return list(planes.values())
 
 
-def main():
-    data = json.loads((SOURCE / "breekstukken.json").read_text())
+def sync(data_bytes, model_bytes, destination):
+    data = json.loads(data_bytes)
     pieces = {piece["id"]: piece for piece in data["pieces"]}
-    assert len(pieces) == len(data["pieces"]) == 76
+    assert len(pieces) == len(data["pieces"]) and pieces
     assert data["up"] == "+Y" and data["front"] == "+Z" and data["units"] == "m"
     assert math.isclose(sum(p["scoreWeight"] for p in pieces.values()), 1.0)
     hulls = {}
@@ -67,15 +67,34 @@ def main():
                 reached.add(neighbor)
                 queue.append(neighbor)
     assert reached == pieces.keys(), "Unsupported pieces in source"
-    DEST.mkdir(parents=True, exist_ok=True)
-    for name in ("gifspuwer-breekbaar.glb", "breekstukken.json"):
-        shutil.copyfile(SOURCE / name, DEST / name)
+    destination.mkdir(parents=True, exist_ok=True)
+    (destination / data["model"]).write_bytes(model_bytes)
+    (destination / "breekstukken.json").write_bytes(data_bytes)
     derived = {
-        "source_sha256": hashlib.sha256((SOURCE / "breekstukken.json").read_bytes()).hexdigest(),
+        "source_sha256": hashlib.sha256(data_bytes).hexdigest(),
         "planes": hulls,
     }
-    (DEST / "collision-planes.json").write_text(json.dumps(derived, separators=(",", ":")) + "\n")
-    print(f"Copied Gifspuwer: {len(pieces)} pieces, {sum(map(len, hulls.values()))} convex planes; source unchanged.")
+    (destination / "collision-planes.json").write_text(json.dumps(derived, separators=(",", ":")) + "\n")
+    print(f"{destination.name}: {len(pieces)} pieces, {sum(map(len, hulls.values()))} convex planes")
+
+
+def main():
+    sync((SOURCE / "breekstukken.json").read_bytes(), (SOURCE / "gifspuwer-breekbaar.glb").read_bytes(), DEST)
+    sources = {
+        "slakkenoog-breekbaar": "03-slakkenoog-blauw/slakkenoog-blauw-monsterbreker.zip",
+        "stippelmonster-breekbaar": "04-bolle-stippelmonster/bolle-stippelmonster-monsterbreker.zip",
+        "stekelmonster-breekbaar": "05-paars-stekelig-monster/paars-stekelmonster-monsterbreker (1).zip",
+        "pluismonster-breekbaar": "06-oranje-pluismonster/oranje-pluismonster-monsterbreker (2).zip",
+        "girafnek-breekbaar": "07-gele-girafnek/gele-girafnek-monsterbreker.zip",
+        "robotmonster-breekbaar": "08-robotmonster-mini/mini-robotmonster-monsterbreker.zip",
+        "paars-spook-breekbaar": "09-paarse-spook/paars-spook-monsterbreker.zip",
+    }
+    for monster_id, relative in sources.items():
+        with zipfile.ZipFile(ROOT / "assets/monsters" / relative) as archive:
+            data_bytes = archive.read("breekstukken.json")
+            model = json.loads(data_bytes)["model"]
+            assert Path(model).name == model
+            sync(data_bytes, archive.read(model), DEST.parent / monster_id)
 
 
 if __name__ == "__main__":

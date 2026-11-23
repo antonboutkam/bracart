@@ -1,0 +1,162 @@
+--- a/game/scripts/profile.gd
++++ b/game/scripts/profile.gd
+@@ -12,7 +12,8 @@
+ var character: String = "boaz"
+ var records: Dictionary = {}
+ var settings: Dictionary = {"music":0.35, "sound":0.65, "difficulty":0, "shadows":true,
+- "camera_motion":true, "auto_accelerate":false, "touch_controls":false, "render_height":0}
++ "camera_motion":true, "auto_accelerate":false, "touch_controls":false, "render_height":0,
++ "antialias":true, "impact_replay":true, "show_fps":false}
+ var storage_path: String = SAVE_PATH
+ var available: Array
+ var last_error: String = ""
+@@ -81,7 +82,7 @@
+   var render_height = _number(data.settings.get("render_height"), 0)
+   var height_id = int(render_height)
+   settings.render_height = height_id if float(height_id) == render_height and height_id in RENDER_HEIGHTS else 0
+-  for key in ["shadows", "camera_motion", "auto_accelerate", "touch_controls"]:
++  for key in ["shadows", "camera_motion", "auto_accelerate", "touch_controls", "antialias", "impact_replay", "show_fps"]:
+    if data.settings.get(key) is bool:
+     settings[key] = data.settings[key]
+ 
+--- a/game/scripts/main.gd
++++ b/game/scripts/main.gd
+@@ -84,6 +84,7 @@
+  # Window/SubViewport.size uses actual pixels, unlike the stretched UI's visible rect.
+  var pixels: Vector2i = viewport.get("size")
+  var limit: int = profile.settings.render_height
++ viewport.msaa_3d = Viewport.MSAA_2X if profile.settings.antialias else Viewport.MSAA_DISABLED
+  viewport.scaling_3d_mode = Viewport.SCALING_3D_MODE_BILINEAR
+  viewport.scaling_3d_scale = minf(1.0, float(limit) / maxi(1, pixels.y)) if limit > 0 else 1.0
+ 
+@@ -304,6 +305,8 @@
+  race.step(delta, gas, Input.get_action_strength("brake"), Input.get_axis("steer_left", "steer_right"), Input.is_action_pressed("boost"))
+ 
+ func _process(delta: float) -> void:
++ if is_instance_valid(ui):
++  ui.update_fps(delta)
+  if not is_instance_valid(track):
+   return
+  var freeze_race = mode == "race" and is_instance_valid(race) and race.paused
+--- a/game/scripts/interface.gd
++++ b/game/scripts/interface.gd
+@@ -19,6 +19,8 @@
+ var race_gauge
+ var rank_rows: Array = []
+ var layout_root: Control
++var fps_label: Label
++var fps_interval: float = 0.0
+ var active_page: String = "home"
+ var previous_focus: Control
+ var current_lap_label: Label
+@@ -79,8 +81,23 @@
+  base.add_child(overlay)
+  overlay.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+  overlay.mouse_filter = Control.MOUSE_FILTER_IGNORE
++ fps_label = at(base, "FPS: --", Vector2(1150, 4), 15, GOLD)
++ fps_label.name = "FpsCounter"
++ fps_label.mouse_filter = Control.MOUSE_FILTER_IGNORE
++ fps_label.z_index = 100
++ fps_label.add_theme_color_override("font_outline_color", INK)
++ fps_label.add_theme_constant_override("outline_size", 4)
++ fps_label.visible = game.profile.settings.show_fps
+  get_viewport().size_changed.connect(_resize_layout)
+  _resize_layout()
++
++func update_fps(delta: float) -> void:
++ fps_label.visible = game.profile.settings.show_fps
++ if not fps_label.visible: return
++ fps_interval -= delta
++ if fps_interval <= 0:
++  fps_interval = 0.5
++  fps_label.text = "FPS: %d" % Engine.get_frames_per_second()
+ 
+ func _resize_layout() -> void:
+  var available = get_viewport().get_visible_rect().size
+@@ -633,6 +650,32 @@
+  shadows.toggled.connect(func(enabled):
+   game.profile.settings.shadows = enabled
+   game.sun.shadow_enabled = enabled
++  game.persist())
++ var antialias = CheckButton.new()
++ antialias.name = "AntialiasSetting"
++ antialias.text = "Zachte randen (uit voor meer snelheid)"
++ antialias.button_pressed = game.profile.settings.antialias
++ box.add_child(antialias)
++ antialias.toggled.connect(func(enabled):
++  game.profile.settings.antialias = enabled
++  game.apply_render_resolution()
++  game.persist())
++ var replay = CheckButton.new()
++ replay.name = "ImpactReplaySetting"
++ replay.text = "Herhaling na botsing in Monsterbreker"
++ replay.button_pressed = game.profile.settings.impact_replay
++ box.add_child(replay)
++ replay.toggled.connect(func(enabled):
++  game.profile.settings.impact_replay = enabled
++  game.persist())
++ var fps = CheckButton.new()
++ fps.name = "FpsSetting"
++ fps.text = "Toon FPS-teller"
++ fps.button_pressed = game.profile.settings.show_fps
++ box.add_child(fps)
++ fps.toggled.connect(func(enabled):
++  game.profile.settings.show_fps = enabled
++  update_fps(0)
+   game.persist())
+  for entry in [["Rustige camera (minder boostbeweging)", "camera_motion"], ["Automatisch gas geven", "auto_accelerate"], ["Aanraakknoppen op het scherm", "touch_controls"]]:
+   var setting_key: String = entry[1]
+--- a/game/scripts/monster/mode.gd
++++ b/game/scripts/monster/mode.gd
+@@ -412,7 +412,8 @@
+   var momentum = velocity * (0.26 if dive_used else 0.12)
+   var broken: int = arena.impact(before + STRIKE_HEIGHT, rocket.position + STRIKE_HEIGHT, _impact_radius(), player, momentum)
+   if broken > 0:
+-   impact_replay.mark_hit(rocket.position)
++   if game.profile.settings.impact_replay:
++    impact_replay.mark_hit(rocket.position)
+    hit_count += broken
+    for i in range(chunk_start, arena.chunks.size()):
+     pending_points += arena.chunks[i].target_count * arena.structure.score_multiplier
+@@ -438,7 +439,7 @@
+   action_button.disabled = false
+   action_button.grab_focus()
+  rocket.update_effects(delta)
+- if phase in ["flight", "settling"]:
++ if game.profile.settings.impact_replay and phase in ["flight", "settling"]:
+   impact_replay.record(delta, self)
+  if phase == "settling" and impact_replay.complete():
+   phase = "replay"
+--- a/game/tests/ui_layout.gd
++++ b/game/tests/ui_layout.gd
+@@ -56,7 +56,7 @@
+  await process_frame
+  await process_frame
+  var toggles = descendants(ui.screen, "CheckButton")
+- check(toggles.size() == 4, "Settings expose shadows, quiet camera, auto acceleration and touch")
++ check(toggles.size() == 7, "Settings expose graphics, replay, FPS and input preferences")
+  for toggle in toggles:
+   var bounds: Rect2 = toggle.get_global_rect()
+   check(bounds.end.y <= ui.layout_root.get_global_rect().end.y, "Setting controls remain within logical page")
+--- a/game/tools/check.sh
++++ b/game/tools/check.sh
+@@ -8,6 +8,6 @@
+ export XDG_CONFIG_HOME="$boracer_test_dir/config"
+ export XDG_DATA_HOME="$boracer_test_dir/data"
+ "$boracer_engine" --headless --path "$boracer_game" --import --quiet
+-for boracer_test in standard_ammo render_resolution monster_breaker monster_selection_responsive fractured_monster fractured_collection impact_replay profile_storage default_vehicle vehicle_audio vehicle_audio_qa world_geometry uithoorn_ground uithoorn_landmarks outdoor_life street_walkers street_walkers_main outdoor_life_qa kitchen_props kitchen_photo_qa kitchen_course kitchen_adventure_props kitchen_course_qa kitchen_adventure_qa nature_accents race_feedback quickwins_qa world_art architecture street_districts street_scene_qa tram_motion reward_weather kart_visuals garage_presentation garage_features garage_interaction_qa dutch_sky_horizons dutch_world_qa aircraft aircraft_qa birds birds_qa race_behavior rear_view rear_view_qa follow_camera camera_composition home_duo_preview home_dashboard_qa ui_layout ui_sfeer world_concepts ui_input_devices game10001_integration smoke input_flow integration_audit tracks_v2 tracks_v2_flight tracks_v2_ui tracks_v2_clearance victory_podium; do
++for boracer_test in standard_ammo performance_options render_resolution monster_breaker monster_selection_responsive fractured_monster fractured_collection impact_replay profile_storage default_vehicle vehicle_audio vehicle_audio_qa world_geometry uithoorn_ground uithoorn_landmarks outdoor_life street_walkers street_walkers_main outdoor_life_qa kitchen_props kitchen_photo_qa kitchen_course kitchen_adventure_props kitchen_course_qa kitchen_adventure_qa nature_accents race_feedback quickwins_qa world_art architecture street_districts street_scene_qa tram_motion reward_weather kart_visuals garage_presentation garage_features garage_interaction_qa dutch_sky_horizons dutch_world_qa aircraft aircraft_qa birds birds_qa race_behavior rear_view rear_view_qa follow_camera camera_composition home_duo_preview home_dashboard_qa ui_layout ui_sfeer world_concepts ui_input_devices game10001_integration smoke input_flow integration_audit tracks_v2 tracks_v2_flight tracks_v2_ui tracks_v2_clearance victory_podium; do
+   "$boracer_engine" --headless --audio-driver Dummy --path "$boracer_game" --script "tests/$boracer_test.gd"
+ done
+--- a/game/README.md
++++ b/game/README.md
+@@ -418,3 +418,9 @@
+ In races en Monsterbreker heeft iedere speler vijf gewone schoten. Druk op **F** of de **B-knop** van de controller; in de race is ook een aanraakknop beschikbaar. Na het vijfde schot duurt het 30 seconden speeltijd voordat de voorraad weer vol is. Tijdens pauze staat de timer stil. Monsterbreker toont een schietknop en geeft iedere speler een eigen voorraad. Gewone schoten staan los van de bestaande power-up **Kanonnen** (E / X).
+ 
+ Schoten in Monsterbreker maken bij een treffer stukken los; punten worden toegekend wanneer de stukken het water bereiken. Controle: `tests/standard_ammo.gd`, opgenomen in `tools/check.sh`.
++
++## Meer FPS zonder de resolutie aan te passen
++
++Onder **Instellingen** kun je **Zachte randen** uitschakelen (minder randverzachting), **Schaduwen** uitschakelen en de **herhaling na botsing in Monsterbreker** uitzetten. De herhaling uitschakelen voorkomt ook het opnemen ervan; de normale botsingen en score blijven werken. De instellingen staan standaard aan zoals voorheen.
++
++Met **Toon FPS-teller** vergelijk je zelf dezelfde situatie vóór en na een aanpassing. Begin bijvoorbeeld met alleen de herhaling uit in Monsterbreker, en vergelijk daarna zachte randen of schaduwen. FPS hangt af van je computer en de scène; een hogere FPS is niet vooraf gegarandeerd. De 3D-resolutie blijft bij deze opties gelijk.

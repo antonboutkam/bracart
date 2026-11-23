@@ -1,0 +1,107 @@
+{
+  "gemaakt_op": "2026-11-21",
+  "bronmap": "assets/monters",
+  "monsters": [
+    {
+      "id": "01-gifspuwer-rood",
+      "naam": "Gifspuwer",
+      "map": "01-gifspuwer-rood",
+      "zip": "01-gifspuwer-rood.zip",
+      "zip_bytes": 22261781,
+      "zip_sha256": "7fa3c60c201bf84c3d91956461a13844e0625a6b431952d96326a7c91df06ae8",
+      "bestanden": 42,
+      "blokken": 1741
+    },
+    {
+      "id": "02-schouderreus-turkoois",
+      "naam": "Schouderreus",
+      "map": "02-schouderreus-turkoois",
+      "zip": "02-schouderreus-turkoois.zip",
+      "zip_bytes": 8822992,
+      "zip_sha256": "6be8f1b1c4169d0b10c9b0a8dcec1edf87bb3c25bc34263731140708d4645276",
+      "bestanden": 16,
+      "blokken": 1780
+    },
+    {
+      "id": "03-slakkenoog-blauw",
+      "naam": "Slakkenoog",
+      "map": "03-slakkenoog-blauw",
+      "zip": "03-slakkenoog-blauw.zip",
+      "zip_bytes": 6864594,
+      "zip_sha256": "02e00d1b27c1b78994196107598c3542225037f8054debbed0aa746b88406e71",
+      "bestanden": 14,
+      "blokken": 1290
+    },
+    {
+      "id": "04-bolle-stippelmonster",
+      "naam": "Bolle Stippel",
+      "map": "04-bolle-stippelmonster",
+      "zip": "04-bolle-stippelmonster.zip",
+      "zip_bytes": 5666386,
+      "zip_sha256": "02039d2df7c53ef2f20d801e32f11f94de942bfbc762489166240a8c0785aaed",
+      "bestanden": 14,
+      "blokken": 1961
+    },
+    {
+      "id": "05-paars-stekelig-monster",
+      "naam": "Stekelmonster",
+      "map": "05-paars-stekelig-monster",
+      "zip": "05-paars-stekelig-monster.zip",
+      "zip_bytes": 7808666,
+      "zip_sha256": "19b4f554cf00a0545382b415a2c3377fd114e4898548b49b221072977bdb4339",
+      "bestanden": 14,
+      "blokken": 864
+    },
+    {
+      "id": "06-oranje-pluismonster",
+      "naam": "Pluismonster",
+      "map": "06-oranje-pluismonster",
+      "zip": "06-oranje-pluismonster.zip",
+      "zip_bytes": 8046925,
+      "zip_sha256": "5bd82237d90cb8cc09f157c16e8a692d7f361f41efa22f36b0abd6a66b6f42f5",
+      "bestanden": 14,
+      "blokken": 1906
+    },
+    {
+      "id": "07-gele-girafnek",
+      "naam": "Girafnek",
+      "map": "07-gele-girafnek",
+      "zip": "07-gele-girafnek.zip",
+      "zip_bytes": 4791696,
+      "zip_sha256": "00d6201364a08e3159804431ba5f759c09dd1e94b4a503377bb4fef5b1d07e62",
+      "bestanden": 14,
+      "blokken": 732
+    },
+    {
+      "id": "08-robotmonster-mini",
+      "naam": "Robotmonster",
+      "map": "08-robotmonster-mini",
+      "zip": "08-robotmonster-mini.zip",
+      "zip_bytes": 4942434,
+      "zip_sha256": "4a2ee389906bbcd66a7e49c2da33d4ede68a110ef989967763ea7d5b68eff40d",
+      "bestanden": 15,
+      "blokken": 272
+    },
+    {
+      "id": "09-paarse-spook",
+      "naam": "Paars Spook",
+      "map": "09-paarse-spook",
+      "zip": "09-paarse-spook.zip",
+      "zip_bytes": 8775618,
+      "zip_sha256": "de0c62e935ebf525f5239986e64211ad4520c4deb70dc5511e62f8710c6c1a45",
+      "bestanden": 16,
+      "blokken": 1134
+    },
+    {
+      "id": "10-geelgroene-spook",
+      "naam": "Groen Spook",
+      "map": "10-geelgroene-spook",
+      "zip": "10-geelgroene-spook.zip",
+      "zip_bytes": 8082334,
+      "zip_sha256": "46c952eec38d0a427190cf5c2dbf911dd6fc938af8bb6338cd4a04c48ae28ed9",
+      "bestanden": 15,
+      "blokken": 1293
+    }
+  ],
+  "voorbeeld_zip": "voorbeeld-gifspuwer.zip"
+}

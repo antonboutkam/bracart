@@ -1,0 +1,98 @@
+{
+  "monster_id": "09-paarse-spook",
+  "exclusief": [
+    "bestanden.json"
+  ],
+  "bestanden": [
+    {
+      "pad": "LEESMIJ.md",
+      "bytes": 2232,
+      "sha256": "f2c55a80cf6c71d399e54ec4f5fe2fa3aca69bd83a8e25e6ab5d7f8ad14e6b5a",
+      "bron": "Gegenereerde documentatie of metagegevens voor dit monster"
+    },
+    {
+      "pad": "OPDRACHT-CHATGPT.md",
+      "bytes": 1638,
+      "sha256": "e74ee981f780d7891266f605362caf5922802333e4d59a649048d5f96f79680a",
+      "bron": "Gegenereerde documentatie of metagegevens voor dit monster"
+    },
+    {
+      "pad": "TECHNISCHE-EISEN.md",
+      "bytes": 2644,
+      "sha256": "81e5a78f8d72ea4f22879856c7574e29d42244216a4979636a101cd034ca1638",
+      "bron": "Gegenereerde documentatie of metagegevens voor dit monster"
+    },
+    {
+      "pad": "afbeeldingen/illustratie.png",
+      "bytes": 2515894,
+      "sha256": "e36174ffd0a6458d0fe37eed7a34a64c6c39683a12e51eb5360b5c2f5b7a5d17",
+      "bron": "assets/monters/losse-monsters/09-paarse-spook.png"
+    },
+    {
+      "pad": "afbeeldingen/voorbeeld-blokjesmodel.png",
+      "bytes": 861617,
+      "sha256": "f5531a36d86f787697c42d12668f4db9b928d430d1ba421643f26f84b40b1787",
+      "bron": "assets/monters/monster-blokjes-10/voorbeelden/09-paarse-spook.png"
+    },
+    {
+      "pad": "afbeeldingen/voorbeeld-organisch-proefmodel.png",
+      "bytes": 961961,
+      "sha256": "68b922e71579fe605f4d6c4905f6dcbdf0014e60dea4d98e021c75759c35e81d",
+      "bron": "assets/monters/monsters-3d-proefmodellen/voorbeelden/09-paarse-spook.png"
+    },
+    {
+      "pad": "afbeeldingen/voorkant-zijkant-achterkant.png",
+      "bytes": 2496057,
+      "sha256": "07bf644275cc1161327ad997f199cd98209ef3781176919e317308baab0533ca",
+      "bron": "assets/monters/monsters-drie-aanzichten/09-paarse-spook-voorkant-zijkant-achterkant.png"
+    },
+    {
+      "pad": "blokjes/blokken.json",
+      "bytes": 44358,
+      "sha256": "32666fb07f68621eeb07f729d73359b2cc6a6ba618c3575fdd04c754b5c239bb",
+      "bron": "assets/monters/monster-blokjes-10/json/09-paarse-spook.json"
+    },
+    {
+      "pad": "blokjes/bronmanifest.json",
+      "bytes": 733,
+      "sha256": "1de83854d922137c5fcd1579da91f5cd5a3433a218ed9b9269c71a59aad707f3",
+      "bron": "Gegenereerde documentatie of metagegevens voor dit monster"
+    },
+    {
+      "pad": "bronnotities/blokjesmodellen.md",
+      "bytes": 2736,
+      "sha256": "97b148fb754912b91649e51143b86f93e388dd827d0a690fca26612ec06b34f1",
+      "bron": "assets/monters/monster-blokjes-10/README.md"
+    },
+    {
+      "pad": "bronnotities/organische-proefmodellen.md",
+      "bytes": 1279,
+      "sha256": "444850a659f100e38c2f0e284ee49b5c8d7882ee853a5db261c35033307dd01a",
+      "bron": "assets/monters/monsters-3d-proefmodellen/README.md"
+    },
+    {
+      "pad": "gegevens.json",
+      "bytes": 1100,
+      "sha256": "40d6877a9c1ea4125ea9eb0b3e68274452e64e0334fde77a324245d39caf9c82",
+      "bron": "Gegenereerde documentatie of metagegevens voor dit monster"
+    },
+    {
+      "pad": "modellen/blokjesmodel.glb",
+      "bytes": 109144,
+      "sha256": "8158247f93a60d23eefb7097246d184764db549762e56049aaa56bbc8601a1f5",
+      "bron": "assets/monters/monster-blokjes-10/glb/09-paarse-spook.glb"
+    },
+    {
+      "pad": "modellen/organisch-proefmodel.glb",
+      "bytes": 4180224,
+      "sha256": "ef18576547a1516eb75598ef8279a8051644a03b1d4612e64940575b223e4129",
+      "bron": "assets/monters/monsters-3d-proefmodellen/09-paarse-spook.glb"
+    },
+    {
+      "pad": "spelgegevens/catalogus-item.json",
+      "bytes": 273,
+      "sha256": "d04931d973e7c9857fb2026580ee52b66ddf15fe7a56c956cb6a86ba308d07ad",
+      "bron": "Gegenereerde documentatie of metagegevens voor dit monster"
+    }
+  ]
+}

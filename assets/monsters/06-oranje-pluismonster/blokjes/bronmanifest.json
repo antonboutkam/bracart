@@ -1,0 +1,36 @@
+{
+  "format": "destructible-block-monsters-v1",
+  "grid_cell_size": [
+    1,
+    1,
+    1
+  ],
+  "axes": {
+    "up": "+Y",
+    "front": "+Z"
+  },
+  "support_rule": "six-face adjacency to a block on y=0",
+  "monsters": [
+    {
+      "id": "06-oranje-pluismonster",
+      "name": "Pluismonster",
+      "count": 1906,
+      "unique": true,
+      "ground_blocks": 42,
+      "connected_to_ground": true,
+      "unconnected": 0,
+      "dimensions": [
+        16,
+        30,
+        5
+      ],
+      "num_colors": 8,
+      "single_block_breakpoints": 0,
+      "breakpoint_examples": [],
+      "raw_voxels": 1906,
+      "hollowed": false,
+      "bridge_blocks_added": 0,
+      "source": "06-oranje-pluismonster-voorkant-zijkant-achterkant.png"
+    }
+  ]
+}

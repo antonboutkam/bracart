@@ -1,0 +1,34 @@
+{
+  "import": {
+    "exit_code": 0,
+    "log": "import.log"
+  },
+  "game-materials": {
+    "exit_code": 0,
+    "log": "game-materials.log"
+  },
+  "kart_visuals": {
+    "exit_code": 0,
+    "log": "kart_visuals.log"
+  },
+  "driver_reactions": {
+    "exit_code": 0,
+    "log": "driver_reactions.log"
+  },
+  "garage_presentation": {
+    "exit_code": 1,
+    "log": "garage_presentation.log"
+  },
+  "garage_current_catalog": {
+    "exit_code": 0,
+    "log": "garage_current_catalog.log"
+  },
+  "follow_camera": {
+    "exit_code": 0,
+    "log": "follow_camera.log"
+  },
+  "smoke": {
+    "exit_code": 0,
+    "log": "smoke.log"
+  }
+}

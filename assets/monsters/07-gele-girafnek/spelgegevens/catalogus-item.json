@@ -1,0 +1,12 @@
+{
+  "id": "07-gele-girafnek",
+  "name": "Girafnek",
+  "blocks": 732,
+  "dimensions": [
+    12,
+    32,
+    4
+  ],
+  "source": "assets/monters/monster-blokjes-10/json/07-gele-girafnek.json",
+  "sha256": "4157850ee87b5c169dfcedb8bffa90643e29ba3110a667285eec3627dd39b92b"
+}

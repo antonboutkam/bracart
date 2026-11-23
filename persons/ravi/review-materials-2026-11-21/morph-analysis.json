@@ -1,0 +1,134 @@
+{
+  "character": "ravi",
+  "identical_position_morph_groups": [
+    [
+      "smile",
+      "happy",
+      "cheer",
+      "celebrate"
+    ],
+    [
+      "laugh",
+      "mouth_open"
+    ],
+    [
+      "sad",
+      "frown"
+    ],
+    [
+      "brows_up",
+      "nervous"
+    ],
+    [
+      "confident",
+      "cheeky",
+      "playful"
+    ]
+  ],
+  "states": [
+    {
+      "name": "neutral",
+      "moved_vertices": 0,
+      "max_coordinate_delta_m": 0.0
+    },
+    {
+      "name": "smile",
+      "moved_vertices": 122,
+      "max_coordinate_delta_m": 0.006431639194488525
+    },
+    {
+      "name": "happy",
+      "moved_vertices": 122,
+      "max_coordinate_delta_m": 0.006431639194488525
+    },
+    {
+      "name": "laugh",
+      "moved_vertices": 124,
+      "max_coordinate_delta_m": 0.02679842710494995
+    },
+    {
+      "name": "surprised",
+      "moved_vertices": 3078,
+      "max_coordinate_delta_m": 0.02679842710494995
+    },
+    {
+      "name": "angry",
+      "moved_vertices": 274,
+      "max_coordinate_delta_m": 0.01286327838897705
+    },
+    {
+      "name": "sad",
+      "moved_vertices": 274,
+      "max_coordinate_delta_m": 0.01286327838897705
+    },
+    {
+      "name": "wink_left",
+      "moved_vertices": 1978,
+      "max_coordinate_delta_m": 0.02619802951812744
+    },
+    {
+      "name": "wink_right",
+      "moved_vertices": 1976,
+      "max_coordinate_delta_m": 0.02619802951812744
+    },
+    {
+      "name": "mouth_open",
+      "moved_vertices": 124,
+      "max_coordinate_delta_m": 0.02679842710494995
+    },
+    {
+      "name": "blink",
+      "moved_vertices": 3954,
+      "max_coordinate_delta_m": 0.02619802951812744
+    },
+    {
+      "name": "frown",
+      "moved_vertices": 274,
+      "max_coordinate_delta_m": 0.01286327838897705
+    },
+    {
+      "name": "brows_up",
+      "moved_vertices": 152,
+      "max_coordinate_delta_m": 0.01286327838897705
+    },
+    {
+      "name": "brows_down",
+      "moved_vertices": 152,
+      "max_coordinate_delta_m": 0.008689820766448975
+    },
+    {
+      "name": "confident",
+      "moved_vertices": 76,
+      "max_coordinate_delta_m": 0.0096474289894104
+    },
+    {
+      "name": "cheeky",
+      "moved_vertices": 76,
+      "max_coordinate_delta_m": 0.0096474289894104
+    },
+    {
+      "name": "playful",
+      "moved_vertices": 76,
+      "max_coordinate_delta_m": 0.0096474289894104
+    },
+    {
+      "name": "cheer",
+      "moved_vertices": 122,
+      "max_coordinate_delta_m": 0.006431639194488525
+    },
+    {
+      "name": "celebrate",
+      "moved_vertices": 122,
+      "max_coordinate_delta_m": 0.006431639194488525
+    },
+    {
+      "name": "nervous",
+      "moved_vertices": 152,
+      "max_coordinate_delta_m": 0.01286327838897705
+    }
+  ],
+  "limit": "This compares exported position deltas, not the appearance of combined facial controls.",
+  "measured_source": "backups/2026-11-21-materials/ravi/ravi.glb",
+  "measured_source_sha256": "69bae3d32cc5e240b9f1c42c57ddacbfa9822ef5a00a6f9f8dacb29110efcf6d",
+  "scope_evidence": "scope-audit.json confirms all morph deltas unchanged in the new material export"
+}

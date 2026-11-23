@@ -34,7 +34,7 @@ func run() -> void:
  await shot("01b-garage")
  game.choose_monster(1)
  await shot("02-monster-choice")
- game.start_monster("02-schouderreus-turkoois", 1)
+ game.start_monster("gifspuwer-breekbaar", 1)
  canvas.disable_3d = false
  canvas.scaling_3d_scale = 0.5
  var mode = game.monster_mode

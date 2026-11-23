@@ -1,0 +1,92 @@
+{
+  "monster_id": "10-geelgroene-spook",
+  "exclusief": [
+    "bestanden.json"
+  ],
+  "bestanden": [
+    {
+      "pad": "LEESMIJ.md",
+      "bytes": 2236,
+      "sha256": "bc5c90e95306dcd40c96a017b47942c5caa3b115139206bf5c12f7f69aded2f7",
+      "bron": "Gegenereerde documentatie of metagegevens voor dit monster"
+    },
+    {
+      "pad": "OPDRACHT-CHATGPT.md",
+      "bytes": 1642,
+      "sha256": "554d01cceeceae30e5b4abbca914e69703a547ee101d63592467eefd16adbfa0",
+      "bron": "Gegenereerde documentatie of metagegevens voor dit monster"
+    },
+    {
+      "pad": "TECHNISCHE-EISEN.md",
+      "bytes": 2644,
+      "sha256": "81e5a78f8d72ea4f22879856c7574e29d42244216a4979636a101cd034ca1638",
+      "bron": "Gegenereerde documentatie of metagegevens voor dit monster"
+    },
+    {
+      "pad": "afbeeldingen/illustratie.png",
+      "bytes": 2728343,
+      "sha256": "dd6919fa986da575010b2f6975f1fbf6e464f4fe449c13a6cb4ae47c39ed61aa",
+      "bron": "assets/monters/losse-monsters/10-geelgroene-spook.png"
+    },
+    {
+      "pad": "afbeeldingen/voorbeeld-blokjesmodel.png",
+      "bytes": 864531,
+      "sha256": "45d5a33633f47da4134a66e0a8e3c6661a7c9c07ab118355ef068d363e49f68b",
+      "bron": "assets/monters/monster-blokjes-10/voorbeelden/10-geelgroene-spook.png"
+    },
+    {
+      "pad": "afbeeldingen/voorkant-zijkant-achterkant.png",
+      "bytes": 2490782,
+      "sha256": "6e0541cd7d89a653dd3581f92386aeb1cd2845b2a8361dd96129c084cf1330f3",
+      "bron": "assets/monters/monsters-drie-aanzichten/10-geelgroene-spook-voorkant-zijkant-achterkant.png"
+    },
+    {
+      "pad": "blokjes/blokken.json",
+      "bytes": 50600,
+      "sha256": "4690f16de8c627641077ca0b739147930026ae0bdfe49c4d1cbd453b89d647df",
+      "bron": "assets/monters/monster-blokjes-10/json/10-geelgroene-spook.json"
+    },
+    {
+      "pad": "blokjes/bronmanifest.json",
+      "bytes": 868,
+      "sha256": "b4e59bc1f14f76a7d5a9666090ee6c05ff973ab20fddc5a7daecd75d554ab64b",
+      "bron": "Gegenereerde documentatie of metagegevens voor dit monster"
+    },
+    {
+      "pad": "bronnotities/blokjesmodellen.md",
+      "bytes": 2736,
+      "sha256": "97b148fb754912b91649e51143b86f93e388dd827d0a690fca26612ec06b34f1",
+      "bron": "assets/monters/monster-blokjes-10/README.md"
+    },
+    {
+      "pad": "bronnotities/organische-proefmodellen.md",
+      "bytes": 1279,
+      "sha256": "444850a659f100e38c2f0e284ee49b5c8d7882ee853a5db261c35033307dd01a",
+      "bron": "assets/monters/monsters-3d-proefmodellen/README.md"
+    },
+    {
+      "pad": "gegevens.json",
+      "bytes": 1103,
+      "sha256": "b0cdc123a251172dbc1a844f27ee9f5a0960ad0d1a757f48803f91bda9acb88e",
+      "bron": "Gegenereerde documentatie of metagegevens voor dit monster"
+    },
+    {
+      "pad": "modellen/blokjesmodel.glb",
+      "bytes": 124204,
+      "sha256": "208418dda7695ca56f8030e882a3e75ebcc6641b932f1ce7b68ffcb2a17d5361",
+      "bron": "assets/monters/monster-blokjes-10/glb/10-geelgroene-spook.glb"
+    },
+    {
+      "pad": "modellen/organisch-proefmodel.glb",
+      "bytes": 4350272,
+      "sha256": "3dd629d153df9305974b1e92100baf452d867f58ce4f4752c3034b8862e35f27",
+      "bron": "assets/monters/monsters-3d-proefmodellen/10-geelgroene-spook.glb"
+    },
+    {
+      "pad": "spelgegevens/catalogus-item.json",
+      "bytes": 281,
+      "sha256": "db9a6f766871be900af3114ca6536d1a229f39dde77147c030aa6c6835dd25f9",
+      "bron": "Gegenereerde documentatie of metagegevens voor dit monster"
+    }
+  ]
+}

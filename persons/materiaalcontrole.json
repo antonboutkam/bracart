@@ -1,0 +1,18 @@
+{
+  "boaz": {
+    "triangles": 65518,
+    "geometry_bit_exact": true,
+    "Blender_import": "passed",
+    "Godot_checks": 75,
+    "fresh_render_count": 6,
+    "source_sha256": "1cf9efb612f508b80b1ac387fffc5ff4276b4bb92541d282b2a9063027b8e7cd"
+  },
+  "ravi": {
+    "triangles": 46304,
+    "geometry_bit_exact": true,
+    "Blender_import": "passed",
+    "Godot_checks": 75,
+    "fresh_render_count": 6,
+    "source_sha256": "d753d51709dcffe4c289d51a376d4d7187ef5e48e5f051c5641575cf2caef819"
+  }
+}

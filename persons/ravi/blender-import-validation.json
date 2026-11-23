@@ -1,5 +1,7 @@
 {
   "file": "ravi.glb",
+  "source_sha256": "d753d51709dcffe4c289d51a376d4d7187ef5e48e5f051c5641575cf2caef819",
+  "Blender": "5.3.0",
   "fresh_Blender_import": "passed",
   "height_m": 1.1500007892486224,
   "meshes": 1,
@@ -13,5 +15,15 @@
     "Kart_Steer",
     "Run"
   ],
+  "embedded_image_sizes": {
+    "ravi_basecolor": [
+      2048,
+      2048
+    ],
+    "ravi_orm": [
+      2048,
+      2048
+    ]
+  },
   "Godot_runtime": "not tested"
 }

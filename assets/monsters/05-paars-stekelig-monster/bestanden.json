@@ -1,0 +1,86 @@
+{
+  "monster_id": "05-paars-stekelig-monster",
+  "exclusief": [
+    "bestanden.json"
+  ],
+  "bestanden": [
+    {
+      "pad": "LEESMIJ.md",
+      "bytes": 2301,
+      "sha256": "20b8390a3ce136e696b41dcc494e7ae1c4346ead61653a28669082d80ab023df",
+      "bron": "Gegenereerde documentatie of metagegevens voor dit monster"
+    },
+    {
+      "pad": "OPDRACHT-CHATGPT.md",
+      "bytes": 1650,
+      "sha256": "29f0af1cb3a1c22419327560b22f60b3db069e2719ff582fce722cb2e3cf50e4",
+      "bron": "Gegenereerde documentatie of metagegevens voor dit monster"
+    },
+    {
+      "pad": "TECHNISCHE-EISEN.md",
+      "bytes": 2644,
+      "sha256": "81e5a78f8d72ea4f22879856c7574e29d42244216a4979636a101cd034ca1638",
+      "bron": "Gegenereerde documentatie of metagegevens voor dit monster"
+    },
+    {
+      "pad": "afbeeldingen/illustratie.png",
+      "bytes": 2470011,
+      "sha256": "79510c8a795e316abd59263331eee9d4902e995b094d653b0b4624c6ccbabcdb",
+      "bron": "assets/monters/losse-monsters/05-paars-stekelig-monster.png"
+    },
+    {
+      "pad": "afbeeldingen/voorkant-zijkant-achterkant.png",
+      "bytes": 2969247,
+      "sha256": "74fbbac3628f5513676a0d120486d35039ac20f0ca5a790a7c7d69f71352884f",
+      "bron": "assets/monters/monsters-drie-aanzichten/05-paars-stekelig-monster-voorkant-zijkant-achterkant.png"
+    },
+    {
+      "pad": "blokjes/blokken.json",
+      "bytes": 33944,
+      "sha256": "fc8795355c224b30c7b4947107754a13c105156dd69401db3e434d1dce57d4e4",
+      "bron": "assets/monters/monster-blokjes-10/json/05-paars-stekelig-monster.json"
+    },
+    {
+      "pad": "blokjes/bronmanifest.json",
+      "bytes": 820,
+      "sha256": "50bacaa533438600eba463aa4507385ec58b5b360c2d55176e38507b486a2863",
+      "bron": "Gegenereerde documentatie of metagegevens voor dit monster"
+    },
+    {
+      "pad": "bronnotities/blokjesmodellen.md",
+      "bytes": 2736,
+      "sha256": "97b148fb754912b91649e51143b86f93e388dd827d0a690fca26612ec06b34f1",
+      "bron": "assets/monters/monster-blokjes-10/README.md"
+    },
+    {
+      "pad": "bronnotities/organische-proefmodellen.md",
+      "bytes": 1279,
+      "sha256": "444850a659f100e38c2f0e284ee49b5c8d7882ee853a5db261c35033307dd01a",
+      "bron": "assets/monters/monsters-3d-proefmodellen/README.md"
+    },
+    {
+      "pad": "gegevens.json",
+      "bytes": 1108,
+      "sha256": "82ad3a8d48d759064cba42e48af08a13e0bd253dc2397b5f7ef99ee6f81148dc",
+      "bron": "Gegenereerde documentatie of metagegevens voor dit monster"
+    },
+    {
+      "pad": "modellen/blokjesmodel.glb",
+      "bytes": 84220,
+      "sha256": "08bed0eab61d7c4a86069213d873d3faf022e21e7595a56c270c73828d8c8497",
+      "bron": "assets/monters/monster-blokjes-10/glb/05-paars-stekelig-monster.glb"
+    },
+    {
+      "pad": "modellen/organisch-proefmodel.glb",
+      "bytes": 4945396,
+      "sha256": "ee70e4de1813ab4dc4c2a5529a3412b19d8002553825e683943ebb9593b3d59b",
+      "bron": "assets/monters/monsters-3d-proefmodellen/05-paars-stekelig-monster.glb"
+    },
+    {
+      "pad": "spelgegevens/catalogus-item.json",
+      "bytes": 294,
+      "sha256": "15b58d6196c0a4b3ff5141edb2475547b01c0fd0a4a4dc0c8cd1427065c4e6e4",
+      "bron": "Gegenereerde documentatie of metagegevens voor dit monster"
+    }
+  ]
+}

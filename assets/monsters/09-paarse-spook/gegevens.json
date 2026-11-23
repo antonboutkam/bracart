@@ -1,0 +1,44 @@
+{
+  "id": "09-paarse-spook",
+  "naam": "Paars Spook",
+  "verzameld_op": "2026-11-21",
+  "bronmap": "assets/monters",
+  "status_organisch_model": "proefmodel",
+  "verfijnd_breekbaar_spelmodel_aanwezig": false,
+  "blokjes": {
+    "aantal": 1134,
+    "afmetingen_gemeten_xyz": [
+      19,
+      30,
+      6
+    ],
+    "afmetingen_historisch_manifest_xyz": [
+      19,
+      30,
+      6
+    ],
+    "manifest_afmetingen_komen_overeen": true,
+    "identiek_aan_spel_json": true
+  },
+  "modellen": {
+    "modellen/blokjesmodel.glb": {
+      "bytes": 109144,
+      "nodes": 1135,
+      "meshes": 7,
+      "materials": 7,
+      "external_resources": [],
+      "header_and_json_valid": true
+    },
+    "modellen/organisch-proefmodel.glb": {
+      "bytes": 4180224,
+      "nodes": 1,
+      "meshes": 1,
+      "materials": 1,
+      "external_resources": [],
+      "header_and_json_valid": true
+    }
+  },
+  "ontbrekende_proefmodel_render": false,
+  "ontbrekende_blokjesmodel_render": false,
+  "opmerking": "Bronnotities en historische spelcontrole zijn oorspronkelijke momentopnamen; geen nieuwe goedkeuring."
+}

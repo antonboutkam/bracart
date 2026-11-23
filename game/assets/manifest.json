@@ -36,18 +36,18 @@
     "playable": true
   },
   "boaz": {
-    "source": "persons/boaz/review-step3/after/boaz.glb",
-    "sha256": "e0221bbb8047c7aa362e18e8be259615cb440b6a073534e7e7ce2f483a33fd57",
+    "source": "persons/boaz/review-materials-2026-11-21/after/boaz.glb",
+    "sha256": "1cf9efb612f508b80b1ac387fffc5ff4276b4bb92541d282b2a9063027b8e7cd",
     "materials": 1,
-    "integration_stage": "costume-step3",
-    "visual_review": "pending klant; zie centrale fasebeelden"
+    "integration_stage": "material-refinement-2026-11-21",
+    "visual_review": "zie persons/ANALYSE-PERSONAGES.md"
   },
   "ravi": {
-    "source": "persons/ravi/review-step3/after/ravi.glb",
-    "sha256": "69bae3d32cc5e240b9f1c42c57ddacbfa9822ef5a00a6f9f8dacb29110efcf6d",
+    "source": "persons/ravi/review-materials-2026-11-21/after/ravi.glb",
+    "sha256": "d753d51709dcffe4c289d51a376d4d7187ef5e48e5f051c5641575cf2caef819",
     "materials": 1,
-    "integration_stage": "costume-step3",
-    "visual_review": "pending klant; zie centrale fasebeelden"
+    "integration_stage": "material-refinement-2026-11-21",
+    "visual_review": "zie persons/ANALYSE-PERSONAGES.md"
   },
   "uithoorn-rechthuis": {
     "source": "assets/straatbeeld/uithoorn/rechthuis/model.glb",
@@ -120,5 +120,12 @@
     "visual_review": "pending; native phase25 and independent QA",
     "source_note": "User-supplied photographs and reconstructed AI references; embedded cropped base-color textures; artistic roughness/metallic; no baked normal-map claim",
     "playable": false
+  },
+  "ufo": {
+    "source": "vehicles/ufo/ufo-spel.glb",
+    "sha256": "88bbaeb391c0fafc60c1e4a7f573daa3dc5cedf9f672c8ee6e07426b1f80a177",
+    "materials": 8,
+    "gltf_y_up": true,
+    "playable": true
   }
 }

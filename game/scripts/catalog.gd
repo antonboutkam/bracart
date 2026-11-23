@@ -7,7 +7,8 @@ const VEHICLES = [
  {"id":"golden-rocket-racer", "name":"Golden Rocket", "price":140, "speed":44.0, "accel":12.0, "handling":0.9, "color":"ffc44e"},
  {"id":"toxic-turbo", "name":"Toxic Turbo", "price":200, "speed":46.0, "accel":15.0, "handling":0.85, "color":"a4ee35"},
  {"id":"retro", "name":"Retro Racer", "price":0, "speed":41.0, "accel":16.0, "handling":1.1, "color":"ff944f"},
- {"id":"rainbow", "name":"Rainbow Jet", "price":160, "speed":43.0, "accel":14.0, "handling":1.2, "color":"ff79b9"}
+ {"id":"rainbow", "name":"Rainbow Jet", "price":160, "speed":43.0, "accel":14.0, "handling":1.2, "color":"ff79b9"},
+ {"id":"ufo", "name":"Kermis-UFO", "price":0, "speed":41.0, "accel":14.0, "handling":1.0, "color":"008f82"}
 ]
 const WORLDS = [
  {"id":"sunset-park", "name":"Sunset Park", "subtitle":"Raketpret aan de kust", "tag":"KERMIS • GLOOIEND", "sky":"dc7f99", "ground":"26576b", "road":"334c70", "accent":"ffbf61", "image":"sunset"},

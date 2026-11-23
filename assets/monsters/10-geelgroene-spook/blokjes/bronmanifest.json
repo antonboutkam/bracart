@@ -1,0 +1,47 @@
+{
+  "format": "destructible-block-monsters-v1",
+  "grid_cell_size": [
+    1,
+    1,
+    1
+  ],
+  "axes": {
+    "up": "+Y",
+    "front": "+Z"
+  },
+  "support_rule": "six-face adjacency to a block on y=0",
+  "monsters": [
+    {
+      "id": "10-geelgroene-spook",
+      "name": "Groen Spook",
+      "count": 1293,
+      "unique": true,
+      "ground_blocks": 60,
+      "connected_to_ground": true,
+      "unconnected": 0,
+      "dimensions": [
+        19,
+        30,
+        6
+      ],
+      "num_colors": 7,
+      "single_block_breakpoints": 2,
+      "breakpoint_examples": [
+        [
+          8,
+          28,
+          2
+        ],
+        [
+          8,
+          29,
+          2
+        ]
+      ],
+      "raw_voxels": 2784,
+      "hollowed": true,
+      "bridge_blocks_added": 51,
+      "source": "10-geelgroene-spook-voorkant-zijkant-achterkant.png"
+    }
+  ]
+}

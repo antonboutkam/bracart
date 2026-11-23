@@ -1,0 +1,92 @@
+{
+  "monster_id": "08-robotmonster-mini",
+  "exclusief": [
+    "bestanden.json"
+  ],
+  "bestanden": [
+    {
+      "pad": "LEESMIJ.md",
+      "bytes": 2295,
+      "sha256": "7e04e67a4725cda11b4bd4333726acbc355fde734f021ac2444cbb649fca6b52",
+      "bron": "Gegenereerde documentatie of metagegevens voor dit monster"
+    },
+    {
+      "pad": "OPDRACHT-CHATGPT.md",
+      "bytes": 1644,
+      "sha256": "108fa03cea88275a42c1d9044d4249c996ec43353cb515a0e1744e2788c1b30a",
+      "bron": "Gegenereerde documentatie of metagegevens voor dit monster"
+    },
+    {
+      "pad": "TECHNISCHE-EISEN.md",
+      "bytes": 2644,
+      "sha256": "81e5a78f8d72ea4f22879856c7574e29d42244216a4979636a101cd034ca1638",
+      "bron": "Gegenereerde documentatie of metagegevens voor dit monster"
+    },
+    {
+      "pad": "afbeeldingen/illustratie.png",
+      "bytes": 1917742,
+      "sha256": "b958b7a73500483647a0ac1f09a7dbbb50c77d36e1a9f642942a8e80f85724cd",
+      "bron": "assets/monters/losse-monsters/08-robotmonster-mini.png"
+    },
+    {
+      "pad": "afbeeldingen/voorbeeld-blokjesmodel.png",
+      "bytes": 843774,
+      "sha256": "4c11b5d9f09416aa2cb63acf49362207cfe54e0ef0d01061f0a5784ca4ed4cba",
+      "bron": "assets/monters/monster-blokjes-10/voorbeelden/08-robotmonster-mini.png"
+    },
+    {
+      "pad": "afbeeldingen/voorkant-zijkant-achterkant.png",
+      "bytes": 1344814,
+      "sha256": "f410f930c07cbb32d2ef05122ff58cf4d3e25e4598a069366bdfe73dc7a8b673",
+      "bron": "assets/monters/monsters-drie-aanzichten/08-robotmonster-mini-voorkant-zijkant-achterkant.png"
+    },
+    {
+      "pad": "blokjes/blokken.json",
+      "bytes": 10839,
+      "sha256": "14fe9cbb37f2df158adc0e107819cd047e320f4ebdf45e6bbe32895e2e2df328",
+      "bron": "assets/monters/monster-blokjes-10/json/08-robotmonster-mini.json"
+    },
+    {
+      "pad": "blokjes/bronmanifest.json",
+      "bytes": 1053,
+      "sha256": "8b1ecf2ebb24b1bbf68d5c47ce96979ab5fe984e728ee4ad87346a7db41e8b4f",
+      "bron": "Gegenereerde documentatie of metagegevens voor dit monster"
+    },
+    {
+      "pad": "bronnotities/blokjesmodellen.md",
+      "bytes": 2736,
+      "sha256": "97b148fb754912b91649e51143b86f93e388dd827d0a690fca26612ec06b34f1",
+      "bron": "assets/monters/monster-blokjes-10/README.md"
+    },
+    {
+      "pad": "bronnotities/organische-proefmodellen.md",
+      "bytes": 1279,
+      "sha256": "444850a659f100e38c2f0e284ee49b5c8d7882ee853a5db261c35033307dd01a",
+      "bron": "assets/monters/monsters-3d-proefmodellen/README.md"
+    },
+    {
+      "pad": "gegevens.json",
+      "bytes": 1103,
+      "sha256": "d077c326ef34c68ceec6182804e7b6dd1f04d49557d339cb4a1588af61e6598d",
+      "bron": "Gegenereerde documentatie of metagegevens voor dit monster"
+    },
+    {
+      "pad": "modellen/blokjesmodel.glb",
+      "bytes": 28828,
+      "sha256": "2ad78a994dc477d8c537a6407f8291683c225c1a6500fe3bd85b61fed670ce4d",
+      "bron": "assets/monters/monster-blokjes-10/glb/08-robotmonster-mini.glb"
+    },
+    {
+      "pad": "modellen/organisch-proefmodel.glb",
+      "bytes": 1643320,
+      "sha256": "65a0e3c5ac46b1d2cec6747e0eac43f44bf374e7938496b3f51533f08f123b79",
+      "bron": "assets/monters/monsters-3d-proefmodellen/08-robotmonster-mini.glb"
+    },
+    {
+      "pad": "spelgegevens/catalogus-item.json",
+      "bytes": 283,
+      "sha256": "2c85b8cd9f0d095099e26a6ec1be697ca3ab92e6739ef676ecc61c92991e4b7b",
+      "bron": "Gegenereerde documentatie of metagegevens voor dit monster"
+    }
+  ]
+}

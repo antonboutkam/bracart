@@ -1,0 +1,17 @@
+{
+  "Godot_version": "4.7.2-stable (official)",
+  "bounds": "[P: (-0.309528, 0.0, -0.130581), S: (0.619056, 1.15, 0.310861)]",
+  "candidate": "/home/anton/Documents/sites/boracart/public_html/boracer/game/../persons/ravi/ravi.glb",
+  "checks": 75,
+  "clips": [
+    "Cheer",
+    "Idle",
+    "Jump",
+    "Kart_Sit",
+    "Kart_Steer",
+    "Run"
+  ],
+  "failures": [],
+  "rendering": "headless; no native image or visual gameplay approval",
+  "runtime_import": "passed"
+}

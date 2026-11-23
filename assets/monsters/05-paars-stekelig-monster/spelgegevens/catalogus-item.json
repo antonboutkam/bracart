@@ -1,0 +1,12 @@
+{
+  "id": "05-paars-stekelig-monster",
+  "name": "Stekelmonster",
+  "blocks": 864,
+  "dimensions": [
+    17,
+    29,
+    3
+  ],
+  "source": "assets/monters/monster-blokjes-10/json/05-paars-stekelig-monster.json",
+  "sha256": "fc8795355c224b30c7b4947107754a13c105156dd69401db3e434d1dce57d4e4"
+}

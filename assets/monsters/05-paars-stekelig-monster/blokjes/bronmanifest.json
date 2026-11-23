@@ -1,0 +1,42 @@
+{
+  "format": "destructible-block-monsters-v1",
+  "grid_cell_size": [
+    1,
+    1,
+    1
+  ],
+  "axes": {
+    "up": "+Y",
+    "front": "+Z"
+  },
+  "support_rule": "six-face adjacency to a block on y=0",
+  "monsters": [
+    {
+      "id": "05-paars-stekelig-monster",
+      "name": "Stekelmonster",
+      "count": 864,
+      "unique": true,
+      "ground_blocks": 11,
+      "connected_to_ground": true,
+      "unconnected": 0,
+      "dimensions": [
+        17,
+        30,
+        5
+      ],
+      "num_colors": 7,
+      "single_block_breakpoints": 1,
+      "breakpoint_examples": [
+        [
+          13,
+          5,
+          2
+        ]
+      ],
+      "raw_voxels": 864,
+      "hollowed": false,
+      "bridge_blocks_added": 0,
+      "source": "05-paars-stekelig-monster-voorkant-zijkant-achterkant.png"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "format": "destructible-block-monsters-v1",
+  "grid_cell_size": [
+    1,
+    1,
+    1
+  ],
+  "axes": {
+    "up": "+Y",
+    "front": "+Z"
+  },
+  "support_rule": "six-face adjacency to a block on y=0",
+  "monsters": [
+    {
+      "id": "01-gifspuwer-rood",
+      "name": "Gifspuwer",
+      "count": 1741,
+      "unique": true,
+      "ground_blocks": 64,
+      "connected_to_ground": true,
+      "unconnected": 0,
+      "dimensions": [
+        26,
+        30,
+        8
+      ],
+      "num_colors": 8,
+      "single_block_breakpoints": 1,
+      "breakpoint_examples": [
+        [
+          21,
+          22,
+          5
+        ]
+      ],
+      "raw_voxels": 3276,
+      "hollowed": true,
+      "bridge_blocks_added": 0,
+      "source": "01-gifspuwer-rood-voorkant-zijkant-achterkant.png"
+    }
+  ]
+}

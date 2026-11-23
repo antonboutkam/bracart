@@ -1,0 +1,12 @@
+{
+  "id": "02-schouderreus-turkoois",
+  "name": "Schouderreus",
+  "blocks": 1780,
+  "dimensions": [
+    23,
+    30,
+    5
+  ],
+  "source": "assets/monters/monster-blokjes-10/json/02-schouderreus-turkoois.json",
+  "sha256": "f1dcc86b6ae61b701ad1f20f2c0a1aec1703f64afab3b0bd89a402e8ba8d91a9"
+}

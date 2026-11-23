@@ -1,0 +1,12 @@
+{
+  "id": "09-paarse-spook",
+  "name": "Paars Spook",
+  "blocks": 1134,
+  "dimensions": [
+    19,
+    30,
+    6
+  ],
+  "source": "assets/monters/monster-blokjes-10/json/09-paarse-spook.json",
+  "sha256": "32666fb07f68621eeb07f729d73359b2cc6a6ba618c3575fdd04c754b5c239bb"
+}

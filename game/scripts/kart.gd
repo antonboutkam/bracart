@@ -1,4 +1,6 @@
 extends Node3D
+const Ammo = preload("res://scripts/combat/ammo.gd")
+var ammo = Ammo.new()
 const DriverReactions = preload("res://scripts/driver_reactions.gd")
 var reactions = DriverReactions.new()
 const Geo = preload("res://scripts/geometry.gd")
@@ -63,7 +65,7 @@ func setup(index: int, character_id: String, computer: bool) -> void:
   var manifest = JSON.parse_string(FileAccess.get_file_as_string("res://assets/manifest.json"))
   var asset: Dictionary = manifest.get(Catalog.VEHICLES[index].id, {})
   # Legacy raw exports use Z-up with different forward axes. Improved GLBs use Y-up.
-  var legacy: bool = not "-improved" in str(asset.get("source", ""))
+  var legacy: bool = not bool(asset.get("gltf_y_up", "-improved" in str(asset.get("source", ""))))
   if legacy:
    if index == 0:
     model.basis = Basis(Vector3.RIGHT, Vector3.FORWARD, Vector3.UP)

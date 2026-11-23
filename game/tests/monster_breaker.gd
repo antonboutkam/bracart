@@ -3,6 +3,7 @@ const Main = preload("res://scripts/main.gd")
 const Structure = preload("res://scripts/monster/structure.gd")
 const Collection = preload("res://scripts/monster/catalog.gd")
 const Arena = preload("res://scripts/monster/arena.gd")
+const LEGACY_TEST_ID = "02-schouderreus-turkoois"
 const Birds = preload("res://scripts/monster/birds.gd")
 const FlightRings = preload("res://scripts/monster/flight_rings.gd")
 var checks = 0
@@ -41,7 +42,7 @@ func settle(mode, gas: float = 1, boost: bool = false) -> void:
   if mode.phase in ["between", "finished"]:
    break
 
-func controlled(id: String = Collection.DEFAULT_ID, players: int = 2):
+func controlled(id: String = LEGACY_TEST_ID, players: int = 2):
  game.start_monster(id, players)
  var mode = game.monster_mode
  mode.set_physics_process(false)
@@ -49,8 +50,9 @@ func controlled(id: String = Collection.DEFAULT_ID, players: int = 2):
  return mode
 
 func run() -> void:
- var entries: Array = Collection.entries()
- check(entries.size() == 12, "Ten block monsters, the refined Gifspuwer and the original dragon are selectable")
+ var playable: Array = Collection.entries()
+ check(playable.size() == 8 and playable.all(func(e): return e.get("format") == "fractured"), "Only eight refined monsters are selectable")
+ var entries: Array = JSON.parse_string(FileAccess.get_file_as_string(Collection.DIRECTORY + "catalog.json"))
  for entry in entries:
   if entry.get("format") == "fractured": continue # Dedicated fractured_monster.gd checks.
   var model = Structure.new()
@@ -101,13 +103,13 @@ func run() -> void:
  var profile_before = [game.profile.coins, game.profile.selected, game.profile.character, game.profile.records.duplicate(true)]
  await click(game.ui.screen.get_node("SplashSoloTile"))
  check(game.ui.active_page == "monsters" and game.ui.monster_players == 1, "Solo splash tile opens solo monster selection")
- await click(game.ui.screen.find_child("Choose_08-robotmonster-mini", true, false))
- check(game.ui.selected_monster == "08-robotmonster-mini", "Selection changes to the actual imported robot")
+ await click(game.ui.screen.find_child("Choose_robotmonster-breekbaar", true, false))
+ check(game.ui.selected_monster == "robotmonster-breekbaar", "Selection changes to the actual imported robot")
  await click(game.ui.screen.get_node("StartMonster"))
  var mode = game.monster_mode
  mode.set_physics_process(false)
  mode.set_process(false)
- check(mode.player_count == 1 and mode.monster_id == "08-robotmonster-mini" and mode.arena.structure.total == 272, "Start uses the selected JSON monster and solo rules")
+ check(mode.player_count == 1 and mode.monster_id == "robotmonster-breekbaar" and mode.arena.structure.total == 10000, "Start uses the selected JSON monster and solo rules")
  check(game.track == null and game.race == null, "Race world is released for the stunt arena")
  game.go_home()
  game.ui.show_splash()
@@ -193,7 +195,7 @@ func run() -> void:
  mode.step(0.2)
  check(mode.sounds.counts.miss == 1, "Waiting after a miss does not replay its sound")
  # Complete an actual solo game by coasting and steering into the two supports.
- mode = controlled(Collection.DEFAULT_ID, 1)
+ mode = controlled(LEGACY_TEST_ID, 1)
  var target_x: Array[float] = []
  var low_x = 100
  var high_x = -100
@@ -219,23 +221,24 @@ func run() -> void:
  check(mode.scores[0] == mode.arena.submerged * 10, "Large tower collapse awards all target blocks exactly once")
  mode.action()
  await process_frame
- check(game.monster_mode.player_count == 1 and game.monster_mode.monster_id == Collection.DEFAULT_ID and game.monster_mode.scores == [0,0], "Replay keeps selected monster and solo mode, resets scores")
+ check(game.monster_mode.player_count == 1 and game.monster_mode.monster_id == LEGACY_TEST_ID and game.monster_mode.scores == [0,0], "Replay keeps selected monster and solo mode, resets scores")
  mode = controlled("09-paarse-spook", 2)
  mode.scores.assign([40, 20])
  mode.toggle_pause()
  await process_frame
  await process_frame
  var pause_grid = game.ui.overlay.find_child("PauseMonsters", true, false)
- check(pause_grid.get_child_count() == entries.size(), "Pause offers every monster as a tile")
+ check(pause_grid.get_child_count() == playable.size(), "Pause offers every monster as a tile")
  var panel_rect: Rect2 = game.ui.overlay.get_node("MonsterPausePanel").get_global_rect()
- for tile in pause_grid.get_children():
-  check(panel_rect.encloses(tile.get_global_rect()), "Monster tile fits inside pause panel: " + tile.name)
+ var pause_scroll = pause_grid.get_parent() as ScrollContainer
+ check(pause_scroll != null and panel_rect.encloses(pause_scroll.get_global_rect()), "Scrollable monster choices fit inside the pause panel")
+ check(pause_scroll.follow_focus, "Keyboard focus follows the selected monster tile")
  var old_mode = weakref(mode)
- await click(pause_grid.get_node("PauseMonster_08-robotmonster-mini"))
+ await click(pause_grid.get_node("PauseMonster_robotmonster-breekbaar"))
  mode = game.monster_mode
  mode.set_physics_process(false)
  mode.set_process(false)
- check(mode.monster_id == "08-robotmonster-mini" and mode.player_count == 2 and mode.scores == [0, 0] and not mode.paused, "Pause tile directly starts the chosen monster with the same player count and fresh points")
+ check(mode.monster_id == "robotmonster-breekbaar" and mode.player_count == 2 and mode.scores == [0, 0] and not mode.paused, "Pause tile directly starts the chosen monster with the same player count and fresh points")
  check(old_mode.get_ref() == null and game.ui.overlay.get_child_count() == 0, "Changing monster releases the old match and pause previews")
  mode.phase = "finished"
  mode.scores.assign([100,200])
@@ -251,7 +254,7 @@ func run() -> void:
  mode.birds.advance(2)
  check(bird.node.position.distance_to(point) > 10, "Bumped bird flies away instead of being destroyed")
  check(mode.sounds.clips.miss.get_length() > 1 and mode.sounds.clips.bird.get_length() < 0.5, "Comic miss and chirp clips are generated")
- mode = controlled(Collection.DEFAULT_ID, 1)
+ mode = controlled(LEGACY_TEST_ID, 1)
  mode.turn = 2
  mode._prepare_turn()
  mode.action()
@@ -265,7 +268,7 @@ func run() -> void:
   settle(mode, 0.8 if entry.id == "08-robotmonster-mini" else 1.0)
   check(mode.phase == "between" and mode.scores[0] > 0 and mode.arena.chunks.is_empty(), "Complete natural flight, hit, splash and scoring: " + entry.id)
   await process_frame
- mode = controlled(Collection.DEFAULT_ID, 1)
+ mode = controlled(LEGACY_TEST_ID, 1)
  var cells_before_aim: Dictionary = mode.arena.structure.cells.duplicate()
  mode.action()
  while mode.phase == "ramp" and mode.road_z > 65:

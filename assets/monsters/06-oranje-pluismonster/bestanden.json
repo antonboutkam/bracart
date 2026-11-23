@@ -1,0 +1,86 @@
+{
+  "monster_id": "06-oranje-pluismonster",
+  "exclusief": [
+    "bestanden.json"
+  ],
+  "bestanden": [
+    {
+      "pad": "LEESMIJ.md",
+      "bytes": 2299,
+      "sha256": "c15eb5abcafc7c5a8a58e43ab166496f9957e3db742630f21187b8c919c32627",
+      "bron": "Gegenereerde documentatie of metagegevens voor dit monster"
+    },
+    {
+      "pad": "OPDRACHT-CHATGPT.md",
+      "bytes": 1646,
+      "sha256": "120e0c976874f6be7a46c7f8eafe3208b806d41bf6440a0392a27a09779ea236",
+      "bron": "Gegenereerde documentatie of metagegevens voor dit monster"
+    },
+    {
+      "pad": "TECHNISCHE-EISEN.md",
+      "bytes": 2644,
+      "sha256": "81e5a78f8d72ea4f22879856c7574e29d42244216a4979636a101cd034ca1638",
+      "bron": "Gegenereerde documentatie of metagegevens voor dit monster"
+    },
+    {
+      "pad": "afbeeldingen/illustratie.png",
+      "bytes": 2473848,
+      "sha256": "df95fc3350daf3cf737443efa486d756b102fafb7a8cd69c6e178fb1427eb1bb",
+      "bron": "assets/monters/losse-monsters/06-oranje-pluismonster.png"
+    },
+    {
+      "pad": "afbeeldingen/voorkant-zijkant-achterkant.png",
+      "bytes": 3093748,
+      "sha256": "a2dc7dc44f92169def16c980383cc2fd3413e8f49219999d158e8bd833c4c732",
+      "bron": "assets/monters/monsters-drie-aanzichten/06-oranje-pluismonster-voorkant-zijkant-achterkant.png"
+    },
+    {
+      "pad": "blokjes/blokken.json",
+      "bytes": 74536,
+      "sha256": "3f8c340119cb4ca59cb18aae449625d7d4c09db816cbf198feb5d9325fabc592",
+      "bron": "assets/monters/monster-blokjes-10/json/06-oranje-pluismonster.json"
+    },
+    {
+      "pad": "blokjes/bronmanifest.json",
+      "bytes": 749,
+      "sha256": "b6d8f5e156dfdd495c374d58944d576fd767a05c86379a1d6a19197955a17eb4",
+      "bron": "Gegenereerde documentatie of metagegevens voor dit monster"
+    },
+    {
+      "pad": "bronnotities/blokjesmodellen.md",
+      "bytes": 2736,
+      "sha256": "97b148fb754912b91649e51143b86f93e388dd827d0a690fca26612ec06b34f1",
+      "bron": "assets/monters/monster-blokjes-10/README.md"
+    },
+    {
+      "pad": "bronnotities/organische-proefmodellen.md",
+      "bytes": 1279,
+      "sha256": "444850a659f100e38c2f0e284ee49b5c8d7882ee853a5db261c35033307dd01a",
+      "bron": "assets/monters/monsters-3d-proefmodellen/README.md"
+    },
+    {
+      "pad": "gegevens.json",
+      "bytes": 1107,
+      "sha256": "c824ff66309c5567daf09363a3e748122c503b5c418e041ec9963a774b45a541",
+      "bron": "Gegenereerde documentatie of metagegevens voor dit monster"
+    },
+    {
+      "pad": "modellen/blokjesmodel.glb",
+      "bytes": 182196,
+      "sha256": "7a0dbcaa6d32f7400bbf007eb0fadc59466d1d8065b83bf8f114ffca3f7f5968",
+      "bron": "assets/monters/monster-blokjes-10/glb/06-oranje-pluismonster.glb"
+    },
+    {
+      "pad": "modellen/organisch-proefmodel.glb",
+      "bytes": 5254876,
+      "sha256": "2afa73b2ebd74f33193692b63b6598be31187a11df5d5f3909cdef98851d4724",
+      "bron": "assets/monters/monsters-3d-proefmodellen/06-oranje-pluismonster.glb"
+    },
+    {
+      "pad": "spelgegevens/catalogus-item.json",
+      "bytes": 288,
+      "sha256": "789a33f7c2eb8d44c880d2f12f17f8adf994deb395d795e3ff382fc0070f8bf2",
+      "bron": "Gegenereerde documentatie of metagegevens voor dit monster"
+    }
+  ]
+}

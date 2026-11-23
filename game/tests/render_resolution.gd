@@ -37,13 +37,22 @@ func run() -> void:
  check(choice is OptionButton and choice.get_selected_id() == 1080, "Settings show the saved resolution")
  var ui_scale: Vector2 = main.ui.layout_root.scale
  var stretch_size: Vector2i = root.content_scale_size
- for entry in [[0, 1.0], [1440, 2.0 / 3], [1080, 0.5], [720, 1.0 / 3]]:
+ for entry in [[0, 1.0], [1800, 1800.0 / 2160], [1440, 2.0 / 3], [1200, 1200.0 / 2160], [1080, 0.5], [900, 900.0 / 2160], [720, 1.0 / 3], [540, 0.25]]:
   var index: int = choice.get_item_index(entry[0])
   choice.select(index)
   choice.item_selected.emit(index)
   check(is_equal_approx(root.scaling_3d_scale, entry[1]), "Dropdown immediately applies %dp" % entry[0])
   check(Profile.new().settings.render_height == entry[0], "Dropdown persists %dp" % entry[0])
  check(root.size == Vector2i(3840, 2160) and root.content_scale_size == stretch_size and main.ui.layout_root.scale == ui_scale, "Resolution choice preserves window size and sharp UI layout")
+ root.size = Vector2i(1920, 1080)
+ await process_frame
+ check(is_equal_approx(root.scaling_3d_scale, 0.5), "540p scales a 16:9 window without changing its aspect")
+ check(root.content_scale_aspect == Window.CONTENT_SCALE_ASPECT_EXPAND, "Widescreen expands the world instead of cropping it")
+ check(root.get_visible_rect().size.x > 1400, "16:9 displays a wider world than the 16:10 base")
+ var widescreen_rect: Rect2 = main.ui.layout_root.get_global_rect()
+ check(root.get_visible_rect().encloses(widescreen_rect), "Complete UI remains visible on widescreen")
+ main.profile.settings.render_height = 720
+ main.apply_render_resolution()
  root.size = Vector2i(1280, 720)
  await process_frame
  check(is_equal_approx(root.scaling_3d_scale, 1.0), "Smaller windows are never upscaled internally")

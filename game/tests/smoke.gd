@@ -16,8 +16,9 @@ func _initialize() -> void:
 
 func run() -> void:
  var profile_path = "user://smoke-profile.json"
- if FileAccess.file_exists(profile_path):
-  DirAccess.remove_absolute(ProjectSettings.globalize_path(profile_path))
+ for path in [profile_path, profile_path + ".bak"]:
+  if FileAccess.file_exists(path):
+   DirAccess.remove_absolute(ProjectSettings.globalize_path(path))
  var profile = Profile.new(profile_path)
  check(profile.selected == Catalog.DEFAULT_VEHICLE and "retro" in profile.owned and "raketfiets" in profile.owned, "new profile starts with Raketfiets and keeps free garage")
  check(not profile.buy_or_select(2), "insufficient coins cannot buy")
@@ -29,7 +30,8 @@ func run() -> void:
  check(loaded.selected == 2 and loaded.coins == 60, "purchase survives reload")
  check(not loaded.buy_or_select(99), "invalid catalog slot rejected")
  var live_profile = Profile.new("user://smoke-availability.json")
- check(live_profile.available.size() == 6, "all six finished vehicles are available")
+ for id in ["retro", "golden-rocket-racer", "raketfiets", "purple-passion", "toxic-turbo", "rainbow"]:
+  check(Catalog.vehicle_index(id) in live_profile.available, "original vehicle is available: " + id)
  var main = Main.new()
  root.add_child(main)
  await process_frame

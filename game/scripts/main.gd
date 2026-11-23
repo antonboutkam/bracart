@@ -84,6 +84,7 @@ func apply_render_resolution() -> void:
  # Window/SubViewport.size uses actual pixels, unlike the stretched UI's visible rect.
  var pixels: Vector2i = viewport.get("size")
  var limit: int = profile.settings.render_height
+ viewport.msaa_3d = Viewport.MSAA_2X if profile.settings.antialias else Viewport.MSAA_DISABLED
  viewport.scaling_3d_mode = Viewport.SCALING_3D_MODE_BILINEAR
  viewport.scaling_3d_scale = minf(1.0, float(limit) / maxi(1, pixels.y)) if limit > 0 else 1.0
 
@@ -91,7 +92,7 @@ func _inputs() -> void:
  var bindings = {
   "accelerate":[KEY_W, KEY_UP], "brake":[KEY_S, KEY_DOWN],
   "steer_left":[KEY_A, KEY_LEFT], "steer_right":[KEY_D, KEY_RIGHT],
-  "boost":[KEY_SHIFT], "power":[KEY_E], "jump":[KEY_SPACE],
+  "boost":[KEY_SHIFT], "power":[KEY_E], "shoot":[KEY_F], "jump":[KEY_SPACE],
   "pause":[KEY_ESCAPE, KEY_P], "reset_kart":[KEY_R], "rear_look":[KEY_C]
  }
  for action in bindings:
@@ -101,7 +102,7 @@ func _inputs() -> void:
    var key = InputEventKey.new()
    key.physical_keycode = code
    InputMap.action_add_event(action, key)
- var buttons = {"jump":JOY_BUTTON_A, "power":JOY_BUTTON_X, "boost":JOY_BUTTON_RIGHT_SHOULDER, "pause":JOY_BUTTON_START, "reset_kart":JOY_BUTTON_Y, "rear_look":JOY_BUTTON_LEFT_SHOULDER}
+ var buttons = {"jump":JOY_BUTTON_A, "power":JOY_BUTTON_X, "shoot":JOY_BUTTON_B, "boost":JOY_BUTTON_RIGHT_SHOULDER, "pause":JOY_BUTTON_START, "reset_kart":JOY_BUTTON_Y, "rear_look":JOY_BUTTON_LEFT_SHOULDER}
  for action in buttons:
   var event = InputEventJoypadButton.new()
   event.button_index = buttons[action]
@@ -289,6 +290,8 @@ func _physics_process(delta: float) -> void:
  if not race.paused and not race.done:
   if Input.is_action_just_pressed("jump"):
    race.jump()
+  if Input.is_action_just_pressed("shoot"):
+   race.fire_standard()
   if Input.is_action_pressed("power"):
    if Input.is_action_just_pressed("power") or race.player.cannon_time > 0:
     race.use_power()
@@ -302,6 +305,8 @@ func _physics_process(delta: float) -> void:
  race.step(delta, gas, Input.get_action_strength("brake"), Input.get_axis("steer_left", "steer_right"), Input.is_action_pressed("boost"))
 
 func _process(delta: float) -> void:
+ if is_instance_valid(ui):
+  ui.update_fps(delta)
  if not is_instance_valid(track):
   return
  var freeze_race = mode == "race" and is_instance_valid(race) and race.paused

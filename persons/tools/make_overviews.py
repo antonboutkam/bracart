@@ -12,7 +12,7 @@ def main():
     for name in sys.argv[1:] or ['boaz','ravi']:
         out=Image.new('RGB',(1500,1350),'#13202a'); d=ImageDraw.Draw(out)
         d.text((30,20),name.upper()+' / BLENDER 3D',font=ImageFont.truetype(FONT,30),fill='#f3c66a')
-        d.text((30,62),'Eerste modelstudie - werkelijke geometrie en skinning',font=ImageFont.truetype(FONT,18),fill='#c3d0db')
+        d.text((30,62),'Materiaalstudie - echte Blender-geometrie, geen gameplaybeeld',font=ImageFont.truetype(FONT,18),fill='#c3d0db')
         for i,(file,label) in enumerate(VIEWS):
             im=Image.open(ROOT/name/'renders'/file).convert('RGB'); im.thumbnail((490,550))
             x=(i%3)*500; y=105+(i//3)*610

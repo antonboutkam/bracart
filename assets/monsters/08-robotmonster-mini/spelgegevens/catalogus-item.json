@@ -1,0 +1,12 @@
+{
+  "id": "08-robotmonster-mini",
+  "name": "Robotmonster",
+  "blocks": 272,
+  "dimensions": [
+    28,
+    26,
+    1
+  ],
+  "source": "assets/monters/monster-blokjes-10/json/08-robotmonster-mini.json",
+  "sha256": "14fe9cbb37f2df158adc0e107819cd047e320f4ebdf45e6bbe32895e2e2df328"
+}

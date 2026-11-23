@@ -1,0 +1,29 @@
+{
+  "created_utc": "2026-11-21T16:21:47.127326+00:00",
+  "backup": "/home/anton/Documents/sites/boracart/persons/integration-materials-2026-11-21/previous-game-assets",
+  "assets": {
+    "boaz": {
+      "previous_sha256": "e0221bbb8047c7aa362e18e8be259615cb440b6a073534e7e7ce2f483a33fd57",
+      "new_sha256": "1cf9efb612f508b80b1ac387fffc5ff4276b4bb92541d282b2a9063027b8e7cd",
+      "source": "persons/boaz/review-materials-2026-11-21/after/boaz.glb",
+      "runtime": "game/assets/models/boaz.glb"
+    },
+    "ravi": {
+      "previous_sha256": "69bae3d32cc5e240b9f1c42c57ddacbfa9822ef5a00a6f9f8dacb29110efcf6d",
+      "new_sha256": "d753d51709dcffe4c289d51a376d4d7187ef5e48e5f051c5641575cf2caef819",
+      "source": "persons/ravi/review-materials-2026-11-21/after/ravi.glb",
+      "runtime": "game/assets/models/ravi.glb"
+    }
+  },
+  "protected_work": {
+    "game/README.md": "8f76dc4aeca42504affda3b46160800dc3a01742024920c1cba96e8746ad7b46",
+    "game/scripts/interface.gd": "b3b2d468d0862a68b52af157198d1ae9d635ea3f7661e2874a576d917c8036b2",
+    "game/scripts/monster/catalog.gd": "f7f8325bdd55de6c41fbf9232b545585de593d80d325715975e8e51714649683",
+    "game/scripts/monster/fractured_structure.gd": "54da9bcc20ff3469b853fa764c9cca49a04a26eb707139718ddba903fa2019fd",
+    "game/scripts/monster/mode.gd": "a8b7fa76a0374542829e7ab0c7658f97a1a2a138695f9629c650ed5ac37faced",
+    "game/scripts/monster/models.gd": "b85baa9510eea7f6643480e7b0adfcf43294009077f360251772edac045b94c4",
+    "game/tests/monster_breaker.gd": "e03be13b3f06ff8309116b318714a20df32507535aee7258ebac99379bfa52d3",
+    "game/tools/check.sh": "6b2a37702529240489001cd243c11820fca0c40c971573e8daf87fb6ee8868b0",
+    "game/tools/sync_fractured_monster.py": "4917bfe1a539bdc01c4d73a2630cad5d704cdc8ff3bc11571ffda02f096e6e9a"
+  }
+}

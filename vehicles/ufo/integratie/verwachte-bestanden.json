@@ -1,0 +1,7 @@
+{
+  "scripts/catalog.gd": "26ed0464c680437c190176c6c6a81c0925bc626b8d9fe14bc52e20a79219140b",
+  "scripts/kart.gd": "45a27aaecf96d0a933bf889ebc9d2cf13775a9d5f44484219e9b86c5253a8234",
+  "scripts/interface.gd": "b3b2d468d0862a68b52af157198d1ae9d635ea3f7661e2874a576d917c8036b2",
+  "assets/manifest.json": "aaeb55844ae6af982b05786414c610b6e11017b8b8a730e1d584695269e4bd3f",
+  "tests/garage_features.gd": "da5046e765ec60e24db27c13c900e1d1e06c7d937c61c9e1fe1e60733daf947e"
+}

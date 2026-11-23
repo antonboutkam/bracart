@@ -1,0 +1,10 @@
+{
+  "scripts/main.gd": "749cdd0abc34f3d712d52ee899529639092a3b88afbe47cc7a870c0e15360da5",
+  "scripts/kart.gd": "a2bf9d6085f0e15695c0be129d1be2bb1ed5bb106b0cd8af75490314b5dcb7a2",
+  "scripts/race.gd": "d51daa5872259687922ddcd308c589fa2332ad69dde816faf0f59c419e22b868",
+  "scripts/monster/mode.gd": "b93058256fcd226ca1bb26c8e69d9c3d0f41a7766c81e0e2444a8f8867ae8f63",
+  "scripts/interface.gd": "69527ebb5ad4c955f1271d7e928d95967829e1486d64a74077156fb5d6d61c2d",
+  "tests/ui_layout.gd": "40face0951e0b4623fbcdbf546922ecf0223523a89676952a9395c95ea3da4c1",
+  "tools/check.sh": "bc2677704cd5d5f1dd607e725367bd30552ae9cfca572e95ad25f46f7eee6ba3",
+  "README.md": "d37d5c3a6cbf2a194a2aa82707ecc36c3a4f9fbedfd008eb6fd7039c4ac555b4"
+}

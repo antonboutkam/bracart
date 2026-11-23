@@ -1,0 +1,7 @@
+{
+  "scripts/monster/catalog.gd": "f7f8325bdd55de6c41fbf9232b545585de593d80d325715975e8e51714649683",
+  "scripts/monster/mode.gd": "a8b7fa76a0374542829e7ab0c7658f97a1a2a138695f9629c650ed5ac37faced",
+  "tests/monster_breaker.gd": "9130dd02a93a5b6fc942c33235c7b0f14106b51438e025e74ab5936d64020973",
+  "tests/monster_visual.gd": "8eec8ad49ddb591f032cee4e730ce6f4a1c12faf7b59a3cc3bc6d72b233cb3c7",
+  "tools/check.sh": "6b2a37702529240489001cd243c11820fca0c40c971573e8daf87fb6ee8868b0"
+}

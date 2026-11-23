@@ -1,0 +1,12 @@
+{
+  "id": "06-oranje-pluismonster",
+  "name": "Pluismonster",
+  "blocks": 1906,
+  "dimensions": [
+    16,
+    29,
+    5
+  ],
+  "source": "assets/monters/monster-blokjes-10/json/06-oranje-pluismonster.json",
+  "sha256": "3f8c340119cb4ca59cb18aae449625d7d4c09db816cbf198feb5d9325fabc592"
+}

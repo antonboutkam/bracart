@@ -1,5 +1,6 @@
 extends SceneTree
 const Main = preload("res://scripts/main.gd")
+const Catalog = preload("res://scripts/catalog.gd")
 const Profile = preload("res://scripts/profile.gd")
 const Preview = preload("res://scripts/ui/vehicle_preview.gd")
 var checks := 0
@@ -70,7 +71,7 @@ func run() -> void:
  check(action == null,"Selected vehicle has no redundant selection button")
  check(main.ui.screen.get_node("GarageSelectedVehicle").studio.kart.vehicle_index == 1,"Chosen vehicle is displayed beside the drivers")
  var cards: Array = previews(main.ui.screen)
- check(cards.size() == 7,"Six vehicle cards and the selected vehicle beside the drivers have studios")
+ check(cards.size() == Catalog.VEHICLES.size() + 1,"Every vehicle and the selected vehicle have studios")
  for preview in cards:
   preview.set_process(false)
   check(preview.studio.has_node("TrackDiorama/RaceAsphalt") and preview.studio.has_node("TrackDiorama/TracksideTree"),"Actual road/grass/kerbs/tree diorama supports each preview")

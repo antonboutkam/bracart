@@ -1,0 +1,86 @@
+{
+  "monster_id": "04-bolle-stippelmonster",
+  "exclusief": [
+    "bestanden.json"
+  ],
+  "bestanden": [
+    {
+      "pad": "LEESMIJ.md",
+      "bytes": 2301,
+      "sha256": "1bb1a128fa822152360f110d8520059fbfb9f232dee3827b5df15fdcf81bf3e4",
+      "bron": "Gegenereerde documentatie of metagegevens voor dit monster"
+    },
+    {
+      "pad": "OPDRACHT-CHATGPT.md",
+      "bytes": 1648,
+      "sha256": "2600f7307635578c579c16578536ceec3fa9b7a5703ca5a45f2b74fa24f9dc12",
+      "bron": "Gegenereerde documentatie of metagegevens voor dit monster"
+    },
+    {
+      "pad": "TECHNISCHE-EISEN.md",
+      "bytes": 2644,
+      "sha256": "81e5a78f8d72ea4f22879856c7574e29d42244216a4979636a101cd034ca1638",
+      "bron": "Gegenereerde documentatie of metagegevens voor dit monster"
+    },
+    {
+      "pad": "afbeeldingen/illustratie.png",
+      "bytes": 2065353,
+      "sha256": "3b589b18d143289850315953fb995a381947d0b699a8726145767b497db8268a",
+      "bron": "assets/monters/losse-monsters/04-bolle-stippelmonster.png"
+    },
+    {
+      "pad": "afbeeldingen/voorkant-zijkant-achterkant.png",
+      "bytes": 2377832,
+      "sha256": "33784b22e970dc599b9338d6e8e0012619cf7e0d148add59449662d038b30435",
+      "bron": "assets/monters/monsters-drie-aanzichten/04-bolle-stippelmonster-voorkant-zijkant-achterkant.png"
+    },
+    {
+      "pad": "blokjes/blokken.json",
+      "bytes": 76932,
+      "sha256": "8eed65a797a95871b6b74570f41f09cbd3f6edd50da1d390ffebed0c564b7615",
+      "bron": "assets/monters/monster-blokjes-10/json/04-bolle-stippelmonster.json"
+    },
+    {
+      "pad": "blokjes/bronmanifest.json",
+      "bytes": 752,
+      "sha256": "095699e31755a0d9ac5c2bdefd8484527e4df75caaa079e9727d6180faf74f23",
+      "bron": "Gegenereerde documentatie of metagegevens voor dit monster"
+    },
+    {
+      "pad": "bronnotities/blokjesmodellen.md",
+      "bytes": 2736,
+      "sha256": "97b148fb754912b91649e51143b86f93e388dd827d0a690fca26612ec06b34f1",
+      "bron": "assets/monters/monster-blokjes-10/README.md"
+    },
+    {
+      "pad": "bronnotities/organische-proefmodellen.md",
+      "bytes": 1279,
+      "sha256": "444850a659f100e38c2f0e284ee49b5c8d7882ee853a5db261c35033307dd01a",
+      "bron": "assets/monters/monsters-3d-proefmodellen/README.md"
+    },
+    {
+      "pad": "gegevens.json",
+      "bytes": 1109,
+      "sha256": "35a794f08bca675cd77ce50fe2b1f36be5b3fae413fb707825288266b6ca88f8",
+      "bron": "Gegenereerde documentatie of metagegevens voor dit monster"
+    },
+    {
+      "pad": "modellen/blokjesmodel.glb",
+      "bytes": 188116,
+      "sha256": "21e97e30b50a088c27908e1e7fd396bcf7675937e56b56127bd64a0fc2618218",
+      "bron": "assets/monters/monster-blokjes-10/glb/04-bolle-stippelmonster.glb"
+    },
+    {
+      "pad": "modellen/organisch-proefmodel.glb",
+      "bytes": 2415564,
+      "sha256": "1cadb88eae00278bb1187f834a24aa61a71585e5560b6b719385c1b212eff51f",
+      "bron": "assets/monters/monsters-3d-proefmodellen/04-bolle-stippelmonster.glb"
+    },
+    {
+      "pad": "spelgegevens/catalogus-item.json",
+      "bytes": 291,
+      "sha256": "e16bb949703e0e03b730531ca5b4ddd421eaea4d31e432fd4e71dc1643b7fccb",
+      "bron": "Gegenereerde documentatie of metagegevens voor dit monster"
+    }
+  ]
+}
